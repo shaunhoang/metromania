@@ -10,7 +10,7 @@ from simplekml import Kml
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import dash_bootstrap_components as dbc
-from dash.exceptions import PreventUpdate
+import json
 
 ######## Data intake and cleaning
 cities = pd.read_csv("datasets/cities.csv")
@@ -46,7 +46,7 @@ stations['latitude'] = stations['latitude'].apply(lambda x: float(x))
 # Reorder columns in STATIONS and clean up
 stations = stations[['station_id','station_name','geometry','longitude',
                      'latitude','opening','closure','city_id','city',
-                     'country','line_id','line_name','system_id','system_name']]
+                     'country','line_id','line_name','line_color','system_id','system_name']]
 
 ## Merge multiple datasets into TRACKS
 tracks = pd.merge(tracks, track_lines_simpl,how='left',on='section_id')
@@ -76,7 +76,7 @@ def split_coord_latlon(x):
 
 # Split 'geometry' for each row into 'linestring' a list of coordinates to draw track lines
 tracks['linestring_latlon'] = tracks.geometry.apply(split_coord_latlon)
-tracks['linestring_lonlat'] = tracks.geometry.apply(split_coord_latlon)
+tracks['linestring_lonlat'] = tracks.geometry.apply(split_coord_lonlat)
 
 # Reorder columns
 tracks = tracks[['section_id','geometry','linestring_latlon','linestring_lonlat','opening','closure',
@@ -87,6 +87,7 @@ tracks = tracks[['section_id','geometry','linestring_latlon','linestring_lonlat'
 ## Fill in NA and other data cleaning
 stations['station_name'] = stations['station_name'].fillna('N.A.')
 tracks['line_color'] = tracks['line_color'].fillna('#000000')
+stations['line_color'] = stations['line_color'].fillna('#000000')
 stations['closure'] = stations['closure'].fillna(999999)
 tracks['closure'] = tracks['closure'].fillna(999999)
 stations['line_id'] = stations['line_id'].fillna(0)
@@ -190,7 +191,7 @@ def get_geocode(city):
 def plot_it(city,year):
     
     if not city or not year:
-        return create_placeholder_figure("Select a city and year to see the schematic map.")
+        return create_placeholder_figure("Select a city and year to see the schematic plot.")
     
     my_stations = stations[(stations.city == city.title()) 
                             & (stations.opening <= year) 
@@ -242,7 +243,6 @@ def plot_it(city,year):
 def map_it(city,year):
     
     url1 = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
-    url2 = 'https://www.ign.es/wmts/mapa-raster?request=getTile&layer=MTN&TileMatrixSet=GoogleMapsCompatible&TileMatrix={z}&TileCol={x}&TileRow={y}&format=image/jpeg'
     attribution = '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> '
     
     markers = []
@@ -259,9 +259,15 @@ def map_it(city,year):
         
         for i in range(len(my_stations)):
             station = my_stations.iloc[i]
-            marker = dl.Marker(
-                position=[station.latitude, station.longitude],
-                title=station.station_name
+            marker = dl.CircleMarker(
+                center=[station.latitude, station.longitude],
+                radius=6,  # Pixel radius
+                color=station.line_color,  
+                fillColor="white",
+                fillOpacity=0.7,
+                stroke=True,  
+                weight=1,     
+                children=[dl.Tooltip(station.station_name)]
             )
             markers.append(marker)
         
@@ -277,20 +283,15 @@ def map_it(city,year):
         dl.LayersControl(
             [
                 dl.BaseLayer(
-                    dl.TileLayer(url=url1, maxZoom=20, attribution=attribution),
+                    dl.TileLayer(url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', maxZoom=20, attribution=attribution),
                     name='Dark mode',
-                    checked=False
+                    checked=True
                 ),
                 dl.BaseLayer(
                     dl.TileLayer(url='https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', 
                                  maxZoom=20, attribution=attribution),
                     name="Light mode",
                     checked=False
-                ),
-                dl.BaseLayer(
-                    dl.TileLayer(url=url2, maxZoom=20, attribution=attribution),
-                    name='Retro mode',
-                    checked=True
                 ),
             ] + 
             [
@@ -410,19 +411,17 @@ def summarize_it(city,year):
     return fig
 
 
-# Export it function
+# Export it function - Into 1 GeoJSON file
 @app.callback(
-    [Output("download-kml-st", "data"),
-     Output("download-kml-tr", "data")],
+    Output("download-geojson", "data"),
     [State('dropdown','value'),
      State('slider','value')],
-    Input("export_button", "n_clicks"),
+    Input("export_geojson_button", "n_clicks"),
     prevent_initial_call=True,
 )
-def export_it(city, year, n_clicks): 
-    
+def export_geojson(city, year, n_clicks):
     if not city or not year:
-        return [no_update, no_update]
+        return no_update
 
     my_stations = stations[(stations.city == city.title()) 
                              & (stations.opening <= year) 
@@ -431,7 +430,79 @@ def export_it(city, year, n_clicks):
                          & (tracks.opening <= year) 
                          & (tracks.closure > year)]
 
-    kml_st = Kml(name='stations')
+    features = []
+
+    # Add stations as Point features
+    for i in range(len(my_stations)):
+        station = my_stations.iloc[i]
+        feature = {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [station.longitude, station.latitude]
+            },
+            "properties": {
+                "name": station.station_name,
+                "opening": f"{station.opening:g}",
+                "line": station.line_name
+            }
+        }
+        features.append(feature)
+
+    # Add tracks as LineString features
+    for i in range(len(my_tracks)):
+        track = my_tracks.iloc[i]
+        feature = {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": track.linestring_lonlat # Already in [lon, lat] format
+            },
+            "properties": {
+                "name": track.line_name,
+                "opening": f"{track.opening:g}",
+                "color": track.line_color
+            }
+        }
+        features.append(feature)
+
+    # Create the final FeatureCollection
+    geojson_data = {
+        "type": "FeatureCollection",
+        "features": features
+    }
+
+    # Create data dictionary for download
+    download_data = dict(
+        content=json.dumps(geojson_data),
+        filename=f"metromania_{city.replace(' ', '_')}_{year:g}.geojson"
+    )
+
+    return download_data
+
+# Export it function
+@app.callback(
+    Output("download-kml", "data"),
+    [State('dropdown','value'),
+     State('slider','value')],
+    Input("export_kml_button", "n_clicks"),
+    prevent_initial_call=True,
+)
+def export_kml(city, year, n_clicks): 
+    
+    if not city or not year:
+        return no_update  # <-- CORRECTED
+
+    my_stations = stations[(stations.city == city.title()) 
+                             & (stations.opening <= year) 
+                             & (stations.closure > year)]
+    my_tracks = tracks[(tracks.city == city.title()) 
+                         & (tracks.opening <= year) 
+                         & (tracks.closure > year)]
+
+    kml = Kml(name=f"{city} Transit {year:g}")
+    
+    # --- Stations ---
     list_st=[]
     for i in range(len(my_stations)):
         d = [my_stations.station_name.iloc[i],f'{my_stations.opening.iloc[i]:g}', my_stations.line_name.iloc[i],
@@ -439,29 +510,24 @@ def export_it(city, year, n_clicks):
         list_st.append(d)
 
     for row in list_st:
-        kml_st.newpoint(name=row[0], description=row[2],
+        kml.newpoint(name=row[0], description=row[2],
                         coords=[(row[4], row[3])]) 
 
-    station_data = dict(
-        content=kml_st.kml(), 
-        filename=f"stations_{city.replace(' ', '_')}_{year:g}.kml"
-    )
-
-    kml_tr = Kml(name='tracks')      
+    # --- Tracks ---
     list_tr=[]
     for i in range(len(my_tracks)):
         d = [my_tracks.line_name.iloc[i], my_tracks.linestring_lonlat.iloc[i],f'{my_tracks.opening.iloc[i]:g}']        
         list_tr.append(d)   
 
     for row in list_tr:
-        kml_tr.newlinestring(name=row[0],description=row[2],coords=row[1])
+        kml.newlinestring(name=row[0],description=row[2],coords=row[1])
 
-    track_data = dict(
-        content=kml_tr.kml(),
-        filename=f"tracks_{city.replace(' ', '_')}_{year:g}.kml"
+    kml_data = dict(
+        content=kml.kml(),
+        filename=f"metromania_{city.replace(' ', '_')}_{year:g}.kml"
     )
 
-    return [station_data, track_data]
+    return kml_data
 
 # ---------------------------------
 ######## 3. Create Dash Layout
@@ -563,7 +629,7 @@ app.layout = html.Div([
                 [
                     dbc.Col(
                         dbc.Card([
-                            dbc.CardHeader(html.H4("Schematic Map", className="text-center")),
+                            dbc.CardHeader(html.H4("Schematic Plot ", className="text-center")),
                             dbc.CardBody([
                                 dcc.Graph(id='plot', style={'height': '70vh'})
                             ])
@@ -604,10 +670,16 @@ app.layout = html.Div([
                 [
                     dbc.Col(
                         [
-                            html.P("Export the current map view to KML files for Google Earth.", className="text-center"),
-                            dbc.Button('Export to KML', id='export_button', n_clicks=0, color="success", className="w-100"),
-                            dcc.Download(id="download-kml-st"),
-                            dcc.Download(id="download-kml-tr")
+                            html.P("Export the current map view to KML or GeoJSON.", className="text-center"),
+                            dbc.ButtonGroup(
+                                [
+                                    dbc.Button('Export to KML', id='export_kml_button', n_clicks=0, color="success"),
+                                    dbc.Button('Export to GeoJSON', id='export_geojson_button', n_clicks=0, color="info") 
+                                ],
+                                className="w-100"
+                            ),
+                            dcc.Download(id="download-kml"),
+                            dcc.Download(id="download-geojson")
                         ],
                         md=6, className="mx-auto mb-4" 
                     )
