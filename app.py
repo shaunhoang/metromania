@@ -162,7 +162,7 @@ server = app.server
 # Get current year
 currentDateTime = datetime.datetime.now()
 currentDate = currentDateTime.date()
-currentYear = float(currentDate.strftime("%Y")) # This is still used for the label
+currentYear = float(currentDate.strftime("%Y"))
 
 # Get geocoords from city input
 api_key = os.environ.get('GEO_API_KEY')
@@ -279,7 +279,7 @@ def map_it(city,year):
                 dl.BaseLayer(
                     dl.TileLayer(url=url1, maxZoom=20, attribution=attribution),
                     name='Dark mode',
-                    checked=True
+                    checked=False
                 ),
                 dl.BaseLayer(
                     dl.TileLayer(url='https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', 
@@ -290,7 +290,7 @@ def map_it(city,year):
                 dl.BaseLayer(
                     dl.TileLayer(url=url2, maxZoom=20, attribution=attribution),
                     name='Retro mode',
-                    checked=False
+                    checked=True
                 ),
             ] + 
             [
@@ -516,7 +516,7 @@ controls = dbc.Card(
                     ),
                     dbc.Col(
                         [
-                            html.Label("Select Year (Default: 2025):"),
+                            html.Label("Select Year (Default: 2020):"),
                             dcc.Slider(
                                 id='slider',
                                 min=1850,
@@ -525,7 +525,7 @@ controls = dbc.Card(
                                 included=False,
                                 marks=slider_marks,
                                 tooltip={"placement": "bottom", "always_visible": True},
-                                value=2025
+                                value=2020
                             )
                         ], md=6
                     ),
@@ -546,26 +546,8 @@ stats_card = dbc.Card(
     ], className="mb-4"
 )
 
-#  CSS targets the dropdown menu pop-up
-dropdown_fix_css = """
-.Select-menu-outer {
-    background-color: #222222 !important;
-    border: 1px solid #444 !important;
-}
-.Select-option {
-    background-color: #222222 !important;
-    color: #f8f9fa !important;
-}
-.Select-option.is-focused {
-    background-color: #0d6efd !important;
-    color: #ffffff !important;
-}
-"""
-
 # --- Updated Layout ---
 app.layout = html.Div([
-    
-    html.Style(children=dropdown_fix_css),
     
     navbar,
     dbc.Container(
