@@ -12,9 +12,7 @@ from plotly.subplots import make_subplots
 import dash_bootstrap_components as dbc
 from dash.exceptions import PreventUpdate
 
-######## Data intake and cleaning (No changes)
-# ... (all data loading and cleaning code remains the same) ...
-
+######## Data intake and cleaning
 cities = pd.read_csv("datasets/cities.csv")
 stations = pd.read_csv("datasets/stations.csv")
 tracks = pd.read_csv("datasets/tracks.csv")
@@ -78,7 +76,7 @@ def split_coord_latlon(x):
 
 # Split 'geometry' for each row into 'linestring' a list of coordinates to draw track lines
 tracks['linestring_latlon'] = tracks.geometry.apply(split_coord_latlon)
-tracks['linestring_lonlat'] = tracks.geometry.apply(split_coord_lonlat)
+tracks['linestring_lonlat'] = tracks.geometry.apply(split_coord_latlon)
 
 # Reorder columns
 tracks = tracks[['section_id','geometry','linestring_latlon','linestring_lonlat','opening','closure',
@@ -129,7 +127,7 @@ wonk_table = wonk_table.reset_index()
 cities_list = wonk_table.city.tolist()
 
 # ---------------------------------
-# Helper function for placeholder graphs (No changes)
+# Helper function for placeholder graphs
 def create_placeholder_figure(text_message):
     fig = go.Figure()
     fig.update_layout(
@@ -153,23 +151,25 @@ def create_placeholder_figure(text_message):
 ######## 2. Dash app creation and callbacks
 
 FA_CSS = "https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+
 app = Dash(
     __name__, 
     external_stylesheets=[dbc.themes.DARKLY, FA_CSS],
     title='Project Metromania' 
-)server = app.server
+)
+server = app.server
 
 # Get current year
 currentDateTime = datetime.datetime.now()
 currentDate = currentDateTime.date()
-currentYear = float(currentDate.strftime("%Y"))
+currentYear = float(currentDate.strftime("%Y")) # This is still used for the label
 
 # Get geocoords from city input
 api_key = os.environ.get('GEO_API_KEY')
 if not api_key:
     print("ERROR: GEO_API_KEY environment variable not set. Geocoding will fail.")
 
-# ... (all callbacks remain the same) ...
+# ... (callbacks) ...
 @app.callback(Output('map','viewport'),[Input('dropdown','value')])    
 def get_geocode(city):
     if not city or not api_key:
@@ -254,8 +254,8 @@ def map_it(city,year):
                                 & (stations.closure > year)]
         
         my_tracks = tracks[(tracks.city == city) 
-                            & (stations.opening <= year) 
-                            & (stations.closure > year)]
+                            & (tracks.opening <= year) 
+                            & (tracks.closure > year)]
         
         for i in range(len(my_stations)):
             station = my_stations.iloc[i]
@@ -466,7 +466,7 @@ def export_it(city, year, n_clicks):
 # ---------------------------------
 ######## 3. Create Dash Layout
 
-# Dropdown list (No changes)
+# Dropdown list
 cities_list_good = sorted(cities_list)
 selection_items = [{'label': city, 'value': city} for city in cities_list_good]
 
@@ -509,14 +509,14 @@ controls = dbc.Card(
                                 id='dropdown', 
                                 options=selection_items,
                                 placeholder="Select a city...",
-                                className="dbc"
+                                className="dbc",
                                 value="London" 
                             )
                         ], md=6
                     ),
                     dbc.Col(
                         [
-                            html.Label(f"Select Year (Default: {currentYear:g}):"),
+                            html.Label("Select Year (Default: 2025):"),
                             dcc.Slider(
                                 id='slider',
                                 min=1850,
@@ -525,7 +525,7 @@ controls = dbc.Card(
                                 included=False,
                                 marks=slider_marks,
                                 tooltip={"placement": "bottom", "always_visible": True},
-                                value=currentYear
+                                value=2025
                             )
                         ], md=6
                     ),
@@ -546,10 +546,8 @@ stats_card = dbc.Card(
     ], className="mb-4"
 )
 
-# --- FIX: Define CSS as a string to inject into the layout ---
-# This CSS targets the dropdown menu pop-up and forces it to be dark
+#  CSS targets the dropdown menu pop-up
 dropdown_fix_css = """
-/* --- Fix for dcc.Dropdown in Dark Mode --- */
 .Select-menu-outer {
     background-color: #222222 !important;
     border: 1px solid #444 !important;
@@ -567,7 +565,6 @@ dropdown_fix_css = """
 # --- Updated Layout ---
 app.layout = html.Div([
     
-    # --- FIX: Inject the CSS string into the layout ---
     html.Style(children=dropdown_fix_css),
     
     navbar,
