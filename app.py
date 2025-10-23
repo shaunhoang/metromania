@@ -506,8 +506,8 @@ controls = dbc.Card(
                                 id='dropdown', 
                                 options=selection_items,
                                 placeholder="Select a city...",
-                                # 'dbc' class themes the input box, but not the pop-up
-                                className="dbc" 
+                                className="dbc"
+                                value="London" 
                             )
                         ], md=6
                     ),
