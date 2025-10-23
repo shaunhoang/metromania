@@ -153,8 +153,11 @@ def create_placeholder_figure(text_message):
 ######## 2. Dash app creation and callbacks
 
 FA_CSS = "https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-app = Dash(__name__, external_stylesheets=[dbc.themes.DARKLY, FA_CSS])
-server = app.server
+app = Dash(
+    __name__, 
+    external_stylesheets=[dbc.themes.DARKLY, FA_CSS],
+    title='Project Metromania' 
+)server = app.server
 
 # Get current year
 currentDateTime = datetime.datetime.now()
