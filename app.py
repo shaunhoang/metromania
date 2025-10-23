@@ -239,10 +239,12 @@ def plot_it(city,year):
 
 
 # Map it function
+# Map it function
 @app.callback(Output('map','children'),[Input('dropdown','value'),Input('slider','value')])
 def map_it(city,year):
     
-    url1 = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
+    url1 = 'https.tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
+    url2 = 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png' # URL for light mode
     attribution = '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> '
     
     markers = []
@@ -283,13 +285,12 @@ def map_it(city,year):
         dl.LayersControl(
             [
                 dl.BaseLayer(
-                    dl.TileLayer(url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', maxZoom=20, attribution=attribution),
+                    dl.TileLayer(url=url1, maxZoom=20, attribution=attribution),
                     name='Dark mode',
                     checked=True
                 ),
                 dl.BaseLayer(
-                    dl.TileLayer(url='https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', 
-                                 maxZoom=20, attribution=attribution),
+                    dl.TileLayer(url=url2, maxZoom=20, attribution=attribution),
                     name="Light mode",
                     checked=False
                 ),
@@ -301,45 +302,6 @@ def map_it(city,year):
         )
     ]
     return my_map_layers
-
-
-# Count it function
-@app.callback(Output('count','children'),[Input('dropdown','value'),Input('slider','value')])
-def count_it(city,year):
-    if not city or not year:
-        return dbc.Col(html.P("Select city and year for stats.", className="text-center text-muted"), md=12)
-
-    my_stations = stations[(stations.city == city) 
-                            & (stations.opening <= year) 
-                            & (stations.closure > year)]
-    my_tracks = tracks[(tracks.city == city) 
-                        & (tracks.opening <= year) 
-                        & (tracks.closure > year)]
-    track_length_km = my_tracks.length.sum()/1000
-    num_stations = len(my_stations)
-    
-    return [
-        dbc.Col(
-            dbc.Card(
-                [
-                    dbc.CardHeader("Stations"),
-                    dbc.CardBody([
-                        html.H4(f"{num_stations}", className="card-title"),
-                    ])
-                ], color="primary", outline=True, className="text-center"
-            ), md=6
-        ),
-        dbc.Col(
-            dbc.Card(
-                [
-                    dbc.CardHeader("Track Length"),
-                    dbc.CardBody([
-                        html.H4(f"{track_length_km:,.0f} km", className="card-title"),
-                    ])
-                ], color="primary", outline=True, className="text-center"
-            ), md=6
-        )
-    ]
 
 
 # Summarize it function
@@ -575,7 +537,7 @@ controls = dbc.Card(
                                 id='dropdown', 
                                 options=selection_items,
                                 placeholder="Select a city...",
-                                className="dbc",
+                                # className="dbc",
                                 value="London" 
                             )
                         ], md=6
