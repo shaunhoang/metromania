@@ -1,22 +1,18 @@
-## Project Metromania
-#-by Shaun H. (shaun.hoang@gmail.com)
-
-### Overview
-# A dashboard that allows users to visualize the growth of chosen city's transit systems over time with a year slider. The user could also export them into KML files for use on other map applications like Google Maps and Earth
-
 import os
 import pandas as pd
 import datetime
 import requests
 import plotly.express as px
 import dash_leaflet as dl
-from dash import dcc, html, Dash
+from dash import dcc, html, Dash, no_update
 from dash.dependencies import Input, Output, State
 from simplekml import Kml
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+import dash_bootstrap_components as dbc  
+from dash.exceptions import PreventUpdate 
 
-######## Data intake and cleaning
+######## Data intake and cleaning 
 
 cities = pd.read_csv("datasets/cities.csv")
 stations = pd.read_csv("datasets/stations.csv")
@@ -64,8 +60,8 @@ def split_coord_lonlat(x):
     stripped_x = x.rstrip(')) ').lstrip(' MULTILINESTRING ((').strip() # strip non-numerical values from object 
     coord_list = []
     for point in stripped_x.split(','):
-        coord = point.split(' ')                 # split into lon-lat 
-        coord = [float(x.strip()) for x in coord]             # turn to float
+        coord = point.split(' ')                # split into lon-lat 
+        coord = [float(x.strip()) for x in coord]               # turn to float
         coord_list.append(coord)
     return coord_list
 
@@ -73,9 +69,9 @@ def split_coord_latlon(x):
     stripped_x = x.rstrip(')) ').lstrip(' MULTILINESTRING ((').strip() # strip non-numerical values from object 
     coord_list = []
     for point in stripped_x.split(','):
-        coord = point.split(' ')                 # split into lon-lat 
-        coord[0],coord[1] = coord[1],coord[0]     # swap to lat-lon
-        coord = [float(x.strip()) for x in coord]             # turn to float
+        coord = point.split(' ')                # split into lon-lat 
+        coord[0],coord[1] = coord[1],coord[0]   # swap to lat-lon
+        coord = [float(x.strip()) for x in coord]               # turn to float
         coord_list.append(coord)
     return coord_list
 
@@ -90,8 +86,6 @@ tracks = tracks[['section_id','geometry','linestring_latlon','linestring_lonlat'
 
 
 ## Fill in NA and other data cleaning
-
-
 stations['station_name'] = stations['station_name'].fillna('N.A.')
 tracks['line_color'] = tracks['line_color'].fillna('#000000')
 stations['closure'] = stations['closure'].fillna(999999)
@@ -101,18 +95,12 @@ tracks['line_id'] = tracks['line_id'].fillna(0)
 stations['line_name'] = stations['line_name'].fillna('N.A.')
 tracks['line_name'] = tracks['line_name'].fillna('N.A.')
 
-
-# Consideration for opening:
-# - Stations: contains 73 'NULL' values, 1633 '0' values, and 42 '999999' values => 0
-# - Tracks: contains 21 'NULL' values, 2937 '0' values, and 17 '999999' values => 0
-
 stations['opening'] = stations['opening'].fillna(0)
 tracks['opening'] = tracks['opening'].fillna(0)
 stations.loc[stations.opening>2040, 'opening'] = 0
 tracks.loc[tracks.opening>2040, 'opening'] = 0
 
-# I'm just having fun here, trying to determine which city has the least stations without clean opening years
-
+# ... (wonkiness calculation) ...
 def wonk(x):
     if x==0 :
         wonk_or_good='wonk'
@@ -130,27 +118,42 @@ pivot_tr = pd.pivot_table(tracks,values='section_id',index='city',columns=['wonk
 pivot_tr = pivot_tr.fillna(0)
 pivot_tr['wonkiness_tr'] = (pivot_tr['wonk']) / (pivot_tr['good'] + pivot_tr['wonk'])
 
-# Will only show cities with wonk_score < median and more than 110 stations
-
 wonk_table = pd.merge(pivot_st,pivot_tr,on='city')
 wonk_table['wonk_score'] = (wonk_table['wonkiness_st'] + wonk_table['wonkiness_tr']) / (wonk_table['good_x'] + wonk_table['good_y'] + wonk_table['wonk_x'] + wonk_table['wonk_y'])
 wonk_table = wonk_table[(wonk_table.wonk_score < wonk_table.wonk_score.median())
-                       & ((wonk_table.good_x+wonk_table.wonk_x)>=110)]
+                            & ((wonk_table.good_x+wonk_table.wonk_x)>=110)]
 
 wonk_table.columns.name = None              
-wonk_table = wonk_table.reset_index()  
-cities_list = wonk_table.city.tolist()
-
-
-cities_list_other = stations.city.unique().tolist()
-for x in cities_list:
-  cities_list_other.remove(x)
-
+wonk_table = wonk_table.reset_index()   
+cities_list = wonk_table.city.tolist() # This is the "good" list
 
 # ---------------------------------
-######## 2. Actually create mapping and plotting functions that take cities and year inputs
+# --- FIX: Helper function for placeholder graphs ---
+def create_placeholder_figure(text_message):
+    """Creates a blank figure with a text message."""
+    fig = go.Figure()
+    fig.update_layout(
+        xaxis={"visible": False},
+        yaxis={"visible": False},
+        annotations=[
+            {
+                "text": text_message,
+                "xref": "paper",
+                "yref": "paper",
+                "showarrow": False,
+                "font": {"size": 16, "color": "#888888"}
+            }
+        ],
+        plot_bgcolor="#222222", # Match DARKLY theme
+        paper_bgcolor="#222222", # Match DARKLY theme
+    )
+    return fig
 
-app = Dash(__name__)
+# ---------------------------------
+######## 2. Dash app creation and callbacks
+
+# --- Use Dash Bootstrap Components and a dark theme ---
+app = Dash(__name__, external_stylesheets=[dbc.themes.DARKLY])
 server = app.server
 
 # Get current year
@@ -158,37 +161,41 @@ currentDateTime = datetime.datetime.now()
 currentDate = currentDateTime.date()
 currentYear = float(currentDate.strftime("%Y"))
 
-# Get geocoords from city input, to help center the plot and map
+# Get geocoords from city input
 api_key = os.environ.get('GEO_API_KEY')
 if not api_key:
-    print("ERROR: GEO_API_KEY environment variable not set.")
+    print("ERROR: GEO_API_KEY environment variable not set. Geocoding will fail.")
 
 @app.callback(Output('map','viewport'),[Input('dropdown','value')])    
 def get_geocode(city):
-    url = f'http://api.positionstack.com/v1/forward?access_key={api_key}&query={city}&limit=1'  
-    response = requests.get(url)    
-    geocode_data = requests.get(url).json()      
-    lat = geocode_data['data'][0]['latitude']
-    lon = geocode_data['data'][0]['longitude']
-    lat = float(lat)
-    lon = float(lon)
-    viewport = {'center':[lat,lon],'zoom':12}
-    return viewport
+    if not city or not api_key:
+        return {'center':[20, 0],'zoom':2} # Default world view
+    try:
+        url = f'http://api.positionstack.com/v1/forward?access_key={api_key}&query={city}&limit=1'    
+        geocode_data = requests.get(url).json()     
+        lat = geocode_data['data'][0]['latitude']
+        lon = geocode_data['data'][0]['longitude']
+        return {'center':[float(lat), float(lon)],'zoom':12}
+    except Exception as e:
+        print(f"Error geocoding {city}: {e}")
+        return {'center':[20, 0],'zoom':2} # Fallback to world view
 
 
 # Plot it function
-
-
 @app.callback(Output('plot','figure'),[Input('dropdown','value'),Input('slider','value')])
 def plot_it(city,year):
     
+    # --- FIX: Check for missing inputs and return placeholder ---
+    if not city or not year:
+        return create_placeholder_figure("Select a city and year to see the schematic map.")
+    
     my_stations = stations[(stations.city == city.title()) 
-                           & (stations.opening <= year) 
-                           & (stations.closure > year)]
+                            & (stations.opening <= year) 
+                            & (stations.closure > year)]
     
     my_tracks = tracks[(tracks.city == city.title()) 
-                       & (tracks.opening <= year) 
-                       & (tracks.closure > year)]
+                        & (tracks.opening <= year) 
+                        & (tracks.closure > year)]
     
     
     # Tracks: Extract linestring coords into lists, combine into a plottable df    
@@ -211,52 +218,65 @@ def plot_it(city,year):
                      x="x", 
                      y="y" , 
                      color="z",
-                     template="simple_white",
-                    width=800, height=800)
+                     template="plotly_dark", # --- FIX: Use dark theme ---
+                     width=800, height=800)
     
     fig.update_yaxes(title_text="",showgrid=False,
                      showline=False,mirror=True, scaleanchor = "x",scaleratio = 1,
-                     showticklabels=False,ticks='',automargin=True)
+                     showticklabels=False,ticks='',automargin=True, zeroline=False)
     fig.update_xaxes(title_text="",showgrid=False,
                      showline=False,mirror=True,
-                     showticklabels=False,ticks='',automargin=True)
-    fig.update_layout(showlegend=False,
-                     autosize=False)
+                     showticklabels=False,ticks='',automargin=True, zeroline=False)
     
-    return fig     # return plotly graph
+    # --- FIX: Match theme colors ---
+    fig.update_layout(showlegend=False,
+                      autosize=False,
+                      plot_bgcolor="#222222",
+                      paper_bgcolor="#222222")
+    
+    return fig    # return plotly graph
 
 
 # Map it function
-
 @app.callback(Output('map','children'),[Input('dropdown','value'),Input('slider','value')])
 def map_it(city,year):
-    my_stations = stations[(stations.city == city) 
-                           & (stations.opening <= year) 
-                           & (stations.closure > year)]
-    
-    my_tracks = tracks[(tracks.city == city) 
-                       & (tracks.opening <= year) 
-                       & (tracks.closure > year)]
     
     url1 = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
     url2 = 'https://www.ign.es/wmts/mapa-raster?request=getTile&layer=MTN&TileMatrixSet=GoogleMapsCompatible&TileMatrix={z}&TileCol={x}&TileRow={y}&format=image/jpeg'
     attribution = '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> '
-
+    
     markers = []
-    for i in range(len(my_stations)):
-        latlon = my_stations[['latitude', 'longitude']]
-        latlonlist = latlon.values.tolist()        
-        marker = dl.Marker(position=latlonlist[i],title=my_stations.station_name.iloc[i])
-        markers.append(marker)
-      
     lines = []
-    for i in range(len(my_tracks)):
-        linesegment = my_tracks.linestring_latlon.iloc[i]
-        linecolor = my_tracks.line_color.iloc[i]
-        line = dl.Polyline(positions=linesegment,color=linecolor)
-        lines.append(line) 
+
+    # --- FIX: Only build markers/lines if inputs are valid ---
+    if city and year:
+        my_stations = stations[(stations.city == city) 
+                                & (stations.opening <= year) 
+                                & (stations.closure > year)]
         
-    my_map = dl.LayersControl(
+        my_tracks = tracks[(tracks.city == city) 
+                            & (tracks.opening <= year) 
+                            & (tracks.closure > year)]
+        
+        for i in range(len(my_stations)):
+            station = my_stations.iloc[i]
+            marker = dl.Marker(
+                position=[station.latitude, station.longitude],
+                title=station.station_name
+            )
+            markers.append(marker)
+        
+        for i in range(len(my_tracks)):
+            track = my_tracks.iloc[i]
+            line = dl.Polyline(
+                positions=track.linestring_latlon,
+                color=track.line_color
+            )
+            lines.append(line)
+            
+    # Always return the map controls, even if markers/lines are empty
+    my_map_layers = [
+        dl.LayersControl(
             [
                 dl.BaseLayer(
                     dl.TileLayer(url=url1, maxZoom=20, attribution=attribution),
@@ -264,12 +284,14 @@ def map_it(city,year):
                     checked=True
                 ),
                 dl.BaseLayer(
-                    dl.TileLayer(opacity=0.5),
+                    # --- FIX: Added a light mode tile layer ---
+                    dl.TileLayer(url='https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', 
+                                 maxZoom=20, attribution=attribution),
                     name="Light mode",
                     checked=False
                 ),
                 dl.BaseLayer(
-                    dl.TileLayer(opacity=0.5,url=url2, maxZoom=20, attribution=attribution),
+                    dl.TileLayer(url=url2, maxZoom=20, attribution=attribution),
                     name='Retro mode',
                     checked=False
                 ),
@@ -279,43 +301,80 @@ def map_it(city,year):
                 dl.Overlay(dl.LayerGroup(lines), name="Lines", checked=True)
             ]
         )
-    return my_map
+    ]
+    return my_map_layers
 
 
-# Count it function - Snapshot of number of stations and track length as of a certain year
-
+# Count it function - Snapshot
 @app.callback(Output('count','children'),[Input('dropdown','value'),Input('slider','value')])
 def count_it(city,year):
+    # --- FIX: Handle missing inputs ---
+    if not city or not year:
+        return dbc.Col(html.P("Select city and year for stats.", className="text-center text-muted"), md=12)
+
     my_stations = stations[(stations.city == city) 
-                           & (stations.opening <= year) 
-                           & (stations.closure > year)]
+                            & (stations.opening <= year) 
+                            & (stations.closure > year)]
     my_tracks = tracks[(tracks.city == city) 
-                       & (tracks.opening <= year) 
-                       & (tracks.closure > year)]
+                        & (tracks.opening <= year) 
+                        & (tracks.closure > year)]
     track_length_km = my_tracks.length.sum()/1000
     num_stations = len(my_stations)
-    count_it_result = f'{city}\'s transit system in {year} had {num_stations} stations and {track_length_km} km total track length'
-    return count_it_result
+    
+    # --- FIX: Return styled DBC components ---
+    return [
+        dbc.Col(
+            dbc.Card(
+                [
+                    dbc.CardHeader("Stations"),
+                    dbc.CardBody([
+                        html.H4(f"{num_stations}", className="card-title"),
+                    ])
+                ], color="primary", outline=True, className="text-center"
+            ), md=6
+        ),
+        dbc.Col(
+            dbc.Card(
+                [
+                    dbc.CardHeader("Track Length"),
+                    dbc.CardBody([
+                        html.H4(f"{track_length_km:,.0f} km", className="card-title"),
+                    ])
+                ], color="primary", outline=True, className="text-center"
+            ), md=6
+        )
+    ]
 
 
 # Summarize it function - Evolution
-
-
 @app.callback(Output('summarize','figure'),[Input('dropdown','value'),Input('slider','value')])
 def summarize_it(city,year):
+    
+    # --- FIX: Handle missing city ---
+    if not city:
+        return create_placeholder_figure("Select a city to see its growth history.")
+    
     my_stations = stations[(stations.city == city.title())]
     my_tracks = tracks[(tracks.city == city.title())]
     
     joint_df = pd.concat([my_tracks.opening,my_stations.opening])
     
-    min_year = int(sorted(joint_df.unique(),reverse=False)[1])
+    # Handle case where city has no data
+    if len(joint_df.unique()) < 2:
+        return create_placeholder_figure(f"Not enough historical data for {city}.")
+
+    min_year = int(sorted(joint_df.unique(),reverse=False)[1]) # [1] correctly skips '0'
     max_year = int(sorted(joint_df.unique(),reverse=True)[0])
     
+    # Handle empty year range
+    if min_year >= max_year:
+         return create_placeholder_figure(f"Not enough historical data for {city}.")
+    
     data = []
-    for y in range(min_year, max_year):
+    for y in range(min_year, max_year + 1): # +1 to include last year
         d = {'year': y,
-             'track_length' : my_tracks[my_tracks.opening <= y].length.sum()/1000,
-             'stations_num' : len(my_stations[my_stations.opening <= y])}
+             'track_length' : my_tracks[(my_tracks.opening <= y) & (my_tracks.closure > y)].length.sum()/1000,
+             'stations_num' : len(my_stations[(my_stations.opening <= y) & (my_stations.closure > y)])}
         data.append(d)
     dataset = pd.DataFrame(data)
     dataset.stations_num = dataset.stations_num.astype(float)
@@ -324,24 +383,30 @@ def summarize_it(city,year):
     fig = make_subplots(specs=[[{"secondary_y": True}]])
 
     fig.add_trace(
-        go.Scatter(x=dataset.year, y=dataset.stations_num, name="stations"),
+        go.Scatter(x=dataset.year, y=dataset.stations_num, name="Stations", mode='lines'),
         secondary_y=False,
     )
 
     fig.add_trace(
-        go.Scatter(x=dataset.year, y=dataset.track_length, name="tracks"),
+        go.Scatter(x=dataset.year, y=dataset.track_length, name="Track (km)", mode='lines'),
         secondary_y=True,
     )
 
     fig.update_xaxes(title_text="Year")
     fig.update_yaxes(title_text="Number of stations", secondary_y=False,showgrid=False,zeroline=False) #Prim
-    fig.update_yaxes(title_text="Track length", secondary_y=True,showgrid=False,zeroline=False) #Sec    
+    fig.update_yaxes(title_text="Track length (km)", secondary_y=True,showgrid=False,zeroline=False) #Sec    
     
-    fig.add_vline(x=year, line_width=2, line_dash="dash", line_color="red")
+    # --- FIX: Check if year is selected before adding vline ---
+    if year:
+        fig.add_vline(x=year, line_width=2, line_dash="dash", line_color="red")
     
+    # --- FIX: Use dark theme ---
     fig.update_layout(
+        template="plotly_dark",
+        plot_bgcolor="#222222",
+        paper_bgcolor="#222222",
         title={
-            'text': "System growth over time",
+            'text': f"{city} System Growth Over Time",
              'y':0.9,
              'x':0.5,
             'xanchor': 'center',
@@ -353,11 +418,10 @@ def summarize_it(city,year):
             'x':0.01
     })
     
-    return fig         # return plotly graph
+    return fig        # return plotly graph
 
 
 # Export it function - Into 2 KML files
-
 @app.callback(
     [Output("download-kml-st", "data"),
      Output("download-kml-tr", "data")],
@@ -366,14 +430,17 @@ def summarize_it(city,year):
     Input("export_button", "n_clicks"),
     prevent_initial_call=True,
 )
-def export_it(city,year,*args):
-    my_stations = stations[(stations.city == city.title()) 
-                            & (stations.opening <= year) 
-                            & (stations.closure > year)]
-    my_tracks = tracks[(tracks.city == city.title()) 
-                        & (tracks.opening <= year) 
-                        & (tracks.closure > year)]
+def export_it(city, year, n_clicks): # --- FIX: Explicitly name n_clicks
+    
+    if not city or not year:
+        return [no_update, no_update]
 
+    my_stations = stations[(stations.city == city.title()) 
+                             & (stations.opening <= year) 
+                             & (stations.closure > year)]
+    my_tracks = tracks[(tracks.city == city.title()) 
+                         & (tracks.opening <= year) 
+                         & (tracks.closure > year)]
 
     # --- Stations (in memory) ---
     kml_st = Kml(name='stations')
@@ -385,14 +452,13 @@ def export_it(city,year,*args):
 
     for row in list_st:
         kml_st.newpoint(name=row[0], description=row[2],
-                         coords=[(row[4], row[3])]) 
+                        coords=[(row[4], row[3])]) 
 
     # Create data dictionary for download
     station_data = dict(
         content=kml_st.kml(), 
-        filename=f"stations_{city}_{year:g}.kml"
+        filename=f"stations_{city.replace(' ', '_')}_{year:g}.kml"
     )
-
 
     # --- Tracks (in memory) ---
     kml_tr = Kml(name='tracks')      
@@ -407,130 +473,164 @@ def export_it(city,year,*args):
     # Create data dictionary for download
     track_data = dict(
         content=kml_tr.kml(),
-        filename=f"tracks_{city}_{year:g}.kml"
+        filename=f"tracks_{city.replace(' ', '_')}_{year:g}.kml"
     )
 
-    # Return the data dicts to the dcc.Download components
     return [station_data, track_data]
 
 # ---------------------------------
-######## 3. Create Dash with dropdown for Cities, and Year slider (with callbacks)
+######## 3. Create Dash Layout
 
-
-selection_items = []
-
-for i in range(len(cities_list)):
-    dict = {'label': f'{cities_list[i]}',
-            'value':cities_list[i]}
-    selection_items.append(dict)
-for i in range(len(cities_list_other)):
-    dict = {'label': f'{cities_list_other[i]}     - Note: Missing data',
-            'value':cities_list_other[i]}
-    selection_items.append(dict)
-      
-dropdown = dcc.Dropdown(id='dropdown', 
-                         options=selection_items)
+# --- FIX: Issue 2 - Exclude cities with missing data ---
+# We only use 'cities_list' from the wonk_table calculation and sort it.
+cities_list_good = sorted(cities_list)
+selection_items = [{'label': city, 'value': city} for city in cities_list_good]
 
 slider_marks = {}
 for i in range(1850,2040,10):
     slider_marks[i] =  {'label': f'{i:g}'}
 
-slider = dcc.Slider(id='slider',
-                    min=1850,
-                    max=2040,
-                    step=1,
-                    included = False,
-                    marks=slider_marks,
-                    tooltip={"placement": "bottom", "always_visible": True})
+# --- FIX: Issue 3 - New professional layout using Dash Bootstrap Components ---
 
-app.layout = html.Div(children=[
-    html.H1(
-        children=['Welcome to Metromania!'],
-        style={'textAlign': 'center',}
-        ),
-    
-    html.Plaintext(
-        children=['Happy you are here, taking your first steps towards becoming a true metro historian'],
-        style={'textAlign': 'center',}
-        ),
-    
-    html.Div(children=[
-        html.H3(
-              children=['Let\'s get started... choose your city:'],
-              style={'textAlign': 'center'},
-        ),
-        
-        html.Br(),
-        
-        html.Div(children=[
-            dropdown
-        ],style={'width': '60%', 'margin': "auto", "display": "block",'justify': 'center'})
-        ,
-        html.Br(),
-        
-        html.H3(
-            children=['Select your favourite year:'],                
-            style={'textAlign': 'center'}
-            ),
-        
-        html.Br(),
-        slider,        
-    ],style={'width': '80%', 'margin': "auto", "display": "block",'justify': 'center'}),
-    
-    html.Div(children=[  
-        html.Div([
-            dcc.Graph(id='plot')
-        ],style={'width': '100%','display': 'flex','justify-content': 'center','align-items': 'center'}),
-    ],style={'width': '80%', 'margin': "auto", "display": "block"}),
+navbar = dbc.NavbarSimple(
+    brand="Project Metromania",
+    brand_href="#",
+    color="primary",
+    dark=True,
+    className="mb-4" # Margin-bottom
+)
 
-    html.Br(),
-    html.Hr(),
+controls = dbc.Card(
+    [
+        dbc.CardBody([
+            dbc.Row(
+                [
+                    dbc.Col(
+                        [
+                            html.Label("Select City:"),
+                            dcc.Dropdown(
+                                id='dropdown', 
+                                options=selection_items,
+                                placeholder="Select a city..."
+                            )
+                        ], md=6
+                    ),
+                    dbc.Col(
+                        [
+                            html.Label(f"Select Year (Default: {currentYear:g}):"),
+                            dcc.Slider(
+                                id='slider',
+                                min=1850,
+                                max=2040,
+                                step=1,
+                                included=False,
+                                marks=slider_marks,
+                                tooltip={"placement": "bottom", "always_visible": True},
+                                value=currentYear # Default to current year
+                            )
+                        ], md=6
+                    ),
+                ]
+            )
+        ])
+    ], className="mb-4"
+)
 
-    html.Div(children=[  
-        html.H2(children=['Did you know...'],style={'display': 'flex','justify-content': 'center'}),
-        html.Plaintext(id='count',style={'display': 'flex','justify-content': 'center'}),
-    ],style={'width': '80%', 'margin': "auto", "display": "block"}), 
-    
-    html.Div(children=[
-        dcc.Graph(id='summarize'),
-    ],style={'width': '80%', 'margin': "auto", "display": "block"}
+stats_card = dbc.Card(
+    [
+        dbc.CardHeader(html.H4("Snapshot", className="text-center")),
+        # The children of this Row are provided by the 'count_it' callback
+        dbc.CardBody([
+            dbc.Row(id='count', children=[
+                dbc.Col(html.P("Select city and year for stats.", className="text-center text-muted"), md=12)
+            ])
+        ])
+    ], className="mb-4"
+)
+
+app.layout = html.Div([
+    navbar,
+    dbc.Container(
+        [
+            controls, # Add the control card
+            
+            dbc.Row(
+                [
+                    dbc.Col(
+                        dbc.Card([
+                            dbc.CardHeader(html.H4("Schematic Map", className="text-center")),
+                            dbc.CardBody([
+                                # Set a fixed height for the graph and map
+                                dcc.Graph(id='plot', style={'height': '70vh'})
+                            ])
+                        ]), md=6, className="mb-4"
+                    ),
+                    dbc.Col(
+                        dbc.Card([
+                            dbc.CardHeader(html.H4("Geographic Map", className="text-center")),
+                            dbc.CardBody([
+                                dl.Map(
+                                    id='map', 
+                                    style={'width': '100%', 'height': '70vh'},
+                                    center=[20, 0], # Default world view
+                                    zoom=2
+                                )
+                            ])
+                        ]), md=6, className="mb-4"
+                    ),
+                ]
             ),
-    
-    html.H2(
-        children=[f'Check it out on a map!'],
-        style={'textAlign': 'center',}
-        ),
-    
-    html.Div(children=[
-        dl.Map(id='map')
-    ],style={'width': '80%', 'height': '75vh', 'margin': "auto", "display": "block"}),
-    
-    html.Br(),
-    
-    html.Div(children=[
-        html.Plaintext(children=['Export this map into (2) KML files \nto explore further in Google Earth'],style={'textAlign': 'center'}),
-    ], style={'width': '100%','display': 'flex','justify-content': 'center','align-items': 'center'}
+            
+            stats_card, # Add the new stats card
+            
+            dbc.Row(
+                [
+                    dbc.Col(
+                        dbc.Card([
+                            dbc.CardHeader(html.H4("System Growth Over Time", className="text-center")),
+                            dbc.CardBody([
+                                dcc.Graph(id='summarize')
+                            ])
+                        ]), md=12, className="mb-4"
+                    )
+                ]
             ),
-    
-    html.Div(children=[
-        html.Button('Export to KML', id='export_button',n_clicks=0),
-        dcc.Download(id="download-kml-st"),
-        dcc.Download(id="download-kml-tr")
-    ], style={'width': '100%','display': 'flex','justify-content': 'center','align-items': 'center'}
+            
+            dbc.Row(
+                [
+                    dbc.Col(
+                        [
+                            html.P("Export the current map view to KML files for Google Earth.", className="text-center"),
+                            # Use dbc.Button for themed button
+                            dbc.Button('Export to KML', id='export_button', n_clicks=0, color="success", className="w-100"),
+                            dcc.Download(id="download-kml-st"),
+                            dcc.Download(id="download-kml-tr")
+                        ],
+                        md=6, className="mx-auto mb-4" # Center the button
+                    )
+                ]
             ),
-    
-    html.Br(),
-    html.Hr(),
-    
-    html.Plaintext(children=['Created by: shaun.hoang@gmail.com'],
-                   style={'textAlign': 'center'}),
-    html.Plaintext(children=[
-        'Data source:',
-        html.A("Kaggle.com", href='https://www.kaggle.com/citylines/city-lines', target="_blank")
-    ],style={'textAlign': 'center'})    
-], style={'align-items': 'center','justify-content': 'center'})   
+            
+            html.Hr(),
+            
+            html.Footer(
+                dbc.Row(
+                    [
+                        dbc.Col(html.P("Created by: shaun.hoang@gmail.com"), className="text-center text-muted"),
+                        dbc.Col(
+                            html.P([
+                                "Data source: ",
+                                html.A("Kaggle.com", href='https://www.kaggle.com/citylines/city-lines', target="_blank")
+                            ]), className="text-center text-muted"
+                        )
+                    ]
+                )
+            )
+        ],
+        fluid=True # Use the full width of the viewport
+    )
+])
 
 # Finally
-
 if __name__ == "__main__":
     app.run_server(debug=True)
