@@ -131,7 +131,6 @@ cities_list = wonk_table.city.tolist()
 # ---------------------------------
 # Helper function for placeholder graphs (No changes)
 def create_placeholder_figure(text_message):
-    """Creates a blank figure with a text message."""
     fig = go.Figure()
     fig.update_layout(
         xaxis={"visible": False},
@@ -145,15 +144,14 @@ def create_placeholder_figure(text_message):
                 "font": {"size": 16, "color": "#888888"}
             }
         ],
-        plot_bgcolor="#222222", # Match DARKLY theme
-        paper_bgcolor="#222222", # Match DARKLY theme
+        plot_bgcolor="#222222", 
+        paper_bgcolor="#222222",
     )
     return fig
 
 # ---------------------------------
 ######## 2. Dash app creation and callbacks
 
-# --- FIX 1: Add Font Awesome CSS for the new icon ---
 FA_CSS = "https://use.fontawesome.com/releases/v5.15.4/css/all.css"
 app = Dash(__name__, external_stylesheets=[dbc.themes.DARKLY, FA_CSS])
 server = app.server
@@ -253,8 +251,8 @@ def map_it(city,year):
                                 & (stations.closure > year)]
         
         my_tracks = tracks[(tracks.city == city) 
-                            & (tracks.opening <= year) 
-                            & (tracks.closure > year)]
+                            & (stations.opening <= year) 
+                            & (stations.closure > year)]
         
         for i in range(len(my_stations)):
             station = my_stations.iloc[i]
@@ -474,23 +472,20 @@ for i in range(1850,2040,10):
     slider_marks[i] =  {'label': f'{i:g}'}
 
 
-# --- FIX 1: A better banner with an icon ---
 navbar = dbc.Navbar(
     dbc.Container(
         [
             html.A(
-                # Use row and col for alignment
                 dbc.Row(
                     [
-                        # Font Awesome icon
                         dbc.Col(html.I(className="fas fa-subway me-2")), 
-                        dbc.Col(dbc.NavbarBrand("Project Metromania", className="ms-2")), # Title
+                        dbc.Col(dbc.NavbarBrand("Project Metromania", className="ms-2")),
                     ],
                     align="center",
-                    className="g-0", # No gutters
+                    className="g-0",
                 ),
                 href="#",
-                style={"textDecoration": "none"}, # Remove underline from link
+                style={"textDecoration": "none"},
             )
         ]
     ),
@@ -511,7 +506,7 @@ controls = dbc.Card(
                                 id='dropdown', 
                                 options=selection_items,
                                 placeholder="Select a city...",
-                                # --- FIX 3: Add 'dbc' class to theme the dropdown ---
+                                # 'dbc' class themes the input box, but not the pop-up
                                 className="dbc" 
                             )
                         ], md=6
@@ -548,19 +543,39 @@ stats_card = dbc.Card(
     ], className="mb-4"
 )
 
+# --- FIX: Define CSS as a string to inject into the layout ---
+# This CSS targets the dropdown menu pop-up and forces it to be dark
+dropdown_fix_css = """
+/* --- Fix for dcc.Dropdown in Dark Mode --- */
+.Select-menu-outer {
+    background-color: #222222 !important;
+    border: 1px solid #444 !important;
+}
+.Select-option {
+    background-color: #222222 !important;
+    color: #f8f9fa !important;
+}
+.Select-option.is-focused {
+    background-color: #0d6efd !important;
+    color: #ffffff !important;
+}
+"""
+
 # --- Updated Layout ---
 app.layout = html.Div([
+    
+    # --- FIX: Inject the CSS string into the layout ---
+    html.Style(children=dropdown_fix_css),
+    
     navbar,
     dbc.Container(
         [
-            # --- FIX 2: Added Subtitle and instructional text ---
             html.H5("Visualize the growth of city transit systems over time", 
                     className="text-center text-muted"),
             html.P("Select a city and slide the year to begin", 
                    className="text-center text-muted mb-4"),
-            # ---
             
-            controls, # Add the control card
+            controls, 
             
             dbc.Row(
                 [
