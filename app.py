@@ -9,10 +9,11 @@ from dash.dependencies import Input, Output, State
 from simplekml import Kml
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-import dash_bootstrap_components as dbc  
-from dash.exceptions import PreventUpdate 
+import dash_bootstrap_components as dbc
+from dash.exceptions import PreventUpdate
 
-######## Data intake and cleaning 
+######## Data intake and cleaning (No changes)
+# ... (all data loading and cleaning code remains the same) ...
 
 cities = pd.read_csv("datasets/cities.csv")
 stations = pd.read_csv("datasets/stations.csv")
@@ -125,10 +126,10 @@ wonk_table = wonk_table[(wonk_table.wonk_score < wonk_table.wonk_score.median())
 
 wonk_table.columns.name = None              
 wonk_table = wonk_table.reset_index()   
-cities_list = wonk_table.city.tolist() # This is the "good" list
+cities_list = wonk_table.city.tolist()
 
 # ---------------------------------
-# --- FIX: Helper function for placeholder graphs ---
+# Helper function for placeholder graphs (No changes)
 def create_placeholder_figure(text_message):
     """Creates a blank figure with a text message."""
     fig = go.Figure()
@@ -152,8 +153,9 @@ def create_placeholder_figure(text_message):
 # ---------------------------------
 ######## 2. Dash app creation and callbacks
 
-# --- Use Dash Bootstrap Components and a dark theme ---
-app = Dash(__name__, external_stylesheets=[dbc.themes.DARKLY])
+# --- FIX 1: Add Font Awesome CSS for the new icon ---
+FA_CSS = "https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+app = Dash(__name__, external_stylesheets=[dbc.themes.DARKLY, FA_CSS])
 server = app.server
 
 # Get current year
@@ -166,10 +168,11 @@ api_key = os.environ.get('GEO_API_KEY')
 if not api_key:
     print("ERROR: GEO_API_KEY environment variable not set. Geocoding will fail.")
 
+# ... (all callbacks remain the same) ...
 @app.callback(Output('map','viewport'),[Input('dropdown','value')])    
 def get_geocode(city):
     if not city or not api_key:
-        return {'center':[20, 0],'zoom':2} # Default world view
+        return {'center':[20, 0],'zoom':2} 
     try:
         url = f'http://api.positionstack.com/v1/forward?access_key={api_key}&query={city}&limit=1'    
         geocode_data = requests.get(url).json()     
@@ -178,14 +181,13 @@ def get_geocode(city):
         return {'center':[float(lat), float(lon)],'zoom':12}
     except Exception as e:
         print(f"Error geocoding {city}: {e}")
-        return {'center':[20, 0],'zoom':2} # Fallback to world view
+        return {'center':[20, 0],'zoom':2} 
 
 
 # Plot it function
 @app.callback(Output('plot','figure'),[Input('dropdown','value'),Input('slider','value')])
 def plot_it(city,year):
     
-    # --- FIX: Check for missing inputs and return placeholder ---
     if not city or not year:
         return create_placeholder_figure("Select a city and year to see the schematic map.")
     
@@ -197,8 +199,6 @@ def plot_it(city,year):
                         & (tracks.opening <= year) 
                         & (tracks.closure > year)]
     
-    
-    # Tracks: Extract linestring coords into lists, combine into a plottable df    
     long=[]
     lat=[]
     line_color=[]
@@ -218,7 +218,7 @@ def plot_it(city,year):
                      x="x", 
                      y="y" , 
                      color="z",
-                     template="plotly_dark", # --- FIX: Use dark theme ---
+                     template="plotly_dark", 
                      width=800, height=800)
     
     fig.update_yaxes(title_text="",showgrid=False,
@@ -228,13 +228,12 @@ def plot_it(city,year):
                      showline=False,mirror=True,
                      showticklabels=False,ticks='',automargin=True, zeroline=False)
     
-    # --- FIX: Match theme colors ---
     fig.update_layout(showlegend=False,
                       autosize=False,
                       plot_bgcolor="#222222",
                       paper_bgcolor="#222222")
     
-    return fig    # return plotly graph
+    return fig
 
 
 # Map it function
@@ -248,7 +247,6 @@ def map_it(city,year):
     markers = []
     lines = []
 
-    # --- FIX: Only build markers/lines if inputs are valid ---
     if city and year:
         my_stations = stations[(stations.city == city) 
                                 & (stations.opening <= year) 
@@ -274,7 +272,6 @@ def map_it(city,year):
             )
             lines.append(line)
             
-    # Always return the map controls, even if markers/lines are empty
     my_map_layers = [
         dl.LayersControl(
             [
@@ -284,7 +281,6 @@ def map_it(city,year):
                     checked=True
                 ),
                 dl.BaseLayer(
-                    # --- FIX: Added a light mode tile layer ---
                     dl.TileLayer(url='https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', 
                                  maxZoom=20, attribution=attribution),
                     name="Light mode",
@@ -305,10 +301,9 @@ def map_it(city,year):
     return my_map_layers
 
 
-# Count it function - Snapshot
+# Count it function
 @app.callback(Output('count','children'),[Input('dropdown','value'),Input('slider','value')])
 def count_it(city,year):
-    # --- FIX: Handle missing inputs ---
     if not city or not year:
         return dbc.Col(html.P("Select city and year for stats.", className="text-center text-muted"), md=12)
 
@@ -321,7 +316,6 @@ def count_it(city,year):
     track_length_km = my_tracks.length.sum()/1000
     num_stations = len(my_stations)
     
-    # --- FIX: Return styled DBC components ---
     return [
         dbc.Col(
             dbc.Card(
@@ -346,11 +340,10 @@ def count_it(city,year):
     ]
 
 
-# Summarize it function - Evolution
+# Summarize it function
 @app.callback(Output('summarize','figure'),[Input('dropdown','value'),Input('slider','value')])
 def summarize_it(city,year):
     
-    # --- FIX: Handle missing city ---
     if not city:
         return create_placeholder_figure("Select a city to see its growth history.")
     
@@ -359,19 +352,17 @@ def summarize_it(city,year):
     
     joint_df = pd.concat([my_tracks.opening,my_stations.opening])
     
-    # Handle case where city has no data
     if len(joint_df.unique()) < 2:
         return create_placeholder_figure(f"Not enough historical data for {city}.")
 
-    min_year = int(sorted(joint_df.unique(),reverse=False)[1]) # [1] correctly skips '0'
+    min_year = int(sorted(joint_df.unique(),reverse=False)[1]) 
     max_year = int(sorted(joint_df.unique(),reverse=True)[0])
     
-    # Handle empty year range
     if min_year >= max_year:
          return create_placeholder_figure(f"Not enough historical data for {city}.")
     
     data = []
-    for y in range(min_year, max_year + 1): # +1 to include last year
+    for y in range(min_year, max_year + 1):
         d = {'year': y,
              'track_length' : my_tracks[(my_tracks.opening <= y) & (my_tracks.closure > y)].length.sum()/1000,
              'stations_num' : len(my_stations[(my_stations.opening <= y) & (my_stations.closure > y)])}
@@ -379,7 +370,6 @@ def summarize_it(city,year):
     dataset = pd.DataFrame(data)
     dataset.stations_num = dataset.stations_num.astype(float)
     
-    # Create figure with secondary y-axis
     fig = make_subplots(specs=[[{"secondary_y": True}]])
 
     fig.add_trace(
@@ -393,14 +383,12 @@ def summarize_it(city,year):
     )
 
     fig.update_xaxes(title_text="Year")
-    fig.update_yaxes(title_text="Number of stations", secondary_y=False,showgrid=False,zeroline=False) #Prim
-    fig.update_yaxes(title_text="Track length (km)", secondary_y=True,showgrid=False,zeroline=False) #Sec    
+    fig.update_yaxes(title_text="Number of stations", secondary_y=False,showgrid=False,zeroline=False)
+    fig.update_yaxes(title_text="Track length (km)", secondary_y=True,showgrid=False,zeroline=False)    
     
-    # --- FIX: Check if year is selected before adding vline ---
     if year:
         fig.add_vline(x=year, line_width=2, line_dash="dash", line_color="red")
     
-    # --- FIX: Use dark theme ---
     fig.update_layout(
         template="plotly_dark",
         plot_bgcolor="#222222",
@@ -418,10 +406,10 @@ def summarize_it(city,year):
             'x':0.01
     })
     
-    return fig        # return plotly graph
+    return fig
 
 
-# Export it function - Into 2 KML files
+# Export it function
 @app.callback(
     [Output("download-kml-st", "data"),
      Output("download-kml-tr", "data")],
@@ -430,7 +418,7 @@ def summarize_it(city,year):
     Input("export_button", "n_clicks"),
     prevent_initial_call=True,
 )
-def export_it(city, year, n_clicks): # --- FIX: Explicitly name n_clicks
+def export_it(city, year, n_clicks): 
     
     if not city or not year:
         return [no_update, no_update]
@@ -442,7 +430,6 @@ def export_it(city, year, n_clicks): # --- FIX: Explicitly name n_clicks
                          & (tracks.opening <= year) 
                          & (tracks.closure > year)]
 
-    # --- Stations (in memory) ---
     kml_st = Kml(name='stations')
     list_st=[]
     for i in range(len(my_stations)):
@@ -454,13 +441,11 @@ def export_it(city, year, n_clicks): # --- FIX: Explicitly name n_clicks
         kml_st.newpoint(name=row[0], description=row[2],
                         coords=[(row[4], row[3])]) 
 
-    # Create data dictionary for download
     station_data = dict(
         content=kml_st.kml(), 
         filename=f"stations_{city.replace(' ', '_')}_{year:g}.kml"
     )
 
-    # --- Tracks (in memory) ---
     kml_tr = Kml(name='tracks')      
     list_tr=[]
     for i in range(len(my_tracks)):
@@ -470,7 +455,6 @@ def export_it(city, year, n_clicks): # --- FIX: Explicitly name n_clicks
     for row in list_tr:
         kml_tr.newlinestring(name=row[0],description=row[2],coords=row[1])
 
-    # Create data dictionary for download
     track_data = dict(
         content=kml_tr.kml(),
         filename=f"tracks_{city.replace(' ', '_')}_{year:g}.kml"
@@ -481,8 +465,7 @@ def export_it(city, year, n_clicks): # --- FIX: Explicitly name n_clicks
 # ---------------------------------
 ######## 3. Create Dash Layout
 
-# --- FIX: Issue 2 - Exclude cities with missing data ---
-# We only use 'cities_list' from the wonk_table calculation and sort it.
+# Dropdown list (No changes)
 cities_list_good = sorted(cities_list)
 selection_items = [{'label': city, 'value': city} for city in cities_list_good]
 
@@ -490,14 +473,30 @@ slider_marks = {}
 for i in range(1850,2040,10):
     slider_marks[i] =  {'label': f'{i:g}'}
 
-# --- FIX: Issue 3 - New professional layout using Dash Bootstrap Components ---
 
-navbar = dbc.NavbarSimple(
-    brand="Project Metromania",
-    brand_href="#",
+# --- FIX 1: A better banner with an icon ---
+navbar = dbc.Navbar(
+    dbc.Container(
+        [
+            html.A(
+                # Use row and col for alignment
+                dbc.Row(
+                    [
+                        # Font Awesome icon
+                        dbc.Col(html.I(className="fas fa-subway me-2")), 
+                        dbc.Col(dbc.NavbarBrand("Project Metromania", className="ms-2")), # Title
+                    ],
+                    align="center",
+                    className="g-0", # No gutters
+                ),
+                href="#",
+                style={"textDecoration": "none"}, # Remove underline from link
+            )
+        ]
+    ),
     color="primary",
     dark=True,
-    className="mb-4" # Margin-bottom
+    className="mb-4",
 )
 
 controls = dbc.Card(
@@ -511,7 +510,9 @@ controls = dbc.Card(
                             dcc.Dropdown(
                                 id='dropdown', 
                                 options=selection_items,
-                                placeholder="Select a city..."
+                                placeholder="Select a city...",
+                                # --- FIX 3: Add 'dbc' class to theme the dropdown ---
+                                className="dbc" 
                             )
                         ], md=6
                     ),
@@ -526,7 +527,7 @@ controls = dbc.Card(
                                 included=False,
                                 marks=slider_marks,
                                 tooltip={"placement": "bottom", "always_visible": True},
-                                value=currentYear # Default to current year
+                                value=currentYear
                             )
                         ], md=6
                     ),
@@ -539,7 +540,6 @@ controls = dbc.Card(
 stats_card = dbc.Card(
     [
         dbc.CardHeader(html.H4("Snapshot", className="text-center")),
-        # The children of this Row are provided by the 'count_it' callback
         dbc.CardBody([
             dbc.Row(id='count', children=[
                 dbc.Col(html.P("Select city and year for stats.", className="text-center text-muted"), md=12)
@@ -548,10 +548,18 @@ stats_card = dbc.Card(
     ], className="mb-4"
 )
 
+# --- Updated Layout ---
 app.layout = html.Div([
     navbar,
     dbc.Container(
         [
+            # --- FIX 2: Added Subtitle and instructional text ---
+            html.H5("Visualize the growth of city transit systems over time", 
+                    className="text-center text-muted"),
+            html.P("Select a city and slide the year to begin", 
+                   className="text-center text-muted mb-4"),
+            # ---
+            
             controls, # Add the control card
             
             dbc.Row(
@@ -560,7 +568,6 @@ app.layout = html.Div([
                         dbc.Card([
                             dbc.CardHeader(html.H4("Schematic Map", className="text-center")),
                             dbc.CardBody([
-                                # Set a fixed height for the graph and map
                                 dcc.Graph(id='plot', style={'height': '70vh'})
                             ])
                         ]), md=6, className="mb-4"
@@ -572,7 +579,7 @@ app.layout = html.Div([
                                 dl.Map(
                                     id='map', 
                                     style={'width': '100%', 'height': '70vh'},
-                                    center=[20, 0], # Default world view
+                                    center=[20, 0], 
                                     zoom=2
                                 )
                             ])
@@ -581,7 +588,7 @@ app.layout = html.Div([
                 ]
             ),
             
-            stats_card, # Add the new stats card
+            stats_card,
             
             dbc.Row(
                 [
@@ -601,12 +608,11 @@ app.layout = html.Div([
                     dbc.Col(
                         [
                             html.P("Export the current map view to KML files for Google Earth.", className="text-center"),
-                            # Use dbc.Button for themed button
                             dbc.Button('Export to KML', id='export_button', n_clicks=0, color="success", className="w-100"),
                             dcc.Download(id="download-kml-st"),
                             dcc.Download(id="download-kml-tr")
                         ],
-                        md=6, className="mx-auto mb-4" # Center the button
+                        md=6, className="mx-auto mb-4" 
                     )
                 ]
             ),
@@ -627,7 +633,7 @@ app.layout = html.Div([
                 )
             )
         ],
-        fluid=True # Use the full width of the viewport
+        fluid=True 
     )
 ])
 
