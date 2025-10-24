@@ -1,6 +1,4 @@
-import os
 import pandas as pd
-import datetime
 import requests
 import plotly.express as px
 import dash_leaflet as dl
@@ -161,28 +159,29 @@ app = Dash(
 server = app.server
 
 # ... (callbacks) ...
-@app.callback(Output('map', 'viewport'), [Input('dropdown', 'value')])
+@app.callback(
+    [Output('map', 'center'),
+     Output('map', 'zoom')],
+    [Input('dropdown', 'value')]
+)
 def get_geocode(city):
     if not city:
-        return {'center': [20, 0], 'zoom': 2}
+        return [20, 0], 2
     try:
         url = "https://nominatim.openstreetmap.org/search"
         params = {"q": city, "format": "json", "limit": 1}
-        headers = {
-            "User-Agent": "Metromania/2.0 (shaun.hoang@gmail.com)"
-        }  
-        r = requests.get(url, params=params, headers=headers)
+        headers = {"User-Agent": "Metromania/2.0 (shaun.hoang@gmail.com)"}  
+        r = requests.get(url, params=params, headers=headers, timeout=10)
         r.raise_for_status()
         data = r.json()
         if not data:
             raise ValueError("No results found")
         lat = float(data[0]["lat"])
         lon = float(data[0]["lon"])
-        print(f"Viewport: Centering map on {city} at ({lat}, {lon}) zoom 11")
-        return {'center': [lat, lon], 'zoom': 11}
+        return [lat, lon], 11
     except Exception as e:
         print(f"Error geocoding {city}: {e}")
-        return {'center': [20, 0], 'zoom': 2}
+        return [20, 0], 2
       
 # Plot it function
 @app.callback(Output('plot','figure'),[Input('dropdown','value'),Input('slider','value')])
@@ -746,7 +745,8 @@ app.layout = html.Div([
                     dbc.CardBody([
                         dl.Map(
                             id='map',
-                            viewport={'center': [20, 0], 'zoom': 2},
+                            center=[20, 0],
+                            zoom=2,
                             style={'width': '100%', 'height': '70vh', 'borderRadius': '12px'},
                             center=[20, 0],
                             zoom=2
