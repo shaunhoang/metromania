@@ -192,6 +192,7 @@ def map_it(city, year):
             radius=3,
             fillColor='white',
             fillOpacity=0.85,
+            color=station.line_color,
             stroke=True,
             weight=1,
             pane='markerPane',  
