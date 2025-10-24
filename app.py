@@ -178,7 +178,7 @@ def get_geocode(city):
             raise ValueError("No results found")
         lat = float(data[0]["lat"])
         lon = float(data[0]["lon"])
-        print(f"Viewport: {{'center': [float(lat), float(lon)], 'zoom': 11}}")
+        print(f"Viewport: Centering map on {city} at ({lat}, {lon}) zoom 11")
         return {'center': [lat, lon], 'zoom': 11}
     except Exception as e:
         print(f"Error geocoding {city}: {e}")
