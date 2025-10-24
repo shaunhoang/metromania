@@ -1,5 +1,5 @@
 import pandas as pd
-import requests
+from flask_caching import Cache
 import plotly.express as px
 import dash_leaflet as dl
 from dash import dcc, html, Dash, no_update, ctx
@@ -148,22 +148,65 @@ def create_placeholder_figure(text_message):
 
 # ---------------------------------
 ######## 2. Dash app creation and callbacks
-LEAFLET_CSS = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-LEAFLET_JS = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-
 FA_CSS = "https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-
 app = Dash(
     __name__, 
-    external_stylesheets=[dbc.themes.DARKLY, FA_CSS, LEAFLET_CSS],
-    external_scripts=[LEAFLET_JS],
+    external_stylesheets=[dbc.themes.DARKLY, FA_CSS],
     title='Metromania',
     suppress_callback_exceptions=True
 )
 
 server = app.server
+cache = Cache(app.server, config={
+    'CACHE_TYPE': 'SimpleCache',
+    'CACHE_DEFAULT_TIMEOUT': 3600 
+})
 
 # # ... (callbacks) ...
+@cache.memoize()
+def get_filtered_data(city, year):
+    if not city or not year:
+        return pd.DataFrame(), pd.DataFrame()
+
+    my_stations = stations[(stations.city == city) & 
+                           (stations.opening <= year) & 
+                           (stations.closure > year)]
+    
+    my_tracks = tracks[(tracks.city == city) & 
+                       (tracks.opening <= year) & 
+                       (tracks.closure > year)]
+                       
+    return my_stations, my_tracks
+@cache.memoize()
+def get_summary_data(city):
+
+    my_stations = stations[(stations.city == city)]
+    my_tracks = tracks[(tracks.city == city)]
+
+    joint_df = pd.concat([my_tracks.opening, my_stations.opening])
+    
+    valid_years = joint_df[(joint_df > 0) & (joint_df < 2041)].unique()
+    if len(valid_years) < 2:
+        return None
+        
+    min_year = int(min(valid_years))
+    max_year = int(max(valid_years))
+
+    if min_year >= max_year:
+        return None
+
+    data = []
+    for y in range(min_year, max_year + 1):
+        d = {'year': y,
+             'track_length' : my_tracks[(my_tracks.opening <= y) & (my_tracks.closure > y)].length.sum()/1000,
+             'stations_num' : len(my_stations[(my_stations.opening <= y) & (my_stations.closure > y)])}
+        data.append(d)
+        
+    if not data:
+        return None
+
+    return pd.DataFrame(data)
+
 @app.callback(
     Output('stations-layer', 'children'),
     Output('lines-layer', 'children'),
@@ -173,18 +216,13 @@ server = app.server
     Input('slider', 'value')
 )
 def map_it(city, year):
-    markers = []
-    lines = []
 
     if not city or not year:
         return [], [], [0, 0], 2
-
-    my_stations = stations[(stations.city == city) & 
-                           (stations.opening <= year) & 
-                           (stations.closure > year)]
-    my_tracks = tracks[(tracks.city == city) & 
-                       (tracks.opening <= year) & 
-                       (tracks.closure > year)]
+    my_stations, my_tracks = get_filtered_data(city, year)
+    
+    markers = []
+    lines = []    
 
     for _, station in my_stations.iterrows():
         markers.append(dl.CircleMarker(
@@ -221,7 +259,7 @@ def plot_it(city,year):
     
     city_all_stations = stations[stations.city == city]
     if city_all_stations.empty:
-        return create_placeholder_figure(f"No data found for {city}.")
+      return create_placeholder_figure(f"No data found for {city}.")
       
     x_min = city_all_stations['longitude'].min()
     x_max = city_all_stations['longitude'].max()
@@ -229,25 +267,14 @@ def plot_it(city,year):
     y_max = city_all_stations['latitude'].max()
 
     # Filter by year for plotting
-    my_tracks = tracks[(tracks.city == city) 
-                        & (tracks.opening <= year) 
-                        & (tracks.closure > year)]
-    
-    # Create a list of DataFrames for each line segment
-    dfs_to_concat = []
-    for sect in range(len(my_tracks)):
-        linesegment = my_tracks.linestring_lonlat.iloc[sect]
-        section_id = my_tracks.section_id.iloc[sect]
-        
-        df_seg = pd.DataFrame(linesegment, columns=['x', 'y'])
-        df_seg['group'] = section_id 
-        dfs_to_concat.append(df_seg)
+    _, my_tracks = get_filtered_data(city, year)
+    if my_tracks.empty:
+      return create_placeholder_figure(f"No tracks found for {city} in {year}.")
 
-    if not dfs_to_concat:
-        return create_placeholder_figure(f"No tracks found for {city} in {year}.")
-        
-    plot_df = pd.concat(dfs_to_concat)
-
+    plot_df = my_tracks[['section_id', 'linestring_lonlat']].explode('linestring_lonlat')
+    plot_df[['x', 'y']] = pd.DataFrame(plot_df['linestring_lonlat'].tolist(), index=plot_df.index)
+    plot_df = plot_df.rename(columns={'section_id': 'group'})
+  
     fig = px.line(plot_df, 
                   x="x", 
                   y="y", 
@@ -286,12 +313,7 @@ def count_it(city,year):
     if not city or not year:
         return html.P("Select city and year for stats.", className="text-center text-muted")
 
-    my_stations = stations[(stations.city == city)
-                            & (stations.opening <= year)
-                            & (stations.closure > year)]
-    my_tracks = tracks[(tracks.city == city)
-                        & (tracks.opening <= year)
-                        & (tracks.closure > year)]
+    my_stations, my_tracks = get_filtered_data(city, year)
 
     track_length_km = my_tracks.length.sum()/1000
     num_stations = len(my_stations)
@@ -354,28 +376,9 @@ def summarize_it(city,year):
     if not city:
         return create_placeholder_figure("Select a city to see its growth history.")
     
-    my_stations = stations[(stations.city == city)]
-    my_tracks = tracks[(tracks.city == city)]
-    
-    joint_df = pd.concat([my_tracks.opening,my_stations.opening])
-    
-    if len(joint_df.unique()) < 2:
-        return create_placeholder_figure(f"Not enough historical data for {city}.")
-
-    min_year = int(sorted(joint_df.unique(),reverse=False)[1]) 
-    max_year = int(sorted(joint_df.unique(),reverse=True)[0])
-    
-    if min_year >= max_year:
-         return create_placeholder_figure(f"Not enough historical data for {city}.")
-    
-    data = []
-    for y in range(min_year, max_year + 1):
-        d = {'year': y,
-             'track_length' : my_tracks[(my_tracks.opening <= y) & (my_tracks.closure > y)].length.sum()/1000,
-             'stations_num' : len(my_stations[(my_stations.opening <= y) & (my_stations.closure > y)])}
-        data.append(d)
-    dataset = pd.DataFrame(data)
-    dataset.stations_num = dataset.stations_num.astype(float)
+    dataset = get_summary_data(city)
+    if dataset is None:
+         return create_placeholder_figure(f"No historical data for {city}.")
     
     fig = make_subplots(specs=[[{"secondary_y": True}]])
 
@@ -428,12 +431,7 @@ def export_geojson(city, year, n_clicks):
     if not city or not year:
         return no_update
 
-    my_stations = stations[(stations.city == city) 
-                             & (stations.opening <= year) 
-                             & (stations.closure > year)]
-    my_tracks = tracks[(tracks.city == city) 
-                         & (tracks.opening <= year) 
-                         & (tracks.closure > year)]
+    my_stations, my_tracks = get_filtered_data(city, year)
 
     features = []
 
@@ -496,14 +494,9 @@ def export_geojson(city, year, n_clicks):
 def export_kml(city, year, n_clicks): 
     
     if not city or not year:
-        return no_update  # <-- CORRECTED
+        return no_update
 
-    my_stations = stations[(stations.city == city) 
-                             & (stations.opening <= year) 
-                             & (stations.closure > year)]
-    my_tracks = tracks[(tracks.city == city) 
-                         & (tracks.opening <= year) 
-                         & (tracks.closure > year)]
+    my_stations, my_tracks = get_filtered_data(city, year)
 
     kml = Kml(name=f"{city} Transit {year:g}")
     
