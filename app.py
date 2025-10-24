@@ -700,7 +700,7 @@ app.layout = html.Div([
                     dbc.CardBody([
                         dcc.Graph(id='plot', style={'height': '70vh'},figure=create_placeholder_figure("Loading map..."))
                     ])
-                ], className="shadow-lg border-0 rounded-3 bg-dark-subtle"), md=6, className="mb-4"
+                ], className="shadow-lg border-0 rounded-3"), md=6, className="mb-4"
             ),
             dbc.Col(
                 dbc.Card([
@@ -721,7 +721,7 @@ app.layout = html.Div([
                             ]
                         )
                     ])
-                ], className="shadow-lg border-0 rounded-3 bg-dark-subtle"), md=6, className="mb-4"
+                ], className="shadow-lg border-0 rounded-3"), md=6, className="mb-4"
             )
         ]),
         #   dbc.Col(
@@ -775,7 +775,7 @@ app.layout = html.Div([
                           figure=create_placeholder_figure("Loading chart...")
                           )
                     ])
-                ], className="shadow-lg border-0 rounded-3 bg-dark-subtle"),
+                ], className="shadow-lg border-0 rounded-3"),
                 width=12
             )
         ], className="mb-4"),
