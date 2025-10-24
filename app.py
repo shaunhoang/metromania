@@ -723,7 +723,7 @@ app.layout = html.Div([
             dbc.Col([
                 dbc.Card([
                     dbc.CardBody([
-                        html.H4("Export Options", className="text-center text-muted mb-3"),
+                        html.H5("Export Options", className="text-center text-muted mb-3"),
                         dbc.Button("Export as KML", id="export_kml_button", color="success", className="w-100 mb-2"),
                         dbc.Button("Export as GeoJSON", id="export_geojson_button", color="info", className="w-100"),
                         dcc.Download(id="download-kml"),
