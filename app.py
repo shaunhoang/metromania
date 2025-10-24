@@ -181,16 +181,17 @@ def map_it(city, year):
                        (tracks.opening <= year) & 
                        (tracks.closure > year)]
 
-    for _, station in my_stations.iterrows():
-        markers.append(dl.CircleMarker(
-            center=[station.latitude, station.longitude],
-            radius=3,
-            color=station.line_color,
-            fillColor='white',
-            fillOpacity=0.8,
-            stroke=True,
-            weight=1
-        ))
+    # for _, station in my_stations.iterrows():
+    #     markers.append(dl.CircleMarker(
+    #         center=[station.latitude, station.longitude],
+    #         radius=3,
+    #         color=station.line_color,
+    #         fillColor='white',
+    #         fillOpacity=0.8,
+    #         stroke=True,
+    #         weight=1,
+    #         pane='markerPane',  
+    #     ))
 
     for _, track in my_tracks.iterrows():
         lines.append(dl.Polyline(
