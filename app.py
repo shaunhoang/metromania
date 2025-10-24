@@ -148,14 +148,19 @@ def create_placeholder_figure(text_message):
 
 # ---------------------------------
 ######## 2. Dash app creation and callbacks
+LEAFLET_CSS = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+LEAFLET_JS = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
 
 FA_CSS = "https://use.fontawesome.com/releases/v5.15.4/css/all.css"
 
 app = Dash(
     __name__, 
-    external_stylesheets=[dbc.themes.DARKLY, FA_CSS],
-    title='Project Metromania' 
+    external_stylesheets=[dbc.themes.DARKLY, FA_CSS, LEAFLET_CSS],
+    external_scripts=[LEAFLET_JS],
+    title='Metromania',
+    suppress_callback_exceptions=True
 )
+
 server = app.server
 
 # # ... (callbacks) ...
@@ -192,11 +197,11 @@ def map_it(city, year):
             pane='markerPane',  
         ))
 
-    # for _, track in my_tracks.iterrows():
-    #     lines.append(dl.Polyline(
-    #         positions=track.linestring_latlon,
-    #         color=track.line_color
-    #     ))
+    for _, track in my_tracks.iterrows():
+        lines.append(dl.Polyline(
+            positions=track.linestring_latlon,
+            color=track.line_color
+        ))
 
     if not my_stations.empty:
         center = [my_stations['latitude'].mean(), my_stations['longitude'].mean()]
