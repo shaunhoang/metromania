@@ -158,31 +158,54 @@ app = Dash(
 )
 server = app.server
 
-# ... (callbacks) ...
+# # ... (callbacks) ...
 @app.callback(
-    [Output('map', 'center'),
-     Output('map', 'zoom')],
-    [Input('dropdown', 'value')]
+    Output('map-markers', 'children'),
+    Output('map', 'center'),
+    Output('map', 'zoom'),
+    Input('dropdown', 'value'),
+    Input('slider', 'value')
 )
-def get_geocode(city):
-    if not city:
-        return [20, 0], 2
-    try:
-        url = "https://nominatim.openstreetmap.org/search"
-        params = {"q": city, "format": "json", "limit": 1}
-        headers = {"User-Agent": "Metromania/2.0 (shaun.hoang@gmail.com)"}  
-        r = requests.get(url, params=params, headers=headers, timeout=10)
-        r.raise_for_status()
-        data = r.json()
-        if not data:
-            raise ValueError("No results found")
-        lat = float(data[0]["lat"])
-        lon = float(data[0]["lon"])
-        return [lat, lon], 11
-    except Exception as e:
-        print(f"Error geocoding {city}: {e}")
-        return [20, 0], 2
-      
+def map_it(city, year):
+    markers = []
+    lines = []
+
+    if not city or not year:
+        return [], [0,0],2
+
+    my_stations = stations[(stations.city == city) & (stations.opening <= year) & (stations.closure > year)]
+    my_tracks = tracks[(tracks.city == city) & (tracks.opening <= year) & (tracks.closure > year)]
+
+    # Add station markers
+    for i, station in my_stations.iterrows():
+        markers.append(dl.CircleMarker(
+            center=[station.latitude, station.longitude],
+            radius=3,
+            color=station.line_color,
+            fillColor='white',
+            fillOpacity=0.8,
+            stroke=True,
+            weight=1,
+            pane="markerPane"
+        ))
+
+    # Add track lines
+    for i, track in my_tracks.iterrows():
+        lines.append(dl.Polyline(
+            positions=track.linestring_latlon,
+            color=track.line_color
+        ))
+
+    # Compute map center
+    if not my_stations.empty:
+        lat = my_stations['latitude'].mean()
+        lon = my_stations['longitude'].mean()
+        zoom = 11
+    else:
+        lat, lon, zoom = 0,0,2
+
+    return markers + lines, [lat, lon], zoom
+  
 # Plot it function
 @app.callback(Output('plot','figure'),[Input('dropdown','value'),Input('slider','value')])
 def plot_it(city,year):
@@ -190,7 +213,7 @@ def plot_it(city,year):
     if not city or not year:
         return create_placeholder_figure("Select a city and year to see the plot.")
     
-    city_all_stations = stations[stations.city == city.title()]
+    city_all_stations = stations[stations.city == city]
     if city_all_stations.empty:
         return create_placeholder_figure(f"No data found for {city}.")
       
@@ -200,7 +223,7 @@ def plot_it(city,year):
     y_max = city_all_stations['latitude'].max()
 
     # Filter by year for plotting
-    my_tracks = tracks[(tracks.city == city.title()) 
+    my_tracks = tracks[(tracks.city == city) 
                         & (tracks.opening <= year) 
                         & (tracks.closure > year)]
     
@@ -259,10 +282,10 @@ def count_it(city,year):
     if not city or not year:
         return html.P("Select city and year for stats.", className="text-center text-muted")
 
-    my_stations = stations[(stations.city == city.title())
+    my_stations = stations[(stations.city == city)
                             & (stations.opening <= year)
                             & (stations.closure > year)]
-    my_tracks = tracks[(tracks.city == city.title())
+    my_tracks = tracks[(tracks.city == city)
                         & (tracks.opening <= year)
                         & (tracks.closure > year)]
 
@@ -291,71 +314,6 @@ def count_it(city,year):
             className="text-center"
         )
     ]
-
-# Map it function
-@app.callback(Output('map','children'),[Input('dropdown','value'),Input('slider','value')])
-def map_it(city,year):
-    
-    url1 = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
-    url2 = 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png' 
-    attribution = '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> '
-    
-    markers = []
-    lines = []
-
-    if city and year:
-        my_stations = stations[(stations.city == city) 
-                                & (stations.opening <= year) 
-                                & (stations.closure > year)]
-        
-        my_tracks = tracks[(tracks.city == city) 
-                            & (tracks.opening <= year) 
-                            & (tracks.closure > year)]
-        
-        for i in range(len(my_stations)):
-            station = my_stations.iloc[i]
-            marker = dl.CircleMarker(
-                center=[station.latitude, station.longitude],
-                radius=3,  
-                color=station.line_color,  
-                fillColor="white",
-                fillOpacity=0.8,
-                stroke=True,  
-                weight=1,     
-                pane="markerPane"
-            )
-            markers.append(marker)
-        
-        for i in range(len(my_tracks)):
-            track = my_tracks.iloc[i]
-            line = dl.Polyline(
-                positions=track.linestring_latlon,
-                color=track.line_color
-            )
-            lines.append(line)
-            
-    my_map_layers = [
-        dl.LayersControl(
-            [
-                dl.BaseLayer(
-                    dl.TileLayer(url=url1, maxZoom=20, attribution=attribution),
-                    name='Dark mode',
-                    checked=True
-                ),
-                dl.BaseLayer(
-                    dl.TileLayer(url=url2, maxZoom=20, attribution=attribution),
-                    name="Light mode",
-                    checked=False
-                ),
-            ] + 
-            [
-                dl.Overlay(dl.LayerGroup(markers), name="Stations", checked=True),
-                dl.Overlay(dl.LayerGroup(lines), name="Lines", checked=True)
-            ]
-        )
-    ]
-    print(f"Map Layers Structure: {type(my_map_layers)}, Length: {len(my_map_layers)}")
-    return my_map_layers
 
 @app.callback(
     Output('slider', 'value'),
@@ -390,8 +348,8 @@ def summarize_it(city,year):
     if not city:
         return create_placeholder_figure("Select a city to see its growth history.")
     
-    my_stations = stations[(stations.city == city.title())]
-    my_tracks = tracks[(tracks.city == city.title())]
+    my_stations = stations[(stations.city == city)]
+    my_tracks = tracks[(tracks.city == city)]
     
     joint_df = pd.concat([my_tracks.opening,my_stations.opening])
     
@@ -464,10 +422,10 @@ def export_geojson(city, year, n_clicks):
     if not city or not year:
         return no_update
 
-    my_stations = stations[(stations.city == city.title()) 
+    my_stations = stations[(stations.city == city) 
                              & (stations.opening <= year) 
                              & (stations.closure > year)]
-    my_tracks = tracks[(tracks.city == city.title()) 
+    my_tracks = tracks[(tracks.city == city) 
                          & (tracks.opening <= year) 
                          & (tracks.closure > year)]
 
@@ -534,10 +492,10 @@ def export_kml(city, year, n_clicks):
     if not city or not year:
         return no_update  # <-- CORRECTED
 
-    my_stations = stations[(stations.city == city.title()) 
+    my_stations = stations[(stations.city == city) 
                              & (stations.opening <= year) 
                              & (stations.closure > year)]
-    my_tracks = tracks[(tracks.city == city.title()) 
+    my_tracks = tracks[(tracks.city == city) 
                          & (tracks.opening <= year) 
                          & (tracks.closure > year)]
 
@@ -744,11 +702,32 @@ app.layout = html.Div([
                 dbc.Card([
                     dbc.CardBody([
                         dl.Map(
-                            id='map',
-                            center=[20, 0],
-                            zoom=2,
-                            style={'width': '100%', 'height': '70vh', 'borderRadius': '12px'},
-                        )
+                          id='map',
+                          center=[51.51, -0.13],
+                          zoom=2,
+                          style={'width': '100%', 'height': '70vh', 'borderRadius': '12px'},
+                          children=[
+                              dl.LayersControl(
+                                  [
+                                      dl.BaseLayer(
+                                          dl.TileLayer(url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'),
+                                          name='Dark mode',
+                                          checked=True
+                                      ),
+                                      dl.BaseLayer(
+                                          dl.TileLayer(url='https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png'),
+                                          name='Light mode',
+                                          checked=False
+                                      ),
+                                      dl.Overlay(
+                                          dl.LayerGroup(id='map-markers'),  
+                                          name='Stations & Lines',
+                                          checked=True
+                                      )
+                                  ]
+                              )
+                          ]
+                      )
                     ])
                 ], className="shadow-lg border-0 rounded-3 bg-dark-subtle"), md=6, className="mb-4"
             )
