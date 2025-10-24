@@ -548,7 +548,7 @@ navbar = dbc.Navbar(
                     dbc.Col(
                         dbc.NavbarBrand([
                             html.Span("Metromania", className="fw-bold fs-4"),
-                            html.Span(" – Urban Rail Explorer", className="text-muted ms-2 fs-6")
+                            html.Span(" – Urban Rail History Explorer", className="text-muted ms-2 fs-6")
                         ]),
                         width="auto"
                     ),
