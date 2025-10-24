@@ -227,12 +227,12 @@ def map_it(city, year):
     for _, station in my_stations.iterrows():
         markers.append(dl.CircleMarker(
             center=[station.latitude, station.longitude],
-            radius=3,
+            radius=2,
             fillColor='white',
-            fillOpacity=0.85,
+            fillOpacity=0.8,
             color=station.line_color,
             stroke=True,
-            weight=1,
+            weight=0.5,
             pane='markerPane',  
         ))
 
@@ -283,7 +283,8 @@ def plot_it(city,year):
     
     fig.update_traces(line=dict(color='white', width=2))
     fig.update_yaxes(title_text="",showgrid=False,
-                     showline=False,mirror=True,showticklabels=False,ticks='',automargin=True, zeroline=False,
+                     showline=False,mirror=True,showticklabels=False,ticks='',automargin=True, zeroline=False, scaleratio=1,
+                     scaleanchor="x",
                      range=[y_min, y_max]   
                      )    
      
@@ -724,7 +725,7 @@ app.layout = html.Div([
                             children=[
                                 dl.TileLayer(
                                     id='base-layer',
-                                    url='https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+                                    url='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
                                 ),
                                 dl.LayerGroup(id='lines-layer', children=[]),
                                 dl.LayerGroup(id='stations-layer', children=[]),
