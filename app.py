@@ -160,7 +160,8 @@ server = app.server
 
 # # ... (callbacks) ...
 @app.callback(
-    Output('map-markers', 'children'),
+    Output('stations-layer', 'children'),
+    Output('lines-layer', 'children'),
     Output('map', 'center'),
     Output('map', 'zoom'),
     Input('dropdown', 'value'),
@@ -171,13 +172,16 @@ def map_it(city, year):
     lines = []
 
     if not city or not year:
-        return [], [0,0],2
+        return [], [], [0, 0], 2
 
-    my_stations = stations[(stations.city == city) & (stations.opening <= year) & (stations.closure > year)]
-    my_tracks = tracks[(tracks.city == city) & (tracks.opening <= year) & (tracks.closure > year)]
+    my_stations = stations[(stations.city == city) & 
+                           (stations.opening <= year) & 
+                           (stations.closure > year)]
+    my_tracks = tracks[(tracks.city == city) & 
+                       (tracks.opening <= year) & 
+                       (tracks.closure > year)]
 
-    # Add station markers
-    for i, station in my_stations.iterrows():
+    for _, station in my_stations.iterrows():
         markers.append(dl.CircleMarker(
             center=[station.latitude, station.longitude],
             radius=3,
@@ -185,27 +189,23 @@ def map_it(city, year):
             fillColor='white',
             fillOpacity=0.8,
             stroke=True,
-            weight=1,
-            pane="markerPane"
+            weight=1
         ))
 
-    # Add track lines
-    for i, track in my_tracks.iterrows():
+    for _, track in my_tracks.iterrows():
         lines.append(dl.Polyline(
             positions=track.linestring_latlon,
             color=track.line_color
         ))
 
-    # Compute map center
     if not my_stations.empty:
-        lat = my_stations['latitude'].mean()
-        lon = my_stations['longitude'].mean()
+        center = [my_stations['latitude'].mean(), my_stations['longitude'].mean()]
         zoom = 11
     else:
-        lat, lon, zoom = 0,0,2
+        center, zoom = [0, 0], 2
 
-    return markers + lines, [lat, lon], zoom
-  
+    return markers, lines, center, zoom
+
 # Plot it function
 @app.callback(Output('plot','figure'),[Input('dropdown','value'),Input('slider','value')])
 def plot_it(city,year):
@@ -720,10 +720,15 @@ app.layout = html.Div([
                                           checked=False
                                       ),
                                       dl.Overlay(
-                                          dl.LayerGroup(id='map-markers'),  
-                                          name='Stations & Lines',
+                                          dl.LayerGroup(id='stations-layer'),
+                                          name='Stations',
                                           checked=True
-                                      )
+                                      ),
+                                      dl.Overlay(
+                                          dl.LayerGroup(id='lines-layer'),
+                                          name='Lines',
+                                          checked=True
+                                      ),
                                   ]
                               )
                           ]
