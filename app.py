@@ -160,32 +160,27 @@ app = Dash(
 )
 server = app.server
 
-# Get current year
-currentDateTime = datetime.datetime.now()
-currentDate = currentDateTime.date()
-currentYear = float(currentDate.strftime("%Y"))
-
-# Get geocoords from city input
-api_key = os.environ.get('GEO_API_KEY')
-if not api_key:
-    print("ERROR: GEO_API_KEY environment variable not set. Geocoding will fail.")
-
 # ... (callbacks) ...
-@app.callback(Output('map','viewport'),[Input('dropdown','value')])    
+@app.callback(Output('map', 'viewport'), [Input('dropdown', 'value')])
 def get_geocode(city):
-    if not city or not api_key:
-        return {'center':[20, 0],'zoom':2} 
+    if not city:
+        return {'center': [20, 0], 'zoom': 2}
     try:
-        url = f'http://api.positionstack.com/v1/forward?access_key={api_key}&query={city}&limit=1'    
-        geocode_data = requests.get(url).json()     
-        lat = geocode_data['data'][0]['latitude']
-        lon = geocode_data['data'][0]['longitude']
-        return {'center':[float(lat), float(lon)],'zoom':11}
+        url = "https://nominatim.openstreetmap.org/search"
+        params = {"q": city, "format": "json", "limit": 1}
+        headers = {"User-Agent": "YourAppName (contact@example.com)"}
+        r = requests.get(url, params=params, headers=headers)
+        r.raise_for_status()
+        data = r.json()
+        if not data:
+            raise ValueError("No results found")
+        lat = float(data[0]["lat"])
+        lon = float(data[0]["lon"])
+        return {'center': [lat, lon], 'zoom': 11}
     except Exception as e:
         print(f"Error geocoding {city}: {e}")
-        return {'center':[20, 0],'zoom':2} 
-
-
+        return {'center': [20, 0], 'zoom': 2}
+      
 # Plot it function
 @app.callback(Output('plot','figure'),[Input('dropdown','value'),Input('slider','value')])
 def plot_it(city,year):
