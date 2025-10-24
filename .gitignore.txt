@@ -1,6 +1,0 @@
-venv
-*.pyc
-.DS_Store
-.env
-geo_api_key.txt
-bin/
