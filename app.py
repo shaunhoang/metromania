@@ -238,7 +238,6 @@ def plot_it(city,year):
         linesegment = my_tracks.linestring_lonlat.iloc[sect]
         section_id = my_tracks.section_id.iloc[sect]
         
-        # Create a small DataFrame for this segment
         df_seg = pd.DataFrame(linesegment, columns=['x', 'y'])
         df_seg['group'] = section_id 
         dfs_to_concat.append(df_seg)
@@ -246,7 +245,6 @@ def plot_it(city,year):
     if not dfs_to_concat:
         return create_placeholder_figure(f"No tracks found for {city} in {year}.")
         
-    # Combine all segments into one DataFrame
     plot_df = pd.concat(dfs_to_concat)
 
     fig = px.line(plot_df, 
