@@ -548,76 +548,93 @@ for i in range(1850,2040,10):
 navbar = dbc.Navbar(
     dbc.Container(
         [
-            html.A(
-                dbc.Row(
-                    [
-                        dbc.Col(html.I(className="fas fa-subway me-2")), 
-                        dbc.Col(dbc.NavbarBrand("Project Metromania", className="ms-2")),
-                    ],
-                    align="center",
-                    className="g-0",
-                ),
-                href="#",
-                style={"textDecoration": "none"},
-            )
-        ]
+            dbc.Row(
+                [
+                    dbc.Col(html.I(className="fas fa-subway fa-lg me-2"), width="auto"),
+                    dbc.Col(
+                        dbc.NavbarBrand([
+                            html.Span("Metromania", className="fw-bold fs-4"),
+                            html.Span(" – Urban Rail Explorer", className="text-muted ms-2 fs-6")
+                        ]),
+                        width="auto"
+                    ),
+                ],
+                align="center",
+                className="g-0",
+            ),
+
+            dbc.Row(
+                [
+                    dbc.Col(
+                        html.A(html.I(className="fab fa-github fa-lg"), 
+                               href="https://github.com/shaunhoang/metromania", target="_blank"),
+                        width="auto",
+                        className="ms-3"
+                    ),
+                    dbc.Col(
+                        html.A(html.I(className="fab fa-linkedin fa-lg"), 
+                               href="https://www.linkedin.com/in/shaunhoang", target="_blank"),
+                        width="auto",
+                        className="ms-2"
+                    ),
+                ],
+                align="center",
+                className="g-0"
+            ),
+        ],
+        className="d-flex justify-content-between"
     ),
     color="primary",
     dark=True,
-    className="mb-4",
+    className="mb-4 py-3"  
 )
 
+
 controls = dbc.Card(
-    [
-        dbc.CardBody([
-            dbc.Row([
-                dbc.Col([
-                    html.Label("Select City:"),
-                    dcc.Dropdown(
-                        id='dropdown', 
-                        options=selection_items,
-                        placeholder="Select a city...",
-                        className="dbc",
-                        value="London" 
-                    )
-                ], width=12)
-            ]),
-            
-            dbc.Row([
-                dbc.Col([
-                    html.Label("Select Year:"),
-                    dbc.Row(
-                        [
-                            dbc.Col(
-                                dbc.Button("<", id="year-backward-button", n_clicks=0, color="primary"), 
-                                width="auto" 
-                            ),
-                            dbc.Col(
-                                dcc.Slider(
-                                    id='slider',
-                                    min=1850,
-                                    max=2040,
-                                    step=1,
-                                    included=False,
-                                    marks=slider_marks,
-                                    tooltip={"placement": "bottom", "always_visible": True},
-                                    value=2000
-                                ), 
-                                width=True 
-                            ),
-                            dbc.Col(
-                                dbc.Button(">", id="year-forward-button", n_clicks=0, color="primary"), 
-                                width="auto" 
-                            ),
-                        ], 
-                        align="center",
-                        className="g-2"
-                    )
-                ], width=12)
-            ], className="mt-4") 
-        ])
-    ], 
-className="h-100"
+    dbc.CardBody([
+        # Row 1: City
+        dbc.Row([
+            dbc.Col(html.Label("Select City:", className="d-flex align-items-center mb-0 justify-content-center"), width=2),
+            dbc.Col(
+                dcc.Dropdown(
+                    id='dropdown',
+                    options=selection_items,
+                    placeholder="Select a city...",
+                    className="dbc",
+                    value="London"
+                ),
+                width=True
+            )
+        ], className="mb-3 align-items-center g-3"),
+
+        # Row 2: Year
+        dbc.Row([
+            dbc.Col(html.Label("Select Year:", className="d-flex align-items-center mb-0 justify-content-center"), width=2),
+            dbc.Col(
+                dcc.Slider(
+                    id='slider',
+                    min=1850,
+                    max=2040,
+                    step=1,
+                    included=False,
+                    marks=slider_marks,
+                    tooltip={"placement": "bottom", "always_visible": True},
+                    value=2000
+                ),
+                width=True,
+            ),
+            # Buttons under slider
+        ], className="mb-2 align-items-center g-3"),
+
+        # Row 3: Buttons below slider
+        dbc.Row([
+            dbc.Col(html.Label("", className="d-flex align-items-center mb-0"), width=2),
+            dbc.Col(dbc.Button("<", id="year-backward-button", n_clicks=0, color="primary"), width="auto"),
+            dbc.Col(width=True),  # spacer
+            dbc.Col(dbc.Button(">", id="year-forward-button", n_clicks=0, color="primary"), width="auto")
+        ], className="align-items-center")
+    ]),
+    className="h-100"
 )
 
 stats_card = dbc.Card(
@@ -670,8 +687,8 @@ app.layout = html.Div([
     dbc.Container([
         # Title Section
         html.Div([
-            html.P("Visualise the growth of urban rail transit systems over time",
-                   className="text-center text-muted mb-2 fs-5"),
+            html.H4("Visualise the growth of urban rail transit systems over time",
+                   className="text-center"),
             html.P("Select a city and year to begin",
                    className="text-center text-muted mb-4"),
         ], className="py-1"),
@@ -683,7 +700,7 @@ app.layout = html.Div([
             dbc.Col([
                 dbc.Card([
                     dbc.CardBody([
-                        html.H5("Export Options", className="text-center text-muted mb-3"),
+                        html.P("Export Options", className="text-center text-muted mb-3"),
                         dbc.Button("Export as KML", id="export_kml_button", color="success", className="w-100 mb-2"),
                         dbc.Button("Export as GeoJSON", id="export_geojson_button", color="info", className="w-100"),
                         dcc.Download(id="download-kml"),
