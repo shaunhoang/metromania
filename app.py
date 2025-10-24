@@ -4,12 +4,12 @@ import datetime
 import requests
 import plotly.express as px
 import dash_leaflet as dl
-from dash import dcc, html, Dash, no_update
+from dash import dcc, html, Dash, no_update, ctx
 from dash.dependencies import Input, Output, State
-from simplekml import Kml
+import dash_bootstrap_components as dbc
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-import dash_bootstrap_components as dbc
+from simplekml import Kml
 import json
 
 ######## Data intake and cleaning
@@ -180,7 +180,7 @@ def get_geocode(city):
         geocode_data = requests.get(url).json()     
         lat = geocode_data['data'][0]['latitude']
         lon = geocode_data['data'][0]['longitude']
-        return {'center':[float(lat), float(lon)],'zoom':12}
+        return {'center':[float(lat), float(lon)],'zoom':11}
     except Exception as e:
         print(f"Error geocoding {city}: {e}")
         return {'center':[20, 0],'zoom':2} 
@@ -191,60 +191,116 @@ def get_geocode(city):
 def plot_it(city,year):
     
     if not city or not year:
-        return create_placeholder_figure("Select a city and year to see the schematic plot.")
+        return create_placeholder_figure("Select a city and year to see the plot.")
     
-    my_stations = stations[(stations.city == city.title()) 
-                            & (stations.opening <= year) 
-                            & (stations.closure > year)]
-    
+    city_all_stations = stations[stations.city == city.title()]
+    if city_all_stations.empty:
+        return create_placeholder_figure(f"No data found for {city}.")
+      
+    x_min = city_all_stations['longitude'].min()
+    x_max = city_all_stations['longitude'].max()
+    y_min = city_all_stations['latitude'].min()
+    y_max = city_all_stations['latitude'].max()
+
+    # Filter by year for plotting
     my_tracks = tracks[(tracks.city == city.title()) 
                         & (tracks.opening <= year) 
                         & (tracks.closure > year)]
     
-    long=[]
-    lat=[]
-    line_color=[]
+    # Create a list of DataFrames for each line segment
+    dfs_to_concat = []
     for sect in range(len(my_tracks)):
         linesegment = my_tracks.linestring_lonlat.iloc[sect]
-        for point in linesegment:
-            long.append(point[0])
-            lat.append(point[1])
-            line_color.append(my_tracks.line_color.iloc[sect])
-    plot = pd.DataFrame({'x':long,
-                         'y':lat,
-                         'z':line_color})
-    plot['x'] = plot['x'].astype(float)
-    plot['y'] = plot['y'].astype(float)
+        section_id = my_tracks.section_id.iloc[sect]
+        
+        # Create a small DataFrame for this segment
+        df_seg = pd.DataFrame(linesegment, columns=['x', 'y'])
+        df_seg['group'] = section_id 
+        dfs_to_concat.append(df_seg)
 
-    fig = px.scatter(plot, 
-                     x="x", 
-                     y="y" , 
-                     color="z",
-                     template="plotly_dark", 
-                     width=800, height=800)
+    if not dfs_to_concat:
+        return create_placeholder_figure(f"No tracks found for {city} in {year}.")
+        
+    # Combine all segments into one DataFrame
+    plot_df = pd.concat(dfs_to_concat)
+
+    fig = px.line(plot_df, 
+                  x="x", 
+                  y="y", 
+                  line_group="group",  
+                  template="plotly_dark")
     
+    fig.update_traces(line=dict(color='white', width=2))
     fig.update_yaxes(title_text="",showgrid=False,
-                     showline=False,mirror=True, scaleanchor = "x",scaleratio = 1,
-                     showticklabels=False,ticks='',automargin=True, zeroline=False)
+                     showline=False,mirror=True,showticklabels=False,ticks='',automargin=True, zeroline=False,
+                     range=[y_min, y_max]   
+                     )    
+     
     fig.update_xaxes(title_text="",showgrid=False,
                      showline=False,mirror=True,
-                     showticklabels=False,ticks='',automargin=True, zeroline=False)
-    
+                     showticklabels=False,ticks='',automargin=True, zeroline=False,
+                     range=[x_min, x_max]) 
+    fig.add_annotation(
+        text=f"<b>{year:g}</b>", 
+        xref="paper", yref="paper",
+        x=0.98, y=0.98,          
+        showarrow=False,
+        font=dict(size=24, color="white"),
+        xanchor='right',
+        yanchor='top'
+    )
     fig.update_layout(showlegend=False,
                       autosize=False,
                       plot_bgcolor="#222222",
                       paper_bgcolor="#222222")
     
     return fig
+  
+# Count it function
+@app.callback(Output('count','children'),[Input('dropdown','value'),Input('slider','value')])
+def count_it(city,year):
+    if not city or not year:
+        return html.P("Select city and year for stats.", className="text-center text-muted")
 
+    my_stations = stations[(stations.city == city.title())
+                            & (stations.opening <= year)
+                            & (stations.closure > year)]
+    my_tracks = tracks[(tracks.city == city.title())
+                        & (tracks.opening <= year)
+                        & (tracks.closure > year)]
 
-# Map it function
+    track_length_km = my_tracks.length.sum()/1000
+    num_stations = len(my_stations)
+
+    return [
+        dbc.Card(
+            [
+                dbc.CardBody([
+                    html.H5(f"{num_stations} stations", className="card-title"),
+                ])
+            ],
+            color="primary",
+            outline=True,
+            className="text-center mb-3" 
+        ),
+        dbc.Card(
+            [
+                dbc.CardBody([
+                    html.H5(f"{track_length_km:,.0f} km track length", className="card-title"),
+                ])
+            ],
+            color="primary",
+            outline=True,
+            className="text-center"
+        )
+    ]
+
 # Map it function
 @app.callback(Output('map','children'),[Input('dropdown','value'),Input('slider','value')])
 def map_it(city,year):
     
-    url1 = 'https.tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
-    url2 = 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png' # URL for light mode
+    url1 = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
+    url2 = 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png' 
     attribution = '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> '
     
     markers = []
@@ -263,13 +319,13 @@ def map_it(city,year):
             station = my_stations.iloc[i]
             marker = dl.CircleMarker(
                 center=[station.latitude, station.longitude],
-                radius=6,  # Pixel radius
+                radius=3,  
                 color=station.line_color,  
                 fillColor="white",
-                fillOpacity=0.7,
+                fillOpacity=0.8,
                 stroke=True,  
                 weight=1,     
-                children=[dl.Tooltip(station.station_name)]
+                pane="markerPane"
             )
             markers.append(marker)
         
@@ -303,6 +359,31 @@ def map_it(city,year):
     ]
     return my_map_layers
 
+@app.callback(
+    Output('slider', 'value'),
+    Input('year-backward-button', 'n_clicks'),
+    Input('year-forward-button', 'n_clicks'),
+    State('slider', 'value'),
+    prevent_initial_call=True
+)
+def update_slider_value(n_back, n_fwd, current_year):
+    if not ctx.triggered_id:
+        return no_update
+
+    min_year = 1850
+    max_year = 2040
+    
+    if current_year is None:
+        current_year = 2025 
+
+    if ctx.triggered_id == 'year-backward-button':
+        new_year = current_year - 1
+        return max(new_year, min_year) # Don't go below min
+    elif ctx.triggered_id == 'year-forward-button':
+        new_year = current_year + 1
+        return min(new_year, max_year) # Don't go above max
+
+    return no_update
 
 # Summarize it function
 @app.callback(Output('summarize','figure'),[Input('dropdown','value'),Input('slider','value')])
@@ -358,7 +439,7 @@ def summarize_it(city,year):
         plot_bgcolor="#222222",
         paper_bgcolor="#222222",
         title={
-            'text': f"{city} System Growth Over Time",
+            'text': f"{city} Urban Rail System Growth Over Time",
              'y':0.9,
              'x':0.5,
             'xanchor': 'center',
@@ -528,146 +609,187 @@ navbar = dbc.Navbar(
 controls = dbc.Card(
     [
         dbc.CardBody([
-            dbc.Row(
-                [
-                    dbc.Col(
+            dbc.Row([
+                dbc.Col([
+                    html.Label("Select City:"),
+                    dcc.Dropdown(
+                        id='dropdown', 
+                        options=selection_items,
+                        placeholder="Select a city...",
+                        className="dbc",
+                        value="London" 
+                    )
+                ], width=12)
+            ]),
+            
+            dbc.Row([
+                dbc.Col([
+                    html.Label("Select Year:"),
+                    dbc.Row(
                         [
-                            html.Label("Select City:"),
-                            dcc.Dropdown(
-                                id='dropdown', 
-                                options=selection_items,
-                                placeholder="Select a city...",
-                                # className="dbc",
-                                value="London" 
-                            )
-                        ], md=6
-                    ),
-                    dbc.Col(
-                        [
-                            html.Label("Select Year (Default: 2020):"),
-                            dcc.Slider(
-                                id='slider',
-                                min=1850,
-                                max=2040,
-                                step=1,
-                                included=False,
-                                marks=slider_marks,
-                                tooltip={"placement": "bottom", "always_visible": True},
-                                value=2020
-                            )
-                        ], md=6
-                    ),
-                ]
-            )
+                            dbc.Col(
+                                dbc.Button("<", id="year-backward-button", n_clicks=0, color="primary"), 
+                                width="auto" 
+                            ),
+                            dbc.Col(
+                                dcc.Slider(
+                                    id='slider',
+                                    min=1850,
+                                    max=2040,
+                                    step=1,
+                                    included=False,
+                                    marks=slider_marks,
+                                    tooltip={"placement": "bottom", "always_visible": True},
+                                    value=2025
+                                ), 
+                                width=True 
+                            ),
+                            dbc.Col(
+                                dbc.Button(">", id="year-forward-button", n_clicks=0, color="primary"), 
+                                width="auto" 
+                            ),
+                        ], 
+                        align="center",
+                        className="g-2"
+                    )
+                ], width=12)
+            ], className="mt-4") 
         ])
-    ], className="mb-4"
+    ], 
+className="h-100"
 )
 
 stats_card = dbc.Card(
     [
-        dbc.CardHeader(html.H4("Snapshot", className="text-center")),
         dbc.CardBody([
             dbc.Row(id='count', children=[
                 dbc.Col(html.P("Select city and year for stats.", className="text-center text-muted"), md=12)
             ])
         ])
-    ], className="mb-4"
+    ], className="h-100"
 )
 
-# --- Updated Layout ---
+app.index_string = '''
+<!DOCTYPE html>
+<html>
+    <head>
+        {%metas%}
+        <title>{%title%}</title>
+        {%favicon%}
+        {%css%}
+        <style>
+            .Select-control, .Select-menu-outer, .Select, .Select-value-label, .Select-placeholder {
+                background-color: #222 !important;
+                color: white !important;
+            }
+            .Select-option {
+                background-color: #222 !important;
+                color: white !important;
+            }
+            .Select-option.is-focused, .Select-option.is-selected {
+                background-color: #444 !important;
+                color: white !important;
+            }
+        </style>
+    </head>
+    <body>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+    </body>
+</html>
+'''
+
+
 app.layout = html.Div([
-    
     navbar,
-    dbc.Container(
-        [
-            html.H5("Visualize the growth of city transit systems over time", 
-                    className="text-center text-muted"),
-            html.P("Select a city and slide the year to begin", 
+
+    dbc.Container([
+        # Title Section
+        html.Div([
+            html.P("Visualise the growth of urban rail transit systems over time",
+                   className="text-center text-muted mb-2 fs-5"),
+            html.P("Select a city and year to begin",
                    className="text-center text-muted mb-4"),
-            
-            controls, 
-            
-            dbc.Row(
-                [
-                    dbc.Col(
-                        dbc.Card([
-                            dbc.CardHeader(html.H4("Schematic Plot ", className="text-center")),
-                            dbc.CardBody([
-                                dcc.Graph(id='plot', style={'height': '70vh'})
-                            ])
-                        ]), md=6, className="mb-4"
-                    ),
-                    dbc.Col(
-                        dbc.Card([
-                            dbc.CardHeader(html.H4("Geographic Map", className="text-center")),
-                            dbc.CardBody([
-                                dl.Map(
-                                    id='map', 
-                                    style={'width': '100%', 'height': '70vh'},
-                                    center=[20, 0], 
-                                    zoom=2
-                                )
-                            ])
-                        ]), md=6, className="mb-4"
-                    ),
-                ]
+        ], className="py-1"),
+
+        # Controls and Stats Row
+        dbc.Row([
+            dbc.Col(controls, width=12, lg=8, className="mb-1"),
+            dbc.Col(stats_card, width=12, lg=2, className="mb-1"),
+            dbc.Col([
+                dbc.Card([
+                    dbc.CardBody([
+                        html.H4("Export Options", className="text-center text-muted mb-3"),
+                        dbc.Button("Export as KML", id="export_kml_button", color="success", className="w-100 mb-2"),
+                        dbc.Button("Export as GeoJSON", id="export_geojson_button", color="info", className="w-100"),
+                        dcc.Download(id="download-kml"),
+                        dcc.Download(id="download-geojson")
+                    ])
+                ], className="rounded-3 h-100")
+            ], width=12, lg=2, className="mb-1")
+        ], align="stretch",className="align-items-stretch mb-4"),
+
+        # Visualization Row
+        dbc.Row([
+            dbc.Col(
+                dbc.Card([
+                    dbc.CardBody([
+                        dcc.Graph(id='plot', style={'height': '70vh'},figure=create_placeholder_figure("Loading map..."))
+                    ])
+                ], className="shadow-lg border-0 rounded-3 bg-dark-subtle"), md=6, className="mb-4"
             ),
-            
-            stats_card,
-            
-            dbc.Row(
-                [
-                    dbc.Col(
-                        dbc.Card([
-                            dbc.CardHeader(html.H4("System Growth Over Time", className="text-center")),
-                            dbc.CardBody([
-                                dcc.Graph(id='summarize')
-                            ])
-                        ]), md=12, className="mb-4"
-                    )
-                ]
-            ),
-            
-            dbc.Row(
-                [
-                    dbc.Col(
-                        [
-                            html.P("Export the current map view to KML or GeoJSON.", className="text-center"),
-                            dbc.ButtonGroup(
-                                [
-                                    dbc.Button('Export to KML', id='export_kml_button', n_clicks=0, color="success"),
-                                    dbc.Button('Export to GeoJSON', id='export_geojson_button', n_clicks=0, color="info") 
-                                ],
-                                className="w-100"
-                            ),
-                            dcc.Download(id="download-kml"),
-                            dcc.Download(id="download-geojson")
-                        ],
-                        md=6, className="mx-auto mb-4" 
-                    )
-                ]
-            ),
-            
-            html.Hr(),
-            
-            html.Footer(
-                dbc.Row(
-                    [
-                        dbc.Col(html.P("Created by: shaun.hoang@gmail.com"), className="text-center text-muted"),
-                        dbc.Col(
-                            html.P([
-                                "Data source: ",
-                                html.A("Kaggle.com", href='https://www.kaggle.com/citylines/city-lines', target="_blank")
-                            ]), className="text-center text-muted"
+            dbc.Col(
+                dbc.Card([
+                    dbc.CardBody([
+                        dl.Map(
+                            id='map',
+                            style={'width': '100%', 'height': '70vh', 'borderRadius': '12px'},
+                            center=[20, 0],
+                            zoom=2
                         )
-                    ]
-                )
+                    ])
+                ], className="shadow-lg border-0 rounded-3 bg-dark-subtle"), md=6, className="mb-4"
             )
-        ],
-        fluid=True 
-    )
+        ]),
+
+        # Summary Graph
+        dbc.Row([
+            dbc.Col(
+                dbc.Card([
+                    dbc.CardBody([
+                        dcc.Graph(
+                          id='summarize', 
+                          style={'height': '40vh'},
+                          figure=create_placeholder_figure("Loading chart...")
+                          )
+                    ])
+                ], className="shadow-lg border-0 rounded-3 bg-dark-subtle"),
+                width=12
+            )
+        ], className="mb-4"),
+
+        html.Hr(className="text-muted"),
+
+        # Footer
+        html.Footer([
+            dbc.Row([
+                dbc.Col(html.P("Created by: shaun.hoang@gmail.com",
+                               className="text-center text-muted small"), width=6),
+                dbc.Col(html.P([
+                    "Data source: ",
+                    html.A("Kaggle.com", href='https://www.kaggle.com/citylines/city-lines',
+                           target="_blank", className="link-info")
+                ], className="text-center text-muted small"), width=6)
+            ])
+        ], className="mt-3")
+    ], fluid=True)
 ])
+
 
 # Finally
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run(debug=True)
