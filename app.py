@@ -748,8 +748,6 @@ app.layout = html.Div([
                             center=[20, 0],
                             zoom=2,
                             style={'width': '100%', 'height': '70vh', 'borderRadius': '12px'},
-                            center=[20, 0],
-                            zoom=2
                         )
                     ])
                 ], className="shadow-lg border-0 rounded-3 bg-dark-subtle"), md=6, className="mb-4"
