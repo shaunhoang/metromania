@@ -640,7 +640,7 @@ controls = dbc.Card(
                                     included=False,
                                     marks=slider_marks,
                                     tooltip={"placement": "bottom", "always_visible": True},
-                                    value=2025
+                                    value=2000
                                 ), 
                                 width=True 
                             ),
