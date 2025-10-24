@@ -746,6 +746,7 @@ app.layout = html.Div([
                     dbc.CardBody([
                         dl.Map(
                             id='map',
+                            viewport={'center': [20, 0], 'zoom': 2},
                             style={'width': '100%', 'height': '70vh', 'borderRadius': '12px'},
                             center=[20, 0],
                             zoom=2
