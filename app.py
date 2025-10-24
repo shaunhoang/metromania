@@ -300,17 +300,19 @@ def count_it(city,year):
         dbc.Card(
             [
                 dbc.CardBody([
-                    html.P(f"{num_stations} stations", className="card-title"),
+                    html.P(f"{num_stations} stations", 
+                           className="card-title"),
                 ])
             ],
             color="primary",
             outline=True,
-            className="text-center mb-3" 
+            className="text-center mb-2" 
         ),
         dbc.Card(
             [
                 dbc.CardBody([
-                    html.P(f"{track_length_km:,.0f} km track length", className="card-title"),
+                    html.P(f"{track_length_km:,.0f} km track length",
+                           className="card-title"),
                 ])
             ],
             color="primary",
