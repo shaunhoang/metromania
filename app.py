@@ -667,7 +667,6 @@ app.index_string = '''
 
 app.layout = html.Div([
     navbar,
-
     dbc.Container([
         # Title Section
         html.Div([
@@ -707,41 +706,63 @@ app.layout = html.Div([
                 dbc.Card([
                     dbc.CardBody([
                         dl.Map(
-                          id='map',
-                          center=[51.51, -0.13],
-                          zoom=2,
-                          style={'width': '100%', 'height': '70vh', 'borderRadius': '12px'},
-                          children=[
-                              dl.LayersControl(
-                                  [
-                                      dl.BaseLayer(
-                                          dl.TileLayer(url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'),
-                                          name='Dark mode',
-                                          checked=True
-                                      ),
-                                      dl.BaseLayer(
-                                          dl.TileLayer(url='https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png'),
-                                          name='Light mode',
-                                          checked=False
-                                      ),
-                                      dl.Overlay(
-                                          dl.LayerGroup(id='stations-layer'),
-                                          name='Stations',
-                                          checked=True
-                                      ),
-                                      dl.Overlay(
-                                          dl.LayerGroup(id='lines-layer'),
-                                          name='Lines',
-                                          checked=True
-                                      ),
-                                  ]
-                              )
-                          ]
-                      )
+                            id='map',
+                            center=[51.51, -0.13],
+                            zoom=2,
+                            style={'width': '100%', 'height': '70vh', 'borderRadius': '12px'},
+                            children=[
+                                dl.TileLayer(
+                                    id='base-layer',
+                                    url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png',
+                                    attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>'
+                                ),
+                                dl.LayerGroup(id='lines-layer', children=[]),
+                                dl.LayerGroup(id='stations-layer', children=[]),
+                            ]
+                        )
                     ])
                 ], className="shadow-lg border-0 rounded-3 bg-dark-subtle"), md=6, className="mb-4"
             )
         ]),
+        #   dbc.Col(
+        #         dbc.Card([
+        #             dbc.CardBody([
+        #                 dl.Map(
+        #                   id='map',
+        #                   center=[51.51, -0.13],
+        #                   zoom=2,
+        #                   style={'width': '100%', 'height': '70vh', 'borderRadius': '12px'},
+        #                   children=[
+        #                       dl.LayersControl(
+        #                           [
+        #                               dl.BaseLayer(
+        #                                   dl.TileLayer(url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'),
+        #                                   name='Dark mode',
+        #                                   checked=True
+        #                               ),
+        #                               dl.BaseLayer(
+        #                                   dl.TileLayer(url='https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png'),
+        #                                   name='Light mode',
+        #                                   checked=False
+        #                               ),
+        #                               dl.Overlay(
+        #                                   dl.LayerGroup(id='stations-layer'),
+        #                                   name='Stations',
+        #                                   checked=True
+        #                               ),
+        #                               dl.Overlay(
+        #                                   dl.LayerGroup(id='lines-layer'),
+        #                                   name='Lines',
+        #                                   checked=True
+        #                               ),
+        #                           ]
+        #                       )
+        #                   ]
+        #               )
+        #             ])
+        #         ], className="shadow-lg border-0 rounded-3 bg-dark-subtle"), md=6, className="mb-4"
+        #     )
+        # ]),
 
         # Summary Graph
         dbc.Row([
