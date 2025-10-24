@@ -168,7 +168,9 @@ def get_geocode(city):
     try:
         url = "https://nominatim.openstreetmap.org/search"
         params = {"q": city, "format": "json", "limit": 1}
-        headers = {"User-Agent": "YourAppName (contact@example.com)"}
+        headers = {
+            "User-Agent": "Metromania/2.0 (shaun.hoang@gmail.com)"
+        }  
         r = requests.get(url, params=params, headers=headers)
         r.raise_for_status()
         data = r.json()
