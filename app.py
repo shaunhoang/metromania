@@ -146,7 +146,7 @@ wonk_table['total_tracks'] = wonk_table['valid_tr'] + wonk_table['missing_tr']
 wonk_table['avg_wonkiness'] = (wonk_table['wonkiness_st'] + wonk_table['wonkiness_tr']) / 2 
 
 # Define quality thresholds using quantiles
-low_wonk_threshold = wonk_table['avg_wonkiness'].quantile(0.5)
+low_wonk_threshold = wonk_table['avg_wonkiness'].quantile(0.6)
 selection_items = []
 for index, row in wonk_table.iterrows():
     if row['avg_wonkiness'] <= low_wonk_threshold:
@@ -594,7 +594,7 @@ def export_kml(city, year, n_clicks):
 
 # Dropdown list
 slider_marks = {}
-for i in range(1850,2030,10):
+for i in range(1850,2031,10):
     slider_marks[i] =  {'label': f'{i:g}'}
 
 navbar = dbc.Navbar(
@@ -606,7 +606,7 @@ navbar = dbc.Navbar(
                     dbc.Col(
                         dbc.NavbarBrand([
                             html.Span("Metromania", className="fw-bold fs-4"),
-                            html.Span(" – Urban Rail History Explorer", className="text-muted ms-2 fs-6")
+                            html.Span(" – Urban Rail History Explorer", className="text-muted ms-1 fs-4")
                         ]),
                         width="auto"
                     ),
@@ -618,16 +618,16 @@ navbar = dbc.Navbar(
             dbc.Row(
                 [
                     dbc.Col(
-                        html.A(html.I(className="fab fa-github fa-lg"), 
+                        html.A(html.I(className="fab fa-github fa-lg me-2"), 
                                href="https://github.com/shaunhoang/metromania", target="_blank"),
                         width="auto",
                         className="ms-3"
                     ),
                     dbc.Col(
-                        html.A(html.I(className="fab fa-linkedin fa-lg"), 
+                        html.A(html.I(className="fab fa-linkedin fa-lg me-2"), 
                                href="https://www.linkedin.com/in/shaunhoang", target="_blank"),
                         width="auto",
-                        className="ms-2"
+                        className="ms-3"
                     ),
                 ],
                 align="center",
@@ -666,24 +666,23 @@ controls = dbc.Card(
                 dcc.Slider(
                     id='slider',
                     min=1850,
-                    max=2040,
+                    max=2030,
                     step=1,
-                    included=False,
+                    included=True,
                     marks=slider_marks,
                     tooltip={"placement": "bottom", "always_visible": True},
                     value=2000
                 ),
                 width=True,
             ),
-            # Buttons under slider
         ], className="mb-2 align-items-center g-3"),
 
         # Row 3: Buttons below slider
         dbc.Row([
             dbc.Col(html.Label("", className="d-flex align-items-center mb-0"), width=2),
-            dbc.Col(dbc.Button("<", id="year-backward-button", n_clicks=0, color="primary"), width="auto"),
-            dbc.Col(width=True),  # spacer
-            dbc.Col(dbc.Button(">", id="year-forward-button", n_clicks=0, color="primary"), width="auto")
+            dbc.Col(dbc.Button("Prev. Year", id="year-backward-button", n_clicks=0, color="primary"), width="auto"),
+            dbc.Col(html.P("Change incrementally to see new additions to the system each year",className="d-flex align-items-center justify-content-center mb-0"), width=True),
+            dbc.Col(dbc.Button("Next Year", id="year-forward-button", n_clicks=0, color="primary"), width="auto")
         ], className="align-items-center")
     ]),
     className="h-100"
@@ -739,11 +738,16 @@ app.layout = html.Div([
     navbar,
     dbc.Container([
         # Title Section
-        html.Div([
-            html.H4("Visualise the growth of urban rail transit systems over time",
-                   className="text-center"),
-            html.P("Select a city and year to begin",
-                   className="text-center text-muted mb-4"),
+        dbc.Row([
+            dbc.Col([
+                html.H4("Visualise the evolution of urban rail systems around the world",
+                        className="text-center"),
+                html.P(["Note: Data quality may vary between cities due to historical data availability.",
+                       html.Br(),
+                       "Cities with high proportions of missing opening/closure date information have been excluded."
+                       ],
+                       className="text-center text-muted mb-4"),
+            ], width=12, lg=6, className="mx-auto") 
         ], className="py-1"),
 
         # Controls and Stats Row
