@@ -29,7 +29,7 @@ systems_simpl = pd.DataFrame({'system_id':systems.id,'system_name':systems.name}
 track_lines_simpl = pd.DataFrame({'section_id':track_lines.section_id,'line_id':track_lines.line_id})
 
 
-## Merge multiple datasets into STATIONS
+##--- Merge multiple datasets into STATIONS
 stations = pd.merge (stations, cities_simpl, how='left',on='city_id')
 stations = pd.merge (stations, station_lines_simpl, how='left',on='station_id')
 stations = pd.merge (stations, lines_simpl, how='left',on='line_id')
@@ -46,7 +46,7 @@ stations = stations[['station_id','station_name','geometry','longitude',
                      'latitude','opening','closure','city_id','city',
                      'country','line_id','line_name','line_color','system_id','system_name']]
 
-## Merge multiple datasets into TRACKS
+##--- Merge multiple datasets into TRACKS
 tracks = pd.merge(tracks, track_lines_simpl,how='left',on='section_id')
 tracks = pd.merge(tracks, lines_simpl, how='left', on='line_id')
 tracks = pd.merge(tracks, cities_simpl, how='left', on='city_id')
@@ -57,7 +57,7 @@ def split_coord_lonlat(x):
     stripped_x = x.rstrip(')) ').lstrip(' MULTILINESTRING ((').strip() # strip non-numerical values from object 
     coord_list = []
     for point in stripped_x.split(','):
-        coord = point.split(' ')                # split into lon-lat 
+        coord = point.split(' ')                                # split into lon-lat 
         coord = [float(x.strip()) for x in coord]               # turn to float
         coord_list.append(coord)
     return coord_list
@@ -66,8 +66,8 @@ def split_coord_latlon(x):
     stripped_x = x.rstrip(')) ').lstrip(' MULTILINESTRING ((').strip() # strip non-numerical values from object 
     coord_list = []
     for point in stripped_x.split(','):
-        coord = point.split(' ')                # split into lon-lat 
-        coord[0],coord[1] = coord[1],coord[0]   # swap to lat-lon
+        coord = point.split(' ')                              # split into lon-lat 
+        coord[0],coord[1] = coord[1],coord[0]                   # swap to lat-lon
         coord = [float(x.strip()) for x in coord]               # turn to float
         coord_list.append(coord)
     return coord_list
@@ -81,49 +81,77 @@ tracks = tracks[['section_id','geometry','linestring_latlon','linestring_lonlat'
                  'length','line_id','line_name','line_color',
                  'system_id','system_name','city_id','city','country']]
 
+# --- Handle name missing data ---
 
-## Fill in NA and other data cleaning
-stations['station_name'] = stations['station_name'].fillna('N.A.')
-tracks['line_color'] = tracks['line_color'].fillna('#000000')
+## Fill in NA 
+stations['station_name'] = stations['station_name'].fillna('n/a')
+stations['line_name'] = stations['line_name'].fillna('n/a')
 stations['line_color'] = stations['line_color'].fillna('#000000')
-stations['closure'] = stations['closure'].fillna(999999)
-tracks['closure'] = tracks['closure'].fillna(999999)
+tracks['line_name'] = tracks['line_name'].fillna('n/a')
+tracks['line_color'] = tracks['line_color'].fillna('#000000')
 stations['line_id'] = stations['line_id'].fillna(0)
 tracks['line_id'] = tracks['line_id'].fillna(0)
-stations['line_name'] = stations['line_name'].fillna('N.A.')
-tracks['line_name'] = tracks['line_name'].fillna('N.A.')
 
-stations['opening'] = stations['opening'].fillna(0)
-tracks['opening'] = tracks['opening'].fillna(0)
-stations.loc[stations.opening>2040, 'opening'] = 0
-tracks.loc[tracks.opening>2040, 'opening'] = 0
+# --- Handle opening and closure date missing data ---
+
+# Handle Closure Dates, Fill NaN with 999999, "still open".
+stations['closure'] = stations['closure'].fillna(999999)
+tracks['closure'] = tracks['closure'].fillna(999999)
+
+# Handle Opening Dates, impute missing data based on minimum known opening year for each city
+stations['opening'] = pd.to_numeric(stations['opening'], errors='coerce')
+tracks['opening'] = pd.to_numeric(tracks['opening'], errors='coerce')
+stations.loc[stations['opening'] > 2100, 'opening'] = pd.NA
+tracks.loc[tracks['opening'] > 2100, 'opening'] = pd.NA
+stations.loc[stations['opening'] == 0, 'opening'] = pd.NA
+tracks.loc[tracks['opening'] == 0, 'opening'] = pd.NA
+stations['opening'] = stations['opening'].astype('Int64')
+tracks['opening'] = tracks['opening'].astype('Int64')
+
+# Flag rows
+stations['was_missing_opening'] = stations['opening'].isna() 
+tracks['was_missing_opening'] = tracks['opening'].isna()   
+
+# Impute
+stations['min_city_opening'] = stations.groupby('city')['opening'].transform('min')
+tracks['min_city_opening'] = tracks.groupby('city')['opening'].transform('min')
+stations['opening'] = stations['opening'].fillna(stations['min_city_opening'])
+tracks['opening'] = tracks['opening'].fillna(tracks['min_city_opening'])
+# Handle cities where all dates were missing (min_city_opening is NaN)
+stations['opening'] = stations['opening'].fillna(1900).astype(int) 
+tracks['opening'] = tracks['opening'].fillna(1900).astype(int) 
+stations = stations.drop(columns=['min_city_opening']) # Drop the temporary column
+tracks = tracks.drop(columns=['min_city_opening']) # Drop the temporary column
 
 # ... (wonkiness calculation) ...
-def wonk(x):
-    if x==0 :
-        wonk_or_good='wonk'
-    else:
-        wonk_or_good='good'
-    return wonk_or_good
+# Calculate proportion of missing/imputed opening dates per city
+pivot_st = pd.pivot_table(stations, values='station_id', index='city', columns='was_missing_opening', aggfunc='count', fill_value=0)
+pivot_tr = pd.pivot_table(tracks, values='section_id', index='city', columns='was_missing_opening', aggfunc='count', fill_value=0)
 
-stations['wonk'] = stations.opening.apply(lambda x: wonk(x)) # add 'wonk' for opening==0
-pivot_st = pd.pivot_table(stations,values='station_name',index='city',columns=['wonk'],aggfunc=len)
-pivot_st = pivot_st.fillna(0)
-pivot_st['wonkiness_st'] = (pivot_st['wonk']) / (pivot_st['good'] + pivot_st['wonk'])
+pivot_st = pivot_st.rename(columns={True: 'missing', False: 'valid'})
+pivot_tr = pivot_tr.rename(columns={True: 'missing', False: 'valid'})
+if 'missing' not in pivot_st.columns: pivot_st['missing'] = 0
+if 'valid' not in pivot_st.columns: pivot_st['valid'] = 0
+if 'missing' not in pivot_tr.columns: pivot_tr['missing'] = 0
+if 'valid' not in pivot_tr.columns: pivot_tr['valid'] = 0
 
-tracks['wonk'] = tracks.opening.apply(lambda x: wonk(x)) # add 'wonk' for opening==0
-pivot_tr = pd.pivot_table(tracks,values='section_id',index='city',columns=['wonk'],aggfunc=len)
-pivot_tr = pivot_tr.fillna(0)
-pivot_tr['wonkiness_tr'] = (pivot_tr['wonk']) / (pivot_tr['good'] + pivot_tr['wonk'])
+# Calculate the "wonkiness" score then merge for filtering
+pivot_st['wonkiness_st'] = pivot_st['missing'] / (pivot_st['valid'] + pivot_st['missing'])
+pivot_tr['wonkiness_tr'] = pivot_tr['missing'] / (pivot_tr['valid'] + pivot_tr['missing'])
+wonk_table = pd.merge(pivot_st[['valid', 'missing', 'wonkiness_st']],
+                      pivot_tr[['valid', 'missing', 'wonkiness_tr']],
+                      on='city', suffixes=('_st', '_tr'))
+wonk_table['total_stations'] = wonk_table['valid_st'] + wonk_table['missing_st']
+wonk_table['total_tracks'] = wonk_table['valid_tr'] + wonk_table['missing_tr']
+wonk_table['avg_wonkiness'] = (wonk_table['wonkiness_st'] + wonk_table['wonkiness_tr']) / 2 
 
-wonk_table = pd.merge(pivot_st,pivot_tr,on='city')
-wonk_table['wonk_score'] = (wonk_table['wonkiness_st'] + wonk_table['wonkiness_tr']) / (wonk_table['good_x'] + wonk_table['good_y'] + wonk_table['wonk_x'] + wonk_table['wonk_y'])
-wonk_table = wonk_table[(wonk_table.wonk_score < wonk_table.wonk_score.median())
-                            & ((wonk_table.good_x+wonk_table.wonk_x)>=110)]
-
-wonk_table.columns.name = None              
-wonk_table = wonk_table.reset_index()   
-cities_list = wonk_table.city.tolist()
+# Define quality thresholds using quantiles
+low_wonk_threshold = wonk_table['avg_wonkiness'].quantile(0.5)
+selection_items = []
+for index, row in wonk_table.iterrows():
+    if row['avg_wonkiness'] <= low_wonk_threshold:
+        label = index
+        selection_items.append({'label': label, 'value': index})
 
 # ---------------------------------
 # Helper function for placeholder graphs
@@ -227,19 +255,23 @@ def map_it(city, year):
     for _, station in my_stations.iterrows():
         markers.append(dl.CircleMarker(
             center=[station.latitude, station.longitude],
-            radius=2,
+            radius=3,
             fillColor='white',
             fillOpacity=0.8,
             color=station.line_color,
             stroke=True,
             weight=0.5,
-            pane='markerPane',  
+            pane='markerPane',
         ))
 
     for _, track in my_tracks.iterrows():
         lines.append(dl.Polyline(
             positions=track.linestring_latlon,
-            color=track.line_color
+            color=track.line_color,
+            weight=2,
+            children=[
+                dl.Tooltip(f"{track.line_name} (Opened {track.opening:g})")
+            ]
         ))
 
     if not my_stations.empty:
@@ -253,59 +285,88 @@ def map_it(city, year):
 # Plot it function
 @app.callback(Output('plot','figure'),[Input('dropdown','value'),Input('slider','value')])
 def plot_it(city,year):
-    
+
     if not city or not year:
         return create_placeholder_figure("Select a city and year to see the plot.")
-    
+
     city_all_stations = stations[stations.city == city]
     if city_all_stations.empty:
       return create_placeholder_figure(f"No data found for {city}.")
-      
     x_min = city_all_stations['longitude'].min()
     x_max = city_all_stations['longitude'].max()
     y_min = city_all_stations['latitude'].min()
     y_max = city_all_stations['latitude'].max()
 
-    # Filter by year for plotting
-    _, my_tracks = get_filtered_data(city, year)
-    if my_tracks.empty:
-      return create_placeholder_figure(f"No tracks found for {city} in {year}.")
+    # --- Get track data for current and previous year ---
+    _, my_tracks_current = get_filtered_data(city, year)
+    _, my_tracks_previous = get_filtered_data(city, year - 1)
 
-    plot_df = my_tracks[['section_id', 'linestring_lonlat']].explode('linestring_lonlat')
-    plot_df[['x', 'y']] = pd.DataFrame(plot_df['linestring_lonlat'].tolist(), index=plot_df.index)
-    plot_df = plot_df.rename(columns={'section_id': 'group'})
-  
-    fig = px.line(plot_df, 
-                  x="x", 
-                  y="y", 
-                  line_group="group",  
-                  template="plotly_dark")
-    
-    fig.update_traces(line=dict(color='white', width=2))
+    if my_tracks_current.empty:
+        fig = create_placeholder_figure(f"No tracks found for {city} in {year}.")
+    else:
+        # --- Identify new section IDs ---
+        current_section_ids = set(my_tracks_current['section_id'])
+        previous_section_ids = set(my_tracks_previous['section_id'])
+        new_section_ids = current_section_ids - previous_section_ids
+
+        # --- Prepare plotting DataFrame ---
+        plot_df = my_tracks_current[['section_id', 'linestring_lonlat']].explode('linestring_lonlat')
+        plot_df[['x', 'y']] = pd.DataFrame(plot_df['linestring_lonlat'].tolist(), index=plot_df.index)
+        plot_df = plot_df.rename(columns={'section_id': 'group'})
+        plot_df['color'] = plot_df['group'].apply(lambda section_id: 'yellow' if section_id in new_section_ids else 'white') # Mark new sections
+
+        # --- Create plot using color mapping ---
+        fig = px.line(plot_df,
+                      x="x",
+                      y="y",
+                      line_group="group",
+                      color='color', 
+                      color_discrete_map={ 
+                          'white': 'white',
+                          'yellow': 'yellow'
+                      },
+                      template="plotly_dark")
+
+        fig.update_traces(line=dict(width=2))
+
     fig.update_yaxes(title_text="",showgrid=False,
-                     showline=False,mirror=True,showticklabels=False,ticks='',automargin=True, zeroline=False, scaleratio=1,
+                     showline=False,mirror=True,showticklabels=False,ticks='',automargin=True, zeroline=False,
+                     scaleratio=1,
                      scaleanchor="x",
-                     range=[y_min, y_max]   
-                     )    
-     
+                     range=[y_min, y_max]
+                     )
+
     fig.update_xaxes(title_text="",showgrid=False,
                      showline=False,mirror=True,
                      showticklabels=False,ticks='',automargin=True, zeroline=False,
-                     range=[x_min, x_max]) 
+                     range=[x_min, x_max])
+
     fig.add_annotation(
-        text=f"<b>{year:g}</b>", 
+        text=f"<b>{year:g}</b>",
         xref="paper", yref="paper",
-        x=0.98, y=0.98,          
+        x=0.98, y=0.98,
         showarrow=False,
         font=dict(size=24, color="white"),
         xanchor='right',
         yanchor='top'
     )
-    fig.update_layout(showlegend=False,
-                      autosize=False,
+    # add annotation for new segments
+    fig.add_annotation(
+        text="<span style='color:yellow;'><b>New sections</b></span> opened that year",
+        xref="paper", yref="paper",
+        x=0.02, y=0.02,
+        showarrow=False,
+        font=dict(size=14, color="white"),
+        xanchor='left',
+        yanchor='top'
+    )
+
+    fig.update_layout(showlegend=False, 
+                      autosize=True,    
                       plot_bgcolor="#222222",
-                      paper_bgcolor="#222222")
-    
+                      paper_bgcolor="#222222",
+                      margin=dict(l=10, r=10, t=10, b=10, pad=4)) 
+
     return fig
   
 # Count it function
@@ -315,7 +376,7 @@ def count_it(city,year):
         return html.P("Select city and year for stats.", className="text-center text-muted")
 
     my_stations, my_tracks = get_filtered_data(city, year)
-
+    
     track_length_km = my_tracks.length.sum()/1000
     num_stations = len(my_stations)
 
@@ -324,8 +385,8 @@ def count_it(city,year):
             [
                 dbc.CardBody([
                     html.P(f"{num_stations} stations", 
-                           className="card-title"),
-                ])
+                           className="card-title mb-0"),
+                ], className="p-2")
             ],
             color="primary",
             outline=True,
@@ -334,9 +395,9 @@ def count_it(city,year):
         dbc.Card(
             [
                 dbc.CardBody([
-                    html.P(f"{track_length_km:,.0f} km track length",
-                           className="card-title"),
-                ])
+                    html.P(f"{track_length_km:,.0f} km of tracks",
+                           className="card-title mb-0"),
+                ], className="p-2")
             ],
             color="primary",
             outline=True,
@@ -356,7 +417,7 @@ def update_slider_value(n_back, n_fwd, current_year):
         return no_update
 
     min_year = 1850
-    max_year = 2040
+    max_year = 2030
     
     if current_year is None:
         current_year = 2025 
@@ -532,13 +593,9 @@ def export_kml(city, year, n_clicks):
 ######## 3. Create Dash Layout
 
 # Dropdown list
-cities_list_good = sorted(cities_list)
-selection_items = [{'label': city, 'value': city} for city in cities_list_good]
-
 slider_marks = {}
-for i in range(1850,2040,10):
+for i in range(1850,2030,10):
     slider_marks[i] =  {'label': f'{i:g}'}
-
 
 navbar = dbc.Navbar(
     dbc.Container(
@@ -635,8 +692,9 @@ controls = dbc.Card(
 stats_card = dbc.Card(
     [
         dbc.CardBody([
+            html.P("Snapshot Stats", className="text-center text-muted mb-3"),
             dbc.Row(id='count', children=[
-                dbc.Col(html.P("Select city and year for stats.", className="text-center text-muted"), md=12)
+                dbc.Col(html.P("Select city and year for stats.", className="text-center text-muted"), sm=12)
             ])
         ])
     ], className="h-100"
