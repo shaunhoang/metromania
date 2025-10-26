@@ -1,0 +1,3803 @@
+id,city_id,name,url_name,color,system_id,transport_mode_id
+43,4,Línea 2,43-linea-2,#ffbe2e,267,4
+2052,59,Line 1,2052-m1-phase-1,#ce0037,675,4
+72,4,FFCC Llano del Maipo,72-ffcc-llanos-del-maipo,#bd10e0,478,9
+73,4,FFCC Yungay-Barrancas,73-ffcc-yungay---barranas,#bd10e0,478,9
+2807,215,Monogahela Street Railway,2807-monogahela-street-railway,#000,793,9
+2070,59,Line 2,2070-m2-phase-3,#f1c400,675,4
+2844,344,Line 1,2844-line-1,#ce4b22,803,5
+2101,217,WES Commuter Rail,2101-wes-commuter-rail,#585858,202,3
+6386,108,Seletar Line,6386-seletar-line,#000,95,4
+5,1,A,a,#39b3d8,254,4
+6,1,B,b,#e84736,254,4
+7,1,C,c,#006ca8,254,4
+8,1,D,d,#007968,254,4
+1615,259,1,1615-1,#000,244,9
+2845,45,Line 1,2845-line-1,#4a90e2,804,9
+2102,217,Portland Aerial Tram,2102-portland-aerial-tram,#ffee3b,688,7
+2103,217,North South Line,2103-north-south-line,#7ed321,689,9
+2104,217,A Loop,2104-a-loop,#e0108b,689,9
+1710,110,25,1710-25,#00aaad,644,5
+1711,110,26,1711-26,#00aaad,644,5
+2105,217,B Loop,2105-b-loop,#409ec3,689,9
+3653,342,M2,3653-m2,#009943,1011,4
+2055,59,Central Line,2055-central-line,#ec2329,676,3
+2054,59,Cikarang Line,2054-cikarang-line,#26baed,676,3
+2106,108,Changi Airport Skytrain,2106-changi-airport-skytrain,#feca37,690,7
+2053,59,Loop Line,2053-loop-line,#fbb316,676,3
+2107,108,Sentosa Express,2107-sentosa-express,#f07d00,691,7
+2056,59,Rangkas Bitung Line,2056-rangkas-bitung-line,#98ca3f,676,3
+4732,206,BQX,4732-bqx,#000,1201,9
+2127,131,Atlanta Streetcar,2127-atlanta-streetcar,#003baf,124,9
+2057,59,Tangerang Line,2057-tangerang-line,#c25f28,676,3
+1779,59,TJ koridor 1,1779-tj-koridor-1,#cf1d24,51,6
+2128,245,TECO Line,2128-teco-line,#ab0015,230,9
+2058,59,Tanjung Priok Line,2058-tanjung-priok-line,#f64a8a,676,3
+219,110,14,219-red-line,#d0021b,257,4
+2143,27,8,2143-8,#4a90e2,706,5
+2144,27,9,2144-9,#bd10e0,706,5
+45,4,Línea 4,45-linea-4,#292d91,267,4
+40,4,Línea 4A,40-linea-4a,#0099ff,267,4
+46,4,Línea 5,46-linea-5,#006633,267,4
+60,4,Línea 6,60-linea-6,#8e16a1,267,4
+70,4,Metrotrén Nos,70-nos-express,#4a90e2,268,4
+223,110,12,223-nockebybanan,#385369,476,5
+227,79,M1,227-m1,#ee2e24,67,4
+10,1,H,h,#fdd500,254,4
+42,4,Línea 1 ,42-linea-1-,#cc0000,267,4
+2067,59,Line A (Phase 2) (Planned),2067-line-a-(phase-2)-(planned),#f39700,662,5
+11,1,Premetro,p,#f6b834,254,9
+158,4,Santiago / San Bernardo,158-ffcc-de-circunvalacion,#4a90e2,751,3
+2071,59,Line 1,2071-line-1,#d0021b,682,1
+4228,199,exo5 - Mascouche,4228-mascouche-line,#ca5798,1107,3
+3657,342,M3,3657-m3,#00a9e2,1011,4
+4227,199,exo3 - Mont-Saint-Hilaire,4227-mont-saint-hilaire-line,#999ac6,1107,3
+170,78,Tren interurbano México - Toluca,170-tren-interurbano-mexico---toluca,#000,272,2
+3658,342,M4,3658-m4,#e91977,1011,4
+3667,11,Γραμμή 16,3667-line-16,#f8c51c,990,9
+3659,342,M5,3659-m5,#672c65,1011,4
+3660,342,M6,3660-m6,#c9ab78,1011,4
+3661,342,M7,3661-m7,#f29fc0,1011,4
+200,4,Mapocho / Puerto,200-ffcc-santiago---valparaiso,#000,276,2
+226,79,S9,226-s9,#aa409f,269,3
+222,110,Premetro Lines,222-premetro-lines,#000,257,5
+145,110,19,145-green-line,#7ed321,257,4
+220,110,10,220-blue-line,#4a90e2,257,4
+59,4,Línea 3,59-linea-3,#925020,267,4
+501,114,Mizonokuchi Line,501-mizonokuchi-line,#5f0101,312,5
+330,114,Hanzomon Line,330-hanzomon-line,#8f76d6,100,4
+279,106,Expresso Turístico • Luz-Mogi das Cruzes (CPTM),279-expresso-turistico-•-luz-mogi-das-cruzes,#761418,275,5
+3662,342,M9,3662-m9,#ffd400,1011,4
+3664,342,T3,3664-t3,#a86528,1011,9
+2117,73,Line 9 (Metro Manila Subway),2117-line-9,#fc4c02,693,4
+2066,120,Linia M2,2066-m2,#c60c30,105,4
+2065,120,Linia M1,2065-m1,#005bbb,105,4
+1598,48,Milngavie Branch,1598-milngavie-branch,#a29539,625,3
+77,78,Línea 1,77-linea-1-metrobus-,#b12118,264,6
+3666,342,T5,3666-t5,#7d73b4,1011,5
+229,79,M3,229-m3,#fdb813,67,4
+1472,91,Sanyo Shinkansen,1472-sanyo-shinkansen,#0072ba,78,1
+1471,91,Tokaido Shinkansen,1471-tokaido-shinkansen,#0072ba,551,1
+3665,342,T4,3665-t4,#ff803e,1011,5
+3654,342,M1A,3654-m1,#ef1c24,1011,5
+3655,342,M1B,3655-m1b,#ef1c24,1011,5
+2886,362,Line 1,2886-line-1,#f50404,806,0
+1780,59,TJ koridor 2,1780-tj-koridor-2,#264598,51,6
+115,69,Northern,115-norther-line,#000,259,4
+6419,71,Azucarera,6419-azucarera,#000,1154,5
+2572,231,Sutro Railroad (Electric),2572-sutro-railroad,#f8e71c,766,9
+333,114,Asakusa Line,333-asakusa-line,#e85298,293,4
+228,79,M2,228-m2,#5d9732,67,4
+56,78,Línea A,56-linea-a,#991a91,248,4
+280,106,Expresso Turístico • Luz-Paranapiacaba (CPTM),280-expresso-turistico-•-luz-paranapiacaba,#761418,275,5
+57,78,Línea B,57-linea-b,#018c65,248,4
+48,78,Línea 2,48-linea-2,#0164a8,248,4
+52,78,Línea 6,52-linea-6,#da251c,248,4
+49,78,Línea 3,49-linea-3,#9e9a36,248,4
+50,78,Línea 4,50-linea-4,#6fb6ae,248,4
+54,78,Línea 8,54-linea-8,#00923f,248,4
+58,78,Línea 12,58-linea-12,#b89d4e,248,4
+55,78,Línea 9,55-linea-9,#4f2926,248,4
+53,78,Línea 7,53-linea-7,#e87b14,248,4
+245,79,S4,245-s4,#67ad12,269,3
+336,114,Oedo Line,336-oedo-line,#b6007a,293,4
+335,114,Shinjuku Line,335-shinjuku-line,#adee2f,293,4
+111,78,Tren Ligero,111-tren-ligero,#013f90,265,5
+165,78,Línea 7,165-linea-7-metrobus-,#000,264,6
+76,78,Tren Suburbano,76-tren-suburbano,#c21707,266,3
+82,78,Línea 6,82-linea-6-metrobus-,#e73e97,264,6
+81,78,Línea 5,81-linea-5-metrobus-,#07357b,264,6
+80,78,Línea 4,80-linea-4-metrobus-,#f9901d,264,6
+79,78,Línea 3,79-linea-3-metrobus-,#78a22f,264,6
+78,78,Línea 2,78-linea-2-metrobus-,#8c3795,264,6
+1693,91,Ajigawa-Chikko Line,1693-ajigawa-chikko-line,#5f0101,640,9
+1688,91,Chikko Line,1688-chikko-line,#5f0101,640,9
+1678,91,Fukushima-Sonezaki Line,1678-fukushima-sonezaki-line,#5f0101,640,9
+1675,91,Imabashi-Temmabashisuji Line,1675-imabashitemmabashisuji-line,#5f0101,640,9
+1679,91,Kasumicho Line,1679-kasumicho-line,#5f0101,640,9
+1692,91,Kasumicho-Tamatsukuri Line,1692-kasumicho-tamatsukuri-line,#5f0101,640,9
+1674,91,Kitahama Line,1674-kitahama-line,#5f0101,640,9
+1684,91,Kujo-Kozu Line,1684-kujo-kozu-line,#5f0101,640,9
+1670,91,Kujo-Nakanoshima Line,1670-kujonakanoshima-line,#5f0101,640,9
+1683,91,Matsushima-Ajigawa Line,1683-matsushima-ajigawa-line,#5f0101,640,9
+1694,91,Matsushima-Minamiokajima Line,1694-matsushima-minamiokajima-line,#5f0101,640,9
+117,69,Circle,117-circle-line,#ffd300,259,4
+1685,91,Namba-Kizu Line,1685-namba-kizu-line,#5f0101,640,9
+1690,91,Namboku Line,1690-namboku-line,#5f0101,640,9
+1681,91,Nishidotonbori-Tennoji Line,1681-nishidotonbori-tennoji-line,#5f0101,640,9
+1687,91,Nishinoda-Fukushima Line,1687-nishinoda-fukushima-line,#5f0101,640,9
+1686,91,Nishinoda Line,1686-nishinoda-line,#5f0101,640,9
+1696,91,Nishinoda-Sakurajima Line,1696-nishinoda-sakurajima-line,#5f0101,640,9
+1677,91,Sakaisuji Line,1677-sakaisuji-line,#5f0101,640,9
+1691,91,Sakuragawa-Nakanoshima Line,1691-sakuragawa-nakanoshima-line,#5f0101,640,9
+1672,91,Sonezaki-Temmabashisuji Line,1672-sonezakitemmabashisuji-line,#5f0101,640,9
+1676,91,Tamatsukuri Line,1676-tamatsukuri-line,#5f0101,640,9
+1673,91,Tanimachi Line,1673-tanimachi-line,#5f0101,640,9
+1697,91,Temmabashi-Zengenjicho Line,1697-temmabashi-zengenjicho-line,#5f0101,640,9
+1682,91,Tenjinbashi-Nishisuji Line,1682-tenjinbashinishisuji-line,#5f0101,640,9
+1689,91,Tozai Line,1689-tozai-line,#5f0101,640,9
+1671,91,Uehommachi Line,1671-uehommachi-line,#5f0101,640,9
+1695,91,Umeda-Zengenjicho Line,1695-umeda-zengenjicho-line,#5f0101,640,9
+1680,91,Utsubohommachi Line,1680-utsubohommachi-line,#5f0101,640,9
+9,1,E,e,#7e227f,254,4
+1712,19,S1,1712-s1,#3e7f35,280,3
+47,78,Línea 1,47-linea-1,#f54a91,248,4
+1698,1,Ruta 4,1698-ruta-4,#f3d379,416,6
+324,114,Ginza Line,324-ginza-line,#ff9500,100,4
+1478,91,Seishin-Yamate Line,1478-seishin-yamate-line,#00ae8e,546,4
+246,79,S2,246-s2,#0f9422,269,3
+247,79,S3,247-s3,#7c0e0e,269,3
+327,114,Tozai Line,327-tozai-line,#009bbf,100,4
+293,19,U4,293-u4,#ffd900,13,5
+1713,19,M1,1713-m1,#c60000,281,0
+1479,91,Kaigan Line,1479-kaigan-line,#267dce,546,4
+352,95,1,352-ligne-1,#ffcd00,83,4
+191,15,Yizhuang Line,191-yizhuang-line,#d0006f,258,4
+353,95,2,353-ligne-2,#006db8,83,4
+354,95,3,354-ligne-3,#9b993b,83,4
+355,95,3bis,355-ligne-3bis,#88d3df,83,4
+356,95,4,356-ligne-4,#ba4a9a,83,4
+1617,259,3,1617-3,#000,244,9
+248,79,MXP1,248-mxp,#770b0b,1435,3
+230,79,M4,230-m4,#4b80d1,67,5
+357,95,5,357-ligne-5,#f78e4b,83,4
+1599,48,West Coast Mainline,1599-west-coast-mainline,#ff0000,631,2
+1473,91,Eizan Main Line,1473-eizan-main-line,#008000,543,4
+300,45,East Coast Mainline,300-east-coat-mainline,#000,629,2
+359,95,7bis,359-ligne-7bis,#77c596,83,4
+362,95,10,362-ligne-10,#dfb03a,83,4
+363,95,11,363-ligne-11,#8c6539,83,4
+364,95,12,364-ligne-12,#008c59,83,4
+1474,91,Kurama Line,1474-kurama-line,#ff0000,543,4
+365,95,13,365-ligne-13,#87d2df,83,4
+366,95,14,366-ligne-14,#662c91,83,4
+281,106,Trem dos Ingleses (ABPF),281-trem-dos-ingleses-(abpf),#f8e71c,275,5
+274,106,Linha 17 • Ouro (ViaMobilidade),274-linha-17-•-ouro,#fc921c,94,4
+346,266,Ligne 1,346-ligne-1,#000000,295,5
+1792,59,Line A,1792-line-a,#f39700,662,5
+276,106,Linha 18 • Bronze (VemABC),276-linha-18-•-bronze,#945a28,94,4
+351,266,Ligne 6,351-ligne-6,#000000,295,5
+1475,91,Main Line,1475-main-line,#000080,544,7
+5726,477,341,5726-341,#f0e000,1632,8
+1781,59,TJ koridor 3,1781-tj-koridor-3,#fbc715,51,6
+1782,59,TJ koridor 4,1782-tj-koridor-4,#562a62,51,6
+322,266,Métro a,322-metro-a,#e2001a,292,4
+347,266,Ligne 2,347-ligne-2,#000000,295,5
+1783,59,TJ koridor 5,1783-tj-koridor-5,#bc581a,51,6
+1784,59,TJ koridor 6,1784-tj-koridor-6,#2ea43f,51,6
+1785,59,TJ koridor 7,1785-tj-koridor-7,#e1245a,51,6
+348,266,Ligne 3,348-ligne-3,#000000,295,5
+1786,59,TJ koridor 8,1786-tj-koridor-8,#cc2790,51,6
+1787,59,TJ koridor 9,1787-tj-koridor-9,#409592,51,6
+1788,59,TJ koridor 10,1788-tj-koridor-10,#8e181e,51,6
+367,95,T 1,367-ligne-1,#14609e,296,5
+375,95,T 7,375-t-7,#885f30,296,5
+1789,59,TJ koridor 11,1789-tj-koridor-11,#2d4ca4,51,6
+349,266,Ligne 4,349-ligne-4,#000000,295,5
+350,266,Ligne 5,350-ligne-5,#000000,295,5
+374,95,T 8,374-t-8,#8c8235,296,5
+377,95,RER B,377-rer-b,#4c90cc,297,3
+373,95,T 6,373-ligne-7,#e95c36,296,5
+381,95,H,381-h,#7b4339,298,2
+1476,91,Saito Line,1476-saito-line,#000080,544,7
+370,95,T 3b,370-ligne-3b,#009b41,296,5
+372,95,T 5,372-ligne-5,#914e8e,296,5
+1477,91,Namboku Line,1477-namboku-line,#000080,545,4
+376,95,RER A,376-rer-a,#ec1b2a,297,3
+378,95,RER C,378-rer-c,#ffdc1d,297,3
+379,95,RER D,379-rer-d,#00ab66,297,3
+323,266,Métro b,323-metro-b,#0786c9,292,4
+383,95,K,383-k,#c7b300,298,2
+384,95,L,384-l,#7584bc,298,2
+385,95,N,385-n,#00a092,298,2
+382,95,J,382-j,#cdcd00,298,2
+388,95,U,388-u,#d60058,298,2
+1790,59,TJ koridor 12,1790-tj-koridor-12,#62bb72,51,6
+387,95,R,387-r,#e4b4d1,298,2
+380,95,RER E,380-rer-e,#c67db4,297,3
+287,106,Linha B • Diadema-Berrini (Metra),287-linha-b-•-diadema-brooklin-(emtu),#1e4ea3,279,8
+1791,59,TJ koridor 13,1791-tj-koridor-13,#802b7c,51,6
+255,116,Linea 2,255-linea-2,#417505,102,0
+2547,261,Manuel Rodríguez,2547-manuel-rodriguez,#b8e986,501,6
+1600,48,East Coast Mainline,1600-east-coast-mainline,#ff00f9,631,2
+3115,114,Aizu-Kinugawa Line,3115-aizu-kinugawa-line,#4aa8e2,876,4
+325,114,Marunouchi Line,325-marunouchi-line,#f62e36,100,4
+329,114,Yurakucho Line,329-yurakucho-line,#c1a470,100,4
+1480,91,Kobe Kosoku Line,1480-kobe-kosoku-line,#0000ff,370,4
+646,114,Gotanda Line,646-gotanda-line,#5f0101,325,5
+3668,11,Ομόνοια - Ρουφ,3668-omonoia---rouf,#a36834,991,9
+2814,11,Γραμμή 5,2814-line-5,#7ed321,794,5
+2813,11,Γραμμή 4,2813-line-4,#7ed321,794,5
+2809,11,Γραμμή 3,2809-line-3,#7ed321,794,5
+1705,1,Tren Universitario,1705-tren-universitario,#4a4a4a,338,5
+334,114,Mita Line,334-mita-line,#0079c2,293,4
+241,79,S1,241-s1,#ee1414,269,3
+249,79,S8,249-s8,#ffa4e5,269,3
+261,106,Linha 1 • Azul (CMSP),261-linha-1---azul,#0455a1,94,4
+263,106,Linha 3 • Vermelha (CMSP),263-linha-3---vermelha,#ee372f,94,4
+267,106,Linha 7 • Rubi (CPTM),267-linha-7---rubi,#ca016b,94,4
+271,106,Linha 11 • Coral (CPTM),271-linha-11---coral,#f68368,94,4
+265,106,Linha 15 • Prata (CMSP),265-linha-15---prata,#c0c0c0,94,4
+1481,91,Kobe Kosoku Line,1481-kobe-kosoku-line,#ff4500,371,4
+1732,22,Circular Line,1732-circular-line,#2c4dc0,648,4
+1730,22,Harbour line,1730-line-1,#051a9e,650,3
+1733,22,Western line,1733-line-1,#f56923,650,3
+283,106,Trem de Guararema (ABPF),283-trem-de-guararema-(abpf),#f8e71c,275,5
+6420,71,Azucarera,6420-azucarera,#a3bf7f,1178,2
+163,69,Thameslink,163-thameslink,#b830ba,853,3
+6947,27,79,6947-79,#104dbc,713,8
+399,95,14ancienne,399-ancien-m-14,#000,83,4
+406,95,2 Nord,406-ancien-m-2nord,#000,83,4
+288,106,Linha C • Guarulhos-Tucuruvi (EMTU),288-linha-c-•-guarulhos-tucuruvi-(emtu),#1e4ea3,279,8
+3669,11,Γραμμή 4 (1909 - 1932),3669-line-4,#f8c51c,990,9
+282,106,Trem dos Imigrantes (ABPF),282-trem-dos-imigrantes-(abpf),#f8e71c,275,5
+244,79,S5,244-s5,#e56c27,269,3
+405,95,2 Sud,405-ancien-m-2sud,#000,83,4
+316,265,Ligne 1,316-tram-ligne-1,#007945,289,5
+317,265,Ligne 2,317-tram-ligne-2,#e52b38,289,5
+172,69,Southern,172-national-rail-(southern),#63f68b,852,2
+460,95,A,460-ancienne-ligne-a-nord-sud,#008c59,2226,4
+211,69,C2C,211-nr-(fenchurch-st),#840084,859,3
+216,69,Main Line,216-nr-(marylebone),#005e97,854,3
+319,265,Ligne 4,319-busway-ligne-4,#fdc613,326,6
+171,69,Southeastern,171-national-rail-(southeastern),#4a90e2,850,3
+318,265,Ligne 3,318-tram-ligne-3,#0079bc,289,5
+328,114,Chiyoda Line,328-chiyoda-line,#00bb85,100,4
+164,69,GWR,164-national-rail-(gwr),#003f0b,858,3
+208,69,West Midlands Trains/LNWR,208-national-rail-(euston),#054400,855,3
+214,69,West Anglia Main Line,214-nr-(liverpool-st),#964f4c,857,3
+289,106,Linha D • Itapevi-Butantã (EMTU),289-linha-d-•-itapevi-butanta,#1e4ea3,279,8
+206,69,Freight Rail,206-national-rail-(freight-other),#000000,261,2
+1482,91,Sanyo Electric Railway Main Line,1482-sanyo-electric-railway-main-line,#eb3543,548,4
+391,95,T 11,391-t-11,#df5f3d,296,5
+392,95,T 12,392-t-12,#a02a3a,296,5
+393,95,T 13,393-t-13,#885f30,296,5
+386,95,P,386-p,#f0b600,298,2
+2548,261,Pedro Aguirre Cerda,2548-pedro-aguirre-cerda,#b8e986,501,6
+398,95,M 18,398-m-18,#95bf32,300,4
+1706,260,MTM - MetroTranvía ,1706-mtm---metrotranvia,#d0021b,245,9
+1483,91,Aboshi Line,1483-aboshi-line,#eb3543,548,4
+390,95,T 10,390-t-10,#8c8235,296,5
+400,95,T Zen 1,400-t-zen-1,#c6cd01,301,6
+401,95,T Zen 2,401-t-zen-2,#c6cd01,301,6
+402,95,T Zen 3,402-t-zen-3,#c6cd01,301,6
+403,95,T Zen 4,403-t-zen-4,#c6cd01,301,6
+1618,259,4,1618-4,#4a4a4a,244,9
+1707,338,Metrobus Av. del Trabajador,1707-metrobus-av.-del-trabajador,#f5a623,642,6
+445,114,New Transit Yurikamome,445-yurikamome,#0067c0,313,7
+1708,338,Tren del Valle,1708-tren-del-valle,#4a5de2,643,5
+5727,477,342,5727-342,#f0e000,1632,8
+1731,22,Line 1,1731-line-1,#bd10e0,647,4
+161,69,Mildmay (North London),161-overground-(north-london-line),#437ec1,262,3
+457,114,Takasaki Line,457-takasaki-line,#ffa500,305,4
+451,114,Rinkai Line,451-rinkai-line,#00389e,316,4
+1716,259,Carruajes Marcelino Campanella,1716-carruajes-mendoza-y-laprida---est-central-argentino,#000,646,9
+1717,259,Alfredo de Arteaga,1717-alfredo-de-arteaga,#000,646,9
+395,95,M 15,395-m-15,#a60f31,300,4
+1718,259,Alfredo de Arteaga Est Central,1718-alfredo-de-arteaga,#000,646,9
+428,114,Odawara Line,428-odawara-line,#2288cc,309,4
+262,106,Linha 2 • Verde (CMSP),262-linha-2---vermelha,#007e5e,94,4
+266,106,Linha 4 • Amarela (ViaQuatro),266-linha-4---amarela,#ffff00,94,4
+264,106,Linha 5 • Lilás (ViaMobilidade),264-linha-5---lilas,#9b3894,94,4
+270,106,Linha 10 • Turquesa (CPTM),270-linha-10---turquesa,#049fc3,94,4
+272,106,Linha 12 • Safira (CPTM),272-linha-12---safira,#133c8d,94,4
+277,106,Linha 13 • Jade (CPTM),277-linha-13-•-jade,#00b352,94,4
+408,95,Voguéo,408-vogueo,#99d420,303,0
+453,4,Línea 7,453-linea-7,#4a4a4a,267,4
+1719,259,Alfredo de Arteaga Colegio Nacional,1719-alfredo-de-arteaga-colegio-nacional,#000,646,9
+140,69,Mildmay (West London),140-overground,#437ec1,262,3
+142,69,Bakerloo,142-bakerloo,#b36305,259,4
+209,69,Elizabeth,209-elizabeth-line,#6950a1,263,3
+146,69,Jubilee,146-jubilee-line,#a0a5a9,259,4
+205,69,Metropolitan,205-metropolitan-line,#9b0056,259,4
+162,69,Piccadilly,162-piccadilly-line,#003688,259,4
+242,79,S10,242-passante,#006699,1437,3
+240,79,R31,240-milano-mortara,#0361ab,1434,3
+143,69,Victoria,143-victoria,#0098d4,259,4
+160,69,DLR,160-dlr,#00a4a7,263,5
+203,69,Tramlink,203-tramlink,#84b817,263,9
+167,69,IFS Cloud Cable Car,167-emirates-airline,#e21836,263,7
+429,114,Tama Line,429-tama-line,#2288cc,309,4
+1720,259,Tramway Anglo-Argentino,1720-tramway-anglo-argentino,#000,646,9
+441,114,Meguro Line,441-meguro-line,#009cd2,312,4
+1721,259,Tramway Rosarino del Norte,1721-tramway-rosarino-del-norte,#000,646,9
+456,114,Tohoku Main Line,456-tohoku-main-line,#3cb371,305,3
+1722,259,Tramway del Saladillo,1722-tramway-del-saladillo,#000,646,9
+1723,259,Tramway del Oeste,1723-tramway-del-oeste,#000,646,9
+1601,48,Whifflet Branch,1601-whifflet-branch,#ff8600,625,3
+1734,340,METRO 1 (PCMC-SWARGATE),1734-metro-1,#d0021b,652,3
+437,114,Nikkō Line,437-nikko-line,#ffa500,311,4
+417,114,Yamanote Line,417-yamanote-line,#73c11d,305,4
+438,114,Tojo Line,438-tojo-line,#004098,311,4
+436,114,Isesaki Line,436-isesaki-line,#ff0000,311,4
+430,114,Ikebukuro Line,430-ikebukuro-line,#ef810f,310,4
+432,114,Kokubunji Line,432-kokubunji-line,#00cc66,310,4
+431,114,Shinjuku Line,431-seibu-shinjuku-line,#00a6bf,310,4
+433,114,Tamagawa Line,433-tamagawa-line,#ef810f,310,4
+434,114,Tamako Line,434-tamako-line,#fdbc00,310,4
+425,114,Inokashira Line,425-inokashira-line,#000088,307,4
+1485,91,Rokko Island Line,1485-rokko-island-line,#07502b,549,7
+404,95,T Zen 5,404-t-zen-5,#c6cd01,301,6
+466,95,CDGVal 2,466-cdgval-2,#0a3071,299,7
+394,95,Orlyval,394-orlyval,#7d7e7e,299,7
+465,95,CDGVal 1,465-cdgval-1,#0a3071,299,7
+1484,91,Port Island Line,1484-port-island-line,#07502b,549,7
+424,114,Keio Line,424-keio-line,#dd0077,307,4
+426,114,Keisei Main Line,426-keisei-main-line,#005aaa,308,4
+423,114,Keikyu Main Line,423-keikyu-main-line,#33c2e4,306,4
+435,114,Skytree Line,435-tobu-skytree-line,#0f6cc3,311,4
+439,114,Den-en-toshi Line,439-den-en-toshi-line,#20a288,312,4
+440,114,Ikegami Line,440-ikegami-line,#ee86a7,312,4
+442,114,Oimachi Line,442-oimachi-line,#f18c43,312,4
+444,114,Toyoko Line,444-toyoko-line,#da0442,312,4
+443,114,Tamagawa Line,443-tokyu-tamagawa-line,#ae0378,312,4
+2549,124,MERVAL (1987-2005),2549-merval-(1987-2005),#d0021b,756,3
+1486,91,Arima Line,1486-arima-line,#dd0033,550,4
+499,114,Hokuso Line  北総線,499-hokuso-line,#00bdf2,324,4
+3671,376,Line 1,3671-line-1,#357fb7,1012,4
+1736,340,PMRDA METRO (HINJAWADI -CIVIL COURTS),1736-pmrda-metro,#4a90e2,652,3
+1735,340,METRO 2 (VANAZ-RAMWADI),1735-metro-2,#bd10e0,652,3
+1619,259,5,1619-5,#000,244,9
+472,95,Le Bus Direct 1,472-le-bus-direct-1,#b20066,299,8
+473,95,Le Bus Direct 2,473-le-bus-direct-2,#7bbb58,299,8
+474,95,Le Bus Direct 3,474-le-bus-direct-3,#0098d8,299,8
+475,95,Le Bus Direct 4,475-le-bus-direct-4,#ff9b00,299,8
+419,114,Chūō-Sōbu Line  中央・総武緩行線,419-chuo-sobu-line,#ffd400,305,4
+470,67,CP,470-cp,#5f05c5,317,0
+538,114,Noda / Urban Park Line,538-urban-park-line,#00bfff,311,4
+540,114,Toshima Line,540-toshima-line,#ef810f,310,4
+539,114,Yurakucho Line,539-yurakucho-line,#ef810f,310,4
+3117,386,Line 1,3117-line-1,#007aff,878,4
+500,114,Yokohama Line,500-yokohama-line,#80c342,305,4
+537,114,Yokosuka Line,537-yokosuka-line,#007ac1,305,4
+3672,375,Line 1,3672-line-1,#ca4536,1013,4
+1487,91,Sanda Line,1487-sanda-line,#dd0033,550,4
+532,114,Hachiko Line  八高線,532-hachiko-line,#a8a39d,305,4
+3673,375,Line 2,3673-line-2,#3b6daf,1013,4
+2374,114,Hokuriku Shinkansen  北陸新幹線,2374-hokuriku-shinkansen,#3c61ba,305,1
+3674,375,Line 3,3674-line-3,#eb5997,1013,4
+479,114,Joban Line  常磐線,479-joban-line,#0032b2,305,4
+416,114,Tokyo Sakura Tram,416-toden-arakawa-line,#d45f81,325,5
+536,114,Joetsu Shinkansen  上越新幹線,536-joetsu-shinkansen,#f2a294,305,1
+418,114,Keihin-Tohoku Line  京浜東北線,418-keihin-tohoku-line,#00b2e5,305,4
+3670,11,Γραμμή 4 (1935 - 1959),3670-line-4-(1),#f8c51c,990,9
+3675,375,Line 4,3675-line-4,#f8ce49,1013,4
+4725,206,Astoria,4725-astoria,#c4465c,490,4
+3676,375,Line 6,3676-line-6,#3e8ea1,1013,4
+3677,373,Line 1,3677-line-1,#9b64c2,1014,4
+478,114,Akabane Line  埼京線,478-akabane-line,#2e8b57,305,4
+1603,91,Arashiyama Line,1603-arashiyama-line,#a83939,632,5
+3678,373,Line 2,3678-line-2,#f9dd4a,1014,4
+420,114,Saikyo Line,420-saikyo-line,#46a573,305,4
+4229,252,MARC Brunswick Line,4229-brunswick-line,#e66e19,1106,3
+533,114,Kawagoe Line  川越線,533-kawagoe-line,#00b48d,305,4
+1488,91,Koen-Toshi Line,1488-koen-toshi-line,#dd0033,550,4
+1489,91,Ao Line,1489-ao-line,#dd0033,550,4
+3679,373,Line 3,3679-line-3,#1c4b83,1014,4
+476,95,Navette,476-navette,#000,83,4
+4361,189,92 Glenoaks,4361-92-glenoaks,#f5a623,1113,8
+3680,370,Line 1,3680-line-1,#921c13,1015,4
+4362,189,236 N. Sepulveda,4362-236-n--sepulveda,#f5a623,1113,8
+3681,370,Line 2,3681-line-2,#387f22,1015,4
+493,114,Nambu Line,493-nambu-line,#ffd400,305,4
+535,114,Tohoku Shinkansen,535-tohoku-shinkansen,#008000,305,1
+477,48,Outer Circle,477-glasgow-subway,#ff6600,40,5
+531,114,Keio New Line,531-keio-new-line,#dd0077,307,4
+498,114,Kanamachi Line,498-kanamachi-line,#005aaa,308,4
+496,114,Oshiage Line,496-oshiage-line,#005aaa,308,4
+3682,370,Line 3,3682-line-3,#ee8b36,1015,4
+506,95,T 11 express,506-t-11-express,#e2562e,296,5
+497,114,Kameido Line,497-kameido-line,#0f6cc3,311,4
+503,114,Tengenjibashi Line,503-tengenji-line,#5f0101,325,5
+529,29,M1,529-m1,#ffdb03,22,5
+502,114,Shin-Tamagawa Line,502-shin-tamagawa-line,#02cdef,312,4
+528,29,M2,528-2,#e41f18,22,4
+530,29,M4,530-m4,#42a634,22,4
+1268,206,Q,1268-brighton-line,#fccc0a,191,4
+1318,206,E,1318-archer-avenue-line-(ind),#0039a6,191,4
+1231,206,2,1231-white-plains-road-line,#ee352e,191,4
+2129,63,Shah Alam Line,2129-bandar-utama–klang-line,#00aae4,55,5
+617,114,Enoshima Electric Railway,617-enoshima-electric-railway,#005c3f,309,5
+563,114,Toyo Rapid Railway Line,563-toyo-rapid-railway-line,#3fb036,339,4
+623,114,Minatomirai 21 Line,623-minatomirai-21-line,#09357f,351,4
+2550,124,Viña del Mar,2550-vina-del-mar,#417505,537,8
+1490,91,Wadamisaki Line,1490-wadamisaki-line,#0072bc,78,4
+3118,386,Line 2,3118-line-2,#ffbbfa,878,4
+1620,259,6,1620-6,#000,244,9
+2077,8,M54,2077-54,#fbd20f,4,4
+2097,217,MAX Red Line,2097-max-red-line,#d0021b,202,5
+2817,71,ML4,2817-ml4,#99f72e,796,5
+1738,340,METRO- 4 (CIVIL COURTS TO HADAPSAR),1738-metro-3-ext,#b8e986,653,3
+1737,340,METRO 1 EXT (NIGDI- PCMC)(SWARGATE-KATRAJ),1737-metro-1-ext,#f5a623,653,3
+1739,340,METRO 2 EXT (RAMWADI- WAGHOLI),1739-metro-2-ext,#6c2776,654,3
+2108,235,"River Street Streecar (""Dottie"")","2108-river-street-streecar-(""dottie"")",#0133a6,220,9
+2076,8,M53,2076-53,#ef4033,4,4
+2109,235,Savannah Belles Ferry,2109-savannah-belles-ferry,#417505,220,10
+543,114,Seibu-en Line,543-seibu-en-line,#00cc66,310,4
+2075,8,M52,2075-52,#00b0f0,4,4
+4209,14,"R1, R2, R2 Nord, R2 Sud, R3, R4, R12",4209-r1--r2--r2-nord--r2-sud--r3--r4--rg1,#282e8f,883,3
+2074,8,M51,2074-51,#f5801a,4,4
+2073,8,M50,2073-50,#259a45,4,4
+6452,114,Matsudo Line,6452-matsudo-line,#005aaa,308,4
+2059,59,Soekarno-Hatta Airport Line,2059-route-1,#262262,677,4
+2119,73,Guadalupe - Maybunga,2119-guadalupe---maybunga,#7ed321,696,10
+705,77,5,705-5,#000,354,5
+3963,134,Penn Line,3963-penn-line,#000,1050,3
+3964,134,Camden Line,3964-camden-line,#000,1050,3
+4412,206,MJ,4412-mj,#ff007d,191,4
+4416,11,Τραμ Περάματος,4416-τραμ-περάματος,#e59309,1120,9
+2120,73,Guadalupe - Pinagbuhatan,2120-guadalupe---pinagbuhatan,#bd10e0,696,10
+2118,73,Guadalupe - Plaza Mexico (Intramuros),2118-guadalupe---plaza-mexico-(intramuros),#4a90e2,696,10
+1491,91,Myoken Line,1491-myoken-line,#c71781,552,4
+599,106,Itapecerica-João Dias-Centro (SPTrans),599-itapecerica-joao-dias-centro-(sptrans),#dd040d,279,8
+1492,91,Nissei Line,1492-nissei-line,#c71781,552,4
+2145,354,1,2145-1,#ff1800,703,9
+2148,354,4,2148-4,#f6ac07,703,5
+2147,354,3,2147-3,#ce00ff,703,5
+2146,354,2,2146-2,#ffd000,703,5
+624,114,Sotetsu Main Line,624-sotetsu-main-line,#0c1e56,352,4
+625,114,Izumino Line,625-izumino-line,#0c1e56,352,4
+556,114,Ome Line,556-ome-line,#f15a22,305,4
+618,114,Enoshima Line,618-enoshima-line,#2288cc,309,4
+565,114,Green Line,565-green-line,#048d58,340,4
+564,114,Blue Line,564-blue-line,#005ba5,340,4
+621,114,Shonan Monorail,621-shonan-monorail,#ff0000,349,7
+600,106,Ver. José Diniz-Ibirapuera-Centro (SPTrans),600-capelinha-ibirapuera-centro-(sptrans),#dd040d,279,8
+597,106,Jd. Ângela-Guarapiranga-Santo Amaro (SPTrans),597-jd.-angela-guarapiranga-santo-amaro-(sptrans),#dd040d,279,8
+2808,206,V,2808-newark–world-trade-center,#ff6319,191,4
+1305,206,S (42nd Street Shuttle),1305-42nd-street-shuttle,#808183,191,4
+602,106,Ponte Baixa,602-leste-•-aricanduva,#dd040d,279,8
+601,106,Paes de Barros (SPTrans),601-paes-de-barros-(sptrans),#dd040d,279,8
+593,106,Pirituba-Lapa-Centro (SPTrans),593-pirituba-lapa-centro-(sptrans),#dd040d,279,8
+596,106,Santo Amaro-Nove de Julho-Centro,596-santo-amaro-nove-de-julho-centro,#dd040d,279,8
+1500,91,Kishigawa Line,1500-kishigawa-line,#dc143c,554,4
+595,106,Campo Limpo-Rebouças-Centro (SPTrans),595-campo-limpo-reboucas-centro-(sptrans),#dd040d,279,8
+603,106,Ponte Orca • Zoo (EMTU),603-ponte-orca-•-zoo-(emtu),#000,279,8
+547,114,Airport Line,547-keikyu-airport-line,#33c2e4,306,4
+594,106,Inajar-Rio Branco-Centro (SPTrans),594-inajar-rio-branco-centro-(sptrans),#dd040d,279,8
+620,114,Narita Line,620-narita-line,#00b261,305,4
+561,1,Urquiza,561-linea-urquiza,#4a4a4a,338,3
+566,114,Negishi Line,566-negishi-line,#00b2e5,305,4
+626,114,Sagami Line,626-sagami-line,#009793,305,4
+545,114,Sagamihara Line,545-sagamihara-line,#dd0077,307,4
+647,114,Roppongi Line,647-roppongi-line,#5f0101,325,5
+619,114,Kodomonokuni Line,619-kodomonokuni-line,#0068b7,312,4
+622,114,Kanazawa Seaside Line,622-kanazawa-seaside-line,#f68b1e,350,7
+1621,259,7,1621-7,#000,244,9
+662,114,Toranomon Line,662-toranomon-line,#5f0101,325,9
+1622,259,8,1622-8,#4a4a4a,244,9
+1605,72,Metrolink,1605-metrolink,#d0021b,61,9
+1624,259,10,1624-10,#4a4a4a,244,9
+659,1,Tranvía del Este,659-tranvia-del-este,#4a4a4a,338,9
+660,1,Tren de la Costa,660-tren-de-la-costa,#4a4a4a,338,5
+1623,259,9,1623-9,#000,244,9
+3050,69,Hatfield/St Albans Branch,3050-hatfield-and-st-albans,#ffbe00,860,3
+1493,91,Hokushin Line,1493-hokushin-line,#9a6e5f,553,4
+699,77,Sandringham Line,699-sandringham-line,#fc7ebb,66,4
+295,19,U6,295-u6,#bd10e0,13,5
+338,99,113,338-113,#4a90e2,353,0
+254,116,Linea 1,254-linea-1,#d01f02,102,0
+260,262,M1,260-m1,#e50a0a,273,0
+697,77,Lilydale Line,697-alamein-line,#094b8d,66,4
+691,77,Hurstbridge Line,691-south-morang-line,#e42b23,66,4
+292,19,U3,292-u3,#009378,13,5
+692,77,Frankston Line,692-werribee-line,#149943,66,4
+644,1,San Martín,644-san-martin,#4a4a4a,338,3
+687,77,Craigieburn Line,687-cragieburn-line,#ffb531,66,4
+294,19,U5,294-u5,#662e17,13,5
+639,1,Mitre,639-mitre,#4a4a4a,338,3
+645,1,Sarmiento,645-sarmiento,#4a4a4a,338,3
+643,95,Ligne Horizon,643-ligne-horizon,#0092e2,83,4
+1744,340,METRO 9 (CHANDANI CHOWK-HINJAWADI),1744-metro-9,#22dbe9,656,5
+1743,340,METRO 8 (WAGHOLI- HINJAWADI),1743-metro-8,#f5a623,656,5
+1742,340,METRO 7 (WARJE -SWARGATE),1742-metro-7,#3f66a9,656,5
+1740,340,METRO 5 (HINJAWADI-CHAKAN),1740-metro-4,#50e3c2,654,3
+1533,91,Iga Line,1533-iga-line,#703664,587,4
+629,114,Chiba Line,629-chiba-line,#005aaa,308,4
+628,114,Kurihama Line,628-kurihama-line,#33c2e4,306,4
+627,114,Zushi Line,627-zushi-line,#33c2e4,306,4
+675,114,Ushigome Line,675-ushigome-line,#5f0101,325,5
+702,77,1,702-1,#000,354,5
+667,114,Tsuchihashi Line,667-tsuchihashi-line,#5f0101,325,5
+562,114,Itsukaichi Line  五日市線,562-itsukaichi-line,#f15a22,305,4
+680,114,Shin-Ohashi Line,680-shin-ohashi-line,#5f0101,325,5
+634,114,Shinagawa Line,634-shinagawa-line,#5f0101,325,5
+652,114,Shinanomachi Line,652-shinanocho-line,#5f0101,325,5
+653,114,Shinjuku Line,653-shinjuku-line,#5f0101,325,5
+669,114,Suidobashi Line,669-suidobashi-line,#5f0101,325,5
+656,1,Belgrano Norte,656-belgrano-norte,#4a4a4a,338,3
+658,1,Roca,658-roca,#4a4a4a,338,3
+640,114,Mita Line,640-mita-line,#5f0101,325,5
+703,77,3,703-3,#000,354,5
+636,114,Meguro Line,636-meguro-line,#5f0101,325,5
+657,1,Belgrano Sur,657-belgrano-sur,#4a4a4a,338,3
+666,114,Marunouchi Line,666-marunouchi-line,#5f0101,325,5
+668,114,Muromachi Line,668-muromachi-line,#5f0101,325,5
+677,114,Ryogokubashi Line,677-ryogokubashi-line,#5f0101,325,5
+679,114,Ochanomizu Line,679-ochanomizu-line,#5f0101,325,5
+673,114,Kudan Line,673-kudan-line,#5f0101,325,5
+655,114,Kasumicho Line,655-kasumicho-line,#5f0101,325,5
+674,114,Ichigaya Line,674-ichigaya-line,#5f0101,325,5
+637,114,Isaragozaka Line,637-isaragozaka-line,#5f0101,325,5
+681,114,Izumibashi Line,681-izumibashi-line,#5f0101,325,5
+665,114,Kandabashi Line,665-kandabashi-line,#5f0101,325,5
+649,114,Horaibashi Line,649-horaibashi-line,#5f0101,325,5
+548,147,Brown Line,548-brown-line,#62361b,132,4
+638,114,Kanasugi Line,638-kanasugi-line,#5f0101,325,5
+651,114,Aoyama Line,651-aoyama-line,#5f0101,325,5
+664,114,Chiyodabashi Line,664-chiyodabashi-line,#5f0101,325,5
+672,114,Edogawa Line,672-edogawa-line,#5f0101,325,5
+642,114,Fudanotsuji Line,642-fudanotsuji-line,#5f0101,325,5
+635,114,Furukawa Line,635-yoshikawa-line,#5f0101,325,5
+654,114,Hanzomon Line,654-hanzomon-line,#5f0101,325,5
+670,114,Bancho Line,670-bancho-line,#5f0101,325,5
+663,114,Hatchobori Line,663-hatchobori-line,#5f0101,325,5
+682,114,Kachidokibashi Line,682-kachidokibashi-line,#5f0101,325,5
+648,114,Hiroo Line,648-hiroo-line,#5f0101,325,5
+641,114,Hondori Line,641-hondori-line,#5f0101,325,5
+671,114,Tsunohazu Line,671-tsunohazu-line,#5f0101,325,5
+650,114,Tameike Line,650-tameike-line,#5f0101,325,5
+661,114,Tsukiji Line,661-tsukiji-line,#5f0101,325,5
+1604,91,Kitano Line,1604-kitano-line,#406681,632,5
+3683,342,F1,3683-f1,#7b7256,1011,5
+1626,259,12,1626-12,#4a4a4a,244,9
+1495,91,Kusatsu Line,1495-kusatsu-line,#5a9934,78,4
+1602,48,via Shotts,1602-via-shotts,#0051ff,626,3
+2551,124,Chorrillos,2551-chorrillos,#417505,537,8
+1607,48,Cathcart Circle,1607-cathcart-circle,#00c1d6,625,3
+1628,259,13 Bis,1628-13-bis,#4a4a4a,244,9
+1608,48,Newton Branch,1608-newton-branch,#00f6ff,625,3
+6485,285,1,6485-1,#d0021b,1863,5
+1629,259,14,1629-14,#4a4a4a,244,9
+1496,91,Kosei Line,1496-kosei-line,#00acd1,78,4
+1323,91,Osaka Higashi Line,1323-osaka-higashi-line,#347293,78,4
+1499,91,Maizuru Line,1499-maizuru-line,#ff8e1f,78,4
+1427,91,Wakayama Line,1427-wakayama-line,#f79fba,78,4
+1494,91,Kansai Line,1494-kansai-line,#5726b7,78,4
+1497,91,Kisei Line,1497-kisei-line,#007fbf,78,4
+1630,259,15,1630-15,#4a4a4a,244,9
+1627,259,13,1627-13,#000,244,9
+298,19,U9,298-u9,#f5a623,13,5
+3119,386,Line 3,3119-line-3,#d2a900,878,4
+291,19,U2,291-u2,#ff3300,13,5
+713,77,48,713-48,#313131,354,5
+290,19,U1,290-u1,#55a822,13,5
+708,77,12,708-12,#008080,354,5
+1631,259,16,1631-16,#4a4a4a,244,9
+707,77,11,707-11,#28f2c5,354,5
+711,77,30,711-30,#6c08bc,354,5
+715,77,58,715-58,#858585,354,5
+712,77,35,712-35,#642b2b,354,5
+719,77,70,719-70,#ff97e4,354,5
+296,19,U7,296-u7,#3791bf,13,5
+721,77,75,721-75,#538bf8,354,5
+297,19,U8,297-u8,#0a3c86,13,5
+1632,259,17,1632-17,#4a4a4a,244,9
+709,77,16,709-16,#fffd64,354,5
+304,263,Mariatroster Bahn,304-mariatroster-bahn,#ff0000,285,0
+1633,259,18,1633-18,#4a4a4a,244,9
+1634,259,19,1634-19,#4a4a4a,244,9
+710,77,19,710-19,#8f4a78,354,5
+714,77,57,714-57,#33bdca,354,5
+716,77,59,716-59,#49805b,354,5
+720,77,72,720-72,#000,354,5
+718,77,67,718-67,#000,354,5
+717,77,64,717-64,#000,354,5
+704,77,3a,704-3a,#000,354,5
+308,258,A,308-a,#7ed321,287,9
+706,77,6,706-6,#000,354,5
+1536,64,Línea Verde,1536-linea-verde,#40b000,588,0
+1534,64,Línea Roja,1534-linea-roja,#ff0505,588,0
+1543,64,Línea Plateada,1543-linea-plateada,#5f5e5e,588,0
+1538,64,Línea Naranja,1538-linea-naranja,#ff8a26,588,0
+1541,64,Línea Morada,1541-linea-morada,#8031e9,588,0
+1542,64,Línea Celeste,1542-linea-celeste,#47bbf4,588,0
+1540,64,Línea Café,1540-linea-cafe,#a54e28,588,0
+1539,64,Línea Blanca,1539-linea-blanca,#000000,588,0
+1537,64,Línea Azul,1537-linea-azul,#0853fe,588,0
+1535,64,Línea Amarilla,1535-linea-amarilla,#ffe900,588,0
+345,267,3,345-3,#e57575,294,0
+256,116,Linea 3,256-linea-3,#4a90e2,102,0
+258,116,Linea 5,258-linea-5,#f8e71c,102,0
+259,116,Linea 6,259-linea-6,#8b572a,102,0
+239,103,MB,239-mb,#2097cf,91,0
+730,56,Island Line,730-island-line,#0860a8,48,4
+734,56,Tseung Kwan O Line,734-tseung-kwan-o-line,#6b208b,48,4
+732,56,Tsuen Wan Line,732-tsuen-wan-line,#ed1d24,48,4
+1547,91,Hankai Line,1547-hankai-line,#006600,589,5
+1548,91,Uemachi Line,1548-uemachi-line,#ff6600,589,5
+1544,64,Línea Dorada,1544-linea-dorada,#d5aa2f,588,0
+1748,45,Edinburgh Circular,1748-edinburgh-circular,#00539f,629,3
+581,70,3,581-3,#883f98,342,0
+1749,48,West Highland Line,1749-west-highland-line,#00539f,627,3
+1747,340,LINE 1 (LONAWALA-PUNE),1747-line-1,#333030,658,4
+1741,340,METRO 6 (SINHAGAD TO CANTONMENT),1741-metro-6,#fb9898,656,5
+1750,48,Balloch Branch,1750-balloch-branch,#f512c8,625,3
+6948,27,12,6948-12,#17871d,713,8
+1751,48,via Airdrie & Bathgate,1751-via-airdrie-&-bathgate,#029a9a,626,3
+1753,48,Neilston Branch,1753-neilston-branch,#417505,625,3
+1752,48,East Kilbride Line,1752-east-kilbride,#98ea42,625,3
+1746,340,HCMTR PCMC,1746-hcmtr-pcmc,#3230bb,657,9
+723,77,82,723-82,#000,354,5
+724,77,86,724-86,#000,354,5
+3684,342,T2,3684-t2,#91ada1,1016,9
+1754,340,HCMTR PMC,1754-hcmtr-pmc,#b897e5,657,9
+793,48,Inner Circle,793-inner-circle,#726464,40,5
+321,264,C-1 Casetas - Miraflores,321-c-1-casetas---miraflores,#ff0000,291,3
+302,45,Borders Railway,302-borders-railway,#d0021b,629,2
+726,77,109,726-109,#ea8d1f,354,5
+725,77,96,725-96,#d30977,354,5
+2089,145,LYNX Blue Line,2089-lynx-blue-line,#1b41d2,130,5
+3689,342,M10,3689-m10,#4db025,1011,4
+3685,342,F2,3685-f2,#7b7256,1016,9
+780,267,R,780-r,#000,345,0
+4363,153,J Line,4363-j-line,#ff47ee,138,5
+4733,485,Light rail,4733-light-rail,#da2127,1202,5
+3687,342,M8,3687-m8,#1e3580,1011,4
+1609,91,Kakogawa Line,1609-kakogawa-line,#00baa5,78,4
+3869,134,Metro SubwayLink Green,3869-baltimore-metro-subwaylink,#417505,127,4
+3688,342,M12,3688-m12,#cad300,1011,4
+4364,134,Metro SubwayLink Red,4364-metro-subwaylink-red,#fd0505,127,4
+3709,11,Ομόνοια - Πετράλωνα,3709-omonoia---petralona,#a36834,991,9
+3708,11,Ομόνοια - Σεπόλια,3708-omonoia---sepolia,#a36834,991,9
+3707,11,Γραμμή 8/9,3707-line-8-9,#f8c51c,990,9
+3704,11,Γραμμή 8,3704-line-8,#f8c51c,990,9
+3705,11,Γραμμή 9 (1908 - 1932),3705-line-9,#f8c51c,990,9
+3706,11,Γραμμή 9 (1953 - 1959),3706-line-9-(1),#f8c51c,990,9
+722,77,78,722-78,#000,354,5
+822,114,Sunamachi Line,822-sunamachi-line,#5f0101,325,5
+798,114,Susaki Line,798-susaki-line,#5f0101,325,5
+826,114,Narihara Line,826-narihara-line,#5f0101,325,5
+811,114,Sarue Line,811-sarue-line,#5f0101,325,5
+745,206,1,745-1,#ee352e,191,4
+4418,379,Line 4,4418-line-4,#417505,987,4
+827,114,Kuramae Line,827-kuramae-line,#5f0101,325,5
+341,252,Orange Line,341-orange-line,#f5a623,237,4
+339,252,Green Line,339-green,#419b14,237,4
+824,114,Komatsugawa Line,824-komatsugawa-line,#5f0101,325,5
+823,114,Kasaibashi Line,823-kasaibashi-line,#5f0101,325,5
+825,114,Ishihara Line,825-ishihara-line,#5f0101,325,5
+821,114,Kotobashi Line,821-kotobashi-line,#5f0101,325,5
+804,114,Takahashi Line,804-takahashi-line,#5f0101,325,5
+3710,342,F4,3710-f4,#7b7256,1011,5
+3743,368,Line 1,3743-line-1,#4d9838,1020,4
+3686,342,B1 - Marmaray,3686-marmaray,#009695,1017,3
+3744,368,Line 2,3744-line-2,#235ba6,1020,4
+878,114,Line 1  1号線,878-line-1,#2843ba,368,7
+879,114,Line 2  2号線,879-line-2,#2843ba,368,7
+897,114,Chichibu Main Line  秩父本線,897-chichibu-main-line,#4169e1,377,4
+896,114,Isumi Line  いすみ線,896-isumi-line,#ffff00,376,4
+3745,367,Line 1,3745-line-1,#d83a39,1021,4
+3746,367,Line 2,3746-line-2,#29623e,1021,4
+3754,11,Αγίου Βασιλείου - Νέο Φάληρο,3754-agiou-vasileiou---neo-faliro,#868686,989,9
+3747,366,Line 2,3747-line-2,#da3832,1022,4
+3760,11,Γραμμή 21,3760-line-21,#f8c51c,990,9
+3748,363,Line 1,3748-line-1,#d42d26,1023,4
+3759,11,Γραμμή 20,3759-line-20,#f8c51c,990,9
+3749,363,Line 2,3749-line-2,#4cade6,1023,4
+3758,11,Γραμμή 19,3758-line-19,#f8c51c,990,9
+3750,363,Line 3,3750-line-3,#b2cb40,1023,4
+3751,363,Line 4,3751-line-4,#861f7f,1023,4
+3756,11,Γραμμή 17,3756-line-17,#f8c51c,990,9
+3752,363,Line 5,3752-line-5,#f2da49,1023,4
+3757,11,Γραμμή 18 (1909 - 1937),3757-line-18,#f8c51c,990,9
+3753,363,Changsha Maglev Express,3753-changsha-maglev-express,#ea96a6,1024,4
+1586,48,Maryhill Branch,1586-maryhill-branch-line,#d0021b,625,3
+1636,110,82,1636-82,#4a90e2,636,10
+1587,48,Springburn Branch,1587-springburn-branch-line,#f5a623,625,3
+3120,386,Line 4,3120-line-4,#99d800,878,4
+2552,124,Colón,2552-colon,#417505,537,8
+1611,91,Ohmi Railway Main Line,1611-yokaichi-line,#0070c0,633,4
+3773,345,İZBAN,3773-i̇zban,#224fc4,1029,3
+1610,91,Taga Line,1610-ohmi-railway-main-line,#f01008,633,4
+2090,145,LYNX Gold Line,2090-lynx-gold-line,#f3cc03,130,9
+6949,27,29,6949-29,#ffaf22,713,8
+861,111,L1,861-l1,#ad1926,366,5
+139,69,District ,139-district-line,#00782a,259,4
+892,114,Uchibo Line,892-uchibo-line,#00b2e5,305,4
+864,111,L2,864-l2,#df1e25,366,5
+863,111,M2,863-m2,#4d9444,365,4
+3761,348,M1,3761-m1,#e9a139,1025,4
+838,114,Omiya Line,838-omiya-line,#33cc66,310,5
+899,114,Chichibu Line,899-chichibu-line,#ef810f,310,4
+853,111,T1,853-t1,#ef9343,97,3
+854,111,T2,854-t2,#008eb4,97,3
+855,111,T3,855-t3,#d34132,97,3
+858,111,T6,858-t6,#416392,97,3
+859,111,T7,859-t7,#6a7b81,97,3
+860,111,T8,860-t8,#008a4f,97,3
+2964,54,Coastal Line,2964-commuter-rail,#26b351,841,3
+862,111,M1,862-m1,#008ab6,365,4
+893,114,Sotobo Line,893-sotobo-line,#db4028,305,4
+894,114,Togane Line,894-togane-line,#f15a22,305,4
+891,114,Chihara Line,891-chihara-line,#005aaa,308,4
+6518,54,Kerava Line,6518-kerava-line,#82367a,1896,3
+6519,54,Leppävaara Line,6519-leppavaara-line,#82367a,1896,3
+6551,54,1,6551-1,#00bbe9,1929,9
+3770,230,Green Line,3770-green-line,#4ba759,215,5
+3771,230,Orange Line,3771-orange-line,#e6873b,215,5
+3772,230,Blue Line,3772-blue-line,#235bb3,215,5
+3766,9,M1,3766-line-m1,#e20000,1028,4
+3765,9,AnkaRay,3765-ankaray,#1c7b2d,1028,5
+3767,9,M2,3767-line-m2,#f0c443,1028,4
+3768,9,M4,3768-line-m4,#6a619a,1028,4
+3769,9,M3,3769-line-m3,#3885c2,1028,4
+2887,15,Yizhuang T1,2887-yizhuang-t1,#d30017,283,9
+1767,22,Line 8,1767-line-8,#ffae00,15,4
+895,114,Kominato Line,895-kominato-line,#ff8c00,375,4
+829,114,Umayabashi Line,829-umayabashi-line,#5f0101,325,5
+831,114,Ueno Line,831-ueno-line,#5f0101,325,5
+868,114,Totsuka Line,868-totsuka-line,#5f0101,325,5
+872,114,Shimura Line,872-shimura-line,#5f0101,325,5
+869,114,Sugamo Line,869-sugamo-line,#5f0101,325,5
+874,114,Suginami Line,874-suginami-line,#5f0101,325,5
+837,114,Senju Line,837-senju-line,#5f0101,325,5
+844,114,Otowa Line,844-otowa-line,#5f0101,325,5
+843,114,Otsuka Line,843-otsuka-line,#5f0101,325,5
+870,114,Kita-Senju Line,870-kita-senju-line,#5f0101,325,5
+866,114,Komagome Line,866-komagome-line,#5f0101,325,5
+833,114,Kiriodoshi Line,833-kiriodoshi-line,#5f0101,325,5
+867,114,Ikebukuro Line,867-ikebukuro-line,#5f0101,325,5
+871,114,Itabashi Line,871-itabashi-line,#5f0101,325,5
+876,114,Asukayama Line,876-asukayama-line,#5f0101,325,5
+828,114,Azumabashi Line,828-azumabashi-line,#5f0101,325,5
+830,114,Awajicho Line,830-awajicho-line,#5f0101,325,5
+834,114,Dozaka Line,834-dozaka-line,#5f0101,325,5
+865,114,Gokokuji Line,865-gokokuji-line,#5f0101,325,5
+840,114,Hakusan Line,840-hakusan-line,#5f0101,325,5
+832,114,Hongo Line,832-hongo-line,#5f0101,325,5
+842,114,Tomisaka Line,842-tomisaka-line,#5f0101,325,5
+315,51,S1,315-s1,#417505,43,3
+299,19,U55,299-u55,#662e17,13,5
+1637,206,Staten Island Ferry,1637-staten-island-ferry,#86b9f1,637,10
+306,27,1,306-1,#b92c92,20,4
+914,27,62,914-62,#f3b5ce,378,9
+920,27,97,920-97,#ab0534,378,9
+508,265,N1,508-navibus-loire,#2aaab6,328,0
+1588,48,Via Falkirk High,1588-via-falkirk-high,#00539f,626,2
+1612,91,Yokaichi Line,1612-manyo-akane-line,#00b050,633,4
+1589,48,Via Falkirk Grahamston,1589-via-falkirk-grahamston,#417505,626,3
+454,114,Tokaido Main Line,454-tokaido-main-line,#f68b1e,305,4
+305,263,Linie 1,305-linie-1,#417505,286,0
+1591,48,North Clyde Line,1591-north-clyde-line,#f8e71c,625,3
+6552,54,2,6552-2,#5fbb46,1929,9
+1592,48,Paisley Canal,1592-paisley-canal,#9013fe,628,3
+4233,409,Orange Line,4233-hebbal---jp-nagar-line,#f59d23,983,4
+582,70,4,582-4,#883f98,342,0
+3763,346,2,3763-line-2,#00d800,1026,4
+3762,346,1,3762-line-1,#008fd0,1026,4
+3777,345,T3a,3777-t3,#ff3536,1027,5
+3774,345,T2,3774-t2,#3fc133,1027,5
+3775,345,T1,3775-t1,#28a91b,1027,5
+409,95,Tuileries-Suresnes,409-tuileries-suresnes,#000,303,0
+410,95,Charenton-Auteuil,410-charenton-auteuil,#000,303,0
+411,95,Austerlitz-Auteuil,411-austerlitz-auteuil,#000,303,0
+412,95, Le Louvre-Ablon,412-le-louvre-ablon,#000,303,0
+1760,22,Trans-Harbour line,1760-line-1-thane--panvel,#f8e71c,650,3
+1758,22,Vasai Road–Roha line,1758-line-4-vasai-rd-diva,#c02a74,650,3
+207,69,Suffragette (Gospel Oak-Barking) Riverside,207-overground-(goblin),#39b97a,262,3
+414,95,STCRP,414-stcrp,#000,303,0
+612,23,A,612-a,#6f2895,16,0
+407,95,Funiculaire de Monmartre,407-funiculaire,#601e92,302,0
+613,23,B,613-b,#ff2d44,16,0
+6553,54,3,6553-3,#0087cd,1929,9
+469,67,Rossio,469-rossio,#670795,317,0
+468,67,Santa Apolónia,468-santa-apolonia,#310878,317,0
+513,265,C3,513-c3,#f9a51b,329,0
+467,67,Cais do Sodré,467-cais-do-sodre,#41026c,317,0
+480,21,Troncal A - Caracas,480-troncal-caracas-(a),#1335fe,253,0
+314,21,Troncal B - Norte,314-troncal-autopista-(b),#7ed321,253,0
+481,21,Troncal E - NQS Central,481-troncal-e---nqs-central,#b45304,253,0
+483,21,Troncal G - NQS Sur,483-troncal-g---nqs-sur,#70b5ff,253,0
+484,21,Troncal H - Caracas Sur,484-troncal-h---caracas-sur,#f5a623,253,0
+485,21,Troncal J - Eje Ambiental,485-troncal-j---eje-ambiental,#f3a1dc,253,0
+486,21,Troncal K - Calle 26,486-troncal-k---calle-26,#ad8e6e,253,0
+487,21,Troncal L - Carrera 10,487-troncal-l---carrera-10,#238981,253,0
+488,21,Troncal M - Carrera 7,488-troncal-m---carrera-7,#8e008a,253,0
+514,265,C4,514-c4,#71bf44,329,0
+491,21,Troncal F - Américas ,491-troncal-f---americas,#d0021b,253,0
+515,265,C5,515-c5,#8dd7f7,329,0
+525,89,Green,525-green,#64be00,76,0
+521,21,Tren Turístico (Del Norte),521-tren-turistico,#4a90e2,332,0
+516,265,C6,516-c6,#b09ac9,329,0
+507,265,Passeur Erdre,507-passeur-erdre,#264494,328,0
+509,265,Passeur de Loire,509-passeur-de-loire,#264494,328,0
+511,265,C1,511-c1,#15c0f2,329,0
+512,265,C2,512-c2,#f47b21,329,0
+517,265,C7,517-c7,#bed630,329,0
+518,265,C9,518-c9,#f193bd,329,0
+310,258,L1,310-l1,#d0021b,243,4
+450,126,Línea 1,450-linea-1,#4a90e2,315,6
+448,126,Línea 2,448-linea-2,#417505,249,5
+449,126,Línea 3,449-linea-3,#ee5bd2,249,4
+343,252,Yellow Line,343-yellow-line,#f8e71c,237,4
+342,252,Silver Line,342-silver-line,#9f9f9f,237,4
+519,265,Doulon - Gare Maritime,519-doulon---gare-maritime,#000,327,0
+520,265,Nord Sud,520-nord-sud,#000,327,0
+522,21,Otro,522-otro,#50e3c2,332,0
+523,21,Ciudad Bolivar,523-ciudad-bolivar,#bd10e0,331,0
+524,89,Yellow,524-yellow,#ffff00,76,0
+527,89,Other National Rail,527-other-national-rail,#280000,333,0
+526,89,East Coast Main Line,526-national-rail,#880303,333,0
+576,70,B,576-b,#007dc6,60,0
+559,268,Renfe,559-renfe,#cf0c90,337,0
+743,199,Blue,743-blue,#007cc1,184,4
+510,265,N3,510-navibus-erdre,#2aaab6,328,0
+463,67,Verde,463-verde,#00a19b,58,0
+464,67,Amarela,464-amarela,#f7a800,58,0
+462,67,Vermelha,462-vermelha,#ea1d76,58,0
+461,67,Azul,461-azul,#3e8ede,58,0
+744,199,Yellow,744-yellow,#ffd400,184,4
+2553,124,Pedro Montt,2553-pedro-montt,#417505,537,8
+1594,45,Newcraighall,1594-newcraighall,#417505,629,3
+1593,48,Argyle Line,1593-argyle-line,#bdaf0b,625,3
+1614,91,Shigaraki Line,1614-shigaraki-line,#00a779,634,4
+3780,227,Blue Line,3780-blue-line,#2a3778,212,5
+3779,227,Red Line,3779-red-line,#b5293f,212,5
+3121,386,Line 5,3121-line-5,#fb6d6d,878,4
+727,211,Line 2 - Trillium Line,727-2-trillium-line,#7ed321,196,5
+769,236,Monorail,769-seattle-center,#e010b3,359,7
+1595,48,Queen Street to Stirling,1595-queen-street-to-stirling,#8b572a,627,2
+577,70,C,577-c,#f99d1c,60,0
+558,268,Topo,558-topo,#b8e027,336,0
+578,70,D,578-d,#00ac4f,60,0
+575,70,A,575-a,#ee3897,60,0
+579,70,1,579-1,#883f98,342,0
+569,21,Ferrocarril del Norte,569-ferrocarril-del-norte,#f8e71c,332,0
+555,147,Yellow Line,555-yellow-line,#f9e300,132,4
+549,147,Red Line,549-red-line,#c60c30,132,4
+553,147,Purple Line,553-purple-line,#522398,132,4
+571,74,M2,571-m2,#e4001a,63,4
+572,74,T1,572-t1,#f18e00,341,9
+574,74,T3,574-t3,#96be0d,341,9
+554,147,Pink Line,554-pink-line,#e27ea6,132,4
+552,147,Orange Line,552-orange-line,#f9461c,132,4
+551,147,Green Line,551-green-line,#009b3a,132,4
+550,147,Blue Line,550-blue-line,#00a1de,132,4
+583,70,5,583-5,#883f98,342,0
+586,70, Rhonexpress,586-rhone-express,#e10626,342,0
+587,70,Rue Terme,587-rue-terme,#000,343,0
+588,70,Croix-Paquet,588-croix-paquet,#000,343,0
+589,70,Saint-Paul - Fourvière,589-saint-paul---fourviere,#000,343,0
+585,70,2 Fourvière,585-2,#8cc751,343,0
+584,70,1 Saint-Just,584-1,#8cc751,343,0
+590,267,1,590-1,#000,294,0
+591,267,6,591-6,#000,294,0
+592,267,STB,592-stb,#000,294,0
+614,23,C,614-c,#d757aa,16,0
+615,23,Bat³,615-bat,#00418a,348,0
+616,23,D,616-d,#006ab3,16,0
+632,99,Metro C,632-metro-c,#d0021b,87,0
+3027,14,R2 Sud,3027-r2-sud,#004c23,883,2
+2098,217,MAX Yellow Line,2098-max-yellow-line,#f6d112,202,5
+630,99,Metro A,630-metro-a,#417505,87,0
+631,99,Metro B,631-metro-b,#f8e71c,87,0
+5728,477,348,5728-348,#f0e000,1599,8
+3026,14,R3,3026-r3,#ff0000,883,2
+767,189,B Line,767-red-line,#d1322b,174,4
+768,189,D Line,768-purple-line,#9761a1,174,4
+812,231,J Church,812-j,#417505,216,5
+813,231,K Ingleside,813-k,#417505,216,5
+815,231,M Ocean View,815-m,#417505,216,5
+816,231,N Judah,816-n,#417505,216,5
+795,247,Line 3 Scarborough,795-line-3-scarborough,#0a6797,232,4
+794,247,Line 2 Bloor-Danforth,794-line-2-bloor-danforth,#2b720a,232,4
+757,70,21,757-21,#3171bb,356,0
+758,70,22,758-22,#4a90e2,356,0
+781,267,F,781-f,#000,345,0
+765,189,A Line,765-blue-line,#2e71b6,174,5
+796,247,Line 4 Sheppard,796-line-4-sheppard,#8b1962,232,4
+782,267,C,782-c,#000,345,0
+764,236,N Line,764-north-line,#9fb6d0,358,3
+763,236,S Line,763-south-line,#9fb6d0,358,3
+760,236,T Line,760-tacoma-link,#e6933a,221,9
+4366,109,Tram 5,4366-tram-5,#000,1115,9
+340,252,Blue Line ,340-blue-line,#4a90e2,237,4
+783,267,T,783-t,#000,345,0
+784,267,J,784-j,#000,345,0
+787,267,A,787-a,#000,345,0
+806,96,Mandurah Line,806-mandurah-line,#f5a623,84,0
+911,27,44,911-44,#eabc00,378,9
+1638,259,21,1638-21,#4a4a4a,244,9
+779,63,Port Klang Line,779-port-klang-line,#dc241f,360,3
+775,63,Seremban Line,775-batu-caves-tampin-line,#1964b7,360,3
+771,63,Ampang Line,771-ampang-line,#fe8e10,55,5
+770,63,Kelana Jaya Line,770-kelana-jaya-line,#e0115f,55,5
+772,63,Sri Petaling Line,772-sri-petaling-line,#721422,55,5
+778,63,KLIA Express,778-klia-express,#800080,361,4
+777,63,KLIA Transit,777-klia-transit,#139593,361,4
+913,27,55,913-55,#eabc00,378,9
+774,63,Kajang Line,774-sungai-buloh-kajang-line,#008000,55,4
+731,56,East Rail Line,731-east-rail-line,#5eb6e4,48,3
+733,56,Kwun Tong Line,733-kwun-tong-line,#1a9431,48,4
+738,56,West Rail Line,738-west-rail-line,#a40084,48,3
+737,56,Airport Express,737-airport-express,#1c7670,48,3
+741,199,Orange,741-orange,#ed7f00,184,4
+883,91,Chuo Line,883-chuo-line,#019a66,369,4
+3122,386,Line 6,3122-line-6,#007710,878,4
+820,231,Local,820-baby-bullet,#4a90e2,362,3
+887,91,Imazatosuji Line,887-imazatosuji-line,#ee7b1a,369,4
+880,91,Midosuji Line,880-midosuji-line,#e5171f,369,4
+4367,256,10,4367-10,#acd478,489,5
+852,247,Stouffville Line,852-stouffville-line,#794400,364,3
+841,114,Mukojima Line,841-mukojima-line,#5f0101,325,5
+504,114,Naka-Meguro Line,504-naka-meguro-line,#5f0101,325,5
+873,114,Akabane Line,873-akabane-line,#5f0101,325,5
+447,114,Setagaya Line,447-tokyu-setagaya-line,#fcc70d,312,4
+886,91,Nagahori Tsurumi-ryokuchi Line,886-nagahori-tsurumi-ryokuchi-line,#a9cc51,369,4
+885,91,Sakaisuji Line,885-sakaisuji-line,#814721,369,4
+884,91,Sennichimae Line,884-sennichimae-line,#e44d93,369,4
+881,91,Tanimachi Line,881-tanimachi-line,#522886,369,4
+6554,54,4,6554-4,#ed2161,1929,9
+839,114,Yukarigaoka Line,839-yukarigaoka-line,#61933c,363,7
+851,247,Richmond Hill Line,851-richmond-hill-line,#009ac7,364,3
+3781,9,Başkentray,3781-başkentray,#009695,5,3
+846,247,Lakeshore West Line,846-lakeshore-west-line,#98002e,364,3
+847,247,Lakeshore East Line,847-lakeshore-east-line,#ee3023,364,3
+766,189,E Line,766-expo-line,#f3bb44,174,5
+4523,71,4,4523-4,#808080,788,9
+849,247,Kitchener Line,849-kitchener-line,#00853f,364,3
+850,247,Barrie Line,850-barrie-line,#003768,364,3
+2092,223,Pulse BRT,2092-pulse-brt,#0342ab,208,6
+4734,147,West Lake Corridor,4734-west-lake-corridor,#e03030,1192,3
+903,27,6,903-6,#0080b2,20,4
+922,82,U2,922-u2,#bb0000,70,0
+923,82,U3,923-u3,#ee8800,70,0
+882,91,Yotsubashi Line,882-yotsubashi-line,#0078ba,369,4
+902,27,5,902-5,#ffcf06,20,4
+912,27,51,912-51,#eabc00,378,9
+907,27,19,907-19,#e5442e,378,9
+908,27,25,908-25,#8e004d,378,9
+921,82,U1,921-u1,#227700,70,0
+925,82,U5,925-u5,#bb7700,70,0
+924,82,U4,924-u4,#00ccaa,70,0
+927,82,U7,927-u7,#000,70,0
+928,82,U8,928-u8,#000,70,0
+926,82,U6,926-u6,#0000cc,70,0
+929,82,S1,929-s1,#36caec,379,0
+935,82,S8,935-s8,#2b2e34,379,0
+934,82,S7,934-s7,#8c2e22,379,0
+933,82,S6,933-s6,#00ac6f,379,0
+1597,323,1A,1597-1a,#000,630,0
+932,82,S4,932-s4,#ff2d1d,379,0
+936,82,S20,936-s20,#ffbacc,379,0
+937,82,20,937-20,#69b8e4,380,0
+938,82,17,938-17,#7d5641,380,0
+939,82,12,939-12,#813887,380,0
+940,82,16,940-16,#3964a9,380,0
+941,82,27,941-27,#e2a426,380,0
+942,82,23,942-23,#c0cd30,380,0
+848,247,Milton Line,848-milton-line,#f58025,364,3
+3784,347,T2 Müze - Zerdalilik,3784-t2,#0084fc,1031,9
+3782,347,T1A Fatih - Havalimanı ✈️,3782-t1a,#ff6600,1030,9
+3785,347,T3 Varsak - Müze,3785-t3,#d2009a,1030,9
+3783,347,T1B Fatih - EXPO,3783-t1b,#ff6600,1030,9
+1596,29,M3,1596-m3,#005ca5,22,4
+888,152,Red Line,888-red-line,#bb261a,137,5
+889,152,Blue Line,889-blue-line,#296595,137,5
+890,152,Green Line,890-green-line,#52962b,137,5
+112,14,"S3, S4, S8, S9, R5, R50, R6, R60",112-altres-fc.,#282e8f,260,3
+6555,54,6,6555-6,#00a664,1929,9
+943,82,28,943-28,#e2a426,380,0
+944,82,21,944-21,#69b8e4,380,0
+917,27,92,917-92,#e5442e,378,9
+915,27,81,915-81,#489224,378,9
+909,27,32,909-32,#ffeb00,378,9
+910,27,39,910-39,#e5442e,378,9
+918,27,93,918-93,#f49f22,378,9
+904,27,3,904-3,#c8d100,706,5
+905,27,4,905-4,#f16f91,706,5
+906,27,7,906-7,#fff06e,706,5
+1639,259,22,1639-22,#4a4a4a,244,9
+1640,259,23,1640-23,#4a4a4a,244,9
+1641,259,24,1641-24,#4a4a4a,244,9
+1642,259,25,1642-25,#4a4a4a,244,9
+1643,259,26,1643-26,#4a4a4a,244,9
+1644,259,27,1644-27,#4a4a4a,244,9
+332,114,Fukutoshin Line,332-fukutoshin-line,#cd7f32,100,4
+981,14,T3,981-t3,#159585,392,5
+817,231,T Third Street,817-t,#417505,216,5
+2093,108,Branch Line,2093-branch-line,#b85600,95,4
+2099,217,MAX Green Line,2099-max-green-line,#56a100,202,5
+995,114,Kawasaki Municipal Streetcar,995-kawasaki-municipal-streetcar,#5f0101,401,5
+976,114,Tamagawa Line (streetcar),976-tamagawa-line-(streetcar),#5f0101,339,5
+2110,108,Shuttle Tebrau,2110-shuttle-tebrau,#000,692,2
+973,114,Keishi Line,973-keishi-line,#0f6cc3,311,4
+975,114,Musashi Chuo Railway,975-musashi-chuo-railway,#dd0077,307,5
+987,102,Linha 2,987-linha-2,#7ed321,394,4
+2554,231,Muni Metro,2554-muni-metro,#000,216,4
+988,102,Linha 4,988-linha-4,#f8e71c,394,4
+961,310,T3,961-t3,#6a1872,387,6
+989,102,Praça XV–Araribóia,989-praca-xv–arariboia,#4a90e2,396,10
+2062,59,Line 3 (Planned),2062-line-3,#80cb28,678,4
+2112,73,Line 2,2112-line-2,#324a9c,62,4
+6556,54,7,6556-7,#d60f8c,1929,9
+2122,63,Sunway Line,2122-sunway-line,#1e4d2b,55,6
+2121,63,Skypark Line,2121-skypark-line,#8d5b2d,360,3
+773,63,KL Monorail Line,773-kl-monorail-line,#7dba00,55,7
+2132,108,North-South Line,2132-north-south-line,#000,692,2
+2063,59,Line 1,2063-line-1,#4a90e2,679,7
+953,275,A,953-a,#e2001a,383,5
+954,275,B,954-b,#ffaa42,383,5
+950,307,A,950-a,#bf1850,381,5
+2157,354,20,2157-20,#000,704,8
+960,310,T2,960-t2,#008a57,387,6
+2060,59,Cibubur Line,2060-line-1,#20409a,678,4
+875,147,Garfield Park Line,875-garfield-park-line,#000,132,4
+2158,354,21,2158-21,#000,704,8
+2159,354,22,2159-22,#000,704,8
+2160,354,23,2160-23,#000,704,8
+2161,354,24,2161-24,#000,704,8
+2149,354,6,2149-6,#00bdff,703,9
+2151,354,11,2151-11,#a89f3b,703,9
+2152,354,12,2152-12,#e09aa2,703,9
+2154,354,16,2154-16,#8b572a,703,9
+1778,22,Line 1,1778-line-1-wadala--jacob's-circle,#03ff0a,660,5
+2155,354,17,2155-17,#1868ca,703,9
+1003,324,T1,1003-t1,#da251d,404,5
+2153,354,15,2153-15,#9f80c0,703,9
+2150,354,9,2150-9,#7ed321,703,9
+2156,354,19,2156-19,#3be0bc,703,5
+952,114,Ina Line,952-new-shuttle,#ffff00,382,7
+955,275,C,955-c,#41a278,383,5
+985,102,Trem do Corcovado,985-trem-do-corcovado,#d0021b,90,5
+990,102,Linha 1,990-linha-1,#4a90e2,393,5
+6557,54,8,6557-8,#7961aa,1929,9
+4698,206,42nd Street,4698-42nd-street,#5c70a2,1199,4
+3794,109,Line 1,3794-line-1,#e92228,96,4
+3795,109,Line 2,3795-line-2,#1c75bb,96,4
+3796,109,Line 3,3796-line-3,#41b24b,96,4
+3797,109,Line 4,3797-line-4,#fdd304,96,4
+3798,209,Downtown Loop,3798-downtown-loop,#c33067,194,9
+3799,209,Bricktown Loop,3799-bricktown-loop,#1b4982,194,9
+3800,193,Green Line,3800-green-line,#99c355,178,4
+3801,193,Orange Line,3801-orange-line,#ea983f,178,4
+3802,193,Inner Loop,3802-inner-loop,#52b4e5,1033,7
+2111,73,Line 1,2111-line-1,#01844b,62,5
+2113,73,Line 3,2113-line-3,#ffcc00,693,5
+2930,15,Line 11,2930-line-11,#ff8674,258,4
+991,102,Linha 2,991-linha-2,#7ed321,393,5
+994,114,Kaigan Electric Railway,994-kaigan-electric-railway,#5f0101,399,5
+998,328,C,998-c,#ff9027,402,5
+996,328,A,996-a,#ff2d16,402,5
+986,102,Linha 1,986-linha-1,#fa7100,394,4
+997,328,B,997-b,#00b8f1,402,5
+999,328,D,999-d,#1ab04d,402,5
+1000,328,E,1000-e,#7a85c4,402,5
+1001,328,F,1001-f,#87c846,402,5
+974,114,Takao Line,974-takao-line,#dd0077,307,4
+992,102,Linha 3,992-linha-3,#f8e71c,393,5
+978,114,Narita Railway,978-narita-railway,#5f0101,391,5
+977,114,Shin-Okusawa Line,977-shin-okusawa-line,#ee86a7,312,4
+797,114,Tsukishima Line,797-tsukishima-line,#5f0101,325,5
+415,114,Nippori-Toneri Liner,415-nippori-toneri-liner,#ff69b4,304,5
+814,231,L Taraval,814-l,#417505,216,5
+901,27,2,901-2,#f68933,20,4
+742,199,Green,742-green,#008f36,184,4
+1650,259,50,1650-50,#9b9b9b,635,8
+1776,339,Línea 1,1776-linea-1,#f64939,661,4
+1062,255,University Line,1062-university-line,#d0021b,240,5
+3123,386,Line 7,3123-line-7,#fe7c00,878,4
+88,14,L6,88-l6,#827bc3,260,4
+735,56,Tung Chung Line,735-tung-chung-line,#fe7f1d,48,3
+1647,259,D,1647-d,#4a90e2,635,8
+1646,259,C,1646-c,#50e3c2,635,8
+1648,259,E,1648-e,#f8e71c,635,8
+1649,259,F,1649-f,#7ed321,635,8
+740,56,South Island Line,740-south-island-line,#b5bd00,48,4
+84,14,L2,84-l2,#992f9c,247,4
+1645,259,B,1645-b,#b8e986,635,8
+945,82,22,945-22,#69b8e4,380,0
+946,82,19,946-19,#c20d19,380,0
+947,82,18,947-18,#5ea343,380,0
+948,82,25,948-25,#da8f9a,380,0
+949,82,15,949-15,#da8f9a,380,0
+1059,255,River Line,1059-red-line,#fe0101,240,5
+956,293,A,956-a,#ef2f98,384,0
+957,293,C,957-c,#ef2e33,385,0
+966,280,A,966-a,#cf2a13,388,0
+967,286,A,967-a,#3376b8,389,0
+968,286,B,968-b,#479a45,389,0
+969,286,C,969-c,#c20078,389,0
+972,286,Grenoble Bastille,972-grenoble-bastille,#e5007e,390,0
+1057,255,Manitoba Line,1057-manitoba-line,#417505,240,5
+739,56,Tuen Ma Line,739-ma-on-shan-line,#9a3b26,48,4
+1058,255,Canada Line,1058-canada-line,#402be0,240,5
+132,107,Line 16,132-line-16,#2cd5c4,252,4
+993,102,Bondinho do Pão de Açúcar,993-bondinho-do-pao-de-acucar,#d0021b,90,0
+1005,324,T3,1005-t3,#000,404,0
+3792,351,10 Şehir Hastanesi - Kumlubel,3792-10,#f5ea04,1032,5
+3791,351,9 SSK - Çamlıca,3791-9,#75c6c0,1032,5
+3790,351,8 SSK - Batıkent,3790-8,#a0599b,1032,5
+3789,351,7 OGÜ - Çankaya,3789-7,#ef9b07,1032,5
+3788,351,4 Otogar - OGÜ,3788-4,#74b8e7,1032,5
+3787,351,3 OGÜ - SSK,3787-3,#e8bbcf,1032,5
+3786,351,1 Otogar - SSK,3786-1,#e02423,1032,5
+1004,324,Ouest<>Est,1004-est<>ouest,#000,404,0
+1006,104,Linha 1,1006-linha-1,#d0021b,92,0
+1007,104,Linha 2,1007-linha-2,#0f23ea,92,0
+86,14,L4,86-l4,#fab70a,247,4
+87,14,L5,87-l5,#317bc7,247,4
+1065,148,Red Line,1065-red-line,#d0021b,133,0
+1066,148,Blue Line,1066-blue-line,#4a53e2,133,0
+63,66,Línea 3,63-linea-3,#0085e0,250,0
+113,66,Línea 1 (Tramo 1B),113-linea-1-(tramo-2),#49aa43,250,0
+114,66,Línea 1 (Tramo 2),114-linea-1-(tramo-2),#49aa43,250,0
+3803,193,Omni Loop,3803-omni-loop,#235ca5,1033,7
+169,261,Línea 2,169-linea-2,#ff0000,256,0
+137,107,Line 14,137-line-14,#827a04,252,4
+128,107,Line 10,128-line-10,#c1a7e2,252,4
+1061,255,Airport Line,1061-airport-line,#8b572a,240,5
+560,268,Línea general,560-linea-general,#276cd9,336,0
+580,70,2,580-2,#883f98,342,0
+785,267,M,785-m,#000,345,0
+786,267,H,786-h,#000,345,0
+979,14,T1,979-t1,#159585,392,5
+980,14,T2,980-t2,#159585,392,5
+982,14,T4,982-t4,#159585,392,5
+197,15,Xijiao Line,197-western-tram,#d30017,283,5
+1063,255,Highway Line,1063-highway-line,#7ed321,240,5
+1060,255,Prairie Line ,1060-prairie-line,#f8e71c,240,5
+178,15,Line 7,178-line-7,#ffc56e,258,4
+184,15,Line 15,184-line-15,#653279,258,4
+185,15,Line 16,185-line-16,#6ba539,258,4
+190,15,Line S1,190-line-s1,#a45a2a,258,4
+344,252,Red Line,344-red-line,#d0021b,237,4
+983,14,T5,983-t5,#159585,392,5
+984,14,T6,984-t6,#159585,392,5
+5729,477,312,5729-312,#f0e000,1632,8
+3804,193,Brickell Loop,3804-brickell-loop,#f3bb4a,1033,7
+4368,87,Line 2,4368-line-2,#004bc9,1116,3
+4369,87,Line 11,4369-line-11,#f70000,1116,4
+3807,189,K Line,3807-k-line,#d382aa,174,5
+3124,386,Line 8,3124-line-8,#6c7597,878,4
+1015,102,Ramal Vila Inhomirim,1015-ramal-vila-inhomirim,#c4b100,395,4
+1023,108,Downtown Line,1023-downtown-line,#0354a6,407,4
+1011,102,Ramal Japeri,1011-ramal-japeri,#229fe7,395,4
+1009,102,Ramal Santa Cruz,1009-ramal-santa-cruz,#67a700,395,4
+1019,108,North South Line,1019-north-south-line,#dc241f,95,4
+1026,108,Sengkang LRT,1026-senkang-lrt,#748477,407,5
+2094,352,Tide Light Rail,2094-tide-light-rail,#0739c3,686,5
+1027,108,Bukit Panjang LRT,1027-pukit-panjang-lrt,#748477,95,5
+224,69,Eurostar/HS1,224-nr-(hs1-&-eurostar),#f4cc26,261,1
+1010,102,Ramal Deodoro,1010-ramal-deodoro,#ff0000,395,4
+3808,189,C Line,3808-c-line,#6ca448,174,5
+1012,102,Ramal Belford Roxo,1012-ramal-belford-roxo,#9013fe,395,4
+1021,108,Circle Line,1021-circle-line,#ff9a00,95,4
+1024,108,Thomson-East Coast Line,1024-thompson-east-coast-line,#734538,95,4
+1020,108,East West Line,1020-east-west-line,#009645,95,4
+1018,111,L3,1018-l3,#78103f,366,5
+5730,477,397,5730-397,#f0e000,1632,8
+1654,259,55,1654-55,#9b9b9b,635,8
+1651,259,51,1651-51,#9b9b9b,635,8
+1652,259,54,1652-54,#9b9b9b,635,8
+1653,259,54 Bis,1653-54-bis,#9b9b9b,635,8
+1655,259,56,1655-56,#9b9b9b,635,8
+1656,259,57,1656-57,#9b9b9b,635,8
+1657,259,57 Bis,1657-57-bis,#9b9b9b,635,8
+1658,259,59,1658-59,#9b9b9b,635,8
+1659,259,60,1659-60,#9b9b9b,635,8
+1768,22,Line 9,1768-line-9,#d0021b,15,4
+1660,259,61,1660-61,#9b9b9b,635,8
+1661,259,62,1661-62,#9b9b9b,635,8
+1662,259,71,1662-71,#9b9b9b,635,8
+4419,381,Line 1,4419-line-1,#b8e986,1131,9
+4420,381,Line 2,4420-line-2,#417505,1131,9
+4421,381,Line 1,4421-pingshan-skyshuttle,#004091,1132,7
+1052,79,S11,1052-s11,#9778e7,269,3
+1014,102,Ramal Guapimirim,1014-ramal-guapimirim,#fdd200,395,4
+1013,102,Ramal Saracuna,1013-ramal-saracuna,#de7d00,395,4
+1022,108,North East Line,1022-north-east-line,#9016b2,407,4
+1064,114,Misato Line,1064-j,#33c2e4,306,4
+1031,114,Nanso Railway,1031-nanso-railway,#5f0101,409,5
+4525,71,6,4525-6,#ff9d41,788,9
+959,310,T1,959-t1,#e20024,387,6
+152,118,U1,152-u1,#e3010b,251,4
+153,118,U2,153-u2,#a862a4,251,4
+1070,114,Nagareyama Line,1070-nagareyama-line,#a10000,411,4
+1046,114,Owariyabashi Line,1046-owariyabashi-line,#5f0101,410,5
+1044,114,Rokkakubashi Line,1044-rokkakubashi-line,#5f0101,410,5
+1042,114,Sugita Line,1042-sugita-line,#5f0101,410,5
+1045,114,Asamacho Line,1045-asamacho-line,#5f0101,410,5
+1033,114,Chuo-Ichiba Line,1033-chuo-ichiba-line,#5f0101,410,5
+1051,114,Chojamachi Line,1051-chojamachi-line,#5f0101,410,5
+1765,22,Line 7,1765-line-7,#d0021b,15,4
+1724,22,Line  6,1724-red-line,#fea6f7,15,4
+4370,87,Line 412,4370-line-1,#f5a623,1117,9
+4372,87,Line 421,4372-line-4,#f5a623,1117,9
+1764,22,Line 5,1764-line-5,#fe8404,15,4
+1043,114,Gunmyoji Line,1043-gunmyoji-line,#5f0101,410,5
+1040,114,Hagoromocho Line,1040-hagoromocho-line,#5f0101,410,5
+1038,114,Hanazonobashi Line,1038-hanazonobashi-line,#5f0101,410,5
+1039,114,Hinodecho Line,1039-hinodecho-line,#5f0101,410,5
+1049,114,Hiranuma Line,1049-hiranuma-line,#5f0101,410,5
+1047,114,Hodogaya Line,1047-hodogayabashi-line,#5f0101,410,5
+1037,114,Honcho Line,1037-honcho-line,#5f0101,410,5
+1035,114,Honmoku Line,1035-honmoku-line,#5f0101,410,5
+1036,114,Negishi Line,1036-negishi-line,#5f0101,410,5
+1032,114,Namamugi Line,1032-namamugi-line,#5f0101,410,5
+1048,114,Idogaya Line,1048-idogaya-line,#5f0101,410,5
+1041,114,Isogo Line,1041-isogo-line,#5f0101,410,5
+1034,114,Kanagawa Line,1034-kanagawa-line,#5f0101,410,5
+1050,114,Kuboyama Line,1050-kuboyama-line,#5f0101,410,5
+3157,386,Yangluo Line,3157-yangluo-line,#c6009e,878,0
+1663,259,72,1663-72,#9b9b9b,635,8
+358,95,6,358-ligne-6,#77c596,83,4
+542,114,Shin-Keisei Line,542-shin-keisei,#ef59a1,308,4
+303,95,7,303-ligne-7,#f49eb2,83,4
+360,95,8,360-ligne-8,#c5a3cc,83,4
+361,95,9,361-ligne-9,#cdc92b,83,4
+546,114,Tama Toshi Monorail Line,546-tama-toshi-monorail-line,#ff6633,334,7
+320,264,L1 Avenida Academia - Mago de Oz,320-l1-avenida-academia---mago-de-oz,#ff0000,290,9
+2555,231,San Francisco Line,2555-san-francisco,#000000,757,4
+2556,231,F Market and Wharves,2556-f-market-and-wharves,#bd10e0,216,9
+7013,438,T1,7013-t1,#35e239,2127,5
+3809,29,H5,3809-h5,#821066,1034,3
+455,114,Utsunomiya Line,455-utsunomiya-line,#ffa500,305,3
+4236,73,Line 4,4236-line-4,#790000,693,4
+534,114,Tokaido Shinkansen  東海道新幹線,534-tokaido-shinkansen,#0000ff,421,1
+422,114,Keiyo Line  京葉線,422-keiyo-line,#c9242f,305,4
+492,114,Musashino Line,492-musashino-line,#f15a22,305,4
+567,114,Tsurumi Line,567-tsurumi-line,#ffd400,305,4
+326,114,Hibiya Line,326-hibiya-line,#b5b5ac,100,4
+965,114,Shirahige Line,965-shirahige-line,#005aaa,308,4
+856,111,T4,856-t4,#00528a,97,3
+857,111,T5,857-t5,#b5297a,97,3
+285,106,Expresso Tiradentes (SPTrans),285-expresso-tiradentes-(sptrans),#dd040d,279,6
+568,114,Daishi Line,568-daishi-line,#33c2e4,306,4
+598,106,Parelheiros-Rio Bonito-Santo Amaro (SPTrans),598-parelheiros-rio-bonito-santo-amaro-(sptrans),#dd040d,279,8
+495,114,Tsukuba Express,495-tsukuba-express,#000084,323,4
+4526,71,7,4526-7,#ff8787,788,9
+284,106,Estrada de Ferro Perus-Pirapora (IFPPC),284-estrada-de-ferro-perus-pirapora-(ifppc),#7ed321,275,5
+3812,29,H8,3812-h8,#ed677e,1034,3
+396,95,M 16,396-m-16,#ec7cae,300,4
+397,95,M 17,397-m-17,#ec7cae,300,4
+369,95,T 3a,369-ligne-3a,#ef7d2d,296,5
+368,95,T 2,368-ligne-2,#ba498d,296,5
+389,95,T 9,389-t-9,#009cb4,296,5
+471,95,CDG Express,471-cdgexpress,#f0871f,299,7
+3811,29,H7,3811-h7,#ee7203,1034,3
+446,114,Tokyo Monorail Haneda Airport Line,446-tokyo-monorail-haneda-airport-line,#000080,314,7
+494,114,Saitama Rapid Railway Line,494-saitama-rapid-railway-line,#345caa,322,4
+835,114,Minowa Line,835-minowa-line,#5f0101,325,5
+836,114,Senzoku Line,836-senzoku-line,#5f0101,325,5
+3810,29,H6,3810-h6,#824b00,1034,3
+51,78,Línea 5,51-linea-5,#f7d417,248,4
+1002,328,G,1002-g,#0546a5,403,6
+278,106,Expresso Turístico • Luz-Jundiaí (CPTM),278-expresso-turistico-•-luz-jundiai,#761418,275,5
+286,106,Linha A • Corredor ABD (Metra),286-linha-a-•-corredor-abd,#1e4ea3,279,8
+3813,29,H9,3813-h9,#ed677e,1034,3
+3814,193,Tri-Rail,3814-tri-rail,#448093,1035,3
+3815,84,Chūō Shinkansen,3815-chūō-shinkansen,#f77321,782,1
+3816,189,G Line,3816-g-line,#e95929,1036,6
+3817,189,J Line,3817-j-line,#afb8be,1036,6
+3818,189,San Bernadino,3818-san-bernadino,#7f3613,1037,3
+3819,189,Riverside,3819-riverside,#5d3182,1037,3
+3820,189,91/Perris Valley,3820-91-perris-valley,#679fce,1037,3
+2167,356,2,2167-line-2,#33a23d,707,4
+268,106,Linha 8 • Diamante (ViaMobilidade),268-linha-8---diamante,#97a098,94,4
+3821,189,Inland Empire-Orange County,3821-inland-empire-orange-county,#cd486e,1037,3
+3158,386,Line 19,3158-line-19,#000,878,0
+3822,189,Orange County,3822-orange-county,#e38f3c,1037,3
+3823,189,Antelope Valley,3823-antelope-valley,#7db050,1037,3
+3824,189,Ventura County,3824-ventura-county,#e5b340,1037,3
+2633,358,Green Line,2633-green-line,#62a033,771,5
+2216,13,Pink Line,2216-pink-line,#eda0c2,699,7
+3827,73,Line 5 (Makati Subway),3827-line-5-(makati-subwat),#a9a9a9,693,4
+3828,230,Sprinter,3828-sprinter,#21579e,1039,3
+3829,230,Coaster,3829-coaster,#3d8b98,1039,3
+3830,173,Red Line,3830-red-line,#d3353e,158,5
+3831,173,Purple Line,3831-purple-line,#714c69,158,5
+3108,369,Line 16,3108-line-16,#f4b56a,874,4
+3109,369,Line 3,3109-line-3,#f8ce46,874,4
+6558,54,9,6558-9,#f299c1,1929,9
+1769,22,Line 10,1769-line-10,#60ab01,15,4
+2557,231,E Embarcadero,2557-e-embarcadero,#bd10e0,216,9
+1077,102,TransCarioca,1077-transcarioca,#f5a623,397,6
+1080,102,Praça XV–Charitas,1080-praca-xv–charitas,#4a90e2,396,10
+2095,217,MAX Blue Line,2095-max-blue-line,#4a83e2,202,5
+2100,217,MAX Orange Line,2100-max-orange-line,#ea9507,202,5
+1423,139,Providence/Stoughton Line,1423-providence-stoughton-line,#bd10e0,422,3
+930,82,S2,930-s2,#6cc247,379,0
+931,82,S3,931-s3,#613199,379,0
+2114,73,Line 7,2114-line-7,#dc241f,693,4
+4697,206,Broadway-Seventh Avenue,4697-broadway-seventh-avenue,#5c70a2,1199,4
+970,286,D,970-d,#de9917,389,0
+971,286,E,971-e,#533786,389,0
+2064,59,Nambo Line,2064-nambo-line,#fbb316,676,3
+1074,265,Trentemoult aval - Gare maritime,1074-trentemoult-aval---gare-maritime,#2aaab6,328,0
+2115,73,Metro North Commuter,2115-metro-north-commuter,#ff9900,694,3
+2558,231,Clay,2558-clay-street,#8b572a,762,9
+2116,73,Metro South Commuter,2116-metro-south-commuter,#ff9900,694,3
+2123,131,Blue Line,2123-blue-line,#1ba6fa,124,4
+4237,189,LAX Automated People Mover,4237-lax-automated-people-mover,#e9ad46,1110,7
+3832,173,Green Line,3832-green-line,#738a35,158,5
+2124,131,Green Line,2124-green-line,#65be00,124,4
+964,152,Orange Line,964-orange-line,#f19d39,137,5
+2125,131,Gold Line,2125-gold-line,#eec700,124,4
+2126,131,Red Line,2126-red-line,#fa132f,124,4
+2134,13,Airport Rail Link Line,2134-airport-rail-link-line,#761f21,10,3
+2135,13,Silom Line,2135-silom-line,#246b5b,698,4
+2136,13,Sukhumvit Line,2136-sukhumvit-line,#77cc00,698,4
+2137,13,Blue Line,2137-blue-line,#1964b7,699,4
+2138,13,Purple Line,2138-purple-line,#800080,699,4
+2139,106,Balsa João Basso (EMAE),2139-balsa-joao-basso,#4a90e2,700,10
+3833,152,Trinity Railway Express,3833-trinity-railway-express,#3b4972,1040,3
+2140,106,Parque do Estoril - Zoológico,2140-parque-do-estoril---zoologico,#9013fe,701,0
+2141,106,Expresso Linha 10 (CPTM),2141-expresso-linha-10-(cptm),#00748b,94,4
+2142,106,Expresso Aeroporto (CPTM),2142-expresso-aeroporto-(cptm),#00a150,94,4
+2162,354,25,2162-25,#000,704,8
+2163,354,26,2163-26,#000,704,8
+2164,354,28,2164-28,#000,704,8
+2165,13,Sathon - Ratchaphruek,2165-sathon---ratchaphruek,#ffff99,705,6
+4238,189,East San Fernando Valley LRT,4238-east-san-fernando-valley-lrt,#00dced,174,5
+916,27,82,916-82,#84c8eb,378,9
+3834,152,TEXRail,3834-texrail,#ca3832,1041,3
+3835,152,A-train,3835-a-train,#e5bf4b,1042,3
+4239,189,OC Streetcar,4239-oc-streetcar,#ff0000,1111,9
+1124,114,Gotemba Line  御殿場線,1124-gotemba-line,#447442,421,4
+2133,205,14 Tulane,2133-tulane-line,#05d586,190,9
+4373,87,Ferrovia Cumana,4373-ferrovia-cumana,#002f79,1116,3
+4374,87,Ferrovia Circumflegrea,4374-ferrovia-circumflegrea,#00a7ff,1116,3
+4375,87,M10,4375-m10,#17c906,74,5
+4376,438,M2,4376-m2,#ff0000,1118,5
+4377,438,M1,4377-m1,#ffd500,1118,5
+4422,390,Line 6,4422-line-6,#6706c2,992,4
+1072,265,N2,1072-bas-chantenay---hangar-a-bananes,#2aaab6,328,0
+1073,265,Trentemoult aval - Bas Chantenay,1073-trentemoult-aval---bas-chantenay,#2aaab6,328,0
+1665,259,73,1665-73,#9b9b9b,635,8
+1664,259,78,1664-78,#9b9b9b,635,8
+3159,386,Line 16,3159-line-16,#000,878,0
+1125,114,Ryugasaki Line,1125-ryugasaki-line,#195697,419,4
+1181,114,Odawara Electric Railway,1181-odawara-electric-railway,#5f0101,309,5
+4079,418,Line 3,4079-line-3,#377d22,1080,4
+2166,356,1,2166-line-1,#0d3692,707,4
+4699,206,Flushing,4699-flushing,#5c70a2,1199,4
+3826,73,North–South Commuter Railway,3826-north–south-commuter-railway,#ff9900,694,3
+1079,102,TransBrasil,1079-transbrasil,#f8e71c,397,6
+1081,102,Praça XV–Cocotá,1081-praca-xv–cocota,#4a90e2,396,10
+1082,102,Praça XV–Paquetá,1082-praca-xv–paqueta,#4a90e2,396,10
+1187,331,Lycée C. Monet <> Place Thiers,1187-lycee-c.-monet-<>-place-thiers,#cf171d,464,0
+1725,22,Line 2,1725-line-2,#f1e205,15,4
+1666,91,San'in Line,1666-san'in-line,#878ddc,78,4
+159,69,Windrush (East London),159-overground-(east-london-line),#ef4d5e,262,3
+1180,114,Hakone Tozan Line,1180-hakone-tozan-line,#f15a22,309,4
+1088,79,S6,1088-s6,#f8e71c,269,3
+1090,110,17,1090-t17,#7ed321,257,4
+1091,110,18,1091-t18,#7ed321,257,4
+1133,139,Green Line/A,1133-a,#008150,110,9
+1089,110,13,1089-t13,#d0021b,257,4
+1177,114,Mooka Line,1177-moka-line,#7ed321,460,4
+1117,114,Joso Line,1117-joso-line,#50e3c2,419,4
+1107,4,Metrotrén Rancagua,1107-metrotren-rancagua,#7ed321,268,3
+1114,114,Honjo Electric Railway,1114-honjo-electric-railway,#5f0101,417,5
+1138,114,Utsunomiya Line,1138-utsunomiya-line,#ffa500,311,4
+1113,1,Ruta 8,1113-ruta-8,#f3d379,416,6
+1112,1,Oeste,1112-oeste,#f3d379,416,6
+1186,331,B,1186-b,#009640,463,5
+1103,1,Norte,1103-norte,#f3d379,416,6
+1111,1,La Matanza,1111-la-matanza,#f3d379,416,6
+1120,114,Kiryu Line,1120-kiryu-line,#ff0000,311,4
+1122,114,Koizumi Line,1122-koizumi-line,#ff0000,311,4
+1121,114,Sano Line,1121-sano-line,#ff0000,311,4
+1118,114,Ogose Line,1118-ogose-line,#004098,311,4
+1109,4,Línea 8,1109-linea-8,#f45209,267,4
+1116,114,Mito Line,1116-mito-line,#3333ff,305,4
+1110,4,Línea 9,1110-linea-9,#f899a0,267,4
+1185,331,A,1185-a,#e30613,463,5
+1119,114,Ryomo Line,1119-ryomo-line,#ffd400,305,4
+1141,114,Jomo Line,1141-jomo-line,#40e0d0,425,4
+1175,114,Oarai Kashima Line,1175-oarai-kashima-line,#ff0000,459,4
+1095,114,Kujukuri Railway,1095-kujukuri-railway,#000,415,4
+1139,114,Tako Line,1139-tako-line,#000,391,4
+1128,139,Orange Line,1128-orange-line,#fd8a03,110,4
+1129,139,Blue Line,1129-blue-line,#2f5da6,110,4
+1130,139,Red Line,1130-red-line,#fa2d27,110,4
+1132,139,Hyannis,1132-hyannis,#78bc42,423,3
+1131,139,Mattapan Line,1131-mattapan-line,#fa2d27,110,5
+1140,114,Yachimata Line,1140-yachimata-line,#000,391,4
+1134,139,Green Line/B,1134-b,#008150,110,5
+1188,305,Ligne 1,1188-ligne-1,#df2e98,465,5
+1178,126,Artesanos,1178-artesanos,#f5a623,461,8
+1100,1,Juan B. Justo,1100-juan-b.-justo,#f3d379,416,6
+1104,1,del Bajo,1104-del-bajo,#f3d379,416,6
+1184,1,Varela,1184-varela,#f3d379,416,6
+1105,1,Sur,1105-sur,#f3d379,416,6
+1102,1,San Martín,1102-san-martin,#f3d379,416,6
+1183,1,Calchaquí,1183-calchaqui,#f3d379,416,6
+1101,1,9 de Julio,1101-9-de-julio,#f3d379,416,6
+1106,1,AU 25 de Mayo,1106-au-25-de-mayo,#f3d379,416,6
+1189,305,Ligne 2,1189-ligne-2,#df2e98,465,5
+1190,317,Ligne 1,1190-ligne-1,#bf0127,466,5
+1191,317,Ligne 2,1191-ligne-2,#ffd910,466,5
+1192,317,Ligne 3,1192-ligne-3,#009234,466,5
+1193,317,Tram-train,1193-tram-train,#b2c602,466,3
+1194,314,A,1194-a,#ff2d16,467,5
+1195,314,B,1195-b,#00b8f1,467,5
+1196,265,Nantes - Clisson,1196-nantes---clisson,#6e267b,468,3
+1197,265,Nantes - Châteaubriant,1197-nantes---chateaubriant,#6e267b,468,3
+1198,300,1,1198-1,#0055a0,469,5
+1199,300,2,1199-2,#ee7f01,469,5
+1200,300,3,1200-3,#cbd300,469,5
+1092,110,11,1092-t11,#4a90e2,257,4
+1201,300,4,1201-4,#582d22,469,5
+1202,300,5,1202-5,#741c3a,469,5
+3160,386,Line 11,3160-line-11,#f8e71c,878,0
+75,34,Línea 3 Metro de Caracas,75-linea-3-metro-de-caracas,#000,119,0
+1136,139,Green Line/D,1136-d,#008150,110,5
+4240,189,Arrow,4240-arrow,#3773d2,1037,3
+3177,69,Hereford East Line,3177-hereford-east-line,#964f4c,857,3
+1206,325,B,1206-b,#ffdd00,471,4
+1207,325,A,1207-a,#db001b,471,4
+1123,114,Choshi Electric Railway Line  銚子電気鉄道線,1123-choshi-electric-railway-line,#8b0000,420,4
+1142,114,Fujikyuko Line  富士急行線,1142-fujikyuko-line,#0033dd,426,4
+1115,114,Daiyuzan Line  大雄山線,1115-daiyuzan-line,#0000ff,418,4
+2168,356,3,2168-line-3,#fe5b10,707,4
+2169,356,4,2169-line-4,#32a1c8,707,4
+2170,356,5,2170-line-5,#8b50a4,707,4
+2171,356,6,2171-line-6,#c55c1d,707,4
+107,126,Línea 1,107-linea-1,#d0021b,249,5
+1126,114,Kashima Line  鹿島線,1126-kashima-line,#c56e2e,305,4
+1208,325,T1,1208-t1,#004687,472,5
+1209,325,T2,1209-t2,#0098d4,472,5
+1210,283,1,1210-1,#00aac4,474,5
+1211,283,2,1211-2,#006c78,474,5
+1212,110,27,1212-27,#bd10e0,475,5
+1213,110,28,1213-28,#bd10e0,475,5
+1214,110,29,1214-29,#bd10e0,475,5
+1215,106,Berrini-Chucri Zaidan,1215-berrini-chucri-zaidan,#dd040d,279,8
+1226,206,Harlem River,1226-harlem-river-line,#b8e986,480,3
+1236,206,Yonkers,1236-getty-square-branch,#50e3c2,483,3
+1235,206,Putnam,1235-putnam-division,#50e3c2,483,3
+1238,206,Harlem,1238-harlem-division,#50e3c2,483,3
+1237,206,Harlem (Electric),1237-main-line,#0039a6,482,3
+1239,206,New Haven,1239-new-haven-line,#ee0034,482,3
+1224,206,Mainline,1224-ny-westchester,#bd10e0,479,3
+2560,231,California Cable Car,2560-california-cable-car,#8b572a,216,9
+1222,4,FFCC Santiago-San Bernardo,1222-ffcc-santiago-san-bernardo,#bd10e0,478,9
+1256,256,7,1256-7,#fa7e2b,488,4
+1203,124,Metro,1203-metro,#005cb9,111,4
+2559,231,Sutter,2559-sutter-street,#417505,766,9
+1240,327,M1,1240-1,#ffe700,473,4
+1241,327,M2,1241-2,#e10019,473,4
+1243,327,T,1243-t,#009fe3,484,5
+1279,4,Grecia,1279-av.-grecia,#d0021b,494,6
+1221,4,FFCC Santiago-Ñuñoa,1221-ffcc-santiago-nunoa,#bd10e0,478,9
+1242,327,R,1242-r,#13a538,484,5
+1244,327,Tramway Touristique de la Vallée de la Deule,1244-tramway-touristique-de-la-vallee-de-la-deule,#000,485,5
+1245,291,T1,1245-t1,#076baf,486,5
+1246,291,T2,1246-t2,#9bbd38,486,5
+1247,291,T3,1247-t3,#dc9318,486,5
+1258,256,9,1258-9,#af7848,488,4
+1248,294,T1,1248-1,#e63733,487,5
+1249,294,T2,1249-2,#1564ad,487,5
+1250,256,1,1250-a,#efc42e,488,4
+1251,256,2,1251-2,#de3083,488,4
+1252,256,3,1252-3,#bd0d2e,488,4
+1220,4,FFCC Santiago Oeste,1220-ffcc-santiago-oeste,#bd10e0,478,9
+1254,256,5,1254-5,#508d71,488,4
+1253,256,4,1253-4,#2b4b96,489,5
+1255,256,6,1255-6,#8683bb,489,5
+1257,256,8,1257-8,#9bcce4,489,5
+1270,318,1,1270-1,#ff2e17,491,5
+1271,308,B,1271-b,#602d8e,492,5
+1272,308,A,1272-a,#ff2e17,492,5
+1274,91,Nanko Port Town Line,1274-nanko-port-town-line,#00a0de,369,7
+1276,124,Barón,1276-baron,#4a90e2,493,7
+1277,124,Artillería,1277-artilleria,#4a90e2,493,7
+1278,124,Cordillera,1278-cordillera,#4a90e2,493,7
+3161,114,Shinano Tetsudo Line,3161-shinano-tetsudo-line,#0070c0,879,4
+1310,91,Joto Line,1310-joto-line,#000,78,4
+3162,86,Line S8,3162-line-s8,#ff9800,79,0
+1337,206,North Shore,1337-north-shore-branch,#b8e986,499,4
+1345,206,Hudson,1345-hudson-line,#009b3a,482,3
+2562,231,Haight,2562-haight,#8b572a,761,9
+1329,206,West Hempstead,1329-west-hempstead-branch,#00a1de,495,3
+2561,231,Valencia,2561-market-street,#8b572a,761,9
+1286,4,Anillo Intermedio,1286-anillo-intermedio,#d0021b,494,6
+1262,206,Z,1262-jamaica-line,#996633,191,4
+1265,206,D,1265-west-end-line,#ff6319,191,4
+1267,206,M,1267-culver-line,#ff6319,191,4
+1232,206,3,1232-lenox-avenue-line,#ee352e,191,4
+1230,206,4,1230-jerome-avenue-line,#00933c,191,4
+1233,206,5,1233-dyre-avenue-line,#00933c,191,4
+1234,206,6,1234-pelham-line,#00933c,191,4
+1229,206,7,1229-flushing-line,#b933ad,191,4
+1333,206,Oyster Bay,1333-oyster-bay-branch,#00af3f,495,3
+1287,4,Camino a Rinconada,1287-camino-a-rinconada,#d0021b,494,6
+1332,206,Port Washington,1332-port-washington-branch,#c60c30,495,3
+4696,206,Lexington Avenue,4696-lexington-ave-,#5c70a2,1199,4
+4700,206,Lenox Avenue,4700-lenox-avenue,#5c70a2,1199,4
+1266,206,Culver,1266-culver-line,#c4465c,490,4
+1260,206,Myrtle Avenue,1260-myrtle-avenue-line,#c4465c,490,4
+1269,206,Fulton Street,1269-fulton-street-line,#c3bf4d,1200,4
+1264,206,5th Avenue Elevated,1264-5th-avenue-line,#c4465c,490,4
+1259,206,Lexington Avenue Elevated,1259-lexington-avenue-line,#c4465c,490,4
+1217,206,6th Avenue Elevated,1217-sixth-avenue-line,#5c70a2,1199,4
+1219,206,3rd Avenue Elevated,1219-third-avenue-line,#5c70a2,1199,4
+1227,206,2nd Avenue Elevated,1227-second-avenue-line,#5c70a2,1199,4
+1335,206,Montauk,1335-babylon-branch,#006983,495,3
+1282,4,Departamental,1282-departamental,#d0021b,494,6
+4735,147,Union Pacific Northwest,4735-union-pacific-northwest,#f8e71c,1191,3
+1331,206,Long Beach,1331-long-beach-branch,#ff6319,495,3
+1289,91,Osaka Loop Line,1289-osaka-loop-line,#e80000,78,4
+1328,206,Hempstead,1328-hempstead-branch,#ce8e00,495,3
+1291,91,Yamatoji Line,1291-yamatoji,#00a497,78,4
+1293,91,Tozai Line,1293-tozai-line,#ff1493,78,4
+4701,206,Jerome Avenue,4701-jerome-avenue,#5c70a2,1199,4
+61,66,Línea 1 (Tramo 1A),61-linea-1,#49aa43,250,0
+1295,91,Kyoto Line,1295-kyoto-line,#0072bc,78,4
+1297,91,Nara Line,1297-nara-line,#aa731c,78,4
+1298,91,Kobe Line,1298-kobe-line,#0072bc,78,4
+1283,4,Las Industrias,1283-las-industrias,#d0021b,494,6
+1285,4,Las Rejas,1285-las-rejas,#d0021b,494,6
+1284,4,Pajaritos,1284-pajaritos,#d0021b,494,6
+1288,4,Pedro Aguirre Cerda,1288-pedro-aguirre-cerda,#d0021b,494,6
+1280,4,Santa Rosa,1280-santa-rosa,#d0021b,494,6
+1281,4,Vicuña Mackenna,1281-vicuna-mackenna,#d0021b,494,6
+4726,206,Broadway,4726-broadway,#c4465c,490,4
+1292,91,Sakurajima Line,1292-yumesaki-line,#414fa3,78,4
+1304,206,Lexington Avenue Line,1304-lexington-avenue-line,#00933c,191,4
+1336,206,Mainline,1336-main-line,#4a90e2,499,4
+4727,206,West End,4727-west-end,#c4465c,490,4
+1290,91,Katamachi Line,1290-gakkentoshi-line,#ff1493,78,4
+1294,91,Hanwa Line,1294-hanwa-line,#ff8e1f,78,4
+1296,91,Fukuchiyama Line,1296-takarazuka-line,#ffba00,78,4
+1324,91,Osaka Line,1324-osaka-line,#2e89d9,374,4
+1325,91,Nara Line,1325-nara-line,#c22047,374,4
+1342,91,Minami Osaka Line,1342-minami-osaka-line,#008446,374,4
+1343,91,Domyoji Line,1343-domyoji-line,#008446,374,4
+1341,91,Kyoto Line,1341-kyoto-line,#fab202,374,4
+1344,91,Kashihara Line,1344-kashihara-line,#fab202,374,4
+1346,124,Concepción,1346-concepcion,#4a90e2,493,7
+1347,124,El Peral,1347-el-peral,#4a90e2,493,7
+1349,124,Mariposas,1349-mariposas,#4a90e2,493,7
+1348,124,Reina Victoria,1348-reina-victoria,#4a90e2,493,7
+1350,124,Florida,1350-florida,#4a90e2,493,7
+1351,124,Lecheros,1351-lecheros,#4a90e2,493,7
+1352,124,Espíritu Santo,1352-espiritu-santo,#4a90e2,493,7
+1353,124,Monjas,1353-monjas,#4a90e2,493,7
+1354,124,Villaseca,1354-villaseca,#4a90e2,493,7
+1355,124,San Agustín,1355-san-agustin,#4a90e2,493,7
+1356,124,Van Buren,1356-van-buren,#4a90e2,493,7
+1357,261,Paicaví,1357-paicavi,#b8e986,501,6
+1358,261,21 de Mayo,1358-21-de-mayo,#b8e986,501,6
+1359,261,Colón,1359-colon,#b8e986,501,6
+1360,91,Nankai Main Line,1360-nankai-main-line,#0083e3,373,4
+1361,91,Koya Line,1361-koya-line,#179422,373,4
+1362,91,Shiomibashi Line,1362-shiomibashi-line,#179422,373,4
+1363,91,Takashinohama Line,1363-takashinohama-line,#0083e3,373,4
+1364,91,Airport Line,1364-airport-line,#757575,373,4
+1435,91,Nakanoshima Line,1435-nakanoshima-line,#66cc33,372,4
+1365,91,Tanagawa Line,1365-tanagawa-line,#0083e3,373,4
+1366,91,Kada Line,1366-kada-line,#0083e3,373,4
+1367,91,Wakayamako Line,1367-wakayamako-line,#0083e3,373,4
+1368,91,Ikoma Line,1368-ikoma-line,#c22047,374,4
+1300,206,J,1300-nassau-street-line,#996633,191,4
+1309,206,L,1309-canarsie-line,#a7a9ac,191,4
+1314,206,N,1314-sea-beach-line,#fccc0a,191,4
+1313,206,A,1313-rockaway-line,#0039a6,191,4
+1315,206,B,1315-concourse-line,#ff6319,191,4
+1299,206,C,1299-8th-avenue-line,#0039a6,191,4
+1317,206,F,1317-6th-avenue-line,#ff6319,191,4
+1301,206,G,1301-crosstown-line,#6cbe45,191,4
+4728,206,SS (Culver Shuttle),4728-ss-(culver-shuttle),#808183,191,4
+1369,91,Namba Line,1369-namba-line,#c22047,374,4
+1370,91,Tenri Line,1370-tenri-line,#fab202,374,4
+1371,91,Tawaramoto Line,1371-tawaramoto-line,#fab202,374,4
+3163,86,Line S1,3163-line-s1,#00c7c7,79,0
+1410,139,Main Line,1410-main-line,#b8e986,502,3
+1135,139,Green Line/C,1135-c,#008150,110,5
+1322,206,City Subway,1322-newark-light-rail,#00a5e3,497,5
+1338,206,Broad Street,1338-newark-light-rail,#ffcf06,497,5
+1339,206,Hoboken-8th Street,1339-hudson-bergen-light-rail,#00a5e3,500,5
+1340,206,Tonelle-West Side,1340-west-side-branch,#ffcf01,500,5
+4729,206,8,4729-8,#00add0,191,4
+1420,139,Fairmount Line,1420-fairmount-line,#bd10e0,422,3
+1406,91,Nagano Line,1406-nagano-line,#008446,374,4
+1407,91,Gose Line,1407-gose-line,#008446,374,4
+1408,91,Hagoromo Line,1408-hagoromo-line,#ff6600,78,4
+3178,69,Hertford Loop,3178-hertford-loop,#ffbe00,860,3
+1372,139,Highland Branch,1372-highland-branch,#b8e986,502,3
+2998,14,R4,2998-r4,#f28120,883,3
+1417,139,Charles River Branch,1417-charles-river-branch,#50e3c2,538,3
+1411,139,Framingham/Worcester Line,1411-framingham-worcester-line,#bd10e0,422,3
+1373,139,Green Line,1373-green-line-(subway),#008150,110,4
+3030,14,R7,3030-r7,#be679e,883,2
+1409,139,Atlantic Avenue Line,1409-atlantic-avenue-line,#8b572a,535,4
+1413,139,Fitchburg Line,1413-fitchburg-line,#bd10e0,422,3
+2999,14,R8,2999-r8,#811067,883,3
+168,261,Línea 1,168-linea-1,#f58223,256,0
+1421,139,Franklin Line,1421-franklin-line,#bd10e0,422,3
+1426,91,Sakurai Line,1426-sakurai-line,#b31c31,78,4
+141,21,Troncal C - Suba,141-g30,#f3d135,253,0
+1422,139,Needham Line,1422-needham-line,#bd10e0,422,3
+1434,91,Oto Line,1434-oto-line,#66cc33,372,4
+2563,231,Washington-Jackson,2563-washington-jackson,#8b572a,762,9
+1433,91,Keihan Main Line,1433-keihan-main-line,#66cc33,372,4
+1428,91,Mizuma Line,1428-mizuma-line,#add8e6,540,4
+1429,91,Semboku Rapid Railway Line,1429-semboku-rapid-railway-line,#1e90ff,541,4
+1430,91,Keihanna Line,1430-keihanna-line,#65c03a,374,4
+1431,91,Shigi Line,1431-shigi-line,#2e89d9,374,4
+1432,91,Yoshino Line,1432-yoshino-line,#008446,374,4
+1437,91,Uji Line,1437-uji-line,#66cc33,372,4
+1436,91,Katano Line,1436-katano-line,#66cc33,372,4
+1438,91,Hankyu Kyoto Main Line,1438-hankyu-kyoto-main-line,#32cd32,370,4
+1439,91,Senri Line,1439-senri-line,#32cd32,370,4
+1440,91,Arashiyama Line,1440-arashiyama-line,#32cd32,370,4
+1441,91,Hankyu Kobe Main Line,1441-hankyu-kobe-main-line,#0000ff,370,4
+1442,91,Imazu Line,1442-imazu-line,#0000ff,370,4
+1443,91,Itami Line,1443-itami-line,#0000ff,370,4
+1444,91,Koyo Line,1444-koyo-line,#0000ff,370,4
+1445,91,Hankyu Takarazuka Main Line,1445-hankyu-takarazuka-main-line,#ffa500,370,4
+1446,91,Mino Line,1446-mino-line,#ffa500,370,4
+1447,91,Hanshin Main Line,1447-hanshin-main-line,#ff4500,371,4
+1448,91,Namba Line,1448-namba-line,#ff4500,371,4
+1449,91,Mukogawa Line,1449-mukogawa-line,#ff4500,371,4
+6559,54,10,6559-10,#feb50c,1929,9
+1424,91,Biwako Line,1424-biwa-line,#0072bc,78,4
+1451,139,Lowell Line,1451-lowell-line,#000,539,3
+1425,139,Fitchburg Line,1425-fitchburg-line,#000000,539,3
+1452,91,Karasuma Line,1452-karasuma-line,#3cb371,542,4
+1453,91,Tozai Line,1453-tozai-line,#ff4500,542,4
+1454,91,Keishin Line,1454-keishin-line,#aace24,372,5
+1455,91,Ishiyama Sakamoto Line,1455-ishiyama-sakamoto-line,#70c8e0,372,5
+1137,139,Green Line/E,1137-e,#008150,110,5
+1456,124,Larraín,1456-larrain,#4a90e2,493,7
+1457,124,Bellavista,1457-bellavista,#4a90e2,493,7
+1458,124,Panteón,1458-panteon,#4a90e2,493,7
+62,66,Línea 2 (Tramo 1A),62-linea-2,#ffbc2d,250,0
+1460,124,Esmeralda,1460-esmeralda,#4a90e2,493,7
+1459,124,Ferroviario,1459-ferroviario,#4a90e2,493,7
+1461,124,Arrayán,1461-arrayan,#4a90e2,493,7
+1462,124,La Cruz,1462-la-cruz,#4a90e2,493,7
+1463,124,Santo Domingo,1463-santo-domingo,#4a90e2,493,7
+1464,124,Placeres,1464-placeres,#4a90e2,493,7
+1465,124,Merced,1465-merced,#4a90e2,493,7
+1466,124,Ramaditas,1466-ramaditas,#4a90e2,493,7
+1467,124,Polanco,1467-polanco,#4a90e2,493,7
+1468,124,Delicias,1468-delicias,#4a90e2,493,7
+1469,124,Perdices,1469-perdices,#4a90e2,493,7
+1470,124,Las Cañas,1470-las-canas,#4a90e2,493,7
+90,14,L8,90-l8,#e659b4,260,4
+94,14,L12,94-l12,#b1b4d9,260,4
+64,66,Línea 4,64-linea-4,#ff2d2e,250,0
+65,66,Línea 5,65-linea-5,#ed90a5,250,0
+66,66,Línea 6,66-linea-6,#6b62a3,250,0
+213,21,Troncal D - Calle 80,213-troncal-80-(d),#8c57f8,253,0
+154,118,U3,154-u3,#ee7e00,251,0
+155,118,U4,155-u4,#00963e,251,0
+156,118,U6,156-u6,#9e692c,251,0
+96,71,L2,96-2,#ff1919,246,4
+97,71,L3,97-3,#f8e71c,246,4
+98,71,L4,98-4,#8b572a,246,4
+99,71,L5,99-5,#7ed321,246,4
+100,71,L6,100-6,#9b9b9b,246,4
+4702,206,Pelham,4702-pelham,#5c70a2,1199,4
+196,15,BRT 4,196-brt-4,#00bcff,283,6
+195,15,BRT 3,195-brt-3,#00bdff,283,6
+194,15,BRT 2,194-brt-2,#00bcff,283,6
+193,15,BRT 1,193-brt-1,#00bcff,283,6
+253,87,M6,253-m6,#4a90e2,74,5
+250,103,Roma-Lido,250-roma-lido,#1cf8e0,271,0
+257,116,Linea 4,257-linea-4,#4a90e2,102,0
+237,103,MC,237-mc,#376230,91,0
+251,103,Roma-Viterbo,251-roma-viterbo,#34c31c,271,0
+252,87,M1,252-m1,#efdd0c,74,4
+4378,28,M1,4378-m1,#f8e71c,21,4
+85,14,L3,85-l3,#4fbe48,247,4
+91,14,L9,91-l9,#f6842a,247,4
+92,14,L10,92-l10,#00adef,247,4
+93,14,L11,93-l11,#9ed74c,247,4
+149,107,Songjiang T2,149-songjiang-t2,#8b572a,282,5
+148,107,Songjiang T1,148-songjiang-t1,#f5a623,282,5
+147,107,Route 71 Yan'an eBRT,147-route-71-yan'an-ebrt,#b8e986,282,6
+133,107,Jinshan Line,133-jinshan-line,#666666,282,3
+136,107,Line 18,136-line-18,#d6a461,252,4
+135,107,Line 17,135-line-17,#c09c83,252,4
+138,107,Line 15,138-line-15,#bca887,252,4
+131,107,Line 13,131-line-13,#ef95cf,252,4
+130,107,Line 12,130-line-12,#007b5f,252,4
+129,107,Line 11,129-line-11,#76232f,252,4
+127,107,Line 9,127-line-9,#71c5e8,252,4
+126,107,Line 8,126-line-8,#009edb,252,4
+123,107,Line 6,123-line-5,#d71671,252,4
+125,107,Line 7,125-line-7,#ff6900,252,4
+124,107,Line 5,124-line-5,#ac4fc6,252,4
+122,107,Line 4,122-line-4,#ac4fc6,252,4
+121,107,Line 3,121-line-3,#ffd100,252,4
+120,107,Line 2,120-line-2,#97d700,252,4
+119,107,Line 1,119-line-1,#e4002b,252,4
+134,107,Maglev,134-maglev,#009090,252,1
+189,15,Line S2,189-line-s2,#006ceb,284,3
+2175,356,AREX,2175-arex,#0090d2,711,3
+2200,356,Ui LRT,2200-ui-lrt,#b0ce18,886,5
+6560,54,13,6560-13,#ffdd00,1929,9
+2176,356,Line 1,2176-line-1,#8cadcb,708,4
+2187,27,S10,2187-s10,#000,709,3
+2181,27,S4,2181-s4,#cc1a1a,709,3
+2183,27,S6,2183-s6,#8b572a,709,3
+2180,27,S3,2180-s3,#1f5189,709,3
+2178,27,S1,2178-s1,#417505,709,3
+2182,27,S5,2182-s5,#f8e71c,709,3
+2188,27,S81,2188-s81,#896bab,709,3
+2185,27,S8,2185-s8,#5691d6,709,3
+2179,27,S2,2179-s2,#d95217,709,3
+2186,27,S9,2186-s9,#7ed321,709,3
+2189,27,S20,2189-s20,#2bc7a4,709,3
+2184,27,S7,2184-s7,#5f0fa8,709,3
+2199,356,Seohae Line,2199-seohae-line,#81a914,712,3
+2203,356,Gimpo Goldline,2203-gimpo-goldline,#a17800,712,5
+2204,356,Incheon Airport Maglev,2204-incheon-airport-maglev,#ffcd12,712,7
+2205,27,38,2205-38,#a667db,713,8
+2207,354,B,2207-b,#f8e71c,714,4
+2211,354,27,2211-27,#000,704,8
+2212,354,29,2212-29,#000,704,8
+2210,354,D,2210-d,#00afff,714,4
+2209,354,C,2209-c,#ff0000,714,4
+2208,354,A,2208-a,#71be1a,714,4
+2206,354,E,2206-e,#0457b6,714,4
+173,15,Line 1,173-batong,#a4343a,258,4
+187,15,Changping Line,187-changping-line,#d986ba,258,4
+199,15,Daxing Line,199-daxing-line,#008c95,258,4
+175,15,Line 4,175-line-4,#008c95,258,4
+174,15,Line 2,174-line-2,#004b87,258,4
+176,15,Line 5,176-line-5,#aa0061,258,4
+179,15,Line 8,179-line-8,#009b77,258,4
+180,15,Line 9,180-line-9,#97d700,258,4
+181,15,Line 10,181-line-10,#0092bc,258,4
+182,15,Line 13,182-line-13,#f4da40,258,4
+183,15,Line 14,183-line-15,#ca9a8e,258,4
+198,15,Yanfang Line ,198-yanfang-line-,#d86018,258,4
+307,258,L3,307-l3,#f12b5c,243,4
+2213,13,Dark Red Line,2213-dark-red-line,#e10506,715,3
+2214,13,Light Red Line,2214-light-red-line,#fd5353,715,3
+2215,13,Orange Line,2215-orange-line,#ff6601,699,4
+2217,13,Yellow Line,2217-yellow-line,#ffcc33,699,7
+2219,356,Ilsan Line,2219-ilsan-line,#fe5b10,711,3
+606,265,Ligne 6,606-projet-ligne-5,#e37e2c,289,5
+2223,265,Ligne 7,2223-ligne-7,#13b3a7,289,5
+2224,265,Ligne 8,2224-ligne-8,#89298d,289,5
+102,71,L8,102-8,#ff02d5,246,4
+110,71,L12,110-12,#808c45,246,4
+105,71,L11,105-11,#2a5200,246,4
+605,74,Ferry boat,605-ferry-boat,#009ab9,346,10
+2225,254,Wilmington Beach Car line,2225-wilmington-beach-car-line,#15bae7,239,2
+2222,265,Ligne 5,2222-ligne-5,#0bbbef,326,6
+1075,265,Parc des Chantiers - Gare maritime - Hangar à bananes - Arbre aux hérons - Trentemoult Roquios,1075-parc-des-chantiers---gare-maritime---hangar-a-bananes---arbre-aux-herons---trentemoult-roquios,#2aaab6,328,0
+2227,360,Metrobus Blas Parera,2227-metrobus-blas-parera,#ff8b00,717,6
+2228,360,Tren Urbano,2228-tren-urbano,#1c6ac8,718,5
+2230,259,Metrobus Norte,2230-metrobus-norte,#ec9812,719,6
+2231,39,SoloBus Sabattini,2231-solobus-sabattini,#f5a623,31,6
+2232,39,Tren de las Sierras,2232-tren-de-las-sierras,#2174d2,720,3
+2233,39,Córdoba - Villa María,2233-cordoba---villa-maria,#850bef,721,2
+2234,335,Tren Universitario,2234-tren-universitario,#4a90e2,722,9
+2177,356,Line 2,2177-line-2,#f06a00,708,5
+2243,225,Blue Line,2243-blue-line,#1369cc,210,5
+2244,225,Gold Line,2244-gold-line,#dbcb00,210,5
+2245,225,Green Line,2245-green-line,#417505,210,5
+2193,356,Gyeongchun Line,2193-gyeongchun-line,#0c8e72,711,3
+2201,356,EverLine,2201-everline,#509f22,712,7
+2195,356,Suin Line,2195-suin-line,#f5a200,711,3
+2192,356,Gyeongui-Jungang Line,2192-gyeongui-jungang-line,#77c4a3,711,3
+2196,356,Gyeonggang Line,2196-gyeonggang-line,#003da5,711,3
+2194,356,Bundang Line,2194-bundang-line,#f5a200,711,3
+2220,356,Ansan Line,2220-ansan-line,#00a5de,711,3
+2221,356,Gwacheon Line,2221-gwacheon-line,#00a5de,711,3
+2197,356,Gyeongbu Line,2197-gyeongbu-line,#0052a4,711,3
+2235,356,Gyeongin Line,2235-gyeongin-line,#0052a4,711,3
+2229,356,Gyeongwon Line,2229-gyeongwon-line,#0052a4,711,3
+2236,356,Janghang Line,2236-janghang-line,#0052a4,711,3
+2191,356,Suseo Line,2191-suseo-line,#c7197d,730,1
+2190,356,Gyeongbu Line,2190-gyeongbu-line,#003da5,710,1
+2310,86,Line 10,2310-line-10,#feda63,79,0
+2246,259,A,2246-a,#417505,635,8
+2287,114,Nishi-Ita Line,2287-nishi-ita-line,#0f6cc3,311,0
+2248,259,G,2248-g,#d0021b,724,8
+2320,37,Line 4,2320-line-4,#d8862f,29,4
+2319,37,Line 3,2319-line-3,#212ac5,29,4
+2318,37,Line 2,2318-line-2,#059923,29,4
+2250,259,I,2250-i,#4a90e2,724,8
+2249,259,H,2249-h,#50e3c2,724,8
+2292,84,Higashiyama Line,2292-higashiyama,#fab123,72,4
+2251,259,J,2251-j,#f5a623,724,8
+2311,37,Line 1,2311-line-1,#ff2a2a,29,4
+2252,259,K,2252-k,#417505,724,8
+2253,259,L,2253-l,#7ed321,724,8
+2296,84,Tsurumai Line,2296-tsurumai,#009bbf,72,4
+3164,114,Koumi Line,3164-koumi-line,#378640,305,4
+2255,153,D Line ,2255-d-line,#429c07,138,5
+2297,84,Sakura-dōri Line,2297-sakura-dori,#c92f44,72,4
+2271,195,Red Line,2271-red-line,#e50000,786,6
+2293,84,Meijō Line,2293-meijo,#b074d6,72,4
+2257,153,E Line,2257-e-line,#6c00ca,138,5
+2294,84,Meikō Line,2294-meiko,#b074d6,72,4
+2258,153,F Line,2258-f-line,#d0021b,138,5
+2295,84,Kamiiida Line,2295-kamiiida,#fc78b4,72,4
+2259,153,H Line,2259-h-line,#1b99f4,138,5
+2260,153,L Line,2260-l-line,#f4df00,138,5
+2256,153,C Line,2256-c-line,#ff6700,138,5
+2261,153,R Line,2261-r-line,#d4fa5c,138,5
+1616,259,2,1616-2,#4a4a4a,244,9
+1625,259,11,1625-11,#4a4a4a,244,9
+1635,259,20,1635-20,#4a4a4a,244,9
+2202,356,U Line,2202-u-line,#fd8100,712,5
+2240,205,1 Riverfront,2240-riverfront-line,#0a3fa8,190,9
+2241,205,8 Napoleon,2241-napoleon-line,#ed94ff,190,9
+2226,205,7 Louisiana,2226-louisiana-line,#8b572a,190,9
+2238,205,11 North Carrollton,2238-canal-city-park-museum-branch,#87e986,190,9
+2254,205,3 Loyola,2254-loyola-upt-line,#f5a623,190,9
+2242,205,13 Esplanade,2242-jackson-line,#f8e71c,190,9
+2239,205,5 Jefferson,2239-rampart-st.-claude-line,#fe0321,190,9
+2237,205,10 Canal,2237-canal-cemeteries,#7d0101,190,9
+2262,153,University of Colorado A Line,2262-university-of-colorado-a-line,#5dcef3,138,3
+2263,153,B Line,2263-b-line,#7fc135,138,3
+2264,153,G Line,2264-g-line,#f5c423,138,3
+2265,153,W Line,2265-w-line,#47cda3,138,5
+2268,153,N Line,2268-n-line,#bd10e0,138,3
+2269,195,Blue Line,2269-blue-line,#0071dd,180,5
+2270,195,Green Line,2270-green-line,#4e860d,180,5
+2272,356,Mangu Line,2272-mangu-line,#0c8e72,711,3
+2277,39,Línea B,2277-linea-b,#ff0000,726,8
+2276,39,Línea A,2276-linea-a,#417505,726,8
+2174,356,9,2174-line-9,#aa9872,707,4
+2278,39,Línea C,2278-linea-c,#2060a8,726,8
+2279,260,Recorrido Parque,2279-recorrido-parque,#5da610,727,8
+2280,260,Recorrido Pellegrini,2280-recorrido-pellegrini,#166b36,727,8
+2281,260,Recorrido Godoy Cruz - Las Heras,2281-recorrido-godoy-cruz---las-heras,#9013fe,727,8
+2282,260,Recorrido UN Cuyo,2282-recorrido-un-cuyo,#b63838,727,8
+2283,260,Recorrido Villanueva,2283-recorrido-villanueva,#e79b1f,727,8
+2284,260,Recorrido Dorrego,2284-recorrido-dorrego,#442037,727,8
+2285,259,Q,2285-q,#12449c,724,8
+2130,63,Putrajaya Line,2130-sungai-buloh-serdang-putrajaya-line,#ffcc00,55,4
+2289,228,Blue Line,2289-blue-line,#084fa3,213,5
+2290,228,Green Line,2290-green-line,#6ac00c,213,5
+2291,228,Red Line,2291-red-line,#d0021b,213,5
+2298,86,Line 1,2298-line-1,#009eff,79,0
+2299,361,Biru,2299-line-1,#0d6fff,728,0
+2300,361,Abang,2300-line-2,#fa1818,728,0
+2301,361,Ijo,2301-line-3,#18ca35,728,0
+2302,361,Kuning,2302-line-4,#ffd40f,728,0
+2304,86,Line 2,2304-line-2,#ff3636,79,0
+2305,86,Line 3,2305-line-3,#03b90c,79,0
+2306,114,Doubutsuen Line,2306-doubutsuen-line,#dd0077,307,4
+2307,114,Keibajo Line,2307-keibajo-line,#dd0077,307,4
+2308,86,Line 4,2308-line-4,#c715b5,79,0
+2309,114,Higashi-Narita Line,2309-higashi-narita-line,#005aaa,308,4
+2314,356,Wolmi Sea Train,2314-wolmi-sea-train,#000,712,7
+2315,356,Line A,2315-line-a,#d0021b,729,3
+2316,356,Line B,2316-line-b,#4a90e2,729,3
+2317,356,Line C,2317-line-c,#417505,729,3
+2198,356,Shinbundang Line,2198-shinbundang-line,#d4003b,712,3
+2267,356,Jungang Line,2267-jungang-line,#77c4a3,711,3
+2266,356,Gyeongui Line,2266-gyeongui-line,#77c4a3,711,3
+2303,361,Coklat,2303-line-5,#b04f01,728,0
+2273,357,Line 1,2273-line-1,#f06a00,725,4
+2275,357,Line 3,2275-line-3,#bb8c00,725,4
+2288,357,Line 4,2288-line-4,#217dcb,725,4
+2286,114,Daishi Line,2286-daishi-line,#0f6cc3,311,4
+2312,114,Shibayama Line,2312-shibayama-line,#00a650,308,4
+3165,86,Line S7,3165-line-s7,#d064c7,79,0
+2359,356,Sillim Line,2359-sillim-line,#6789ca,886,7
+2372,114,Kinugawa Line,2372-kinugawa-line,#ffa500,311,4
+2324,32,Line 1,2324-line-1,#fde700,25,4
+2325,32,Line 2,2325-line-2,#0239c1,25,4
+2326,32,Line 3,2326-line-3,#f48e0b,25,4
+2328,32,Line 5,2328-line-5,#b20707,25,4
+2327,32,Line 4,2327-line-4,#009c2c,25,4
+2329,32,Line 6,2329-line-6,#630392,25,4
+2330,32,Line 7,2330-line-7,#6fe758,25,4
+2331,32,Line 8,2331-line-8,#08a679,25,4
+2332,32,Line 9,2332-line-9,#68e7c0,25,4
+2333,32,Line 13,2333-line-13,#96a803,25,4
+2335,32,Line 14,2335-line-14,#885a00,25,4
+2336,32,Line 21,2336-line-21,#16006c,25,4
+2323,37,Line 10,2323-line-10,#920fea,29,4
+2322,37,Line 6,2322-line-6,#efaaaa,29,4
+2337,114,Sotetsu Shin-Yokohama Line,2337-sotetsu-shin-yokohama-line,#0c1e56,352,4
+2338,359,Taipa Line,2338-taipa-line,#96c93c,731,7
+2339,259,M,2339-m,#ff0000,724,8
+2342,259,B Negro,2342-b-negro,#b8e986,635,8
+2343,259,B Rojo,2343-b-rojo,#b8e986,635,8
+2344,259,F Negra,2344-f-negra,#7ed321,635,8
+2345,259,F Roja,2345-f-roja,#7ed321,635,8
+2340,259,200,2340-200,#9b9b9b,635,8
+2341,259,205,2341-205,#9b9b9b,635,8
+2346,259,1,2346-1,#9b9b9b,635,8
+2347,259,2,2347-2,#9b9b9b,635,8
+2348,259,3,2348-3,#9b9b9b,635,8
+2349,259,4,2349-4,#9b9b9b,635,8
+2350,259,6,2350-6,#9b9b9b,635,8
+2351,259,7,2351-7,#9b9b9b,635,8
+2352,259,8,2352-8,#9b9b9b,635,8
+2353,259,9,2353-9,#9b9b9b,635,8
+2354,259,10,2354-10,#9b9b9b,635,8
+2321,37,Line 5,2321-line-5,#028de6,29,4
+2355,259,15 Negra,2355-15-negra,#9b9b9b,635,8
+2356,259,15 Roja,2356-15-roja,#9b9b9b,635,8
+2357,259,21,2357-21,#9b9b9b,635,8
+2358,356,Sin-Ansan Line,2358-sin-ansan-line,#f04938,711,3
+2362,357,Busan-Gimhae LRT (BGL),2362-busan-gimhae-lrt-(bgl),#8652a1,733,5
+2274,357,Line 2,2274-line-2,#81bf48,725,4
+2363,357,Gyeongbu Line,2363-gyeongbu-line,#0066b3,732,3
+2364,357,Gyeongbu Line,2364-gyeongbu-line,#0066b3,734,1
+2361,357,Donghae Line,2361-donghae-line,#003da5,732,3
+2365,357,Suseo Line,2365-suseo-line,#c7197d,735,1
+2366,114,Shonan Shinjuku Line,2366-shonan-shinjuku-line,#e31f26,305,3
+2369,114,Suigun Line,2369-suigun-line,#368c44,305,3
+2377,56,Po Fook Hill Elevator,2377-po-fook-hill-elevator,#000,736,9
+2378,56,Discovery Bay Elevator,2378-discovery-bay-elevator,#000,736,9
+2376,56,Peak Tram,2376-peak-trams,#000,736,9
+2379,56,505,2379-505,#db1f26,737,5
+2380,56,507,2380-507,#00a650,737,5
+2381,56,610,2381-610,#431115,737,5
+2382,56,614,2382-614,#4dc6f4,737,5
+2383,56,614P,2383-614p,#f46989,737,5
+2384,56,615,2384-615,#fddd04,737,5
+2385,56,615P,2385-615p,#215483,737,5
+2386,56,705,2386-705,#64c542,737,5
+2387,56,706,2387-706,#b365b9,737,5
+2388,56,751,2388-751,#f47216,737,5
+2389,56,751P,2389-751p,#000,737,5
+2390,56,761P,2390-761p,#672290,737,5
+2392,56,Hong Kong Express Rail Link,2392-hong-kong-express-rail-link,#0033c9,48,1
+736,56,Disneyland Resort Line,736-disneyland-resort-line,#f550a6,48,4
+2393,114,Ueno Tokyo Line,2393-ueno-tokyo-line,#800080,305,4
+2395,130,Route 10,2395-route-10,#d0021b,123,8
+2396,130,Route 20,2396-route-20,#f5a623,123,8
+2397,130,Route 30,2397-route-30,#4a90e2,123,8
+2398,130,Route 40,2398-route-40,#000,123,8
+2400,130,Route 35,2400-route-35,#bd10e0,123,8
+2394,56,Kowloon-Canton Railway (East Rail),2394-east-rail-line,#5eb6e4,739,2
+2367,114,Nikkō Line,2367-nikko-line,#880022,305,4
+2375,56,Hong Kong Tramways,2375-hong-kong-tramways,#276756,736,9
+331,114,Namboku Line,331-namboku-line,#00ac9b,100,4
+2399,130,Route 25,2399-route-25,#b8e986,123,8
+2401,130,Route 55,2401-route-55,#f8e71c,123,8
+89,14,L7,89-l7,#ac5414,260,4
+2402,130,Route 65,2402-route-65,#8b572a,123,8
+2403,56,Sha Tau Kok,2403-sha-tau-kok,#5eb6e4,739,3
+2404,56,Ma On Shan,2404-ma-on-shan,#9a3b26,739,4
+2405,56,Ma On Shan,2405-ma-on-shan,#9a3b26,48,4
+2406,81,Line 1 - Sokolnicheskaya,2406-sokolnicheskaya,#ef161e,69,4
+2407,81,Line 2 - Zamoskvoretskaya,2407-zamoskvoretskaya,#2dbe2c,69,4
+2409,81,Line 4 - Filyovskaya,2409-filyovskaya,#00bfff,69,4
+2408,81,Line 3 - Arbatsko-Pokrovskaya,2408-arbatsko-pokrovskaya,#0078be,69,4
+2410,81,Line 5 - Koltsevaya,2410-line-5---koltsevaya,#8d5b2d,69,4
+2411,81,Line 6 - Kaluzhsko-Rizhskaya,2411-line-6---kaluzhsko-rizhskaya,#ed9121,69,4
+2412,81,Line 7 - Tagansko-Krasnopresnenskaya,2412-line-7---tagansko-krasnopresnenskaya,#800080,69,4
+2415,81,Line 9 - Serpukhovsko-Timiryazevskaya,2415-line-9---serpukhovsko-timiryazevskaya,#999999,69,4
+2416,81,Line 10 - Lyublinsko-Dmitrovskaya,2416-line-10---lyublinsko-dmitrovskaya,#99cc00,69,4
+2417,81,Line 11 - Bolshaya Koltsevaya,2417-line-11---bolshaya-koltsevaya,#82c0c0,69,4
+2370,114,Joetsu Line  上越線,2370-joetsu-line,#00b3e6,305,4
+2419,81,Line 12 - Butovskaya,2419-line-12---butovskaya,#a1b3d4,69,4
+4077,418,Line 1,4077-line-1,#ea3323,1080,4
+2422,81,Line 15 - Nekrasovskaya,2422-line-15---nekrasovskaya,#de64a1,69,4
+2423,81,D1 - Belorussko-Savyolovsky,2423-d1--,#f6a600,740,3
+2424,81,D2 - Kursko-Rizhsky,2424-d2--,#e74280,740,3
+2425,81,D3 - Leningradsko-Kazansky,2425-d3--,#e95b0c,740,3
+2426,81,D4 - Kievsko-Gorkovsky,2426-d4--,#40b280,740,3
+2427,81,D5 - Yaroslavsko-Paveletsky,2427-d5--,#77b729,740,3
+2368,114,Karasuyama Line  烏山線,2368-karasuyama-line,#339966,305,4
+2444,11,Γραμμή 3,2444-line-3,#0098d4,8,4
+2442,11,Γραμμή 1,2442-line-1,#00792c,8,4
+2431,56,West Rail,2431-west-rail,#a40084,739,3
+2516,4,23 Macul,2516-linea-23,#f8e71c,754,9
+2413,81,Line 8 - Kalininsko–Solntsevskaya,2413-line-8---kalininskaya,#ffd702,69,4
+2420,81,Line 13 - Moscow Monorail,2420-line-13---moscow-monorail,#9999ff,69,4
+2421,81,Line 14 - Moscow Central Circle,2421-line-14---moscow-central-circle,#c25349,69,4
+2430,81,Vnukovo-Kievskiy,2430-line-3,#eb0000,741,3
+2429,81,Domodedovo-Paveletskiy,2429-line-2,#eb0000,741,3
+2428,81,Sheremetyevo-Belorussky,2428-line-1,#eb0000,741,3
+2433,56,Hong Kong International Airport Automated People Mover,2433-hong-kong-international-airport-automated-people-mover,#f8e71c,48,7
+2434,56,Central - Tsim Sha Tsui,2434-central---tsim-sha-tsui,#d0021b,742,10
+2435,56,Wan Chai - Tsim Sha Tsui,2435-wan-chai---tsim-sha-tsui,#7ed321,742,10
+2436,56,Central - Hung Hom,2436-central---hung-hom,#8b572a,742,10
+2437,56,Wan Chai - Hung Hom,2437-wan-chai---hung-hom,#4a90e2,742,10
+2438,67,Sintra,2438-sintra,#0be0b4,317,3
+2447,358,Tamsui-Xinyi Line,2447-tamsui-xinyi-line,#e3002c,743,4
+2439,358,Wenhu Line,2439-wenhu-line,#c48c31,743,5
+2448,114,Sōbu Line (Rapid),2448-sōbu-line-(rapid),#0067c0,305,4
+2450,358,Songshan-Xindian Line,2450-songshan-xindian-line,#008659,743,4
+2449,358,Zhonghe-Xinlu Line,2449-zhonghe–xinlu-line,#f8b61c,743,4
+2451,358,Bannan Line,2451-bannan-line,#0070bd,743,4
+83,14,L1,83-l1,#e22739,247,4
+2452,14,Línea II,2452-linea-ii,#992f9c,748,4
+2453,14,Línea II,2453-linea-iii,#fab70a,747,4
+2454,14,Línea I,2454-linea-i,#4fbe48,747,4
+2455,8,1,2455-1,#f37654,683,9
+2456,358,Circular Line,2456-circular-line,#ffdb00,743,5
+2457,358,Danhai Light Rail,2457-danhai-light-rail,#e5554f,749,5
+2458,26,6,2458-citylines-east,#d0021b,19,8
+2459,26,7,2459-citylines-east,#d0021b,19,8
+2460,26,17,2460-17,#d0021b,19,8
+2461,26,42,2461-42,#d0021b,19,8
+2462,26,43,2462-43,#d0021b,19,8
+2463,26,44,2463-44,#d0021b,19,8
+2464,26,45,2464-44,#d0021b,19,8
+2465,228,S Line,2465-s-line,#9b9b9b,213,9
+2466,228,FrontRunner,2466-frontrunner,#bd10e0,213,3
+2467,228,Utah Valley Express,2467-utah-valley-express,#4a9de2,213,6
+2469,215,Red Line,2469-red-line,#d0021b,200,5
+2470,215,Silver Line,2470-silver-line,#9b9b9b,200,5
+2471,215,Blue Line,2471-blue-line,#4a90e2,200,5
+2835,215,West Shore Electric Street Railway,2835-west-shore-electric-street-railway,#000,800,9
+2474,358,Ankeng Light Rail,2474-ankeng-light-rail,#c3b091,749,5
+2475,358,Sanying Line,2475-sanying-line,#79bce8,749,5
+2476,215,PATrain,2476-patrain,#000,200,3
+2479,149,Red Line,2479-red-line,#d0021b,750,4
+2480,149,Blue Line,2480-blue-line,#4a90e2,750,5
+2482,4,Metrotrén Batuco,2482-metrotren-batuco,#7ed321,268,3
+633,4,Metrotrén Melipilla,633-melipilla,#7ed321,268,3
+2575,231,McAllister,2575-mcallister,#8b572a,761,9
+2483,4,Alameda / Ñuñoa,2483-alameda---nunoa,#4a90e2,751,3
+2484,4,Metrotrén Tiltil,2484-metrotren-tiltil,#7ed321,752,3
+2485,4,Metrotrén Rancagua,2485-metrotren-rancagua,#7ed321,752,3
+2565,231,Cliff House Steam Line,2565-california-st.-and-lands-end-line,#f8e71c,762,9
+2566,231,Howard,2566-omnibus-co.-howard-lines,#b8e986,763,9
+2568,231,Mainline,2568-san-francisco-&-san-mateo-railway,#9013fe,764,9
+2574,231,4 Sutter,2574-sutter,#d0021b,760,9
+2571,231,14 Mission,2571-mission,#d0021b,760,9
+2567,231,O'Farrell/Jones/Hyde,2567-o'farrell-jones-hyde,#8b572a,758,9
+2569,231,Sacramento,2569-sacramento-clay,#8b572a,762,9
+2570,231,Sacramento-Clay,2570-sacramento-clay,#8b572a,762,9
+2486,4,Independencia,2486-independencia,#d0021b,494,6
+2533,4,40 San Bernardo,2533-linea-40,#f8e71c,754,9
+2531,4,38 Cisterna,2531-linea-38,#f8e71c,754,9
+2530,4,37 Ovalle,2530-linea-37,#f8e71c,754,9
+2529,4,36 Matadero Palma,2529-linea-36,#f8e71c,754,9
+2528,4,35 Bilbao,2528-linea-35,#f8e71c,754,9
+2527,4,34 Pedro de Valdivia,2527-linea-34,#f8e71c,754,9
+2526,4,33 Avenida Matta,2526-linea-33,#f8e71c,754,9
+2525,4,32 Avenida Latorre,2525-linea-32,#f8e71c,754,9
+2524,4,31 Alameda-San Francisco,2524-linea-31,#f8e71c,754,9
+2522,4,29 Negrete,2522-linea-29,#f8e71c,754,9
+2523,4,30 San Eugenio,2523-linea-30,#f8e71c,754,9
+2520,4,27 Los Leones,2520-linea-27,#f8e71c,754,9
+2521,4,28 Hipodromo,2521-linea-28,#f8e71c,754,9
+2515,4,22 Moneda/Agustinas,2515-linea-22,#f8e71c,754,9
+2514,4,21 Huérfanos/Agustinas,2514-linea-21,#f8e71c,754,9
+2513,4,20 Bascuñán,2513-linea-20,#f8e71c,754,9
+2509,4,16 Cochrane-Nataniel,2509-linea-16,#f8e71c,754,9
+2508,4,15 Mercado-Franklin,2508-linea-15,#f8e71c,754,9
+2507,4,14 San Francisco/Santa Rosa,2507-linea-14,#f8e71c,754,9
+2505,4,12 Maestranza,2505-linea-12,#f8e71c,754,9
+2504,4,11 Providencia,2504-linea-11,#f8e71c,754,9
+1302,206,R,1302-4th-avenue-line,#fccc0a,191,4
+2518,4,25 Quinta,2518-linea-25,#f8e71c,754,9
+2519,4,26,2519-linea-26,#f8e71c,754,9
+2512,4,19 Parque,2512-linea-19,#f8e71c,754,9
+2511,4,18 Club Hípico,2511-linea-18,#f8e71c,754,9
+2534,4,Alameda,2534-alameda,#50e3c2,755,9
+2510,4,17 Avenida España,2510-linea-17,#f8e71c,754,9
+2502,4,9 Bellavista,2502-linea-9,#f8e71c,754,9
+2501,4,8 Cementerio,2501-linea-8,#f8e71c,754,9
+2500,4,7 Recoleta,2500-linea-7,#f8e71c,754,9
+2487,4,1 Alameda,2487-linea-1,#f8e71c,754,9
+2537,4,Matadero,2537-matadero,#50e3c2,755,9
+2495,4,2 Catedral/Compañía,2495-linea-2,#f8e71c,754,9
+2538,4,Cañadilla,2538-canadilla,#50e3c2,755,9
+4530,71,11,4530-11,#58a758,788,9
+2481,149,Green Line,2481-green-line,#69b511,750,5
+2496,4,3 Ñuñoa,2496-linea-3,#f8e71c,754,9
+2497,4,4 San Pablo/Rosas,2497-linea-4,#f8e71c,754,9
+2535,4,Catedral,2535-catedral---compania,#50e3c2,755,9
+2536,4,Yungay,2536-san-pablo,#50e3c2,755,9
+2539,4,Recoleta,2539-recoleta,#50e3c2,755,9
+2498,4,5 Yungay,2498-linea-4,#f8e71c,754,9
+2540,4,Providencia,2540-providencia,#50e3c2,755,9
+2499,4,6 La Palma,2499-linea-6,#f8e71c,754,9
+2541,4,Bellavista,2541-bellavista,#50e3c2,755,9
+2517,4,24 Macul 2,2517-linea-24,#f8e71c,754,9
+2542,4,Purísima,2542-purisima,#50e3c2,755,9
+2473,215,Duquesne Incline,2473-duquesne-incline,#000000,200,7
+2543,4,Carmen,2543-carmen,#50e3c2,755,9
+2472,215,Monongahela Incline,2472-monongahela-incline,#000000,200,7
+2544,4,Santa Rosa,2544-santa-rosa,#50e3c2,755,9
+2545,4,Duarte,2545-duarte,#50e3c2,755,9
+2546,4,Agustinas,2546-agustinas,#50e3c2,755,9
+3166,86,Line 5,3166-line-5,#dfdb00,79,0
+2576,231,Hayes,2576-hayes,#8b572a,761,9
+2577,231,Castro,2577-castro,#8b572a,761,9
+2573,231,Geary Street Park and Ocean Railway,2573-geary,#8b572a,758,9
+2578,231,Post,2578-post,#b8e986,763,9
+2580,231,Oak,2580-oak,#b8e986,763,9
+2579,231,Ellis,2579-ellis,#b8e986,763,9
+2581,231,18th and Park Branch,2581-18th-and-park-branch,#9013fe,764,9
+2584,4,FFCC Urbano Pedro de Valdivia,2584-ffcc-urbano-pedro-de-valdivia,#b8e986,765,9
+2586,231,Larkin,2586-larkin,#417505,766,9
+2587,231,40 San Mateo,2587-40-san-mateo,#d0021b,760,9
+2589,231,Dublin/Pleasanton Line,2589-dublin-pleasanton-line,#4a90e2,757,4
+2588,231,Richmond-North San Jose Line,2588-richmond-north-san-jose,#f5a623,757,4
+2590,231,Antioch Line,2590-antioch-line,#f8e71c,757,4
+2592,231,North San Jose-Daly City Line,2592-north-san-jose-daly-city-line,#7ed321,757,4
+2591,231,Richmond-Millbrae Line,2591-richmond-millbrae,#d0021b,757,4
+2593,231,eBart Line (DMU),2593-ebart-line-(dmu),#000000,757,4
+2596,231,Ocean View Branch,2596-ocean-view-branch,#000,767,3
+2595,231,Peninsula Main Line,2595-peninsula-line,#000,767,3
+2598,231,33 18th Street,2598-33-18th-street,#d0021b,760,9
+2599,231,9 Valencia,2599-9-valencia,#d0021b,760,9
+2601,231,1 California,2601-1-california,#d0021b,760,9
+2602,231,2 Clement,2602-2-clement,#d0021b,760,9
+2582,231,Powell/Hyde Cable Car,2582-powell-hyde-cable-car,#8b572a,216,9
+2564,231,Powell/Mason Cable Car,2564-powell-mason-cable-car,#8b572a,216,9
+2600,231,8 Market/Castro,2600-8-market-castro,#d0021b,760,9
+2604,231,B Geary/Ocean,2604-b-geary-ocean,#417505,768,9
+2603,231,C Geary/California,2603-c-geary-california,#417505,768,9
+2605,231,A Geary/Park,2605-a-geary-park,#417505,768,9
+2606,124,Ferrocarril Urbano de Valparaíso,2606-ferrocarril-urbano-de-valparaiso,#8b572a,769,9
+2607,124,Trenes Locales,2607-trenes-locales,#000,770,3
+2608,124,Ferrocarril de Playa Ancha,2608-ferrocarril-de-playa-ancha,#f8e71c,769,9
+2609,124,Tranvía del Cardonal al Sauce,2609-tranvia-del-cardonal-al-sauce,#f8e71c,769,9
+2610,124,1 Brasil,2610-1-brasil,#b8e986,753,9
+2611,124,2 Pedro Montt,2611-2-pedro-montt,#b8e986,753,9
+2613,124,4 Colón,2613-4-colon,#b8e986,753,9
+2622,124,13,2622-13,#b8e986,753,9
+2612,124,3 Victoria/Independencia,2612-3-victoria-independencia,#b8e986,753,9
+2614,124,5,2614-5,#b8e986,753,9
+2615,124,6 Cementerio,2615-6,#b8e986,753,9
+2616,124,7 Torpederas,2616-7,#b8e986,753,9
+2617,124,8 Playa Ancha,2617-8,#b8e986,753,9
+2618,124,9 Gran Bretaña,2618-9,#b8e986,753,9
+2619,124,10 Viña del Mar,2619-10,#b8e986,753,9
+2620,124,11 Chorrillos,2620-11,#b8e986,753,9
+2621,124,12 Cerro Barón,2621-12,#b8e986,753,9
+1771,22,Line 12,1771-line-12,#fe8404,15,4
+2583,4,FFCC Cristóbal Colón,2583-ffcc-cristobal-colon,#bd10e0,478,9
+2585,4,Tranvías Eléctricos Pedro de Valdivia,2585-tranvias-electricos-pedro-de-valdivia,#bd10e0,478,9
+2625,4,28 Maestranza/V. Mackenna,2625-28-maestranza-v.-mackenna,#f8e71c,754,9
+2624,4,18 Avenida Viel,2624-18-avenida-viel,#f8e71c,754,9
+2506,4,13 Carmen/Lira,2506-linea-13,#f8e71c,754,9
+2503,4,10 Purísima,2503-linea-10,#f8e71c,754,9
+2626,4,6 Plaza Ñuñoa,2626-6-plaza-nunoa,#f8e71c,754,9
+2627,4,FFCC San Miguel,2627-ffcc-san-miguel,#b8e986,765,9
+2628,4,FFCC La Granja,2628-ffcc-la-granja,#b8e986,765,9
+2629,4,FFCC Urbano Maipú,2629-ffcc-urbano-maipu,#b8e986,765,9
+2630,4,Tranvías de San Pablo a Barrancas,2630-tranvias-de-san-pablo-a-barrancas,#b8e986,765,9
+2631,4,24 Matadero-Terminal,2631-24-matadero-terminal,#f8e71c,754,0
+2632,358,Taoyuan Airport MRT,2632-taoyuan-airport-mrt,#8246af,771,3
+4243,381,Line 14,4243-line-14,#f8e71c,982,4
+2636,215,West Busway,2636-west-busway,#6dc10d,200,6
+2634,215,South Busway,2634-south-busway,#f8d11c,200,6
+2635,215,Martin Luther King Jr. East Busway,2635-east-busway,#891894,200,6
+2637,215,Brown Line,2637-brown-line,#aa6c36,200,5
+2638,215,Knoxville Incline,2638-knoxville-incline,#000,772,7
+2639,215,Mount Oliver Incline,2639-mount-oliver-incline,#000,772,7
+2640,215,Penn Incline,2640-penn-incline,#000,772,7
+2594,231,Baby Bullet,2594-baby-bullet,#4a9fe2,362,3
+2597,231,SFO-Millbrae Line,2597-sfo-millbrae-line,#9013fe,757,4
+2641,215,Castle Shannon Incline,2641-castle-shannon-incline,#000,772,7
+2642,215,St. Clair Incline,2642-st.-clair-incline,#000,773,7
+2702,71,Civis,2702-civis-guadalajara,#8b572a,780,3
+2643,215,Nunnery Hill Incline,2643-nunnery-hill-incline,#000,774,7
+3268,59,Line 4,3268-line-3,#db8713,675,4
+2836,215,Chartiers Branch,2836-chartiers-branch,#000,801,2
+2644,215,Castle Shannon Incline No. 2,2644-castle-shannon-incline-no.-2,#000,772,7
+2846,215,29 Thornburg,2846-29-thornburg,#000,772,9
+2645,215,Clifton Incline,2645-clifton-incline,#000,775,7
+2646,215,Fort Pitt Incline,2646-fort-pitt-incline,#000,776,7
+2706,14,R5,2706-r5,#00aab8,260,3
+2647,215,Troy Hill Incline,2647-troy-hill-incline,#000,777,7
+2707,14,R6,2707-r6,#868a8e,260,3
+2648,140,Buffalo Metro Rail,2648-buffalo-metro-rail,#4a90e2,113,5
+2649,215,98 Glassport,2649-98-glassport,#000,772,9
+2650,215,56 McKeesport via 2nd Ave.,2650-56-mckeesport-via-dravosburg,#000,772,9
+2651,215,57 Glenwood,2651-57-glenwood,#000,772,9
+2652,215,55 Homestead-East Pittsburgh,2652-55-homestead-east-pittsburgh,#000,772,9
+2653,215,68 Homestead-Duquesne-McKeesport,2653-68-homestead-duquesne-mckeesport,#000,772,9
+2654,215,55A Homestead-Munhall,2654-55a-homestead-munhall,#000,772,9
+2655,215,60 East Liberty-Homestead,2655-60-east-liberty-homestead,#000,772,9
+2656,215,59 Homestead-Homeville,2656-59-homestead-homeville,#000,772,9
+2657,215,65 Munhall-Lincoln Place,2657-65-munhall-lincoln-place,#000,772,9
+2658,71,77,2658-77,#003c84,778,9
+2659,71,12,2659-12,#003c84,778,9
+2661,215,58 Greenfield,2661-58-greenfield,#000,772,9
+2662,71,Sol-Salamanca,2662-sol-salamanca,#4a2d00,779,9
+2663,71,Salamanca-Sol-Pozas,2663-salamanca-sol-pozas,#834e00,779,9
+2664,71,Sol-Pozas,2664-sol-pozas,#9a6f26,779,9
+2665,71,Sol-Argüelles,2665-sol-arguelles,#e5995b,779,9
+2666,71,Salamanca-Sol-Argüelles,2666-salamanca-sol-arguelles,#b47844,779,9
+2667,215,64 Wilkinsburg-East Pittsburgh,2667-64-wilkinsburg-east-pittsburgh,#000,772,9
+2668,215,66 Wilkinsburg via Forbes,2668-66-wilkinsburg-via-forbes,#000,772,9
+2669,215,67 Swissvale-Rankin-Braddock,2669-67-swissvale-rankin-braddock,#000,772,9
+2670,215,69 Squirrel Hill,2670-69-squirrel-hill,#000,772,9
+2671,215,63 Corey Ave.,2671-63-corey-ave.,#000,772,9
+2672,215,62 East Pittsburgh-Trafford,2672-62-east-pittsburgh-trafford,#000,772,9
+2673,215,87 Ardmore,2673-87-ardmore,#000,772,9
+2674,215,75 East Liberty-Wilkinsburg,2674-75-east-liberty-wilkinsburg,#000,772,9
+2675,215,76 Hamilton,2675-76-hamilton,#000,772,9
+2676,215,71 Negley,2676-71-negley,#000,772,9
+2677,215,73 Highland,2677-73-highland,#000,772,9
+2680,71,C-3,2680-c-3,#9013fe,780,3
+2681,71,C-3a,2681-c-3a,#e86fff,780,3
+2684,71,C-5,2684-c-5,#ffc900,780,3
+2689,215,81 Atwood St.,2689-81-atwood-st.,#000,772,9
+2690,215,82 Lincoln,2690-82-lincoln,#000,772,9
+2691,215,84 Larimer,2691-84-larimer,#000,772,9
+2692,215,85 Bedford,2692-85-bedford,#000,772,9
+2693,215,88 Frankstown,2693-88-frankstown,#000,772,9
+2694,215,94 Sharpsburg-Aspinwall,2694-94-sharpsburg-aspinwall,#000,772,9
+2695,215,95 Butler St.,2695-95-butler-st.,#000,772,9
+2696,215,96 East-Liberty-62nd St.,2696-96-east-liberty-62nd-st.,#000,772,9
+2697,215,53 Carrick,2697-53-carrick,#000,772,9
+2698,215,52 36th and Carson Sts.,2698-52-36th-and-carson-sts.,#000,772,9
+2699,215,51 Bon Air,2699-51-bon-air,#000,772,9
+2700,71,C-6,2700-c-6,#7ed321,780,3
+2679,71,C-2,2679-c-2,#2d8a00,780,3
+2701,201,Music City Star,2701-music-city-star,#2a72c5,186,3
+2685,71,C-7,2685-c-7,#ff0000,780,3
+2686,71,C-8,2686-c-8,#808080,780,3
+2688,71,C-10,2688-c-10,#80d321,780,3
+1757,22,Port line,1757-line-3-nerul--uran,#9b9b9b,650,3
+2682,71,C-4a,2682-c-4a,#0024ff,780,3
+2683,71,C-4b,2683-c-4b,#0024ff,780,3
+2678,71,C-1,2678-c-1,#68adff,780,3
+2704,179,KC Streetcar,2704-kc-streetcar,#4a90e2,164,9
+2710,14,R60,2710-r60,#5b5b5b,260,2
+2708,14,R50,2708-r50,#008599,260,2
+2712,14,S3,2712-s3,#398a94,260,2
+2713,14,S4,2713-s4,#92790a,260,2
+2714,14,S8,2714-s8,#29c0da,260,2
+2715,14,S9,2715-s9,#f05474,260,2
+2790,48,Circle,2790-circle,#f5a623,40,5
+2716,14,S1,2716-s1,#f26e21,260,2
+2717,14,S2,2717-s2,#81c340,260,2
+2742,84,Chita New Line,2742-chita-line,#2a9dd8,784,3
+2847,215,28 Heidelburg,2847-28-heidelburg,#000,772,9
+2848,215,27 Carnegie,2848-27-carnegie,#000,772,9
+2721,195,Northstar Line,2721-northstar-line,#f8dc1c,180,3
+2728,84,Taita Line,2728-taita-line,#bfba2f,782,3
+2723,84,Tōkaidō Shinkansen,2723-tōkaidō-shinkansen,#f77321,782,1
+2725,84,Chūō Main Line,2725-chūō-main-line,#3b6c9c,782,3
+4244,381,Line 12,4244-line-12,#d2b4da,982,4
+2726,84,Kansai Main Line,2726-kansai-main-line,#000,782,3
+2727,84,Takayama Main Line,2727-takayama-main-line,#000,782,3
+2739,84,Airport Line,2739-airport-line,#1065ab,784,3
+2731,84,Bisai Line,2731-bisai-line,#e85624,784,3
+2740,84,Chikkō Line,2740-chikkō-line,#727171,784,3
+2745,84,Gamagōri Line,2745-gamagōri-line,#654e9e,784,3
+2733,84,Hashima Line,2733-hashima-line,#d7a629,784,3
+2736,84,Hiromi Line,2736-hiromi-line,#018b44,784,3
+2734,84,Inuyama Line,2734-inuyama-line,#018b44,784,3
+2735,84,Kakamigahara Line,2735-kakamigahara-line,#018b44,784,3
+2737,84,Komaki Line,2737-komaki-line,#da5290,784,3
+2741,84,Kōwa Line,2741-kōwa-line,#2a9dd8,784,3
+2729,84,Nagoya Main Line,2729-nagoya-main-line,#d12027,784,3
+2744,84,Nishio Line,2744-nishio-line,#654e9e,784,3
+2748,84,Seto Line,2748-seto-line,#7c2982,784,3
+2732,84,Takehana Line,2732-takehana-line,#d7a629,784,3
+2738,84,Tokoname Line,2738-tokoname-line,#1065ab,784,3
+2743,84,Toyokawa Line,2743-toyokawa-line,#d12027,784,3
+2747,84,Toyota Line,2747-toyota-line,#9eb03a,784,3
+2730,84,Tsushima Line,2730-tsushima-line,#e85624,784,3
+2749,195,A Line,2749-a-line,#9b9b9b,180,6
+2750,195,C Line,2750-c-line,#9b9b9b,180,6
+2746,84,Mikawa Line (Sanage - Chiryū),2746-mikawa-line,#9eb03a,784,3
+2753,84,Mikawa Line (Chiryū - Hekinan),2753-mikawa-line-(chiryū---hekinan),#654e9e,784,3
+2724,84,Tōkaidō Main Line,2724-tōkaidō-main-line,#f57615,782,3
+2754,84,Nagoya Line,2754-nagoya-line,#153f97,783,3
+2756,84,Suzuka Line,2756-suzuka-line,#153f97,783,3
+2755,84,Yunoyama Line,2755-yunoyama-line,#153f97,783,3
+2722,84,Yutorito Line,2722-yutorito-line,#3c459a,785,6
+2752,195,Orange Line,2752-metro-orange-line,#f5a623,180,6
+2660,71,70,2660-cocheras,#003c84,778,9
+2762,71,Sol-Hipódromo,2762-sol-hipodromo,#f6b72c,779,9
+2763,71,Argüelles-C.Coello,2763-arguelles-c.coello,#bc5c0a,779,9
+2764,84,Linimo (Tōbu Kyūryō Line),2764-linimo-(tōbu-kyūryō-line),#0067c0,789,7
+2765,84,Seto Line,2765-seto-line,#000,790,3
+2766,80,142,2766-142,#000,68,8
+4703,206,Nostrand Avenue,4703-nostrand-avenue,#5c70a2,1199,4
+2768,215,77/54 North Side-Carrick via Bloomfield,2768-77-54-north-side-carrick-via-bloomfield,#000,772,9
+2769,215,Allegheny Valley Street Railway,2769-allegheny-valley-street-railway,#000,791,9
+2770,8,2,2770-2,#000,683,9
+2772,8,4,2772-tram-4,#000,683,9
+2773,8,5,2773-5,#000,683,9
+2771,8,3,2771-tram-3,#000,683,9
+2774,8,7,2774-7,#000,683,9
+2757,88,2 - Yellow Line,2757-yellow,#fdee53,75,4
+2783,8,26,2783-26,#000,683,9
+2782,8,25,2782-25,#000,683,9
+2781,8,24,2781-24,#000,683,9
+2780,8,19,2780-19,#000,683,9
+2779,8,17,2779-17,#000,683,9
+2778,8,14,2778-14,#000,683,9
+2777,8,13,2777-13,#000,683,9
+2776,8,12,2776-12,#000,683,9
+2775,8,11,2775-11,#000,683,9
+2785,215,Pittsburgh & Lake Erie Railroad,2785-pittsburgh-&-lake-erie-railroad,#000,792,3
+2791,215,50 Carson St.,2791-50-carson-st.,#000,772,9
+2792,215,49 Beltzhoover,2792-49-beltzhoover,#000,772,9
+2793,215,48 Arlington,2793-48-arlington,#000,772,9
+2794,215,47 Carrick via Tunnel,2794-47-carrick-via-tunnel,#000,772,9
+3167,86,Line S3,3167-line-s3,#e98bfe,79,0
+2795,215,44 Knoxville-Penna. Station,2795-44-knoxville-penna-station,#000,772,9
+2796,215,43 Neeld Ave.,2796-43-neeld-ave.,#000,772,9
+2839,215,34 Elliot,2839-34-elliot,#000,772,9
+2797,215,42 Dormont,2797-42-dormont,#000,772,9
+2798,215,40 Mt. Washington,2798-40-mt.-washington,#000,772,9
+2840,215,33 Mt. Washington via West End,2840-33-mt.-washington-via-west-end,#000,772,9
+2799,215,39 Brookline,2799-39-brookline,#000,772,9
+2800,215,38 Mt. Lebanon,2800-38-mt.-lebanon,#000,772,9
+2841,215,32 P&LE Transfer,2841-32-p&le-transfer,#000,772,9
+2801,215,37 Shannon,2801-37-shannon,#000,772,9
+2802,215,36 Drake,2802-36-drake,#000,772,9
+2842,215,31 Sheraden-Ingram,2842-31-sheraden-ingram,#000,772,9
+2803,215,35 Library,2803-35-library,#000,772,9
+2804,215,Washington line,2804-washington-line,#000,772,2
+2843,215,30 Crafton-Ingram,2843-30-crafton-ingram,#000,772,9
+2805,215,Charleroi line,2805-charleroi-line,#000,772,2
+2849,215,26 West Park,2849-26-west-park,#000,772,9
+2806,71,C-4,2806-c-4,#0500ff,780,3
+2850,215,25 Island Ave.,2850-25-island-ave.,#000,772,9
+2838,139,Main Line Elevated,2838-main-line,#8b572a,535,4
+2888,215,34/31 Elliot-Sheraden,2888-34-31-elliot-sheraden,#000,772,9
+2889,215,24 Schoenville,2889-24-schoenville,#000,772,9
+2890,215,23 Coraopolis-Sewickley,2890-23-coraopolis-sewickley,#000,772,9
+2891,215,22 Crosstown,2891-22-crosstown,#000,772,9
+2892,215,21 Fineview,2892-21-fineview,#000,772,9
+2893,215,20 Rebecca,2893-20-rebecca,#000,772,9
+4245,381,Line 16,4245-line-16,#002074,982,4
+2927,139,Haverhill Line,2927-haverhill-line,#000,539,3
+2928,139,Reading Line,2928-reading-line,#000,539,3
+2929,139,Haverhill/Reading Line,2929-haverhill-line,#bd10e0,422,3
+2931,215,Norwood Incline,2931-norwood-incline,#000,839,7
+2932,215,38A Mount Lebanon Castle Shannon Shuttle,2932-38a-mount-lebanon-castle-shannon-shuttle,#000,772,9
+2933,215,19 Western Ave.,2933-19-western-ave.,#000,772,9
+2934,215,18 Woods Run,2934-18-woods-run,#000,772,9
+2935,215,17 Reedsdale,2935-17-reedsdale,#000,772,9
+2936,215,16 Shadeland,2936-16-shadeland,#000,772,9
+2937,215,15 Bellevue-West View,2937-15-bellevue-west-vue,#000,772,9
+2938,215,14 Avalon,2938-14-avalon,#000,772,9
+2939,215,13 Emsworth,2939-13-emsworth,#000,772,9
+2940,215,12 Evergreen,2940-12-evergreen,#000,772,9
+2941,215,11 East St.,2941-11-east-st.,#000,772,9
+2942,215,10 West View-Bellevue,2942-10-west-view-bellevue,#000,772,9
+2943,215,9 Charles St. Transfer,2943-9-charles-st.-transfer,#000,772,9
+2944,215,8 Perrysville Ave.,2944-8-perrysville-ave.,#000,772,9
+2945,215,7 Charles St.,2945-7-charles-st.,#000,772,9
+2946,215,6 Brighton Road,2946-6-brighton-road,#000,772,9
+2947,215,5 Spring Hill,2947-5-spring-hill,#000,772,9
+2948,215,4 Troy Hill,2948-4-troy-hill,#000,772,9
+2949,215,3 Millvale,2949-3-millvale,#000,772,9
+2950,215,2 Etna,2950-2-etna,#000,772,9
+2951,215,1 Spring Garden,2951-1-spring-garden,#000,772,9
+2953,139,Lowell Line,2953-lowell-line,#bd10e0,422,3
+2954,261,Concepción-Talcahuano,2954-concepcion-talcahuano,#000,840,9
+2955,261,1 Pedro de Valdivia,2955-1-pedro-de-valdivia,#000,840,9
+2956,261,2 Plaza Acevedo,2956-2-maipu,#000,840,9
+2957,261,4 Maipú,2957-4-maipu,#000,840,9
+2958,261,5 Ejército,2958-5-ejercito,#000,840,9
+2959,261,6 Collao,2959-6-collao,#000,840,9
+2960,15,Line 12,2960-line-12,#7e4f27,258,4
+2962,54,Metro,2962-m1,#f03820,46,4
+2974,212,Airport Line,2974-airport-line,#f0b2b2,844,3
+2970,212,Market-Frankford Line,2970-market-frankford-line,#4a90e2,844,4
+2971,212,Broad Street Line,2971-broad-street-line,#f5a623,844,4
+2961,15,Line 3,2961-line-3,#e91414,258,4
+3168,86,Line 7,3168-line-7,#8ac400,79,0
+3024,14,R1,3024-r1,#56b7e7,883,2
+3028,14,R2,3028-r2,#00ab4d,883,2
+4246,381,Line 13,4246-line-13,#ff7a00,982,4
+3029,14,R2 Nord,3029-r2-nord,#b5c527,883,2
+2975,139,Newburyport/Rockport Line,2975-rockport-line,#bd10e0,422,3
+3181,358,Wanda-Zhonghe-Shulin Line,3181-wanda-zhonghe-shulin-line,#77c720,743,5
+2979,139,Saugus Branch,2979-saugus-branch,#000,539,3
+3182,71,P.Mayor-Pte.Toledo,3182-p.mayor-pte.toledo,#e55f5f,779,9
+3183,71,Sol-Fuentecilla,3183-sol-fuentecilla,#e42a2a,779,9
+2983,139,Gloucester Branch,2983-gloucester-branch,#000,539,3
+2978,139,Eastern Line,2978-eastern-division,#000,539,3
+1414,139,Main Line,1414-needham-line,#50e3c2,538,3
+1419,139,Midland Line,1419-midland-division,#50e3c2,538,3
+1415,139,Needham Branch,1415-dedham-branch,#50e3c2,538,3
+1418,139,Stoughton Branch,1418-stoughton-branch,#50e3c2,538,3
+3184,71,Sol/P.Mayor-Carab.Alto,3184-sol-p.mayor-carab.alto,#ce0000,779,9
+2984,261,Tranvía San Vicente (Animal),2984-tranvia-san-vicente-(animal),#b8e986,843,9
+2985,261,Talcahuano,2985-talcahuano,#000,840,9
+3185,71,Sol/P.Mayor-Leganés,3185-sol-p.mayor-leganes,#b30000,779,9
+2987,139,Silver Line (Washington St),2987-silver-line,#9b9b9b,110,6
+2988,139,Silver Line (Waterfront),2988-silver-line-(waterfront),#9b9b9b,110,6
+2968,54,Lahti Line,2968-lahti-line,#26b351,841,3
+2965,54,Main Line,2965-coastal-line,#26b351,841,3
+2969,54,Riihimäki-Lahti Line,2969-riihimaki-lahti-line,#26b351,841,3
+2967,54,Ring Rail Line,2967-ring-rail-line,#82367a,1896,3
+2966,54,Vantaankoski Line,2966-vantaankoski-line,#82367a,1896,3
+2994,212,Manayunk/Norristown Line,2994-manayunk-norristown-line,#9b9b9b,844,3
+1225,206,Port Chester,1225-port-chester-line,#bd10e0,479,3
+2990,206,Harlem (Diesel),2990-harlem-line-(diesel),#4a90e2,482,3
+2997,206,Mainline,2997-main-line,#b8e986,480,3
+3034,54,Kerava-Porvoo Line,3034-kerava-porvoo-line,#26b351,841,3
+2972,212,Broad Ridge Spur,2972-broad-ridge-spur,#f5a623,844,4
+3000,114,Narita Express,3000-narita-express,#4a4a4a,305,4
+3001,84,Mikawa Main Line,3001-mikawa-main-line,#000,846,3
+3002,51,S11,3002-s11,#7ed321,43,3
+3003,51,S2,3003-s2,#a44040,43,3
+3004,51,S21,3004-s21,#db9191,43,3
+3005,51,S3,3005-s3,#7213c7,43,3
+3006,51,S31,3006-s31,#b989e5,43,3
+3007,51,U1,3007-u1,#2587fd,847,4
+3008,51,U2,3008-u2,#ea1010,847,4
+3009,51,U3,3009-u3,#f8e71c,847,4
+3010,51,U4,3010-u4,#50e3c2,847,4
+3011,51,A1,3011-a1,#f5a623,848,3
+3012,51,A2,3012-a2,#f5a623,848,3
+3013,51,A3,3013-a3,#f5a623,848,3
+3014,69,East London,3014-east-london,#f5a623,259,4
+3018,69,Main Line,3018-mainline,#840084,859,3
+951,114,Kururi Line,951-kururi-line,#417505,305,4
+3019,69,Tilbury Loop,3019-tilbury-loop,#840084,859,3
+3020,69,Upminster-Grays,3020-upminster---grays,#840084,859,3
+3023,69,London-Aylesbury,3023-london-aylesbury,#005e97,854,3
+3017,69,Main Line,3017-mainline,#4a90e2,850,3
+3031,69,Greenwich,3031-greenwich,#4a90e2,850,3
+3032,69,Bexleyheath,3032-bexleyheath,#4a90e2,850,3
+2980,212,Cynwyd Line,2980-cynwyd-line,#860404,844,3
+2992,212,Fox Chase Line,2992-fox-chase-line,#6cbaf0,844,3
+541,114,Haijima Line,541-hajima-line,#00a6bf,310,4
+544,114,Sayama Line,544-sayama-line,#ef810f,310,4
+2373,114,Yamaguchi Line,2373-yamaguchi-line,#ff3333,310,7
+3015,69,Main Line,3015-north-london,#f8e71c,849,3
+3065,69,Northern City (1904-13),3065-moorgate-line,#ffbe00,860,3
+202,69,Main Line,202-national-rail-(kx-moorgate),#ffbe00,860,3
+118,69,Waterloo & City,118-waterloo-&-city-line,#95cdba,259,4
+3039,114,Shin-Etsu Line,3039-shin-etsu-line,#00acd1,305,0
+4247,381,Line 6B,4247-line-6b,#58828c,982,4
+3043,206,Babylon,3043-babylon,#00985f,495,3
+427,114,Narita Airport Line (Narita Sky Access),427-narita-sky-access,#ff8620,308,4
+3053,32,Line 11,3053-line-11,#f5c92a,25,4
+3049,69,Abbey Branch,3049-abbey,#054400,855,3
+3051,69,Enfield Town,3051-enfield-town,#964f4c,857,3
+3025,69,Great Eastern Main Line,3025-great-eastern-main-line,#964f4c,857,3
+3022,69,Shenfield-Southend,3022-shenfield---southend,#964f4c,857,3
+3048,114,Suigun Line (Hitachi-Ōta Branch),3048-hitachi-ōta-branch,#368c44,305,4
+3052,69,Edgware/High Barnet Branch,3052-edgeware-branch,#ffbe00,860,3
+3054,32,Line 1,3054-line-1,#b8d321,866,0
+3056,32,Line 3,3056-line-3,#0019ff,866,0
+3055,32,Line 2,3055-line-2,#ff0000,866,0
+3044,114,Sunzu Line  駿豆線,3044-sunzu-line,#4a73e2,418,4
+3057,32,Nanhai New Transit,3057-nanhai-new-transit,#81e4ff,866,5
+3058,32,Zhongshan Road Corridor,3058-zhongshan-road-corridor,#ffa103,867,6
+3060,32,Haizhu Tram,3060-haizhu-tram,#1dd700,25,9
+3061,32,APM,3061-apm,#00e5ff,25,5
+3062,69,Watford-Rickmansworth Branch,3062-watford-rickmansworth-branch,#054400,855,3
+3064,69,Northern City,3064-northern-city,#ffbe00,860,3
+3066,107,Pujiang Line,3066-pujiang-line,#6c6c6c,252,5
+3067,107,Fengpu BRT,3067-fengpu-brt,#4a90e2,282,6
+3042,114,Izu Kyuko Line  伊豆急行線,3042-izu-kyuko,#79f2c9,864,4
+3046,114,Minobu Line  身延線,3046-minobu-line,#722684,421,4
+6584,54,3B (2009-2013),6584-3b-(2009-2013),#89ca9b,1929,9
+3070,32,Line 12,3070-line-12,#908e68,25,4
+3059,32,Line 18,3059-line-18,#1080fc,25,4
+3071,32,Line 10,3071-line-10,#52808f,25,4
+3063,69,Primrose Hill-City,3063-primrose-hill-city,#054400,855,3
+3045,215,PRTX University Line,3045-downtown---uptown---oakland---east-end-brt,#000,200,6
+2993,212,Lansdale/Doylestown Line,2993-lansdale-doylestown-line,#9287fa,844,3
+2973,212,Media/Elwyn Line,2973-media-elwyn-line,#110764,844,3
+2982,212,Paoli/Thorndale Line,2982-paoli-thorndale-line,#af7777,844,3
+2989,212,Trenton Line,2989-trenton-line,#572121,844,3
+2995,212,Warminster Line,2995-warminster-line,#416d94,844,3
+2996,212,West Trenton Line,2996-west-trenton-line,#c2d5e7,844,3
+2981,212,Wilmington/Newark Line,2981-wilmington-newark-line,#ca8761,844,3
+3072,32,Huangpu Tram Line 1,3072-huangpu-tram-line-1,#c64c00,25,9
+3073,32,Gaoming Tram Line 1,3073-gaoming-tram-line-1,#36f300,869,9
+3075,37,Line 9,3075-line-9,#8a0000,29,4
+3074,37,Line 0,3074-line-0,#d2e400,29,4
+3077,15,Line S1,3077-line-s1,#000,284,3
+3079,15,Line S5,3079-line-s5,#ffc0b8,284,3
+3078,15,Line S6,3078-line-s6,#002f91,284,3
+7014,438,Tren de Sóller,7014-tren-de-soller,#f5a623,2128,5
+3084,114,Watarase Keikoku Tetsudo Line,3084-watarase-keikoku-tetsudo-line,#5a1714,872,4
+3085,364,Line 5,3085-line-5,#c600f0,871,4
+3087,364,Line 7,3087-line-7,#00dbff,871,4
+3091,364,Line 17,3091-line-17,#58ffad,871,4
+3094,364,Line 13,3094-line-13,#f9d52c,871,4
+3095,364,Second Ring Road Loop,3095-second-ring-road-loop,#ff0000,873,6
+3096,364,Shenxianshu Corridor,3096-shenxianshu-corridor,#ff0000,873,6
+3097,364,Fengshan Corridor,3097-fengshan-corridor,#ff0000,873,6
+3041,114,Ito Line  伊東線,3041-ito-line,#167505,305,4
+3021,114,Sobu Main Line  総武本線,3021-sobu-main-line,#ffd400,305,4
+3076,37,Bishan SkyShuttle,3076-bishan-yungui,#4a90e2,870,5
+3104,114,Kinuta Line,3104-kinuta-line,#5f0101,312,5
+3107,114,Mekama Line,3107-mekama-line,#009cd2,312,4
+3169,86,Line S6,3169-line-s6,#dd81e0,79,0
+3170,86,Line S9,3170-line-s9,#fff200,79,0
+3040,114,Jōshin Line,3040-jōshin-line,#f29d00,863,4
+188,15,Fangshan Line,188-fangshan-line,#d86018,258,4
+3069,15,Line 17,3069-line-17,#00abab,258,4
+3099,369,Line 9,3099-line-9,#b15420,874,4
+3106,369,Line 8,3106-line-8,#9e2859,874,4
+3105,369,Line 7,3105-line-7,#7c2798,874,4
+3103,369,Line 6,3103-line-6,#2e72c7,874,4
+3102,369,Line 5,3102-line-5,#4cacc4,874,4
+3100,369,Line 2,3100-line-2,#dc7e2f,874,4
+3098,369,Line 1,3098-line-1,#ce5263,874,4
+3113,369,Hanghai Line,3113-hanghai-line,#3077c2,874,4
+3171,386,Autocity T1,3171-autocity-t1,#ff0000,880,9
+3174,386,Xiongchu Avenue BRT,3174-xiongchu-avenue-brt,#ff8400,880,6
+3175,86,Hexi Line,3175-hexi-line,#000,881,9
+3176,86,Qilin Line,3176-qilin-line,#b8e986,881,9
+150,107,Zhangjiang Tram,150-zhangjiang-tram,#d0021b,282,9
+3173,386,Optics Valley Tram L2,3173-optics-valley-tram-l2,#fe0b00,880,5
+3172,386,Optics Valley Tram L1,3172-optics-valley-tram-l1,#0d00ff,880,5
+3186,71,Sol-Pacífico,3186-sol-pacifico,#bd10e0,779,9
+3187,71,Sol-Noviciado/Quevedo,3187-sol-noviciado-quevedo,#8700a2,779,9
+3188,71,Sol-P.Cebada/S.Francisco,3188-sol-p.cebada-s.francisco,#c847e2,779,9
+3189,71,Sol-Norte,3189-sol-norte,#7f0099,779,9
+3190,71,Sol-Bombilla,3190-sol-bombilla,#671279,779,9
+3191,71,Sol-Progreso,3191-sol-progreso,#e14dff,779,9
+3192,71,A.Martín-Noviciado,3192-a.martin-noviciado,#8817b4,779,9
+3193,71,Pacífico-Noviciado,3193-pacifico-noviciado,#8115ce,779,9
+3194,71,Pacífico-Chamberí,3194-pacifico-chamberi,#f20cb5,779,9
+3195,71,Progreso-Bombilla,3195-progreso-bombilla,#2b10f8,779,9
+3196,71,Progreso-C.Caminos,3196-progreso-c.caminos,#530fb6,779,9
+3197,71,Obelisco-Progreso,3197-obelisco-progreso,#e92bde,779,9
+3198,71,S.Francisco-Obelisco,3198-s.francisco-obelisco,#6000f3,779,9
+3199,71,Sol-P.Toledo/Mataderos,3199-sol-p.toledo-mataderos,#ec6c6c,779,9
+3200,71,Salamanca-Sol-Quevedo,3200-salamanca-sol-quevedo,#b36860,779,9
+3220,211,Line 1 - Confederation Line,3220-confederation-line,#c61212,196,5
+3203,124,Pedro Montt (2021),3203-pedro-montt-(2021),#417505,537,8
+3204,124,Villanelo,3204-villanelo,#4a90e2,493,7
+3207,84,Ozone Line,3207-ozone-line,#000,884,3
+3208,84,Katsukawa Line,3208-katsukawa-line,#000,884,3
+3210,84,Tokadai Line (Peachliner),3210-tokadai-line-(peachliner),#000,885,7
+1025,108,Punggol LRT,1025-punggol-lrt,#748477,407,5
+3216,356,Seobu Line,3216-seobu-line,#000,886,5
+3217,356,Myonmok Line,3217-myonmok-line,#000,886,5
+3218,356,Wirye-Sinsa Line,3218-wirye-sinsa-line,#000,886,5
+3219,356,Mokdong Line,3219-mokdong-line,#000,886,5
+3214,356,Dongbuk Line,3214-dongbuk-line,#941e34,886,5
+3224,114,Tokaido Main Line  東海道本線,3224-tokaido-main-line,#f68b1e,421,4
+3081,364,Line 2,3081-line-2,#ff4900,871,4
+3082,364,Line 3,3082-line-3,#ff2399,871,4
+3083,364,Line 4,3083-line-4,#00a256,871,4
+3086,364,Line 6,3086-line-6,#af6001,871,4
+3090,364,Line 10,3090-line-10,#1445c5,871,4
+3092,364,Line 19,3092-line-19,#6aa0c2,871,4
+3089,364,Line 9,3089-line-9,#f2e11c,871,4
+3093,364,Line 18,3093-line-18,#007255,871,4
+3223,84,Okazaki Line,3223-okazaki-line,#000,888,3
+3226,84,Heisaka Branch Line,3226-hirasaka-branch-line,#654e9e,784,3
+3225,84,Heisaka Line,3225-hirasaka-line,#000,888,3
+3227,84,Anjō Branch Line,3227-anjō-branch-line,#654e9e,784,3
+3228,84,Yoshida Line,3228-yoshida-line,#000,888,3
+3229,212,Norristown High Speed Line,3229-norristown-high-speed-line,#a80fc7,844,4
+3230,13,Gold Line,3230-gold-line,#a58704,698,7
+3221,84,Nishio Line,3221-nishio-line,#50e3c2,887,3
+3222,84,Nishio Line,3222-nishio-line,#4a90e2,889,3
+3232,84,Tokoname Line,3232-tokoname-line,#000,889,3
+3234,84,Chita Line,3234-chita-line,#000,891,3
+3242,84,Chikkō Line,3242-chikkō-line,#000,889,3
+3247,84,Arimatsu Line,3247-arimatsu-line,#000,889,3
+3209,84,Iwakura Branch Line,3209-iwakura-line,#000,784,3
+3241,11,Σιδηρόδρομοι Αττικής (Σ.Α.),3241-attica-railways,#000,892,3
+3211,212,Bethlehem Line,3211-bethlehem-line,#9b9b9b,844,3
+3248,84,Toyohashi Line,3248-toyohashi-line,#000,889,3
+3249,84,Okazaki Line,3249-okazaki-line,#000,889,3
+1078,102,TransOlímpica,1078-transolimpica,#7ed321,397,6
+3250,102,TransOeste,3250-transoeste,#4a90e2,397,6
+3245,11,Σιδηρόδρομος Πειραιώς - Δεμερλή - Συνόρων (Σ.Π.Δ.Σ.),3245-pireaus---demerli---borders-railway,#000,892,2
+3110,369,Line 10,3110-line-10,#a58a2c,874,4
+312,249,Expo Line,312-expo-line,#255ea4,234,4
+3215,356,Wirye Line,3215-wirye-line,#000,886,9
+3114,369,Airport Express,3114-airport-express,#83c2d9,874,4
+3213,88,8 - Magenta Line,3213-magenta,#884090,75,4
+3111,369,Line 1,3111-line-1,#b52541,875,4
+3112,369,Line 2,3112-line-2,#2d6eb2,875,4
+3244,11,Προαστιακός / Suburban Railway,3244-suburban-railway-athens,#bb0012,897,3
+3243,11,Ο.Σ.Ε. / ΤΡΑΙΝΟΣΕ / Hellenic Train,3243-ose---hellenic-train,#ee7d11,897,2
+3231,11,Γραμμή 4,3231-line-4,#f39800,8,4
+2443,11,Γραμμή 2,2443-line-2,#e32119,8,4
+3205,206,<6>,3205-<6>,#00933c,191,4
+3201,206,<7>,3201-<7>,#b933ad,191,4
+3202,206,T,3202-t,#00add0,191,4
+3251,84,Kozakai Branch Line,3251-kozakai-branch-line,#d12027,784,3
+3252,84,Kozakai Branch Line,3252-kozakai-branch-line,#000,889,3
+3257,84,Ichinomiya Line,3257-ichinomiya-line,#000,884,3
+3258,84,Inuyama Line,3258-inuyama-line,#000,884,3
+3259,84,Komaki Line,3259-komaki-line,#000,884,3
+3260,84,Tsushima Line,3260-tsushima-line,#000,884,3
+3253,84,Tsushima Line,3253-tsushima-line,#000,898,2
+3256,84,Komaki Line,3256-komaki-line,#000,898,2
+3255,84,Inuyama Line,3255-inuyama-line,#000,898,2
+3254,84,Ichinomiya Line,3254-ichinomiya-line,#000,898,2
+3261,84,Biwajima Line,3261-biwajima-line,#000,898,2
+3262,84,Ichinomiya Line,3262-ichinomiya-line,#000,899,3
+3263,84,Ichinomiya Line,3263-ichinomiya-line,#000,784,3
+3264,84,Tsushima Line,3264-tsushima-line,#000,899,3
+3265,84,Inuyama Line,3265-inuyama-line,#000,899,3
+3266,84,Monkey Park Monorail Line,3266-monkey-park-monorail-line,#018b44,784,7
+3267,84,Komaki Line,3267-komaki-line,#000,899,3
+3269,14,R12,3269-r12,#f8f31c,883,3
+3270,84,Kiyosu Line,3270-kiyosu-line,#000,898,2
+3271,84,Kiyosu Line,3271-kiyosu-line,#000,784,3
+3272,84,Kiyosu Line,3272-kiyosu-line,#000,899,3
+3273,84,Kiyosu Line,3273-kiyosu-line,#000,884,3
+3274,84,Meigi Line,3274-meigi-line,#000,899,3
+3275,84,Meigi Line,3275-meigi-line,#000,884,3
+3276,84,Bisai Line,3276-bisai-line,#000,900,3
+3277,84,Bisai Line,3277-bisai-line,#000,899,3
+3278,84,Bisai Line,3278-bisai-line,#000,884,3
+3279,14,R13,3279-r13,#e0106e,883,3
+3280,14,R14,3280-r14,#8813fe,883,3
+3284,84,Soto Line,3284-soto-line,#000,884,9
+3285,84,Soto Line,3285-soto-line,#000,899,9
+3286,84,Soto Line,3286-soto-line,#000,784,9
+3282,84,Okoshi Line,3282-okoshi-line,#000,784,9
+3287,91,Hokushin Line,3287-hokushin-line,#9a6e5f,546,4
+3290,212,Route 11,3290-route-11,#417505,844,9
+3295,84,Tōmi Line,3295-tōmi-line,#000,902,4
+3294,84,Tōnō Line,3294-tono-line,#000,901,5
+3296,84,Tōmi Line,3296-tōmi-line,#000,784,3
+3289,212,Route 10,3289-route-10,#274603,844,9
+3291,212,Route 13,3291-route-13,#7cbb34,844,9
+3292,212,Route 34,3292-route-34,#b4f569,844,9
+3293,212,Route 36,3293-route-36,#c1dda0,844,9
+3297,84,Imawatari Line,3297-imawatari-line,#000,899,3
+3298,84,Hiromi Line,3298-hiromi-line,#000,899,3
+3299,84,Hiromi Line,3299-hiromi-line,#000,884,3
+3302,14,R11,3302-r11,#02185f,883,3
+3304,14,R16,3304-r16,#d0022d,883,3
+3305,84,Taita Line,3305-taita-line,#000,903,3
+3306,84,Taita Line,3306-taita-line,#000,904,3
+3303,14,R15,3303-r15,#8b762a,883,3
+3301,84,Yaotsu Line,3301-yaotsu-line,#018b44,784,3
+3307,84,Kakamigahara Line,3307-kakamigahara-line,#000,905,3
+3308,69,Epping & Ongar Railway,3308-epping-&-ongar-railway,#006e22,906,4
+3309,84,Nakamura Line,3309-nakamura-line,#000,900,3
+3310,84,Kōnomiya Branch Line,3310-kōnomiya-branch-line,#000,899,3
+3311,84,Meigi Line,3311-meigi-line,#000,784,3
+3312,69,Vaterland War Railway,3312-vaterland-war-railway,#eaff00,906,4
+6586,54,6 (-2018),6586-6-(-2018),#954598,1929,9
+3316,77,Fairfield to Riversdale,3316-fairfield-to-riversdale,#e42b23,907,4
+3315,77,Kew Line,3315-kew-line,#094b8d,907,4
+3314,77,Stony Point Line,3314-stony-point-line,#27ed32,66,4
+7015,438,Tramvia de Sóller,7015-tramvia-de-soller,#fe6918,2128,9
+3352,212,Route 102,3352-route-102,#eea5e0,844,5
+3353,212,River Line,3353-river-line,#b9cfe7,915,5
+3324,77,Inner Circle Line,3324-inner-circle-line,#ffb531,907,4
+3323,77,Mont Park Line,3323-mont-park-line,#e42b23,907,4
+3319,77,Port Melbourne Line,3319-port-melbourne-line,#fc7ebb,907,4
+3325,77,Whittlesea Line,3325-whittlesea-line,#e42b23,907,4
+3322,77,Springvale Cemetery Line,3322-springvale-cemetery-line,#16b4e8,907,4
+3318,77,St Kilda Line,3318-st-kilda-line,#fc7ebb,907,4
+3320,77,Darling to Oakleigh,3320-darling-to-oakleigh,#094b8d,907,4
+3317,77,Camberwell to Waverley Road,3317-alamein-to-oakleigh,#094b8d,907,4
+3321,77,Deepdene Dasher,3321-deepdene-dasher,#094b8d,907,4
+3326,77,Mornington Line,3326-mornington-line,#ff6132,907,4
+3327,77,South Gippsland Line,3327-south-gippsland-line,#f79c00,907,4
+3330,77,Flemington Racecourse Line,3330-flemington-racecourse-line,#000,66,4
+3331,77,Orbost line,3331-orbost-line,#4a49a1,907,4
+3332,77,Wonthaggi Line,3332-wonthaggi-line,#cc8c24,907,4
+3333,77,Barry beach branch line,3333-barry-beach-branch-line,#bb9b64,907,4
+3337,84,Kasamatsu Line,3337-kasamatsu-line,#000,910,3
+3341,77,Bellarine Line,3341-bellarine-line,#aeb841,907,4
+3342,84,Kasamatsu Line,3342-kasamatsu-line,#000,884,3
+3343,84,Kasamatsu Line,3343-kasamatsu-line,#000,784,3
+3345,84,Takehana Line,3345-takehana-line,#000,911,3
+3344,84,Toyohashi Line,3344-toyohashi-line,#d12027,784,3
+3346,84,Aonami Line (Nishi-Nagoyakō Line),3346-aonami-line-(nishi-nagoyakō-line),#334fa0,912,3
+3347,84,Jōhoku Line,3347-jōhoku-line,#f77321,913,3
+3348,84,Aichi Loop Line,3348-aichi-loop-line,#2536a1,914,3
+3349,84,Okada Line,3349-okada-line,#000,904,3
+3350,84,Okada Line,3350-okada-line,#000,782,3
+3354,212,Speedline,3354-speedline,#d0021b,916,4
+3335,77,Belgrave Line,3335-belgrave,#094b8d,66,4
+3356,77,Alamein Line,3356-alamein-line,#094b8d,66,4
+3334,77,Mernda Line,3334-mernda-line,#e42b23,66,4
+3336,77,Sunbury Line,3336-sunbury,#ffb531,66,4
+3357,77,Upfield Line,3357-upfield-line,#ffb531,66,4
+3358,77,Werribee Line,3358-werribee-line,#149943,66,4
+3359,77,Williamstown Line,3359-williamstown-line,#149943,66,4
+3360,77,Altona Loop,3360-altona-loop,#149943,66,4
+3361,77,Glen Waverley Line,3361-glen-waverley-line,#094b8d,66,4
+3340,77,Albury Line,3340-albury-line,#820eba,908,2
+3329,77,Geelong Line,3329-geelong-line,#820eba,908,2
+3328,77,Gippsland Line,3328-gippsland-line,#820eba,908,2
+3338,77,Seymour Line,3338-seymour-line,#820eba,908,2
+3339,77,Shepparton Line,3339-shepparton-line,#820eba,908,2
+3362,77,Ballarat Line,3362-ballarat-line,#820eba,908,2
+3363,77,Bendigo Line,3363-bendigo-line,#820eba,908,2
+3364,77,Warrnambool Line,3364-warrnambool-line,#820eba,908,2
+3365,77,Swan Hill Line,3365-swan-hill-line,#820eba,908,2
+3366,77,Echuca Line,3366-echuca-line,#820eba,908,2
+3367,77,Ararat Line,3367-ararat-line,#820eba,908,2
+3368,77,Maryborough Line,3368-maryborough-line,#820eba,908,2
+3369,77,Leongatha Line,3369-leongatha-line,#820eba,908,2
+3370,77,Sandringham Line,3370-sandringham-line,#e92d89,66,4
+1772,22,Line 13,1772-line-13,#9013fe,15,4
+1727,22,Line 1,1727-line-1,#55a9ff,15,4
+1775,22,Line 4,1775-line-4,#5aa500,15,4
+3371,77,Freight,3371-freight,#000,921,4
+3404,59,BTM Line,3404-btm-line,#000,917,9
+3405,59,BETM Line,3405-betm-line,#000,919,9
+3406,59,Line 1,3406-line-1,#000,920,9
+3407,59,Line 2,3407-line-2,#000,920,9
+3408,59,Line 3,3408-line-3,#000,920,9
+3409,59,NITM Line,3409-nitm-line,#000,918,9
+3410,212,Atlantic City Line,3410-atlantic-city-line,#0e53a4,915,3
+3411,260,Carril Exclusivo Godoy Cruz,3411-carril-exclusivo-godoy-cruz,#f5a623,954,6
+3412,260,Carril Exclusivo Av. San Martín,3412-carril-exclusivo-av.-san-martin,#f5a623,954,6
+3413,212,Bridge Line,3413-bridge-line,#d0021b,955,4
+700,77,Pakenham & cranbourne Line,700-cranbourne-line,#16b4e8,66,4
+3414,77,Clyde Line/ extention ,3414-clyde-line--extention,#00dbff,66,4
+3416,84,Tōkaidō Shinkansen,3416-tōkaidō-shinkansen,#000,904,1
+4381,28,M4,4381-m4,#249a00,21,4
+4382,28,M5,4382-m5,#ff9500,21,4
+3419,247,501 - Queen,3419-501---queen,#da251d,956,9
+3426,247,503 - Kingston Rd,3426-503---kingston-rd,#da251d,956,9
+3420,247,504 - King,3420-504---king,#da251d,956,9
+3421,247,505 - Dundas,3421-505---dundas,#da251d,956,9
+3422,247,506 - Carlton,3422-506---carlton,#da251d,956,9
+3423,247,509 - Harbourfront,3423-509---harbourfront,#da251d,956,9
+3418,247,510 - Spadina,3418-510---spadina,#da251d,956,9
+3424,247,511 - Bathurst,3424-511---bathurst,#da251d,956,9
+3425,247,512 - St. Clair,3425-512---st.-clair,#da251d,956,9
+3427,247,514 - Cherry,3427-514---cherry,#da251d,956,9
+3428,247,504A - King,3428-504a---king,#da251d,956,9
+3429,247,504B - King,3429-504b---king,#da251d,956,9
+3430,247,507 - Long Branch,3430-507---longbranch,#da241d,956,9
+3433,247,Queen,3433-queen,#000,958,9
+845,247,Line 5 Eglinton,845-line-5-eglington,#f58634,232,5
+3432,247,Yonge,3432-yonge,#000,958,9
+3434,247,King,3434-king,#000,958,9
+3446,114,Gakunan Railway Line  岳南線,3446-gakunan-railway-line,#f29d00,959,4
+3435,247,Sherbourne,3435-sherbourne,#000,958,9
+3436,247,Church,3436-church,#000,958,9
+3437,247,Spadina,3437-spadina,#000,958,9
+4379,28,M2,4379-m2,#0073f5,21,4
+4380,28,M3,4380-m3,#ff0000,21,4
+3439,247,College,3439-college,#000,958,9
+3440,247,Bathurst,3440-bathurst,#000,958,9
+3441,247,Brockton,3441-brockton,#000,958,9
+3438,247,Parliament,3438-parliament,#000,958,9
+3444,247,Winchester,3444-winchester,#000,958,9
+6587,54,7 (-2017),6587-7-(-2017),#fbb22e,1929,9
+3445,247,Line 6 Finch West,3445-line-6-finch-west,#747074,232,5
+3415,212,Route 15,3415-route-15,#eef362,844,9
+683,247,Line 1 Yonge-University,683-ttc-subway,#ffcc29,232,4
+3447,247,Mississauga Transitway,3447-mississauga-transitway,#000,960,6
+3449,247,Hurontario LRT,3449-hurontario-lrt,#000,962,5
+3450,247,UP Express,3450-up-express,#948a4c,963,4
+3452,43,Green,3452-green,#00a666,35,9
+3451,43,Red,3451-red,#ef4957,35,9
+3453,43,DART,3453-dart,#7dc242,964,3
+3457,43,Northern Commuter,3457-northern-commuter,#7fa9ce,965,0
+3456,43,South Eastern Commuter,3456-south-eastern-commuter,#7fa9ce,965,0
+3455,43,South Western Commuter,3455-south-western-commuter,#7fa9ce,965,0
+3454,43,Western Commuter,3454-western-commuter,#7fa9ce,965,0
+3458,247,Rogers,3458-rogers,#da251d,956,9
+1182,114,Hakone Tozan Funicular,1182-hakone-tozan-funicular,#f20000,309,5
+3460,247,Bloor,3460-bloor,#da251d,956,9
+3461,247,Danforth,3461-danforth,#000,967,9
+3462,247,Bloor,3462-bloor,#000,968,9
+3463,247,Bloor,3463-bloor-bloor-west,#000,967,9
+3464,247,Bloor West,3464-bloor-west,#da251d,956,9
+3465,247,Belt,3465-belt,#da251d,956,0
+3442,247,Belt,3442-belt,#000,968,9
+3467,247,Lansdowne,3467-lansdowne,#000,967,9
+3466,247,St. Clair,3466-st.-clair,#000,967,9
+3468,247,Gerrard,3468-gerrard,#000,967,9
+3469,247,Lansdowne,3469-1947,#da251d,956,9
+3470,247,Lansdowne,3470-lansdowne,#000,968,9
+3471,247,Lansdowne South,3471-lansdowne-south,#da251d,956,9
+3472,247,Parliament ,3472-parliament,#000,968,9
+3473,247,Kingston Road,3473-kingston-road,#000,958,9
+3474,114,Shinonoi Line,3474-shinonoi-line,#cb5f12,305,4
+1726,22,Line 3,1726-line-3,#00d9e4,15,4
+1773,22,Line 14,1773-line-14,#ff00ff,15,4
+6588,54,8 (-2017),6588-8-(-2017),#d17410,1929,9
+3475,114,Ueda Dentetsu Bessho Line,3475-ueda-dentetsu-bessho-line,#0000f2,969,4
+3476,247,Gerrard-Main,3476-gerrard-main,#da251d,956,9
+3477,247,Coxwell,3477-coxwell,#da251d,956,9
+3478,247,Bay,3478-bay,#da251d,956,9
+3479,247,Avenue Road,3479-avenue-road,#da251d,956,9
+3480,247,Avenue Road,3480-avenue-road,#000,968,9
+3481,247,Dupont,3481-dupont,#000,968,9
+3482,77,Victorian Goldfields Railway (Castlemaine to Maldon),3482-victorian-goldfields-railway-(castlemaine-to-maldon),#ae9135,907,4
+3483,77,Maldon Branch Line,3483-maldon-branch-line,#a62a2a,907,4
+3484,212,Delaware Avenue Elevated,3484-delaware-avenue-elevated,#4a90e2,955,4
+371,95,T 4,371-ligne-4,#f2c700,296,5
+6589,54,9 (2008-2017),6589-9-(2008-2017),#d8008c,1929,9
+3485,236,1 Line,3485-1-line,#5fab41,221,5
+311,249,Canada Line,311-canada-line,#4499c1,234,4
+313,249,Millennium Line,313-millennium-line,#f8d348,234,4
+3486,236,First Hill Streetcar,3486-first-hill-streetcar,#cb583c,971,9
+3487,236,South Lake Union Streetcar,3487-south-lake-union-streetcar,#cb583c,971,9
+3490,341,Gold Line,3490-gold-line,#e9b248,972,4
+3489,341,Green Line,3489-green-line,#8ab342,972,4
+3488,341,Red Line,3488-red-line,#d03a2c,972,4
+3491,341,Blue Line,3491-blue-line,#4a90e2,973,9
+3492,341,Yellow Line,3492-yellow-line,#f8e71c,973,9
+3493,341,Orange Line,3493-orange-line,#ed7333,974,9
+3495,341,Pink Line,3495-pink-line,#d43d8d,974,9
+3494,341,Turquoise Line,3494-turquoise-line,#45a4a5,974,9
+3443,247,Bloor,3443-bloor,#000,958,9
+3496,341,Purple Line,3496-purple-line,#8765ac,974,9
+4383,28,M6,4383-m6,#f680ff,21,4
+3497,341,Msheireb Tram,3497-msheireb-tram,#51345b,975,9
+3563,11,Ομόνοια - Σταθμός Λαρίσης,3563-line-5,#a36834,991,9
+3573,11,Ομόνοια - Κήποι Ιλισσού,3573-omonoia---pagkrati,#a36834,991,9
+3498,213,Valley Metro Rail,3498-valley-metro-rail,#4285b7,198,5
+3505,11,Γραμμή 7,3505-line-7,#7ed321,794,5
+3504,11,Γραμμή 6,3504-line-6,#7ed321,794,5
+3562,11,Γραμμή 1/3,3562-line-1-3,#f8c51c,990,9
+3561,11,Γραμμή 1,3561-line-1,#f8c51c,990,9
+3565,11,Γραμμή 5/12,3565-line-5-12,#f8c51c,990,9
+3564,11,Γραμμή 5,3564-line-5,#f8c51c,990,9
+3500,413,Green Line,3500-green-line,#489f4f,976,4
+3499,413,Red Line,3499-red-line,#d22e2d,976,4
+3502,413,Al Sufouh Tram,3502-al-sufouh-tram,#dc702d,977,9
+3503,413,Palm Monorail,3503-palm-monorail,#469ea6,978,4
+3512,247,Church,3512-church,#000,968,9
+3513,247,Church,3513-church,#000,956,9
+3514,247,Yonge,3514-yonge,#000,968,9
+3515,247,Yonge,3515-yonge,#000,956,9
+3516,247,Broadview,3516-broadview,#000,958,9
+3517,247,Broadview,3517-broadview,#000,968,9
+3518,381,Line 1,3518-line-1,#4ca849,982,4
+3519,381,Line 2,3519-line-2,#cd7234,982,4
+3520,381,Line 3,3520-line-3,#46a0db,982,4
+3522,381,Line 5,3522-line-5,#8f56ad,982,4
+3521,381,Line 4,3521-line-4,#cb392d,982,4
+3523,381,Line 6,3523-line-6,#62b9a8,982,4
+3524,381,Line 7,3524-line-7,#0e37a6,982,4
+3525,381,Line 8,3525-line-8,#cd7234,982,4
+3526,381,Line 9,3526-line-9,#806f74,982,4
+3527,381,Line 10,3527-line-10,#e87f9e,982,4
+3528,381,Line 11,3528-line-11,#622343,982,4
+3529,381,Line 20,3529-line-20,#9bd9de,982,4
+3530,409,Purple Line,3530-purple-line,#8c2877,983,4
+3531,409,Green Line,3531-green-line,#009933,983,4
+3532,409,Yellow Line,3532-yellow-line,#ffdf00,983,4
+3533,409,Pink Line,3533-pink-line,#fc8eac,983,4
+3535,409,Sampige Line,3535-sampige-line,#000,984,3
+3536,409,Mallige Line,3536-mallige-line,#000,984,3
+3537,409,Parijaata Line,3537-parijaata-line,#000,984,3
+3538,409,Kanaka Line,3538-kanaka-line,#000,984,3
+2758,88,1 - Red Line,2758-red,#bf4140,75,4
+2759,88,3 - Blue Line,2759-blue,#3680ba,75,4
+3539,88,4 - Blue Branch,3539-4---blue-branch,#3680ba,75,4
+3313,88,5 - Green Line,3313-aqua-line,#479c73,75,4
+3541,88,Airport Express - Orange Line,3541-orange-line---airport-express,#d67540,75,4
+3542,88,9 - Grey Line,3542-9---grey-line,#b5b6b6,75,4
+3540,88,6 - Violet Line,3540-6---violet-line,#5c3a65,75,4
+3212,88,7 - Pink Line,3212-pink,#d2717f,75,4
+3543,88,Rapid Metro Gurgaon,3543-rapid-metro-gurgaon,#518cc7,985,4
+1729,22,Central line,1729-line-1,#569b06,650,3
+5759,22,Panvel-Karjat line,5759-panvel-karjat-line,#bd10e0,650,3
+3544,88,Aqua Line,3544-aqua-line,#8bcbd6,986,4
+7016,438,T2,7016-t2,#4a90e2,2127,5
+6590,54,10 (-2017),6590-10-(-2017),#8d8b00,1929,9
+3547,379,Line 3,3547-line-3,#225bb0,987,4
+3548,379,Line 8,3548-line-8,#b13a92,987,4
+3551,384,Line 1,3551-line-1,#ae2322,988,4
+3552,384,Line 2,3552-line-2,#ebe04e,988,4
+3553,384,Line 3,3553-line-3,#3e8ab9,988,4
+3554,384,Line 4,3554-line-4,#3a753d,988,4
+3555,384,Line 5,3555-line-5,#ea7734,988,4
+3556,384,Line 6,3556-line-6,#922e6d,988,4
+3557,384,Line 8,3557-line-8,#593278,988,4
+3559,384,TEDA Modern Guided Rail Tram,3559-teda-modern-guided-rail-tram,#9ac143,988,9
+3566,390,Line 1,3566-line-1,#d32d1f,992,4
+3567,390,Line 2,3567-line-2,#f9d548,992,4
+3568,390,Line 3,3568-line-3,#ef8633,992,4
+3569,390,Line 4,3569-line-4,#459fe3,992,4
+3571,390,Line 14,3571-line-14,#ac8bb9,992,4
+3570,390,Line 5,3570-line-5,#365848,992,4
+3572,390,Chengjiao Line,3572-chengjiao-line,#a4ad7a,992,4
+3581,11,Ομόνοια - Αμπελόκηποι,3581-omonoia---ambelokipoi,#a36834,991,9
+3580,11,Ομόνοια - Πατήσια,3580-omonoia---patissia,#a36834,991,9
+3614,11,Ομόνοια - Ιπποκράτους,3614-omonoia---ippokratous,#a36834,991,9
+3620,11,Ιπποκράτους - Μητροπόλεως,3620-ippokratous---mitropoleos,#a36834,991,9
+3613,11,Ομόνοια - Κολοκύνθους,3613-omonoia---kolokinthous,#a36834,991,9
+3579,11,Γραμμή 2/12,3579-line-2-12,#f8c51c,990,9
+3578,11,Γραμμή 2/7,3578-line-2-7,#f8c51c,990,9
+3576,11,Γραμμή 2 (1930 - 1935),3576-line-2-(new),#f8c51c,990,9
+3585,11,Γραμμή 3/7,3585-line-3-7,#f8c51c,990,9
+3582,11,Γραμμή 3,3582-line-3,#f8c51c,990,9
+3577,11,Γραμμή 3/12,3577-line-3-12,#f8c51c,990,9
+3583,11,Γραμμή 7,3583-line-7,#f8c51c,990,9
+3606,11,Γραμμή 6,3606-line-6,#f8c51c,990,9
+3584,11,Γραμμή 4/7,3584-line-4-7,#f8c51c,990,9
+3625,11,Γραμμή 15,3625-line-15,#f8c51c,990,9
+3624,11,Γραμμή 14,3624-line-14,#f8c51c,990,9
+3623,11,Γραμμή 13,3623-line-13,#f8c51c,990,9
+3575,11,Γραμμή 12,3575-line-12,#f8c51c,990,9
+3622,11,Γραμμή 11,3622-line-11,#f8c51c,990,9
+3621,11,Γραμμή 10,3621-line-10,#f8c51c,990,9
+3593,416,Line 14,3593-line-14,#55bed1,993,4
+3590,416,Line 5,3590-line-5,#b3e071,993,4
+3550,379,West Coast Line,3550-line-13,#4ba785,987,4
+3592,416,Line 9,3592-line-9,#f2a240,993,4
+3588,416,Line 3,3588-line-3,#c176c7,993,4
+3587,416,Line 2,3587-line-2,#dc4547,993,4
+3586,416,Line 1,3586-line-1,#3077c2,993,4
+3591,416,Line 6,3591-line-6,#4b5ec0,993,4
+3596,417,Line 3,3596-line-3,#e79b37,994,4
+3595,417,Line 2,3595-line-2,#c52d27,994,4
+3594,417,Line 1,3594-line-1,#418fc5,994,4
+3597,417,Line 4,3597-line-4,#b2cb40,994,4
+3598,417,Line 5,3598-line-5,#1c2383,994,4
+3604,365,Line 13,3604-line-13,#fbe44d,995,4
+3603,365,Line 12,3603-line-12,#4b4693,995,4
+3602,365,Line 3,3602-line-3,#cc2d78,995,4
+3601,365,Line 2,3601-line-2,#4299d3,995,4
+3600,365,Line 1,3600-line-1,#419153,995,4
+3607,414,1 - Maskowskaya (Маскоўская),3607-1---maskowskaya-(маскоўская),#36357b,996,4
+3608,414,2 - Awtazavodskaya (Аўтазаводская),3608-2---awtazavodskaya-(аўтазаводская),#bd433a,996,4
+3609,414,3 - Zelenaluzhskaya (Зеленалужская),3609-3---zelenaluzhskaya-(зеленалужская),#589256,996,4
+3610,415,M1 - Sviatoshynsko–Brovarska Line,3610-m1---sviatoshynsko–brovarska-line,#dc4433,997,4
+3611,415,M2 - Obolonsko–Teremkivska Line,3611-m2---obolonsko–teremkivska-line,#4183c1,997,4
+3612,415,M3 - Syretsko–Pecherska Line,3612-m3---syretsko–pecherska-line,#5faa60,997,4
+3615,105,Line 1 (Kirovsko-Vyborgskaya Line),3615-line-1-(kirovsko-vyborgskaya-line),#c52c40,93,4
+3616,105,Line 2 (Moskovsko-Petrogradskaya Line),3616-line-2-(moskovsko-petrogradskaya-line),#3177c3,93,4
+3617,105,Line 3 (Nevsko-Vasileostrovskaya Line),3617-line-3-(nevsko-vasileostrovskaya-line),#449752,93,4
+3618,105,Line 4 ( Lakhtinsko-Pravoberezhnaya Line),3618-line-4-(-lakhtinsko-pravoberezhnaya-line),#db773a,93,4
+3619,105,Line 5 (Frunzensko-Primorskaya Line),3619-line-5-(frunzensko-primorskaya-line),#672e80,93,4
+3626,412,Line 1,3626-line-1,#c94c5e,998,4
+3627,412,Line 2,3627-line-2,#4ba783,998,4
+3628,412,Line 3,3628-line-3,#f4b33f,998,4
+3558,384,Line 9,3558-line-9,#1d53bc,988,4
+3545,379,Line 1,3545-line-1,#dab833,987,4
+3546,379,Line 2,3546-line-2,#b03538,987,4
+6591,54,5 (2016-2017),6591-5-(2016-2017),#e180b2,1929,9
+3630,410,Orange Line,3630-orange-line,#de763f,1000,4
+3631,408,Red Line,3631-red-line,#cd2c46,1001,4
+3632,408,Orange Line,3632-orange-line,#e99e3b,1001,4
+3633,408,Green Line,3633-green-line,#8ebc52,1001,5
+3634,402,Red Line,3634-red-line,#c1443a,1002,4
+3635,402,Blue Line,3635-blue-line,#4478b1,1002,4
+3636,402,Green Line,3636-green-line,#599356,1002,4
+3637,398,Pink Line,3637-pink-line,#d459ea,1003,4
+3640,393,Line 1,3640-line-1,#df402c,1005,4
+3641,387,Line 1,3641-line-1,#ee7b30,1006,4
+3642,387,Line 2,3642-line-2,#3c8625,1006,4
+3643,387,Line 3,3643-line-3,#649ec4,1006,4
+3644,385,Line S1,3644-line-s1,#2661a8,1007,4
+3645,383,Line 2,3645-line-2,#bb261a,1008,4
+3646,382,Line 1,3646-line-1,#d44c3b,1009,4
+3647,382,Line 2,3647-line-2,#f5c445,1009,4
+3870,134,Baltimore Light RailLink,3870-baltimore-light-raillink,#67aaef,1044,5
+3648,382,Line 3,3648-line-3,#45a0da,1009,4
+3649,380,Line 1,3649-line-1,#d22c2b,1010,4
+3650,380,Line 2,3650-line-2,#f5c145,1010,4
+3872,134,HC2 - Canton Waterfront Park and Tide Point,3872-hc2---canton-waterfront-park-and-tide-point,#025085,1052,10
+3651,380,Line 9,3651-line-9,#3f8edc,1010,4
+3459,114,Hakone Tozan Cable Car 箱根登山鉄道線,3459-hakone-tozan-cable-car,#ea4d15,966,4
+3652,380,Line 10,3652-line-10,#51a34a,1010,4
+4423,460,Line 1,4423-line-1,#ce0000,1134,4
+3871,134,HC1 - Maritime Park and Tide Point,3871-hc1---maritime-park-and-tide-point,#0079ac,1052,10
+3873,134,HC3 - Pier 5 and Federal Hill,3873-hc3---pier-5-and-federal-hill,#002d78,1052,10
+4424,460,Line 2,4424-line-2,#f8e71c,1134,4
+3639,394,Green Line (Line 2),3639-green-line,#439630,1004,4
+3874,134,Green - City Hall - Fells Point - Johns Hopkins,3874-green,#b8e986,1051,8
+3875,134,Orange - Hollins Market - Harbor East,3875-orange---hollins-market---harbor-east,#e6970f,1051,8
+3876,134,Purple - Federal Hill - 33rd Street,3876-purple---federal-hill---fort-mchenry,#8f2ab5,1051,8
+3877,134,Banner - Inner Harbor - Fort McHenry,3877-banner---inner-harbor---fort-mchenry,#0c0197,1051,8
+3890,134,Gold (GD),3890-gold-(gd),#000,1051,8
+4253,199,exo2 - Saint-Jérôme,4253-exo2---saint-jerome,#a2d586,1107,3
+4254,199,exo4 - Candiac,4254-exo4---candiac,#5ab6b3,1107,3
+4252,199,exo1 - Vaudreuil-Hudson,4252-exo1---vaudreuil-hudson-line,#f1617a,1107,3
+4255,199,exo6 - Deux-Montagnes,4255-exo6---deux-montagnes,#eea596,1107,0
+1094,114,Bushu Railway  武州鉄道,1094-bushu-railway,#000,414,4
+2131,205,2 St. Charles,2131-st.-charles-line,#2e5502,190,9
+4259,205,6 Claiborne,4259-6-claiborne,#9b9b9b,190,9
+4260,205,15 St. Bernard,4260-15-st--bernard,#776d00,190,9
+4261,205,17 Elysian Fields,4261-17-elysian-fields,#2c8f7f,190,9
+4258,205,12 Broad,4258-12-broad,#9013fe,190,9
+4262,205,24 Gentilly,4262-24-gentilly,#7b6b7e,190,9
+4263,205,27 Broadway,4263-27-broadway,#ffbaf6,190,9
+4264,205,31 MLK,4264-31-thalia,#7ed321,190,9
+4265,205,55 Franklin,4265-55-franklin,#ad0040,190,9
+4266,205,9 Orleans,4266-9-orleans,#50e3c2,190,9
+4270,189,2 Sunset,4270-2-sunset,#f5a623,1113,8
+4271,189,4 Santa Monica,4271-4-santa-monica,#f5a623,1113,8
+4272,189,10 Melrose,4272-10-melrose,#f5a623,1113,8
+4273,189,14 Beverly,4273-14-beverly,#f5a623,1113,8
+4274,189,16 3rd St,4274-16-3rd-st,#f5a623,1113,8
+4276,189,20 Wilshire,4276-20-wilshire,#f5a623,1113,8
+4278,189,30 Pico,4278-30-pico,#f5a623,1113,8
+4279,189,33 Venice,4279-33-venice,#f5a623,1113,8
+4280,189,35 Washington,4280-35-washington,#f5a623,1113,8
+4281,189,37 Adams,4281-37-adams,#f5a623,1113,8
+4282,189,38 Jefferson,4282-38-jefferson,#f5a623,1113,8
+4284,189,45 Broadway,4284-45-broadway,#f5a623,1113,8
+4285,189,51 Avalon,4285-51-avalon,#f5a623,1113,8
+4283,189,40 MLK,4283-40-redondo-beach,#f5a623,1113,8
+4286,189,53 Central,4286-53-central,#f5a623,1113,8
+4074,134,HC3 - Harborview and Harbor East,4074-hc3---harborview-and-harbor-east,#000,1052,10
+4075,134,HC3 - Harbor East and Federal Hill,4075-hc3---harbor-east-and-federal-hill,#000,1052,10
+4295,189,90 Glendale,4295-90-glendale,#f5a623,1113,8
+4294,189,81 Figueroa,4294-81-figueroa,#f5a623,1113,8
+4292,189,76 Valley,4292-76-valley,#f5a623,1113,8
+4291,189,70 Garvey,4291-70-garvey,#f5a623,1113,8
+4302,189,108 Slauson,4302-108-slauson,#f5a623,1113,8
+4303,189,111 Florence,4303-111-florence,#f5a623,1113,8
+4426,461,Orange Line,4426-line-2,#f28f27,1135,4
+4425,461,Blue Line,4425-line-5,#1a00ff,1135,4
+3629,411,Blue Line,3629-east-west-line,#4a90e2,999,4
+4304,189,115 Manchester/Firestone,4304-115-manchester-firestone,#f5a623,1113,8
+4305,189,117 Century,4305-117-century,#f5a623,1113,8
+4306,189,120 Imperial,4306-120-imperial,#f5a623,1113,8
+4307,189,125 Rosecrans,4307-125-rosecrans,#f5a623,1113,8
+4309,189,128 Alondra,4309-128-alondra,#f5a623,1113,8
+4310,189,134 PCH,4310-134-pch,#f5a623,1113,8
+4312,189,204 Vermont,4312-204-vermont,#f5a623,1113,8
+4314,189,206 Normandie,4314-206-normandie,#f5a623,1113,8
+4313,189,207 Western,4313-205-western,#f5a623,1113,8
+4315,189,210 Crenshaw,4315-210-crenshaw,#f5a623,1113,8
+4316,189,212 La Brea,4316-212-la-brea,#f5a623,1113,8
+4318,189,215 Inglewood,4318-215-inglewood,#f5a623,1113,8
+4319,189,19 Whittier,4319-19-whittier,#f5a623,1113,8
+4275,189,18 6th St,4275-18-6th-st-whittier,#f5a623,1113,8
+4277,189,28 Olympic,4277-28-w--olympic,#f5a623,1113,8
+4321,189,110 Gage,4321-110-gage,#f5a623,1113,8
+4308,189,127 Compton/Redondo Beach,4308-127-compton-bellflower,#f5a623,1113,8
+4288,189,60 Long Beach/Randolph,4288-60-long-beach,#f5a623,1113,8
+4289,189,62 Telegraph,4289-62-telegraph-pioneer,#f5a623,1113,8
+4293,189,78 Las Tunas,4293-78-mission-las-tunas,#f5a623,1113,8
+4322,189,79 Mission,4322-79-mission,#f5a623,1113,8
+4323,189,97 Hyperion,4323-97-hyperion,#f5a623,1113,8
+4300,189,105 Vernon,4300-105-la-cienaga,#f5a623,1113,8
+4317,189,205 La Cienega,4317-217-fairfax,#f5a623,1113,8
+4324,189,71 Cesar Chavez,4324-71-cesar-chavez,#f5a623,1113,8
+4325,189,150 Ventura,4325-150-ventura,#f5a623,1113,8
+4327,189,154 Burbank,4327-154-burbank,#f5a623,1113,8
+4330,189,164 Victory,4330-164-victory,#f5a623,1113,8
+4331,189,165 Vanowen,4331-165-vanowen,#f5a623,1113,8
+4326,189,238 Lankershim,4326-152-roscoe,#f5a623,1113,8
+4328,189,158 Devonshire,4328-158-woodman,#f5a623,1113,8
+4320,189,246 Pacific/Long Beach,4320-220-pacific,#f5a623,1113,8
+3047,114,Minato Line  湊線,3047-minato-line,#ff8c00,865,4
+4076,134,Harbor Connector Alternate Shuttle,4076-harbor-connector-alternate-shuttle,#000,1052,8
+2371,114,Agatsuma Line  吾妻線,2371-agatsuma-line,#0c7505,305,4
+458,114,Chūō Line (Rapid)  中央線快速,458-chuo-line,#fe642e,305,4
+3179,114,Chūō Line  中央本線,3179-chūō-line,#fe642e,305,4
+4336,189,179 Huntington,4336-179-huntington,#f5a623,1113,8
+4337,189,180 Colorado,4337-180-colorado,#f5a623,1113,8
+4340,189,156 Roscoe,4340-155-roscoe,#f5a623,1113,8
+4339,189,162 Sherman,4339-156-sherman,#f5a623,1113,8
+4341,189,155 Magnolia,4341-155-magnolia,#f5a623,1113,8
+4334,189,169 Mulholland,4334-169-mulholland-valley-circle,#f5a623,1113,8
+4332,189,166 Nordhoff,4332-166-nordhoff-osborne,#f5a623,1113,8
+4335,189,177 Del Mar,4335-177-fair-oaks-del-mar,#f5a623,1113,8
+4333,189,167 Plummer/Lassen,4333-167-coldwater-canyon,#f5a623,1113,8
+4342,189,218 Laurel Canyon,4342-218-laurel-canyon,#f5a623,1113,8
+4344,189,224 San Fernando,4344-224-san-fernando,#f5a623,1113,8
+4348,189,235 Balboa,4348-235-balboa,#f5a623,1113,8
+4350,189,240 Reseda,4350-240-reseda,#f5a623,1113,8
+4351,189,242 Tampa,4351-242-tampa,#f5a623,1113,8
+4352,189,243 Mason,4352-243-mason,#f5a623,1113,8
+4353,189,244 DeSoto,4353-244-desoto,#f5a623,1113,8
+4338,189,251 Eagle Rock,4338-182-eagle-rock,#f5a623,1113,8
+4343,189,222 Hollywood Way,4343-222-cahuenga,#f5a623,1113,8
+4346,189,233 Woodman,4346-233-van-nuys,#f5a623,1113,8
+4345,189,232 S. Sepulveda,4345-232-sepulveda,#f5a623,1113,8
+4347,189,234 Verdugo,4347-234-brand,#f5a623,1113,8
+4349,189,237 Woodley,4349-237-white-oak-woodley,#f5a623,1113,8
+4385,37,Line 18,4385-line-18,#00e6ff,29,4
+4386,37,Jiangtiao line,4386-jiangtiao-line,#028de6,29,3
+3560,11,Ακαδημία - Νέο / Παλίο Φάληρο,3560-steam-tram,#868686,989,9
+3605,11,Ομόνοια - Αχαρνών,3605-omonoia---archanon,#a36834,991,9
+3755,11,Αγίου Βασιλείου - Νέο Φάληρο,3755-agiou-vasileiou---neo-faliro,#a36834,991,9
+3246,11,Σιδηρόδρομοι Πειραιώς - Αθηνών - Πελοποννήσου (Σ.Π.Α.Π.),3246-pireaus---athens---peloponnese-railways,#000,892,2
+3235,11,Σιδηρόδρομος Αθηνών - Πειραιώς (Σ.Α.Π.),3235-athens---pireaus-railway,#000,892,3
+4427,88,Delhi–Meerut RRTS ,4427-delhi–meerut-rrts,#d40909,1137,2
+4428,438,Linia 1,4428-linia-1,#ff0000,1138,9
+4441,121,Johnsonville Line,4441-johnsonville-line,#33d3ed,106,4
+4442,121,Kapiti Line ,4442-kapiti-line,#fbfe00,106,4
+4444,14,FM ,4444-funicular-montjuic,#2b4f01,247,5
+4142,14,"S1, S2",4142-s1--s2--s5--s6--s7,#282e8f,260,3
+4078,418,Line 2,4078-line-2,#3d68f6,1080,4
+4080,418,Line 4,4080-line-4,#f09135,1080,4
+4081,418,Line 5,4081-line-5,#c5d34c,1080,4
+4082,420,Line 1,4082-line-1,#87ba41,1081,4
+4083,420,Line 2,4083-line-2,#dc4547,1081,4
+4356,189,260 Atlantic,4356-260-atlantic,#f5a623,1113,8
+4084,420,Line 3,4084-line-3,#ef8833,1081,4
+4355,189,256 Eastern,4355-256-eastern,#f5a623,1113,8
+4085,420,Line 4,4085-line-4,#2e72c7,1081,4
+4086,420,Line 5,4086-line-5,#d74da8,1081,4
+4088,424,Orange Line,4088-orange-line,#f1983f,1083,4
+4089,424,Lahore Metrobus,4089-lahore-metrobus,#eb483f,1084,6
+4090,426,1 Saddar – Pak Secretariat,4090-1-saddar-–-pak-secretariat,#eb483f,1085,6
+4091,426,2 Peshawar Morr – Airport,4091-2-peshawar-morr-–-airport,#eb483f,1085,6
+7017,438,T3,7017-t3,#f8e71c,2127,5
+4087,419,Line 2A - Cát Linh Line (C),4087-line-2a-(c),#00c000,1082,4
+4093,419,Line 1 - Long Biên Line (L),4093-line-1--,#b22222,1082,4
+4101,419,Line 2 - Hoàn Kiếm Line (H),4101-line-2---hoan-kiếm-line-(h),#000080,1082,4
+4094,419,Line 3 - Văn Miếu Line (V),4094-line-3---văn-miếu-line-(v),#90403e,1082,4
+4095,419,Line 4 - Thăng Long Line (T),4095-line-4---thăng-long-line-(t),#ff8c00,1082,4
+4096,419,Line 5 - Kim Mã Line (K),4096-line-5---kim-ma-line-(k),#ffd700,1082,4
+4097,419,Line 6 - Nội Bài Line (N),4097-line-6---nội-bai-line-(n),#a9a9a9,1082,4
+4098,419,Line 7 - Hà Đông Line (A),4098-line-7---ha-đong-line-(a),#ff69b4,1082,4
+4099,419,Line 8 - Mỹ Đình Line (M),4099-line-8---mỹ-đinh-line-(m),#4b0082,1082,4
+4100,419,Line 9 - Sơn Tây Line (S),4100-line-9---sơn-tay-line-(s),#8b4513,1082,4
+4102,84,Chūō West Line,4102-chūō-west-line,#000,903,3
+4103,84,Chūō Main Line,4103-chūō-main-line,#000,903,3
+4104,84,Chūō Main Line,4104-chūō-main-line,#000,904,3
+4105,15,Line S8,4105-line-s8,#737171,284,3
+4106,15,Line S9,4106-line-s9,#3e3d3d,284,3
+4107,59,Bogor Line,4107-bogor-line,#ec2329,676,3
+4108,59,Cikarang Loop Line,4108-cikarang-loop-line,#26baed,676,3
+4109,361,Ungu,4109-ungu,#bd10e0,728,0
+192,15,Batong Line,192-batong-line,#a4343a,258,0
+186,15,Capital Airport Express,186-airport-line,#a192b2,258,4
+2894,15,Daxing Airport Express,2894-daxing-airport-express,#0049a5,258,4
+177,15,Line 6,177-line-6,#b58500,258,4
+2952,15,Line 19,2952-line-19,#d3a3c9,258,4
+4110,361,Jambon,4110-jambon,#fc7aea,728,0
+4114,342,Metrobüs,4114-metrobus,#aa9f07,1086,6
+4115,30,Line 1,4115-line-1,#1d57fb,23,4
+4116,30,Line 2,4116-line-2,#ed0e0e,23,4
+4117,30,Line 3,4117-line-3,#149a05,23,4
+4118,30,Line 1,4118-line-1,#7e0000,1087,3
+4119,30,New Administrative Capital Monorail,4119-new-administrative-capital-monorail,#f8ea05,1088,5
+4121,30,Line 4,4121-line-4,#e675ff,23,4
+4120,30,6th of October City Monorail,4120-6th-of-october-city-monorail,#00ff02,1088,5
+4122,353,Line 6,4122-line-6,#ff0000,1090,4
+4123,342,B2 - Bahçeşehir - Halkalı,4123-b2---bahceşehir---halkalı,#009695,1017,3
+4125,342,M14,4125-m14,#b17c1f,1018,4
+4126,1,Alberdi - Directorio,4126-alberdi---directorio,#f3d379,416,6
+4127,367,Line 5,4127-line-3,#7f4065,1021,4
+4128,31,Line 1,4128-line-1,#17329a,24,4
+4129,31,Line 2,4129-line-2,#3a802c,24,4
+4130,375,Line 5,4130-line-5,#54a551,1013,4
+3101,369,Line 4,3101-line-4,#81bf5b,874,4
+4131,363,Line 6,4131-line-6,#1c4d9c,1023,4
+4132,113,Line 1,4132-line-1,#ff0000,99,4
+4134,113,Line 3,4134-line-3,#00afff,99,4
+4092,233,Tren Urbano,4092-tren-urbano,#2300a6,218,4
+4136,113,Line 5,4136-line-5,#298500,99,3
+4137,113,Line 6,4137-line-6,#ff88cd,99,4
+4138,113,Line 7,4138-line-7,#674296,99,4
+4135,113,Line 4,4135-line-4,#ffdb00,99,4
+4139,113,Line 10,4139-line-10,#003dff,99,4
+4133,113,Line 2,4133-line-2,#00149d,99,4
+2976,220,"Fayetteville, Blount, and Polk Sts.",2976-fayetteville--blount--and-polk-sts-,#000,205,9
+4111,71,ML1,4111-ml1,#3a7dda,796,5
+4112,71,ML2,4112-ml2,#a60084,796,5
+4113,71,ML3,4113-ml3,#ed1c24,796,5
+4141,14,"S4, S8, S9, R5, R50, R6, R60",4141-s4--s8--s9--r5--r50--r6--r60,#282e8f,260,0
+4357,189,265 Paramount,4357-265-paramount,#f5a623,1113,8
+4144,14,"S4, S8, R5, R50, R6, R60",4144-r5--r50--r6--r60--s4--s8,#282e8f,260,0
+1770,22,Line 11,1770-line-11,#5fae00,15,4
+309,258,Antigua línea a Plencia,309-antigua-linea-a-plencia,#4a90e2,288,3
+4148,258,L2,4148-l2,#f5a623,243,4
+4149,395,1,4149-1,#e60000,1093,5
+4150,395,2,4150-2,#173ba0,1093,5
+4151,395,C-1,4151-c-1,#65b2e8,1094,3
+4152,395,C-2,4152-c-2,#00953b,1094,3
+5793,442,RT2,5793-rt2,#ff72d0,1665,3
+4155,268,5 Benta Berri ,4155-5,#ed1919,1095,8
+4156,268,8 Gros - Intxaurrondo,4156-8-gros---intxaurrondo,#000,1095,8
+4157,268,9 Egia - Renfe-Bus - Intxaurrondo,4157-9-egia---renfe-bus---intxaurrondo,#000,1095,0
+4158,268,13 Altza,4158-13-altza,#000,1095,0
+4159,268,14 Bidebieta,4159-14-bidebieta,#000,1095,0
+4160,268,16 Igeldo,4160-16-igeldo,#000,1095,0
+4161,268,17 Gros - Amara - Miramon,4161-17-gros---amara---miramon,#000,1095,0
+4162,268,18 Seminario,4162-18-seminario,#000,1095,0
+4163,268,19 Aiete - Bera Bera - Pagola,4163-19-aiete---bera-bera---pagola,#000,1095,0
+4164,268,21 Mutualidades - Anoeta,4164-21-mutualidades---anoeta,#000,1095,0
+4165,268,23 Errondo,4165-23-errondo,#000,1095,0
+4166,268,24 Altza - Gros - Antiguo,4166-24-altza---gros---antiguo,#000,1095,0
+4167,268,25 Benta Berri - Añorga - Belartza,4167-25-benta-berri---anorga---belartza,#000,1095,0
+4168,268,26 Amara - Riberas - Martutene,4168-26-amara---riberas---martutene,#000,1095,0
+4169,268,27 Altza - Intxaurrondo - Antiguo,4169-27-altza---intxaurrondo---antiguo,#000,1095,0
+4170,268,28 Amara - Ospitaleak - Miramon,4170-28-amara---ospitaleak---miramon,#000,1095,0
+4171,268,29 Intxaurrondo Sur,4171-29-intxaurrondo-sur,#000,1095,0
+4172,268,31 Intxaurrondo - Ospitaleak - Altza,4172-31-intxaurrondo---ospitaleak---altza,#000,1095,0
+4173,268,32 Puio - Errondo,4173-32-puio---errondo,#000,1095,0
+4174,268,33 Larratxo - Intxaurrondo - Berio - Igara,4174-33-larratxo---intxaurrondo---berio---igara,#000,1095,0
+4175,268,35 Antiguo - Aiete - Ospitaleak,4175-35-antiguo---aiete---ospitaleak,#000,1095,0
+4176,268,36 San Roque - Aldakonea,4176-36-san-roque---aldakonea,#000,1095,0
+4177,268,37 Rodil - Zorroaga,4177-37-rodil---zorroaga,#000,1095,0
+4178,268,38 Trintxerpe - Altza - Alto Molinao,4178-38-trintxerpe---altza---alto-molinao,#000,1095,0
+4179,268,39 Urgull,4179-39-urgull,#000,1095,0
+4180,268,40 Gros - Igara,4180-40-gros---igara,#000,1095,0
+4181,268,41 Gros - Egia - Martutene,4181-41-gros---egia---martutene,#000,1095,0
+4182,268,42 Aldapa - Egia,4182-42-aldapa---egia,#000,1095,0
+4183,268,43 Anoeta - Universidad - Igara,4183-43-anoeta---universidad---igara,#000,1095,0
+4184,268,45 Estaciones - Universidad - Bera Bera,4184-45-estaciones---universidad---bera-bera,#000,1095,0
+4185,268,46 Morlans - San Antonio,4185-46-morlans---san-antonio,#000,1095,0
+4186,268,B1 Benta Berri - Berio - Añorga - Belartza,4186-b1-benta-berri---berio---anorga---belartza,#000,1095,0
+4189,395,2,4189-2,#000,1096,9
+4187,395,3,4187-circular,#000,1096,9
+4188,395,1,4188-1,#ff0000,1096,9
+4190,395,4,4190-4,#000,1096,9
+4191,395,5,4191-5,#000,1096,9
+4192,395,6,4192-6,#000,1096,9
+4193,257,1,4193-1,#01820b,242,5
+4194,257,T1,4194-t1,#e6b012,1097,9
+4195,257,C-1,4195-c-1,#65b2e8,1098,3
+4196,257,C-2,4196-c-2,#00953b,1098,3
+4197,257,C-3,4197-c-3,#f5333f,1098,3
+4198,257,C-4,4198-c-4,#c028b9,1098,3
+4199,257,C-5,4199-c-5,#ffc629,1098,3
+4200,404,C-1,4200-c-1,#e6242b,1099,3
+4201,404,C-2f,4201-c-2f,#009739,1100,3
+4202,404,C-3f,4202-c-3f,#0032a0,1100,3
+4203,7,1,4203-1,#2399d9,3,4
+4204,7,Alger - El Affroun,4204-alger---el-affroun,#e30021,1101,3
+4205,7,Alger - Thénia,4205-alger---thenia,#e30021,1101,3
+4206,7,Alger - Zéralda,4206-alger---zeralda,#e30021,1101,3
+4207,7,Alger - Aéroport Houari-Boumediene,4207-alger---aeroport-houari-boumediene,#e30021,1101,3
+4208,14,RG1,4208-rg1,#0645ad,883,3
+4210,445,1,4210-1,#c00b31,1102,5
+4211,446,C-1,4211-c-1,#f5333f,1103,3
+4212,446,C-1a,4212-c-1a,#f5333f,1103,3
+4213,446,1,4213-1,#76bc21,1104,5
+4147,336,L4,4147-l-4,#a79ec9,1092,5
+4214,336,L1,4214-l1,#e2001a,1092,5
+4215,336,L2,4215-l2,#009036,1092,5
+4216,336,L3,4216-l3,#ffcc00,1092,5
+4217,336,L5,4217-l5,#172983,1092,5
+4358,189,266 Rosemead/Lakewood,4358-266-rosemead-lakewood,#f5a623,1113,8
+4218,336,L9,4218-l9,#9c9e9f,1092,5
+4219,336,L4L,4219-l4l,#985718,1092,5
+4359,189,267 Temple City,4359-267-temple-city,#f5a623,1113,8
+4220,126,Línea 2,4220-linea-2,#8c5ac5,315,6
+4360,189,268 Baldwin,4360-268-baldwin,#f5a623,1113,8
+4221,126,Línea 4,4221-linea-4,#f5a623,249,2
+4387,11,Σιδηρόδρομοι Ελληνικού Κράτους (Σ.Ε.Κ.),4387-σιδηρόδρομοι-ελληνικού-κράτους-(σ-ε-κ-),#000,892,2
+4388,11,Γραμμή Κ,4388-γραμμή-κ,#f8c51c,990,9
+3574,11,Γραμμή 2 (1908 - 1925),3574-line-2-(old),#f8c51c,990,9
+4223,123,Línea 2,4223-linea-2,#7ed321,114,4
+4222,123,Línea 1,4222-linea-1,#f8e71c,114,4
+4224,123,Línea 3,4224-linea-3,#f5a623,114,4
+4225,252,H Street/Benning Road Line,4225-h-street-benning-road-line,#ff4446,1105,9
+4389,11,Πειραιάς - Τελωνείο Αγίου Νικολάου,4389-πειραιάς-(σ-α-π-)---τελωνείο-αγίου-νικολάου,#a36834,991,9
+4390,11,Παραλιακή Πειραιά,4390-παραλιακή-πειραιά,#e59309,1120,9
+4226,252,Purple Line,4226-purple-line,#9d14ae,1106,5
+4391,11,Γραμμή 18 (1938 - 1959),4391-γραμμή-18-(1938---1959),#f8c51c,990,9
+4429,462,Red Line,4429-red-line,#ff0000,1139,4
+4431,462,Purple Line,4431-purple-line,#7b10d5,1139,4
+4430,462,Green Line,4430-green-line,#4a8a00,1139,4
+4432,462,Green Line (shuttle),4432-green-line,#7ed321,1139,4
+4433,396,Karachi Circular Railway,4433-karachi-circular-railway,#ff0000,1140,3
+4435,31,Line 4,4435-line-4,#f8e71c,24,4
+4436,31,Line 6,4436-line-6,#f5a623,24,4
+4434,31,Line 3,4434-line-3,#5e00b1,24,4
+4438,199,REM,4438-rem,#7ed321,1142,5
+4443,121,Melling Line,4443-melling-line,#bd10e0,106,4
+4531,71,12,4531-12,#b7e6ac,788,9
+4447,113,Line 2,4447-line-2,#2fae83,1144,4
+4437,407,Red Line,4437-the-red-line,#ff0000,1141,5
+4448,407,Green Line,4448-green-line,#73cb11,1141,5
+4449,407,Purple Line,4449-purple-line,#9013fe,1141,5
+3776,345,M2,3776-ucyol---camlıkule,#ffde0d,1027,4
+4450,365,Line 5,4450-line-5,#f70000,995,4
+4451,365,Line 4,4451-line-4,#b03e01,995,4
+4452,365,Route 201,4452-route-201,#de40ff,1145,9
+4453,365,Route 202,4453-route-202,#a9ff4e,1145,9
+3778,345,T3b,3778-t3b,#42b0fb,1027,5
+4454,463,Linha Amarela - D,4454-linha-amarela,#f8e71c,1146,5
+4455,463,Linha Azul - A,4455-linha-azul---a,#4a90e2,1146,5
+4456,463,Linha Vermelha - B,4456-linha-vermelha---b,#d0021b,1146,5
+4457,463,Linha Verde - C,4457-linha-verde---c,#7ed321,1146,5
+4458,463,Linha Violeta - E,4458-linha-violeta---e,#9013fe,1146,5
+4459,463,Linha Laranja - F,4459-linha-laranja---f,#f5a623,1146,5
+4460,120,Linia M3,4460-linia-m3,#1ce755,105,4
+4461,120,1,4461-1,#940101,1147,9
+4465,92,Linje 1,4465-linje-1,#009cdc,1148,4
+4466,92,Linje 2,4466-linje-2,#ea5b0b,1148,4
+4467,92,Linje 3,4467-linje-3,#a683a5,1148,4
+4468,92,Linje 4,4468-linje-4,#00489a,1148,4
+4469,92,Linje 5,4469-linje-5,#3aaa35,1148,4
+2468,132,Red Line,2468-capital-metrorail,#d0021b,125,3
+4470,132,801,4470-801,#e2188f,1150,8
+4471,132,803,4471-803,#e2188f,1150,8
+4472,31,Route 24/29,4472-route-24-29,#db821b,1152,9
+95,71,L1,95-1,#4295ef,246,4
+101,71,L7,101-7,#f5a623,246,4
+103,71,L9,103-9,#bd10e0,246,4
+104,71,L10,104-10,#220faf,246,4
+106,71,R ,106-r-,#000000,246,4
+4473,71,1,4473-1,#1faaff,1153,8
+4474,71,2,4474-2,#1faaff,1153,8
+4475,71,Sol-Chamberí,4475-sol-chamberi,#95f2fd,779,9
+4476,71,Sol-C.Caminos,4476-sol-c-caminos,#70d0d4,779,9
+4477,71,A.Mtnez.-Gta.Cisne,4477-a-mtnez--gta-cisne,#6da6ca,779,9
+4479,71,Cibeles-Embajadores,4479-cibeles-embajadores,#78fd66,779,9
+4480,71,Cibeles-Ventas,4480-cibeles-ventas,#29b10e,779,9
+4481,71,P.Mayor-Norte,4481-pza-mayor-norte,#3a642f,779,9
+4482,71,Salamanca-Prosperidad,4482-salamanca-prosperidad,#ff73e6,779,9
+4483,71,Madrid-Vallecas,4483-madrid-vallecas,#404040,1154,5
+4484,71,C.Caminos-Tetuán,4484-c-caminos-tetuan,#a0fefe,1155,9
+4485,71,C.Caminos-Chamartín,4485-c-caminos-chamartin,#5e8efd,1155,9
+4486,71,Ventas-C.Lineal,4486-ventas-c-lineal,#ff2222,1155,9
+4487,71,C.Caminos-Fuencarral,4487-c-caminos-fuencarral,#ffa2a2,1155,9
+4488,212,Route 56,4488-route-56,#417505,844,9
+4489,212,Route 53,4489-route-53,#417505,844,9
+4491,212,Route 60,4491-route-60,#417505,844,9
+4493,87,Ferrovia Circumvesuviana,4493-ferrovia-circumvesuviana,#810000,1116,3
+604,74,La navette,604-la-navette,#009ab9,346,10
+570,74,M1,570-m1,#0076bd,63,4
+573,74,T2,573-t2,#f5e615,341,9
+4494,74,68,4494-68,#257545,1158,9
+4495,59,Dream 1,4495-tangerang,#e7caca,1159,4
+4496,59,Dream 2,4496-dream-2,#bdc7f8,1159,4
+4497,59,Dream 3,4497-dream-3,#e0b780,1159,4
+4498,59,Dream 4,4498-dream-4,#8be5a6,1159,4
+4499,59,Dream 5,4499-dream-5,#b6e2f2,1159,4
+4500,59,Dream 6,4500-dream-6,#d5aefd,1159,0
+2061,59,Bekasi Line,2061-line-2,#0e6938,678,4
+4522,71,3,4522-3,#dddddd,788,9
+4490,212,Route 23,4490-route-23,#b5f868,844,9
+5792,442,RT1,5792-rt1,#50e3c2,1665,3
+4524,71,5,4524-5,#ff0000,788,9
+4502,108,Jurong Region Line,4502-jurong-region-line,#0099aa,95,4
+4527,71,8,4527-8,#ff8787,788,9
+4528,71,9,4528-9,#ff8787,788,9
+4529,71,10,4529-10,#ff8787,788,9
+4520,71,1,4520-1,#b7e6ac,788,9
+4521,71,2,4521-2,#b7e6ac,788,9
+4532,71,13,4532-13,#ff4a18,788,9
+4533,71,14,4533-14,#ff4a18,788,9
+4534,71,15,4534-15,#ff4a18,788,9
+4536,71,17,4536-17,#1e6c17,788,9
+4535,71,16,4535-16,#ff5b00,788,9
+4504,450,2,4504-2,#004aad,1161,8
+4503,450,1,4503-1,#004aad,1161,8
+4505,450,4,4505-4,#004aad,1161,8
+4506,450,6,4506-6,#004aad,1161,8
+4507,450,A,4507-a,#65a8f8,1162,8
+4537,71,18,4537-18,#474545,788,9
+4508,450,B,4508-b,#65a8f8,1162,8
+4538,71,19,4538-19,#474545,788,9
+4509,450,C,4509-c,#65a8f8,1162,8
+4539,71,20,4539-20,#b7eae8,788,9
+4510,450,D,4510-d,#65a8f8,1162,8
+4540,71,21,4540-21,#1e6c17,788,9
+4511,450,COLÍN,4511-colin,#65a8f8,1162,8
+4541,71,22,4541-22,#1e6c17,788,9
+4512,450,3,4512-3,#0bdb34,1163,8
+4542,71,23,4542-23,#808080,788,9
+4513,450,3B,4513-3b,#0bdb34,1163,8
+4543,71,24,4543-24,#ff0000,788,9
+4514,450,5,4514-5,#0bdb34,1163,8
+4544,71,25,4544-25,#eeee0c,788,9
+4515,450,7,4515-7,#0bdb34,1163,8
+4516,108,Cross Island Line,4516-cross-island-line,#97c616,95,4
+4517,456,Green Line,4517-green-line,#8ec31c,1164,4
+4518,456,Taiwan HSR Line,4518-taiwan-hsr-line,#db5426,1165,1
+3825,358,Taiwan HSR Line,3825-taiwan-hsr-line,#db5426,1038,1
+1179,114,Haga-Utsunomiya LRT (LIGHTLINE),1179-utsunomiya-lrt,#ffd700,462,9
+4519,220,New Bern Avenue,4519-new-bern-avenue,#f5a623,1166,6
+269,106,Linha 9 • Esmeralda (ViaMobilidade),269-linha-9---esmeralda,#01a9a7,94,4
+4553,252,Baltimore to Washington,4553-baltimore-to-washington,#1be7ff,1172,3
+4546,252,Washington and Georgetown Railroad,4546-7th-street,#802c2c,1170,9
+4548,252,Columbia Railway,4548-h-street,#0d3b7b,1170,9
+4549,252,Rock Creek Railway,4549-rock-creek-railway,#91a246,1170,9
+4551,252,Kensington Railway Company,4551-kensington-railway-company,#86217d,1170,9
+4555,252,Washington Railway and Electric Company,4555-georgetown-to-cabin-john,#ce8b24,1170,9
+4559,252,Georgetown and Tennallytown Railway,4559-georgetown-and-tennallytown-railway,#d9cc5e,1170,9
+4560,252,Tennallytown and Rockville Railway,4560-tennallytown-and-rockville-railway,#b29090,1170,9
+4492,252,Baltimore to Washington,4492-washington-branch,#000,1157,3
+4550,252,Capital Traction Company,4550-rock-creek-railway,#4a9090,1170,9
+4575,252,Route 40,4575-route-40,#ff73af,1174,9
+4552,252,Martinsburg to Washington,4552-metropolitan-branch,#000,1157,3
+4231,252,MARC Camden Line,4231-camden-line,#e66e19,1106,3
+4230,252,MARC Penn Line,4230-penn-line,#e66e19,1106,3
+4561,252,Washington and Rockville Electric Railway,4561-washington-and-rockville-electric-railway,#587c2b,1170,9
+4705,206,Eastern Parkway,4705-eastern-parkway,#5c70a2,1199,4
+4562,252,Route 50,4562-route-50,#ff73af,1174,9
+4563,252,Route 54,4563-route-54,#ff73af,1174,9
+4706,206,White Plains Road,4706-white-plains-road,#5c70a2,1199,4
+4564,252,Route 82,4564-route-82,#ff73af,1174,9
+4565,252,Metropolitan Railroad,4565-metropolitan-railroad,#1d5906,1170,9
+4707,206,Dyre Avenue,4707-dyre-avenue,#5c70a2,1199,4
+4730,342,M13,4730-m13,#32a852,1011,4
+4568,71,Metropolitano,4568-metropolitano,#424242,1175,9
+4569,71,Madrid-El Pardo,4569-madrid-el-pardo,#404040,1154,5
+4570,71,C.Caminos-Ventas,4570-c-caminos-ventas,#70da58,1155,9
+4571,71,Ventas-Canillejas,4571-ventas-canillejas,#f3df17,1155,9
+4572,252,Manassas Line,4572-manassas-line,#0a007d,1176,3
+4573,252,Fredericksburg Line,4573-fredericksburg-line,#970000,1176,3
+4566,252,Anacostia and Potomac River Railroad,4566-anacostia-and-potomac-river-railroad,#916c3a,1170,9
+4567,252,"Capitol, North O Street and South Washington Railway",4567-capitol--north-o-street-and-south-washington-railway,#90c1db,1170,9
+4574,252,"Washington, Alexandria, and Mount Vernon Electric Railway",4574-washington--alexandria--and-mount-vernon-electric-railway,#efcb7d,1170,9
+4576,252,Route 42,4576-route-42,#ff73af,1174,9
+4577,252,Route 90,4577-route-90,#ff73af,1174,9
+4578,252,Route 92,4578-route-92,#ff73af,1174,9
+4579,252,Route 10,4579-route-10,#ff73af,1174,9
+3690,342,M11,3690-u,#ac5390,1018,4
+4580,252,Route 12,4580-route-12,#ff73af,1174,9
+4581,252,Route 60,4581-route-60,#ff73af,1174,9
+4582,252,Route 30,4582-route-30,#ff73af,1174,9
+4583,252,Route 20,4583-route-20,#ff73af,1174,9
+4585,103,Roma-Giardinetti,4585-roma-giardinetti,#f8c21c,271,5
+4586,103,2,4586-2,#4a90e2,1177,9
+4588,103,5,4588-5,#f59123,1177,9
+238,103,MA,238-ma,#f58723,91,0
+4587,103,3,4587-3,#5e9b17,1177,9
+4589,103,8,4589-8,#7ed321,1177,9
+4590,103,19,4590-19,#bd10e0,1177,5
+4592,71,MZA,4592-mza,#2c6c00,1178,2
+4593,71,Norte,4593-norte,#a30000,1178,2
+4594,71,MCP,4594-mcp,#007d8e,1178,2
+4584,71,RENFE,4584-renfe,#3b0084,1178,2
+4596,252,Brightwood Railway,4596-brightwood-railway,#5ee5d3,1170,9
+958,310,M,958-m,#004594,386,5
+962,310,T4,962-t4,#f5f075,387,6
+4598,310,F1,4598-f1,#ff00f8,1179,8
+4599,310,F2,4599-f2,#a300b7,1179,8
+4606,310,F9,4606-f9,#007efc,1179,8
+4605,310,F8,4605-f8,#019dff,1179,8
+4604,310,F7,4604-f7,#24d57d,1179,8
+4603,310,F6,4603-f6,#8cc7e7,1179,8
+4602,310,F5,4602-f5,#60dd24,1179,8
+4601,310,F4,4601-f4,#ff8f00,1179,8
+4600,310,F3,4600-f3,#faff00,1179,8
+4607,310,Liaison Sud-Ouest Rapide,4607-liaison-sud-ouest-rapide,#007aff,1180,6
+4608,252,Washington-Virginia Railway,4608-washington-virginia-railway,#c1c691,1170,9
+4609,252,"Washington, Arlington, and Falls Church Railway",4609-washington--arlington--and-falls-church-railway,#ca81ca,1170,9
+4610,252,Route 70,4610-route-70,#ff73af,1174,9
+4611,252,Route 74,4611-route-74,#ff73af,1174,9
+4612,252,Route 72,4612-route-72,#ff73af,1174,9
+4613,252,Route 80,4613-route-80,#ff73af,1174,9
+4614,54,Lauttasaari tramway,4614-lauttasaari-tramway,#c00c0c,1897,9
+4616,37,Line 27,4616-line-27,#a77cff,29,4
+4621,252,City and Suburban Railway,4621-city-and-suburban-railway,#64c7f4,1170,9
+4622,252,Arlington and Fairfax Railway,4622-arlington-and-fairfax-railway,#ac92ae,1170,9
+4623,252,"Mount Vernon, Alexandria and Washington Railway",4623-mount-vernon--alexandria-and-washington-railway,#97973d,1170,9
+4624,252,AMDOT,4624-baltimore-to-washington,#334a7b,1106,4
+4625,252,Baltimore to Washington,4625-baltimore-to-washington,#541717,1184,4
+4626,252,"Washington, Woodside and Forest Glen Railway",4626-washington--woodside-and-forest-glen-railway-power-company,#f1c7f2,1170,9
+4627,252,Baltimore and Washington Transit Company,4627-baltimore-and-washington-transit-company,#e67474,1170,9
+4628,149,Waterfront Line,4628-waterfront-line,#2ca4ad,750,5
+2172,356,7,2172-line-7,#54640d,707,4
+2173,356,8,2173-line-8,#f51361,707,4
+4629,71,FC Tajuña,4629-fc-tajuna,#404040,1154,5
+4630,346,T1,4630-t1,#c01a00,1026,9
+4632,346,T3,4632-t3,#f4c800,1185,9
+4631,346,T2,4631-t2,#274a93,1026,5
+3663,342,T1,3663-t1,#004788,1011,5
+3793,351,12 OGÜ - 75. Yıl,3793-12,#31dc00,1032,5
+4633,350,M1 Gebze OSB - Darıca Sahil,4633-m1-gebze---darıca,#2316d9,1186,4
+4619,350,AkçaRay,4619-akcaray,#09990a,1182,5
+4634,331,Ligne 1,4634-ligne-1,#000000,1187,5
+4635,331,Ligne 2,4635-ligne-2,#000,1187,0
+3764,345,M1,3764-fahrettin-altay–evka-3-line,#fb1619,1027,4
+4636,206,Ronkonkoma,4636-ronkonkoma,#a626aa,495,3
+4637,206,Port Jefferson,4637-port-jefferson,#0039a6,495,3
+4638,206,Far Rockaway,4638-far-rockaway,#6e3219,495,3
+4640,206,Bergen County Line,4640-bergen-county-line,#b9c9df,1188,3
+4641,206,Montclair-Boonton Line,4641-montclair-boonton-line,#e66b5b,1188,3
+4642,206,Morristown Line,4642-morristown-line,#00a94f,1188,3
+4643,206,Northeast Corridor Line,4643-northeast-corridor-line,#ef3e42,1188,3
+4644,206,Raritan Valley Line,4644-raritan-valley-line,#faa634,1188,3
+4645,206,Pascack Valley Line,4645-pascack-valley-line,#8e258d,1188,3
+4646,206,Main Line,4646-main-line,#ffcf01,1188,3
+4675,147,Union Pacific North,4675-union-pacific-north,#518e0e,1191,3
+4647,206,Gladstone Line,4647-gladstone-line,#a2d5ae,1188,3
+4648,206,North Jersey Coast Line,4648-north-jersey-coast-line,#00a4e4,1188,3
+2767,206,Tonelle-Hoboken,2767-hoboken-tonelle,#008c2e,500,5
+4649,171,Skyline,4649-skyline,#015188,156,4
+4650,206,Boonton Line,4650-boonton-line,#e66b5b,1188,3
+4651,206,Montclair Branch,4651-montclair-branch,#00a94f,1188,3
+4710,206,Sixth Avenue,4710-sixth-avenue,#c3bf4d,1200,4
+4709,206,Eighth Avenue,4709-eighth-avenue,#c3bf4d,1200,4
+4711,206,Culver,4711-culver,#c3bf4d,1200,4
+4595,54,Downtown network,4595-downtown-network,#008151,1929,9
+4591,54,15,4591-line-15-(jokeri),#00b2a9,1898,5
+4712,206,Concourse,4712-concourse,#c3bf4d,1200,4
+1275,206,S (Franklin Avenue Shuttle),1275-franklin-avenue-line,#808183,191,4
+4655,206,Hoboken–33rd Street,4655-hoboken–33rd-street,#0095d3,1189,4
+4653,206,Hoboken–World Trade Center,4653-hoboken–world-trade-center,#0095d3,1189,4
+4654,206,Journal Square–33rd Street,4654-journal-square–33rd-street,#0095d3,1189,4
+4652,206,Newark–World Trade Center,4652-newark–world-trade-center,#0095d3,1189,4
+4713,206,S (Rockaway Park Shuttle),4713-s-(rockaway-park-shuttle),#808183,191,4
+4656,206,H&M,4656-h&m,#c71b00,1190,4
+4657,206,Newark–Hudson Terminal,4657-newark–hudson-terminal,#0095d3,1189,4
+4714,206,Rockaway,4714-rockaway,#c3bf4d,1200,4
+4658,206,Hoboken–Hudson Terminal,4658-hoboken–hudson-terminal,#0095d3,1189,4
+4659,80,151,4659-151,#ff0000,68,8
+4715,206,Canarsie,4715-canarsie,#c4465c,490,4
+4660,14,FV,4660-fv,#0a57a3,260,5
+4661,14,MM,4661-mm,#7ed321,260,5
+4716,206,Brighton,4716-brighton,#c4465c,490,4
+4662,195,D Line,4662-d-line,#9b9b9b,180,6
+4663,195,Gold Line,4663-gold-line,#ebca23,180,6
+1228,206,W (2001-2010),1228-queensboro-line,#fccc0a,191,4
+4717,206,Queens Boulevard,4717-queens-boulevard,#c3bf4d,1200,4
+4664,206,W (2016-),4664-w-(2016-),#fccc0a,191,4
+4665,149,HealthLine,4665-healthline,#9b9b9b,750,6
+4718,206,Franklin Avenue,4718-franklin-avenue,#c4465c,490,4
+4666,149,Cleveland State Line,4666-cleveland-state-line,#417505,750,6
+4667,147,BNSF Line,4667-bnsf-line,#64ac15,1191,3
+4719,206,Crosstown,4719-crosstown,#c3bf4d,1200,4
+4668,147,Heritage Corridor,4668-heritage-corridor,#9e3624,1191,3
+4669,147,Metra Electric,4669-metra-electric,#ee6413,1191,3
+4670,147,Milwaukee District North,4670-milwaukee-district-north,#e08e06,1191,3
+4671,147,Milwaukee District West,4671-milwaukee-district-west,#e9d80e,1191,3
+4721,206,Jamaica,4721-jamaica,#c4465c,490,4
+4672,147,North Central Service,4672-north-central-service,#b06fe8,1191,3
+4722,206,Nassau Street,4722-nassau-street,#c4465c,490,4
+4673,147,Rock Island District,4673-rock-island-district,#d0021b,1191,3
+4674,147,SouthWest Service,4674-southwest-service,#206ac2,1191,3
+4723,206,Sea Beach,4723-sea-beach,#c4465c,490,4
+4676,147,Union Pacific West,4676-union-pacific-west,#de9beb,1191,3
+4724,206,Fourth Avenue,4724-fourth-avenue,#c4465c,490,4
+4677,147,South Shore Line,4677-south-shore-line,#770412,1192,2
+4720,206,Fulton Street Elevated,4720-fulton-street-elevated,#c4465c,490,4
+4678,118,U5,4678-u5,#008f96,251,0
+1216,206,9th Avenue Elevated,1216-ninth-ave-elevated,#5c70a2,1199,4
+4731,128,Rail Runner Express,4731-rail-runner-express,#ffbb00,121,3
+4679,345,T1a,4679-t4,#e87d0e,1027,5
+4680,206,Port Jervis,4680-port-jervis-line,#ff7900,482,3
+4681,206,Harlem Line,4681-harlem,#8c92d8,1193,3
+4683,206,New Haven Line,4683-new-haven-line,#8c92d8,1193,3
+4684,206,Hudson Line,4684-hudson-line,#8c92d8,1193,3
+4685,206,Harlem,4685-harlem,#686868,1130,3
+4686,206,Hudson,4686-hudson,#50e3c2,483,3
+4687,206,Hudson,4687-hudson,#686868,1130,3
+4688,206,City Terminal Zone,4688-city-terminal-zone,#000,495,3
+4689,152,Fort Worth-Dallas,4689-fort-worth-dallas,#000,1194,2
+4690,206,Long Island Rail Road,4690-long-island-rail-road,#cb85a2,1198,3
+4691,206,Central Railroad of Long Island,4691-central-railroad-of-long-island,#e7d37c,1198,3
+4692,206,South Side Railroad of Long Island,4692-south-side-railroad-of-long-island,#96d8e9,1198,3
+4693,152,Denison and Sherman,4693-denison-and-sherman,#000,1195,2
+4694,206,Flushing and North Side Railroad,4694-flushing-and-north-side-railroad,#c799d4,1198,3
+4695,206,New York and Flushing Railroad,4695-new-york-and-flushing-railroad,#b8caad,1198,3
+144,69,South Western,144-south-west-trains,#fe0321,851,2
+5794,442,R13,5794-r13,#f74cf4,1665,2
+4736,467,Yellow line,4736-yellow-line,#f8e71c,1203,4
+4737,467,Blue line,4737-blue-line,#1349df,1203,0
+116,69,Central,116-central-line,#e32017,259,4
+4738,470,Red line,4738-red-line,#ff0000,1204,4
+4739,470,Shuttle,4739-shuttle,#f5a623,1204,4
+4769,468,Yellow Line,4769-yellow-line,#fbea41,1236,4
+4770,411,Red Line,4770-red-line,#f75959,999,4
+4771,466,Blue Line,4771-blue-line,#0027ea,1237,4
+4772,466,Red Line,4772-red-line,#ff0303,1237,4
+4802,236,2 Line,4802-2-line,#006ff9,221,5
+4835,147,Rockford Intercity Passenger Rail,4835-rockford-intercity-passenger-rail,#0f4789,1191,2
+4868,433,Metropolitana,4868-metropolitana,#ff001f,1269,4
+4869,433,Circumetnea,4869-circumetnea,#005dff,1270,4
+4901,147,"Chicago, Milwaukee, St. Paul & Pacific Railroad",4901-chicago--milwaukee--st--paul-&-pacific-railroad,#000,1302,3
+4501,442,L1,4501-l1,#f5a623,1160,9
+4934,432,TRAM 1,4934-tram-1,#80099b,1335,9
+5795,442,R14,5795-r14,#9013fe,1665,2
+4935,432,TRAM 2,4935-tram-2,#fc8d00,1335,9
+210,69,Lioness (Watford DC),210-lo-(watford-dc),#f1b41c,262,3
+4936,432,TRAM 3,4936-tram-3,#6abc0b,1335,9
+4146,69,Weaver (Chingford),4146-chingford,#972861,262,3
+4937,432,TRAM 4,4937-tram-4,#0e51d5,1335,9
+215,69,Weaver (Lea Valley),215-lo-(lea-valley-lines),#972861,262,3
+151,69,Windrush (South London),151-overground-(south-london-line),#ef4d5e,262,3
+4939,432,Palermo Notarbartolo-Giachery,4939-palermo-notarbartolo-giachery,#032493,1336,4
+4938,432,Palermo Centrale-Aeroporto,4938-palermo-centrale-aeroporto-punta-raisi,#ff0000,1336,4
+4967,20,Line 1,4967-line-1,#4a90e2,14,5
+2687,71,C-9,2687-c-9,#ff7000,780,5
+6593,54,3 (2013-2017),6593-3-(2013-2017),#89ca9b,1929,9
+5000,464,Orange Line,5000-orange-line,#f5a623,1368,4
+5001,464,Aqua Line,5001-aqua-line,#50e3d9,1368,4
+5033,105,Line 6 (Krasnoselsko-Kalininskaya line),5033-line-6-(krasnoselsko-kalininskaya-line),#967b52,93,4
+5034,359,Seac Pai Van Line,5034-seac-pai-van-line,#bd10e0,731,7
+5035,359,Hengqin Line,5035-hengqin-line,#f5a623,731,7
+5066,359,East Line,5066-east-line,#79529b,731,7
+5067,81,Line 16 - Troitskaya,5067-line-16---troitskaya,#20773c,69,4
+5099,81,Line 17 - Rublyovo-Arkhangelskaya,5099-line-17---rublyovo-arkhangelskaya,#000,69,4
+5100,81,Line 18 - Biryulyovskaya,5100-line-18---biryulyovskaya,#7a1c1c,69,4
+4234,409,Red Line,4234-hebbal---sarjapur-line,#d0021b,983,4
+3534,409,Blue Line,3534-blue-line,#3f7ace,983,4
+5165,69,Mainline,5165-mainline,#000,1401,3
+5166,69,Gospel Oak-Barking Line,5166-tottenham-and-forest-gate-railway,#000,1401,3
+5198,69,Moorgate Line,5198-moorgate-line,#000,1401,3
+5199,69,Midland City Line,5199-midland-city-line,#000,1401,0
+3016,69,Stratford Line,3016-north-london-(stratford),#f8e71c,849,3
+5231,79,MXP2,5231-mxp2,#770b0b,1435,3
+5232,79,S12,5232-s12,#293838,269,3
+5234,79,S14,5234-s14,#99ba68,1437,3
+5235,79,S7,5235-s7,#de166f,269,3
+5233,79,S13,5233-s13,#784f24,269,3
+5237,79,S50,5237-s50,#7d4808,1438,3
+5238,79,S10,5238-s10,#ed1c24,1438,3
+5239,79,S30,5239-s30,#00a651,1438,3
+5240,79,S40,5240-s40,#6cc27f,1438,3
+5236,79,RE80,5236-re80,#007ec7,1438,3
+5241,79,RE1,5241-re1,#d11216,1436,3
+5242,79,RE2,5242-re2,#d11216,1436,3
+5243,79,RE3,5243-re3,#d11216,1436,3
+5244,79,RE4,5244-re4,#d11216,1436,3
+5245,79,RE5,5245-re5,#d11216,1436,3
+5246,79,RE6,5246-re6,#d11216,1436,3
+5247,79,RE7,5247-re7,#d11216,1436,3
+5248,79,RE8,5248-re8,#d11216,1436,3
+5249,79,RE11,5249-re11,#d11216,1436,3
+5250,79,RE13,5250-re13,#d11216,1436,3
+243,79,R16,243-r16,#0361ab,1434,3
+5252,79,R2,5252-r2,#0361ab,1434,3
+5251,79,R1,5251-r1,#0361ab,1434,3
+5253,79,R3,5253-r3,#0361ab,1434,3
+5254,79,R4,5254-r4,#0361ab,1434,3
+5255,79,R5,5255-r5,#0361ab,1434,3
+5256,79,R6,5256-r6,#0361ab,1434,3
+5257,79,R7,5257-r7,#0361ab,1434,3
+5258,79,R8,5258-r8,#0361ab,1434,3
+5259,79,R9,5259-r9,#0361ab,1434,3
+5260,79,R11,5260-r11,#0361ab,1434,3
+5261,79,R12,5261-r12,#0361ab,1434,3
+5262,79,R13,5262-r13,#0361ab,1434,3
+5263,79,R14,5263-r14,#0361ab,1434,3
+5264,79,R15,5264-r15,#0361ab,1434,3
+5265,79,R17,5265-r17,#0361ab,1434,3
+5266,79,R18,5266-r18,#0361ab,1434,3
+5267,79,R21,5267-r21,#0361ab,1434,3
+5268,79,R22,5268-r22,#0361ab,1434,3
+5269,79,R23,5269-r23,#0361ab,1434,3
+5270,79,R24,5270-r24,#0361ab,1434,3
+5271,79,R25,5271-r25,#0361ab,1434,3
+5272,79,R27,5272-r27,#0361ab,1434,3
+5273,79,R28,5273-r28,#0361ab,1434,3
+5274,79,R32,5274-r32,#0361ab,1434,3
+5275,79,R33,5275-r33,#0361ab,1434,3
+5276,79,R34,5276-r34,#0361ab,1434,3
+5277,79,R35,5277-r35,#0361ab,1434,3
+5133,69,Chingford Branch,5133-chingford-branch,#964f4c,857,3
+7018,247,16 Mcowan road,7018-16-mcowan-road,#ff0000,232,8
+5278,79,R36,5278-r36,#0361ab,1434,3
+5279,79,R37,5279-r37,#0361ab,1434,3
+5796,442,R15,5796-r15,#857a5d,1665,2
+5280,79,R38,5280-r38,#0361ab,1434,3
+5285,459,Γραμμή 2,5285-line-2,#204ddf,1439,4
+5281,79,R39,5281-r39,#0361ab,1434,3
+5797,442,R16,5797-r16,#b60117,1665,2
+5282,79,R40,5282-r40,#0361ab,1434,3
+5284,459,Γραμμή 1,5284-line-1,#d0021b,1439,4
+5283,79,R41,5283-r41,#0361ab,1434,3
+5798,442,R17,5798-r17,#f5a623,1665,2
+1450,91,Sagano Line,1450-sagano-line,#878ddc,78,4
+1498,91,Bantan Line,1498-bantan-line,#a52f5d,78,4
+5297,69,Romford-Upminster,5297-romford-upminster,#840084,859,0
+212,69,Liberty (Romford-Upminster),212-lo-(romford-shuttle),#676767,262,3
+204,69,Hammersmith & City,204-hammersmith-&-city-line,#f3a9bb,259,4
+4124,342,U3 - Kazlıçeşme - Sirkeci Gar,4124-kazlıceşme---sirkeci-gar,#e77c7c,1017,5
+5298,69,London&Blackwall,5298-london&blackwall,#840084,1467,3
+5330,69,Southbury Loop,5330-southbury-loop,#964f4c,857,3
+5363,69,Palace Gates Line,5363-palace-gates-line,#964f4c,857,3
+5132,69,Hainault Loop,5132-hainault-loop,#964f4c,857,3
+5364,69,Cambridge Line,5364-cambridge-line,#964f4c,857,3
+2623,124,Ferrocarril Urbano de Viña del Mar,2623-ferrocarril-urbano-de-vina-del-mar,#8b572a,769,9
+3080,364,Line 1,3080-line-1,#0100b4,871,4
+3088,364,Line 8,3088-line-8,#c9e242,871,4
+5826,345,T4,5826-t4,#e5b00d,1027,5
+5396,364,Line 27,5396-line-27,#25b9fe,871,4
+5693,477,121,5693-121,#00ab83,1599,8
+5429,364,Line S3,5429-line-s3,#df8c40,871,2
+5430,364,Line 30,5430-line-30,#ee8fc5,871,4
+3549,379,Oceantec Valley Line,3549-line-11,#324293,987,4
+5431,364,Line S5,5431-line-s5,#97c7d5,871,2
+5891,379,Line 7,5891-line-7,#c4a5dc,987,4
+5462,416,Line 16,5462-line-16,#eda873,993,4
+5892,379,Line 5,5892-line-5,#9940ae,987,4
+5463,416,Line 8,5463-line-8,#efc123,993,4
+5464,416,Line 10,5464-line-10,#00ce9d,993,4
+5893,379,Line 9,5893-line-9,#65bc08,987,4
+5894,379,Line 15,5894-line-15,#f2b2c7,987,4
+5466,416,Line 1,5466-line-1,#e83232,1500,7
+3589,416,Line 4,3589-line-4,#4c9da2,993,4
+5465,416,Line 15,5465-line-15,#d15280,993,4
+5858,379,Line 6,5858-line-6,#83b7d7,987,4
+5467,383,Line 1,5467-line-1,#284bcb,1008,4
+5495,390,Line 10,5495-line-10,#da7f59,992,4
+5924,379,Line 1,5924-line-1,#f5a623,1698,9
+5496,390,Line 12,5496-line-12,#1845b0,992,4
+5497,390,Zhengxu Line,5497-zhengxu-line,#003a17,992,4
+5957,114,Haneda Airport Access Line,5957-haneda-airport-access-line,#000,305,3
+5498,390,Line 7,5498-line-7,#f5b363,992,4
+5499,390,Line 8,5499-line-8,#d9dea4,992,4
+5990,417,Line 6,5990-line-6,#0a7505,994,4
+5528,420,Line 6,5528-line-6,#00cbe6,1081,4
+5529,420,Line 7,5529-line-7,#be8deb,1081,4
+5530,420,Line 8,5530-line-8,#939b53,1081,4
+5991,417,Line 7,5991-line-7,#6c5b41,994,4
+5531,420,Line 11,5531-line-11,#f9cebb,1081,4
+5992,417,Line 8,5992-line-8,#d610e0,994,4
+6023,417,Line 10,6023-line-10,#a189b7,994,4
+5533,420,Line 2,5533-line-2,#a70000,1533,9
+5532,420,Line 1,5532-line-1,#c4b684,1533,9
+5561,420,Line 10,5561-line-10,#c4aba1,1081,4
+6024,417,Line 12,6024-line-12,#6ba5d3,994,4
+5694,477,2,5694-2,#6cf3ff,1731,9
+5595,418,Line 7,5595-line-7,#f8e71c,1080,4
+5594,418,Line 6,5594-line-6,#bf95c4,1080,4
+6056,477,3,6056-3,#5a0a19,1731,9
+5596,418,Line 8,5596-line-8,#50c4e3,1080,4
+5597,418,Line S1,5597-line-s1,#aba87d,1080,4
+6057,477,11,6057-11,#a8e8e0,1731,9
+5627,384,Line 10,5627-line-10,#a9ea66,988,4
+5628,384,Line 11,5628-line-11,#183b8f,988,4
+6058,477,10,6058-10,#e0c870,1731,9
+5629,384,Line 7,5629-line-7,#b1842c,988,4
+6059,477,16,6059-16,#6000ff,1731,9
+5630,384,Jinjing Line,5630-jinjing-line,#e7bce8,988,0
+5631,71,Sol-Ventas,5631-sol-ventas,#29b10e,779,9
+5660,477,PKM 1,5660-pkm-1,#0092ff,1566,3
+5661,477,PKM 2,5661-pkm-2,#ff0000,1566,3
+5662,477,PKM 3,5662-pkm-3,#089100,1566,3
+5663,477,PKM 4,5663-pkm-4,#6100b3,1566,3
+5664,477,PKM 5,5664-pkm-5,#ffbb00,1566,3
+225,79,M5,225-m5,#b17aea,67,5
+6595,54,8 (2017-2018),6595-8-(2017-2018),#019758,1929,9
+6061,477,19,6061-19,#7af1e2,1731,9
+6596,54,5,6596-5,#716f70,1929,9
+6060,477,7,6060-7,#0050b8,1731,9
+6062,477,9,6062-9,#e88000,1731,9
+6650,54,2 (-2005),6650-2-(-2005),#003185,1929,9
+6617,54,3 (-2009),6617-3b-(-2009),#03ab62,1929,9
+6585,54,3T (2009-2013),6585-3t,#03ab62,1929,9
+6063,477,1,6063-1,#b80010,1731,9
+6064,477,17,6064-17,#407090,1731,9
+7020,422,Ruta 2,7020-ruta-2,#d0021b,2129,6
+6065,477,5,6065-5,#8df500,1731,9
+7019,422,Ruta 1,7019-troncal-1,#7ed321,2129,6
+6066,477,6,6066-6,#27c42b,1731,9
+7021,422,Ruta 3,7021-ruta-3,#177aef,2129,6
+6067,477,8,6067-8,#b00808,1731,9
+6068,477,12,6068-12,#daa0e5,1731,9
+7046,26,Weston Super Mare - Severn Beach,7046-weston-super-mare---severn-beach,#266e0a,2160,3
+275,106,Linha 6 • Laranja (LinhaUni),275-linha-6-•-laranja,#ff8000,94,4
+6069,477,13,6069-13,#b99a60,1731,9
+6070,477,14,6070-14,#8d633c,1731,9
+6071,477,15,6071-15,#b5b5b5,1731,9
+7079,351,36 OGÜ - Opera - Otogar,7079-36-ogu---opera---otogar,#787878,1032,5
+6072,477,18,6072-18,#f2db00,1731,9
+2991,212,Chestnut Hill East Line,2991-chestnut-hill-east-line,#192eaf,844,3
+2986,212,Chestnut Hill West Line,2986-chestnut-hill-west-line,#e61c1c,844,3
+6089,342,T7,6089-t7,#b16400,1011,5
+3351,212,Route 101,3351-route-101,#b460c2,844,5
+459,95,B,459-ancienne-ligne-b-nord-sud,#ff0000,2226,4
+6123,394,MRTS,6123-mrts,#000,1764,3
+7112,99,143,7112-143,#4a90e2,353,8
+6691,400,Buho,6691-buho,#000,1966,8
+6688,400,Azul VALL. - LA VEGA - ARROYO - LA FLECHA - VALL.,6688-azul,#0009ff,1966,8
+6125,394,Red Line (Line 5),6125-red-line,#d0021b,1004,3
+6122,394,Purple Line (Line 3),6122-mrts,#bd10e0,1004,3
+6124,394,Orange Line (Line 4),6124-orange-line,#f5a623,1004,3
+3638,394,Blue Line (Line 1),3638-blue-line,#0024f2,1004,4
+4615,37,Bitong line,4615-bitong-line,#028de6,29,3
+6687,400,Roja VALL. - LA FLECHA - ARROYO - LA VEGA - VALL.,6687-buho,#ff0000,1966,8
+6155,37,Line 15,6155-line-15,#184cb3,29,4
+6689,400,Verde - IDA - UNIVERSIDADES,6689-verde---ida,#2fcb26,1966,8
+6188,37,Line 24,6188-line-24,#cb9941,29,4
+6690,400,Verde - VUELTA - UNIVERSIDADES,6690-verde---vuelta,#2fcb26,1966,8
+6221,37,Line 7,6221-line-7,#448c70,29,4
+6254,37,Line 17,6254-line-17,#9013fe,29,4
+6287,147,Niles Center Branch,6287-niles-center-branch,#000,1797,3
+6592,54,2 (2013-2017),6592-2-(2013-2017),#03ab62,1929,9
+6320,114,Tokyu-Shin-Yokohama Line,6320-tokyu-shin-yokohama-line,#96007c,312,4
+6749,474,Line 1,6749-line-1,#8ae327,1995,5
+6354,106,AQUÁTICO-SP,6354-aquatico-sp,#0082ba,700,10
+6750,474,Line 2,6750-line-2,#0050f0,1995,4
+6751,474,Line 3,6751-line-3,#d0021b,1995,4
+6782,54,12,6782-12,#00b2a9,1898,5
+6816,474,Line 4,6816-line-4,#f5a623,1995,4
+6815,54,11,6815-11,#00b4e5,1929,9
+6850,459,Line 3,6850-line-3,#6fc708,2061,3
+6849,459,Line 2,6849-line-2,#ff0000,2061,3
+6848,459,Line 1,6848-line-1,#368cf2,2061,3
+6881,459,Γραμμή 1,6881-γραμμή-1,#f8e71c,2094,9
+6882,459,Γραμμή 2,6882-γραμμή-2,#f8e71c,2094,9
+6883,459,Γραμμή 3,6883-γραμμή-3,#f8e71c,2094,9
+6914,194,General Mitchel - UWM,6914-general-mitchel---uwm,#f8e71c,179,5

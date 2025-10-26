@@ -1,0 +1,901 @@
+id,city_id,name,historic,length
+1,5,,false,0
+2,6,,false,0
+6,16,,false,0
+7,10,,false,0
+9,12,,false,0
+11,17,,false,0
+12,18,,false,0
+361,63,Express Rail Link (ERL),false,58967
+17,24,,false,0
+18,25,,false,0
+43,51,S-Bahn,false,0
+26,33,,false,0
+27,35,,false,0
+28,36,,false,0
+30,38,,false,0
+32,40,,false,0
+33,41,,false,0
+34,42,,false,0
+96,109,Metropolitan JSC,false,48397
+36,44,,false,0
+38,46,,false,0
+39,47,,false,0
+41,49,,false,0
+42,50,,false,0
+44,52,,false,0
+45,53,,false,0
+47,55,,false,0
+49,57,,false,0
+50,58,,false,0
+52,60,,false,0
+53,61,,false,0
+54,62,,false,0
+57,65,,false,0
+59,68,,false,0
+64,75,,false,0
+65,76,,false,0
+99,113,Tehran Metro,false,285184
+71,83,,false,0
+73,85,,false,0
+77,90,,false,0
+875,369,Shaoxing Metro,false,56072
+81,93,,false,0
+82,94,,false,0
+85,97,,false,0
+86,98,,false,0
+88,100,,false,0
+89,101,,false,0
+121,128,,false,154763
+98,112,,false,0
+156,171,,false,17297
+101,115,,false,0
+103,117,,false,0
+104,119,,false,0
+107,122,,false,0
+108,125,,false,0
+109,138,,false,0
+112,143,,false,0
+144,159,,false,0
+115,141,,false,0
+116,142,,false,0
+117,144,,false,0
+118,135,,false,0
+120,127,,false,0
+122,129,,false,0
+126,133,,false,0
+128,136,,false,0
+129,137,,false,0
+131,146,,false,0
+113,140,Niagara Frontier Transportation Authority,false,10402
+135,150,,false,0
+136,151,,false,0
+139,154,,false,0
+140,155,,false,0
+141,156,,false,0
+142,157,,false,0
+143,158,,false,0
+145,160,,false,0
+146,161,,false,0
+147,162,,false,0
+148,163,,false,0
+149,164,,false,0
+150,165,,false,0
+151,166,,false,0
+152,167,,false,0
+153,168,,false,0
+154,169,,false,0
+155,170,,false,0
+1111,189,Orange County Transportation Authority,false,1194
+157,172,,false,0
+84,96,Transperth Trains,false,0
+158,173,METRORail,false,37928
+159,174,,false,0
+160,175,,false,0
+161,176,,false,0
+162,177,,false,0
+163,178,,false,0
+165,180,,false,0
+166,181,,false,0
+167,182,,false,0
+168,183,,false,0
+169,184,,false,0
+170,185,,false,0
+171,186,,false,0
+365,111,Sydney Metro,false,0
+114,123,Metrorrey,false,39206
+21,28,Metroul din București,false,70971
+1185,346,BurTram,true,2137
+172,187,,false,0
+173,188,,false,0
+175,190,,false,0
+1186,350,Kocaeli Metro,false,0
+5,9,TCDD Taşımacılık,false,36305
+176,191,,false,0
+177,192,,false,0
+181,196,,false,0
+182,197,,false,0
+183,198,,false,0
+185,200,,false,0
+187,202,,false,0
+188,203,,false,0
+189,204,,false,0
+192,207,,false,0
+193,208,,false,0
+195,210,,false,0
+921,77,Other,false,21674
+199,214,,false,0
+201,216,,false,0
+203,218,,false,0
+204,219,,false,0
+206,221,,false,0
+207,222,,false,0
+209,224,,false,0
+211,226,,false,0
+214,229,,false,0
+217,232,,false,0
+219,234,,false,0
+222,237,,false,0
+223,238,,false,0
+224,239,,false,0
+225,240,,false,0
+226,241,,false,0
+227,242,,false,0
+228,243,,false,0
+229,244,,false,0
+231,246,,false,0
+233,248,,false,0
+235,250,,false,0
+236,251,,false,0
+238,253,,false,0
+648,22,Thane Circular  Metro,false,0
+123,130,People Mover Bus,false,0
+280,19,S-Bahn,false,0
+281,19,Tram,false,0
+24,31,Kolkata Metro,false,70583
+1698,379,Qingdao Tram,false,8862
+1172,252,Conrail,true,64451
+180,195,Metro Transit,false,188624
+319,21,SITP Provisional,false,0
+321,21,Taxis compartidos,false,0
+861,54,Hyvinkää-Karkkila Railway,true,0
+330,21,SITP,false,0
+345,267,City Bus,false,0
+1201,206,Brooklyn-Queens Connector,false,0
+379,82,S-Bahn,false,0
+403,328,BHNS,false,0
+1863,285,Ligne 1,false,0
+638,259,Ómnibus Microómnibus,false,0
+645,259,Ómnibus Microómnibus 2,false,0
+1021,367,Fuzhou Metro,false,81646
+655,340,SUGGESTED LINES FOR FUTURE,false,0
+486,291,Tramway,false,0
+737,56,Light Rail (MTR),false,0
+397,102,BRT Rio,false,0
+242,257,Metro,false,17955
+705,13,Bangkok BRT,false,15214
+704,354,Bus,false,0
+461,126,Ruta-Empresa,false,0
+1174,252,Capital Transit Company,true,19022
+186,201,Tennesee Regional Transportation Authority,false,50368
+911,84,Takehana Railway,true,9280
+234,249,SkyTrain,false,77641
+1731,477,MPK Poznań Sp. z o.o.,false,40968
+212,227,MetroLink,false,72952
+194,209,Oklahoma City Streetcar,false,8097
+164,179,Kansas City Streetcar Authority,false,3646
+970,43,Tram,true,0
+198,213,Valley Metro Rail,false,50203
+1034,29,MÁV-HÉV Zrt. - BHÉV,false,96914
+178,193,Metrorail,false,39878
+866,32,Foshan Metro,false,152397
+1020,368,Guiyang Metro,false,73857
+258,15,Beijing Subway,false,841313
+1027,345,İzmir Metro,false,57777
+954,260,Metrobus,false,7502
+218,233,Tren Urbano,false,16506
+696,73,Pasig River Ferry,false,24268
+700,106,Metrohidroviário,false,5183
+14,20,,false,0
+254,1,Subte,false,64585
+341,74,Tramway de Marseille,false,24835
+358,236,Sounder,false,131628
+61,72,Manchester Metrolink,false,6248
+1023,363,Changsha Metro,false,188310
+1095,268,D-Bus,false,0
+55,63,RapidKL,false,166432
+1665,442,Rodalies,false,0
+982,381,Shenzhen Metro,false,581125
+1202,485,Light rail,false,20775
+711,356,Korail,false,701608
+640,91,Osaka Shiden,true,0
+1000,410,Kanpur Metro,false,14698
+8,11,Μετρό / Metro,false,90088
+968,247,Toronto Railway Company,true,7290
+1022,366,Dongguan Rail Transit,false,36719
+907,77,Victorian Railways,true,40763
+66,77,Metro Trains Melbourne,false,409897
+1100,404,Cercanías AM,false,0
+2160,26,GWR,false,0
+40,48,Glasgow Subway,false,10531
+19,26,Citylines East,false,0
+983,409,Namma Metro,false,76034
+4,8,Metro,false,41601
+110,139,MBTA Subway,false,109506
+62,73,Manila Light Rail Transit System,false,43694
+1160,442,TramCamp,false,0
+679,59,Soetta APMS,false,3046
+245,260,MetroTranvía,false,17153
+416,1,Metrobus,false,123327
+1632,477,"""TRANSKOM"" Sp. z o.o.",false,8265
+742,56,Star Ferry,false,2548
+13,19,U-Bahn,false,1231
+16,23,Tramway de Bordeaux,false,124045
+873,364,Chengdu BRT,false,42169
+1764,394,MRTS,false,0
+58,67,Metro,false,39580
+31,39,BRT- SoloBus,false,5328
+736,56,Trams,false,18492
+60,70,Métro de Lyon,false,32012
+876,114,Yagan-tetsudo Railway,false,0
+70,82,U-Bahn,false,8627
+76,89,Metro,false,87747
+119,34,,false,9939
+48,56,MTR,false,248393
+537,124,Trolebuses,false,9683
+1195,152,Denison & Sherman Railway,true,0
+767,231,Southern Pacific Railway,true,91345
+766,231,Sutter Street Railway,true,8140
+757,231,BART,false,200286
+759,231,Other,true,0
+758,231,Other Cable Cars,true,1467
+760,231,Market Streeet Railway (Streetcars),true,15260
+768,231,MUNI Defunct Lines,true,2358
+1196,152,Texas Traction Company,true,0
+1080,418,Hefei Metro,false,223205
+796,71,Metro Ligero,false,15585
+1179,310,Bus FAST ,false,118892
+756,124,Metro Regional,true,43005
+780,71,Cercanías,false,339003
+191,206,MTA NYC Subway,false,372753
+1117,87,Azienda Napoletana Mobilità,false,8361
+90,102,Turísticos,false,5063
+1113,189,LACMTA Metro Bus,false,1711025
+867,32,Guangzhou BRT,false,22125
+79,86,Nanjing Metro,false,492062
+2226,95,Nord-Sud,true,8978
+267,4,Metro de Santiago,false,141593
+22,29,Budapest Metro,false,37296
+1107,199,Exo,false,0
+87,99,Metro,false,82061
+478,4,Tranvías Suburbanos,true,7440
+552,91,Nose Electric Railway,false,14810
+247,14,Metro,false,123928
+92,104,Metrô,false,27043
+78,91,JR West,false,1074194
+336,268,Euskotren,false,40309
+102,116,Sistema Ferroviario Metropolitano Regionale,false,53524
+337,268,Renfe,false,31042
+806,362,Changchun Subway,false,2299
+124,131,Metropolitan Atlanta Rapid Transit Authority (MARTA),false,83668
+130,145,CATS,false,32247
+63,74,Métro de Marseille,false,43288
+133,148,Cincinnati Subway,false,31236
+10,13,Airport Rail Link,false,28581
+1533,420,Suzhou Tram,false,45224
+105,120,Metro Warszawskie Sp. z.o.o.,false,39888
+1187,331,Métro,false,0
+998,412,Daegu Metro,false,83045
+208,223,Greater Richmond Transit Company,false,12123
+210,225,Sacramento RT,false,70512
+220,235,Savannah DOT,false,1866
+986,88,Noida Metro,false,27981
+230,245,Hillsborough Area Regional Transit (HART),false,4219
+777,215,Troy Hill Incline Plane Company,true,0
+776,215,Fort Pitt Incline Plane Company,true,0
+775,215,Clifton Avenue Incline Plane Company,true,0
+999,411,Ahmedabad Metro,false,58459
+1401,69,(BR) East Midlands,false,103428
+20,27,Metro,false,37238
+1435,79,Malpensa Express,false,60528
+1088,30,Cairo Monorail,false,0
+132,147,CTA,false,176871
+213,228,Utah Transit Authority,false,227921
+29,37,Chongqing Rail Transit,false,554112
+967,247,Toronto Civic Railways,true,8050
+240,255,Winnipeg Transit - MBMetroRail,false,203519
+302,95,Funiculaire,false,107
+248,78,Sistema de Transporte Colectivo (STC),false,205066
+493,124,Ascensores (Funiculares),false,834
+184,199,STM - Montreal Metro,false,65665
+253,21,Transmilenio,false,114205
+95,108,SMRT Trains,false,185088
+190,205,New Orleans Regional Transit Authority,false,135152
+869,32,Foshan Tram,false,6540
+1184,252,Pennsylvania Railroad,true,77359
+264,78,Metrobús,false,144333
+265,78,Servicio de Transportes Eléctricos de CDMX (STE),false,12591
+266,78,Ferrocarriles Suburbanos,false,25784
+1039,230,North County Transit District,false,101416
+272,78,Secretaría de Comunicaciones y Transportes (SCT),false,58532
+273,262,Metro,false,7081
+286,263,Straßenbahn Graz,false,11290
+1099,404,Cercanías,false,0
+289,265,Tramway,false,83225
+290,264,Tranvía de Zaragoza,false,18789
+291,264,Cercanías Renfe,false,16419
+292,266,STAR,false,44363
+294,267,Tram,false,47447
+295,266,Tramways Électriques Rennais (TER),false,915
+326,265,Busway,false,14753
+328,265, Navettes fluviales,false,3394
+331,21,TransmiCable,false,3216
+332,21,Tren de la Sabana,false,30310
+333,89,National Rail,false,65095
+317,67,Comboios de Portugal,false,102840
+244,259,Tranvía,true,0
+1096,395,Tranvías de Málaga,true,0
+1599,477,MPK Poznań Sp. z o.o.,false,9851
+216,231,MUNI,false,57672
+202,217,TriMet,false,123554
+1024,363,Changsha Maglev Express,false,18500
+1093,395,Metro,false,11489
+1929,54,Trams,false,59734
+256,261,Biotrén,false,66721
+250,66,,false,39004
+315,126,Macrobús,false,15533
+342,70,Tramway,false,63673
+343,70,Funiculaire,false,1240
+327,265,Ancien tramway,false,0
+329,265,Chronobus,false,0
+463,331,Tramway,false,25978
+137,152,DART Light Rail,false,125278
+348,23,Navette fluviale,false,5918
+356,70,Tram-Train,false,36551
+1199,206,IRT,true,115408
+497,206,NJT Newark Light Rail,false,10538
+97,111,Sydney Trains,false,333610
+366,111,Sydney Light Rail,false,21391
+138,153,Regional Transportation District,false,174092
+847,51,Metro,false,0
+243,258,Metro Bilbao,false,50303
+287,258,Tranvía,false,8113
+848,51,AKN,false,0
+387,310,TEOR,false,50201
+221,236,Link Light Rail,false,75685
+360,63,KTM Komuter,false,263346
+380,82,Tram,false,160158
+381,307,Tram,false,29841
+383,275,Tramway,false,24251
+384,293,Tramway,false,28256
+385,293,Téléphérique,false,421
+1180,310,LISOR,true,0
+388,280,Tramway,false,30613
+389,286,Tram,false,86718
+390,286,Téléphérique,false,634
+402,328,Tram,false,46159
+404,324,Tram,false,17665
+908,77,V/Line Victoria,false,707723
+874,369,Hangzhou Metro,false,492861
+268,4,Metrotrén Segunda Etapa,false,0
+346,74,Liaisons maritimes,false,25928
+1158,74,Tramway de Marseille,true,5237
+839,215,Norwood Incline,true,0
+791,215,West Penn Railways,true,0
+251,118,Wiener Linien,false,82670
+354,77,Yarra Trams,false,68228
+1166,220,Go+ Raleigh,false,0
+205,220,Raleigh Street Railway Co.,true,0
+215,230,San Diego Trolley,false,100669
+739,56,KCR,true,76123
+393,102,VLT Carioca,false,13791
+392,14,Tram,false,31537
+1177,103,Tram,false,0
+1114,189,LADOT Bus,false,0
+1434,79,Linee regionali,false,44392
+1995,474,Mashhad Urban Railway,false,42529
+378,27,Tram,false,105595
+1118,438,Metro de Palma,false,16951
+963,247,Union Pearson Express ,false,24583
+630,323,Lanka Bus Group,false,0
+499,206,MTA Staten Island Railroad,false,23195
+394,102,Metrô Rio,false,52995
+652,340,Underconstruction,false,0
+653,340,DPR IN PROGRESS,false,0
+654,340,FUTURE LINES,false,0
+656,340,LRT PROPOSED,false,0
+657,340,ART (PEOPLE MOVER),false,0
+465,305,Tramway,false,38110
+466,317,Tramway,false,48434
+467,314,Tramway,false,11337
+468,265,Tram-train,false,120624
+469,300,Tramway,false,98621
+471,325,Métro,false,11935
+472,325,Tramway,false,32772
+473,327,Métro,false,45562
+474,283,Tramway,false,28824
+484,327,Tramway,false,36958
+485,327,AMITRAM,false,2826
+487,294,Tramway,false,35483
+491,318,TVR,false,17481
+492,308,Tramway,false,40694
+919,59,BETM - Batavia Eleketrische Tram Maatschappij,true,4673
+35,43,Luas,false,44131
+727,260,Trolebus,false,83652
+1092,336,TRAM,false,2907
+91,103,Metro,false,60856
+635,259,Autobus,true,0
+646,259,Tranvías Caballo,true,0
+840,261,Tranvías Eléctricos,true,3943
+338,1,Trenes Metropolitanos,false,982456
+377,114,Chichibu Railway  秩父鉄道,false,71903
+25,32,Guangzhou Metro,false,759464
+1087,30,LRT,false,66630
+260,14,FGC,false,151914
+988,384,Tianjin Metro,false,362596
+282,107,Other,false,131921
+588,64,Teleférico,false,30977
+1194,152,Northern Texas Traction Company,true,0
+984,409,Suburban Rail,false,0
+1566,477,Koleje Wielkopolskie Sp. z o.o.,false,442949
+271,103,Ferrovie Urbane,false,90871
+692,108,KTM Intercity,false,2301
+642,338,Metrobus,false,6312
+643,338,Tren del Valle,false,5918
+658,340,SUBURBAN RAILWAY,false,63975
+661,339,Metro,false,21510
+75,88,Delhi Metro,false,341577
+985,88,Rapid Metro Gurgaon,false,11632
+395,102,SuperVia,false,79954
+488,256,Metro,false,171716
+489,256,Tramvia,false,32784
+174,189,LA Metro Rail,false,180199
+1116,87,Ferrovie metropolitane,false,211097
+288,258,Euskotren Trena,true,0
+1797,147,Chicago Rapid Transit Company,true,8191
+751,4,Trenes Populares FFCC del E ,true,0
+1302,147,"Chicago, Milwaukee, St. Paul & Pacific Railroad",true,80235
+728,361,Tegal Subway,false,62630
+880,386,Other,false,60205
+878,386,Wuhan Metro,false,428607
+625,48,Suburban Lines,false,153078
+396,102,CCR Barcas,false,13601
+369,91,Osaka Metro,false,137064
+370,91,Hankyu,false,139018
+1081,420,Suzhou Rail Transit,false,344400
+735,357,SRT,false,0
+686,352,Hampton Roads Transit,false,11803
+1025,348,Adana Metro,false,12870
+353,99,Bus,false,11292
+464,331,Funiculaire,false,307
+743,358,Taipei Metro,false,147317
+357,236,RapidRide,false,0
+703,354,Tram,false,134979
+239,254,Tidewater Power Company,true,0
+714,354,Metro [RET],false,101307
+717,360,BRT,false,6159
+718,360,Tren Urbano,false,3780
+719,259,Metrobus,false,1703
+720,39,Tren de las Sierras,false,57189
+721,39,Tren Regional,false,141684
+722,335,Tren Universitario,false,4480
+724,259,Trolebus,false,50655
+987,379,Qingdao Metro,false,347848
+1335,432,Rete tranviaria di Palermo,false,17765
+1436,79,Linee Regio Express,false,0
+892,11,Σιδηρόδρομοι πριν το 1971 / Railways before 1971,true,92546
+2094,459,Τραμ,true,0
+179,194,Light Rail,false,0
+706,27,Tram CHRONO,false,46225
+962,247,Metrolinx,false,17089
+364,247,GO Transit,false,505586
+725,357,Busan Metro,false,116248
+726,39,Trolebus,false,58781
+769,124,Tranvías a Caballo,true,2762
+732,357,Korail,false,57551
+733,357,B&G Metro,false,22590
+734,357,KTX,false,51900
+683,8,Tram,false,0
+770,124,FFCC del E,true,43005
+285,263,Elektrische Kleinbahn Graz-Mariatrost,true,0
+629,45,National Rail,false,8184
+731,359,Macau Light Rapid Transit,false,14271
+501,261,Corredor Bus,false,16319
+1036,189,LA Metro Busway,false,77461
+1176,252,Virginia Railway Express,false,549
+1041,152,TEXRail,false,42194
+94,106,Metroferroviário,false,381598
+386,310,Tramway (Métro officiellement),false,29797
+111,124,Metro Valparaíso,false,43005
+626,48,Glasgow to Edinburgh Lines,false,128917
+627,48,North of Scotland Lines,false,64960
+628,48,Ayrshire & Inverclyde Lines,false,12297
+631,48,Intercity Lines,false,20977
+362,231,Caltrain,false,75393
+804,45,Edinburgh Trams,false,13813
+803,344,Bybanen,false,19803
+761,231,Market Street Cable Car,true,0
+762,231,Ferries and Cliff House Railway,true,6820
+881,86,Trams,false,16784
+763,231,Omnibus Railroad & Cable Company,true,368
+1097,257,Metrocentro,false,2228
+1098,257,Cercanías,false,218830
+972,341,Doha Metro,false,73495
+973,341,Education City Tram,false,5051
+754,4,Tranvías Eléctricos (CET&L - ENT - ETCE),true,7440
+1101,7,Réseau ferré de la banlieue d'Alger,false,55848
+1134,460,Ho Chi Minh City Metro,false,19025
+753,124,Tranvías Eléctricos,true,9960
+275,106,Turismo,false,163413
+747,14,Gran Metropolità de Barcelona,true,1600
+650,22,Mumbai Suburban Railway,false,538945
+871,364,Chengdu Metro,false,653627
+350,114,Yokohama Seaside Line,false,10703
+15,22,Mumbai Metro,false,78150
+1084,424,Lahore Metrobus,false,25863
+1178,71,FFCC Vía Ancha,false,283554
+359,236,Monorail,false,1533
+301,95,TZen,false,0
+1191,147,Metra,false,782442
+841,54,Commuter rail - Regional lines,false,41046
+1898,54,Light rail,false,24746
+1189,206,PATH,false,21644
+715,13,SRT,false,38304
+786,195,Minnesota Valley Transit Authority,false,15836
+790,84,Seto Electric Railway,true,15103
+905,84,Kakamigahara Railway,true,17438
+785,84,BRT,false,6749
+694,73,PNR,false,62246
+423,139,CapeFLYER,false,0
+502,139,Boston & Albany Railroad,true,13329
+538,139,New Haven Railroad,true,41196
+535,139,Boston Elevated Railway,true,2035
+422,139,MBTA Commuter Rail,false,523061
+539,139,Boston & Maine Railroad,true,271985
+898,84,Nagoya Electric Railway,true,39504
+764,231,San Francisco & San Mateo Railway,true,8162
+1120,11,Ηλεκτρικό Τραμ (1435mm) / Electric Tram (1435mm),true,0
+989,11,Ατμοκίνητο Τραμ / Steam Tram,true,0
+772,215,Pittsburgh Railways,true,20192
+793,215,Monogahela Street Railway,true,0
+1135,461,Bhoj Metro,false,0
+990,11,Ηλεκτρικό Τραμ (1000 mm) / Electric Tram (1000mm),true,0
+783,84,Kintetsu Railway,false,0
+374,91,Kintetsu,false,326167
+540,91,Mizuma Railway,false,5534
+541,91,Semboku Rapid Railway,false,14284
+1966,400,Transporte Metropolitano Arroyo de la Encomienda,false,0
+2061,459,Προαστιακός,false,461649
+1439,459,Μετρό,false,12029
+713,27,Bus,false,17243
+2127,438,Serveis Ferroviaris de Mallorca,false,28587
+2128,438,Ferrocarril de Sóller,false,0
+960,247,MiWay,false,9772
+232,247,Toronto Transit Commission Subway,false,99980
+2129,422,Megabús,false,0
+1086,342,İETT,false,50165
+1016,342,İETT,true,2205
+1090,353,Dhaka Metro Rail,false,19482
+843,261,Otros,true,0
+1094,395,Cercanías Málaga,false,64422
+1115,109,Sofia Tram,false,7977
+3,7,Métro d'Alger,false,16004
+688,217,Portland Aerial Tram,false,1026
+689,217,Portland Streetcar,false,20990
+975,341,Msheireb Tram,false,1609
+249,126,Tren Eléctrico Urbano ,false,43917
+691,108,Sentosa Development Corporation,false,2023
+752,4,Metrotrén Primera Etapa,true,0
+1002,402,Hyderabad Metro,false,63256
+1003,398,Jaipur Metro,false,10949
+1137,88,RRTS,false,0
+106,121,MetLink Train Services,false,80054
+1005,393,Turin Metro,false,13488
+1006,387,Xiamen Metro,false,97139
+1007,385,Wenzhou Rail Transit,false,53167
+284,15,BCR,false,379208
+1009,382,Shijiazhuang Metro,false,76176
+1010,380,Shenyang Metro,false,115417
+1012,376,Lanzhou Metro,false,25787
+283,15,BRT,false,61066
+677,59,Railink,false,55492
+1029,345,İzmir Banliyö A.Ş.,false,135136
+701,106,Teleférico,false,0
+778,71,Tranvías EMT,true,0
+779,71,Tranvías Primitivos,true,0
+1896,54,Commuter rail - Urban lines,false,66533
+1897,54,Lauttasaari tramway,true,0
+46,54,Helsinki Metro,false,41641
+755,4,Tranvías a Caballo (FUS),true,0
+1105,252,DC Streetcar,false,3029
+1051,134,Charm City Circulator,false,9015
+1050,134,MTA MARC Train,false,0
+1026,346,BursaRay,false,51902
+1052,134,Harbor Connector,false,2522
+1083,424,Lahore Metro,false,25397
+1182,350,UlaşımPark,false,13189
+699,13,MRT,false,131075
+1038,358,Taiwan High Speed Rail,false,47841
+749,358,New Taipei Metro,false,17419
+693,73,Manila Metro Rail Transit System,false,16857
+1015,370,Harbin Metro,false,92801
+844,212,Southeastern Pennsylvania Transportation Authority (SEPTA),false,487236
+1004,394,Chennai Metro,false,52839
+1106,252,Maryland Transit Administration,false,317463
+916,212,Port Authority Transit Corporation (PATCO),false,23087
+740,81,Moscow Central Diameters,false,284631
+351,114,Yokohama Minatomirai Railway Company,false,4259
+1198,206,Historical Long Island Railroads,true,515160
+352,114,Sagami Railway,false,41945
+1200,206,IND,true,118213
+1131,381,Shenzhen Tram,false,11671
+1085,426,Rawalpindi-Islamabad Metrobus,false,53658
+1132,381,Pingshan SkyShuttle,false,7960
+1008,383,Taiyuan Metro,false,51584
+976,413,Dubai Metro,false,85196
+977,413,Al Sufouh Tram,false,8150
+978,413,Palm Monorail,false,5298
+1035,193,Tri-Rail,false,114352
+1042,152,A-train,false,33822
+1040,152,Trinity Railway Express,false,54278
+1014,373,Jinan Metro,false,83464
+902,84,Tōmi Railway,true,6781
+901,84,Tōnō Railway,true,14899
+72,84,Nagoya Municipal Subway,false,94630
+789,84,Aichi Rapid Transit,false,9106
+707,356,Seoul Metropolitan Subway,false,667546
+884,84,Meigi Railway,true,121130
+269,79,Linee suburbane,false,317212
+1437,79,Linee non più in servizio,true,1211
+1438,79,Linee transfrontaliere,false,0
+67,79,Metro,false,105575
+1467,69,Defunct Railways,true,5881
+897,11,Σιδηρόδρομοι μετά το 1971 / Railways after 1971,false,294428
+991,11,Ιππήλατο Τραμ / Horse Tram,true,0
+794,11,Σύγχρονο Τραμ / Modern Tram,false,29403
+709,27,S-Train,false,357096
+1138,438,Trambadia,false,0
+956,247,TTC Streetcar,false,74246
+958,247,Toronto Street Railway,true,34667
+1011,342,Metro İstanbul,false,221417
+660,22,Monorail,false,19861
+647,22,Navi Mumbai Metro,false,10762
+1133,340,PMPML,false,0
+93,105,Saint Petersburg Metro,false,128712
+997,415,Kiev Metro,false,68143
+407,108,SBS Transit,false,83371
+1013,375,Kunming Metro,false,163323
+974,341,Lusail Tram,false,6044
+1139,462,Baku Metro,false,40293
+1140,396,Karachi Circular Railway,false,0
+1142,199,Réseau express métropolitain,false,0
+992,390,Zhengzhou Metro,false,444909
+1082,419,Hanoi Metro,false,21634
+883,14,Rodalies,false,472043
+748,14,Ferrocarril Metropolitano de Barcelona SA,true,3016
+996,414,Minsk Metro,false,46065
+690,108,Changi Airport Group,false,2958
+994,417,Ningbo Rail Transit,false,257864
+870,37,Bishan SkyShuttle,false,15249
+993,416,Xi'an Metro,false,396278
+279,106,Metrorrodoviário,false,210553
+306,114,Keikyu,false,87129
+788,71,Tranvías SGT-SMT,true,0
+74,87,Metropolitana di Napoli,false,26226
+1037,189,Metrolink,false,674524
+276,4,FFCC del E,true,0
+1102,445,Metropolitano de Granada,false,16015
+494,4,BRT,false,81350
+765,4,Tranvías a Caballo (Otros),true,0
+1028,9,Ankara Metro,false,67253
+1130,206,Penn Central,true,239257
+1141,407,Tel Aviv Light Rail,false,23841
+1161,450,Sotratal,false,0
+995,365,Dalian Metro,false,221008
+1110,189,Los Angeles International Airport,false,0
+1162,450,Taxutal,false,0
+698,13,BTS Skytrain,false,66501
+237,252,WMATA Metrorail,false,204543
+1170,252,Historical Streetcars,true,65455
+1103,446,Cercanías Cádiz,false,72026
+1104,446,Trambahía,false,24161
+127,134,MTA Metro SubwayLink,false,23759
+1044,134,MTA Light RailLink,false,46292
+252,107,Shanghai Metro,false,822764
+196,211,O-Train,false,12375
+964,43,Dublin Area Rapid Transit,false,0
+965,43,Iarnród Éireann Commuter,false,151729
+1033,193,Metromover,false,7874
+750,149,RTA,false,51116
+475,110,Roslagsbanan,false,12254
+413,110,Pendeltåg,false,0
+476,110,Nockebybanan,false,5676
+257,110,Tunnelbana,false,105768
+636,110,Båt,false,1791
+644,110,Saltsjöbanan,false,7410
+549,91,Kobe New Transit,false,15295
+1145,365,Dalian Trams,false,23100
+1163,450,Abate Molina,false,0
+1336,432,Metropolitana di Palermo,false,39334
+1368,464,Nagpur Metro,false,36465
+708,356,Incheon Subway,false,59910
+885,84,Tokadai New Transit,true,0
+899,84,Nagoya Railway (Old),true,97187
+914,84,Aichi Loop Railway,false,45623
+912,84,Nagoya Rinkai Rapid Transit,false,15414
+900,84,Bisai Railway,true,35251
+887,84,Hekikai Electric Railway,true,14296
+889,84,Aichi Electric Railway,true,102293
+888,84,Nishio Ralilway,true,7922
+891,84,Chita Railway,true,28728
+910,84,Mino Electric Railway,true,5402
+903,84,Japanese Government Railways (JGR) / Ministry of Railways,true,47365
+904,84,Japanese National Railways (JNR),true,335574
+846,84,Mikawa Railway,true,56120
+495,206,MTA Long Island Railroad,false,493079
+500,206,NJT Hudson-Bergen Light Rail,false,25606
+1164,456,Taichung Metro,false,17067
+1146,463,Metro do Porto,false,93307
+1165,456,Taiwan High Speed Rail,false,7084
+1147,120,Tramwaje Warszawskie sp. z o.o.,false,14522
+1152,31,Kolkata Tram,false,0
+480,206,"New York, New Haven & Hartford Railroad",true,96512
+1269,433,Metropolitana di Catania,false,8264
+1270,433,Ferrovia Circumetnea,false,30376
+1148,92,Sporveien T-banen,false,0
+675,59,Jakarta MRT,false,17691
+490,206,BMT,true,123111
+637,206,Staten Island Ferry,false,8340
+482,206,MTA Metro-North,false,336739
+479,206,Westchester & Boston Railroad,true,18905
+125,132,Capital MetroRail,false,51691
+1149,132,Capital MetroBus,false,0
+1150,132,Capital MetroRapid,false,7206
+1151,132,Capital MetroExpress,false,0
+483,206,New York Central,true,239257
+1190,206,Hudson & Manhattan Railroad,true,21644
+662,59,Jakarta LRT,false,5747
+1188,206,NJT Rail,false,63968
+1193,206,Conrail,true,328337
+801,215,"Pittsburgh, Cincinnati, Chicago, and St. Louis Railroad",true,0
+773,215,St. Clair Incline Plane Company,true,0
+200,215,Pittsburgh Regional Transit (PRT),false,84176
+774,215,Nunnery Hill Incline Plane Company,true,0
+800,215,West Shore Electric Street Railway,true,0
+792,215,Pittsburgh & Lake Erie Railroad,true,0
+1017,342,TCDD Taşımacılık,false,97327
+68,80,CUTCSA,false,0
+1018,342,UAB,false,46303
+303,95,Navettes fluviales,false,0
+1030,347,AntRay,false,46112
+1031,347,Antalya Ulaşım A.Ş.,true,4824
+298,95,Transilien,false,0
+553,91,Hokushin Kyuko Electric Railway,true,7775
+676,59,Commuter Line,false,234323
+1157,252,Baltimore & Ohio Railroad,true,180287
+682,59,HSR Jakarta-Bandung,false,42153
+678,59,Greater Jakarta LRT,false,42568
+918,59,NITM - NederlandschIndische Tramweg Maatschappij,true,13709
+784,84,Nagoya Railway (Meitetsu),false,445506
+782,84,JR Central,false,335574
+771,358,Taoyuan Metro,false,52027
+1001,408,Kaohsiung Metro,false,59343
+913,84,Tōkai Transport Service,false,11425
+51,59,Jakarta BRT,false,235303
+920,59,BVM - Bataviasche Verkeers Maatschappij,true,0
+23,30,Cairo Metro,false,102198
+917,59,BTM - Bataviasche Tramway Maatschappij (BTM),true,16138
+1500,416,SkyShuttle,false,17086
+1159,59,MRT Dream,false,0
+1032,351,ESTRAM,false,51868
+1144,113,Karaj Metro,false,9115
+1153,71,EMT,false,11483
+1192,147,Northern Indiana Commuter Transportation District (NITCD),false,157576
+955,212,Philadelphia Transit Company,true,5640
+915,212,NJ Transit,false,75879
+865,114,Hitachinaka Seaside Railway  ひたちなか海浜鉄道,false,0
+246,71,Metro,false,285320
+1154,71,FFCC Vía Estrecha,true,0
+1155,71,Tranvías CMU,true,0
+414,114,Bushu Railway  武州鉄道,true,0
+426,114,Fuji Kyuko  富士急行,false,26650
+886,356,Seoul Light Rail Transit,false,19070
+729,356,GTX,false,0
+712,356,Others,false,137710
+1204,470,Yerevan Metro,false,11906
+371,91,Hanshin,false,48174
+372,91,Keihan,false,90696
+373,91,Nankai,false,153829
+542,91,Kyoto Municipal Subway,false,31496
+543,91,Eizan Electric Railway,false,14318
+544,91,Osaka Monorail,false,28013
+545,91,Kita-Osaka Kyuko Railway,false,8389
+710,356,KTX,false,79948
+730,356,SRT,false,79520
+546,91,Kobe Municipal Subway,false,38485
+548,91,Sanyo Electric Railway,false,54729
+550,91,Kobe Electric Railway,false,69570
+551,91,JR Central,false,107008
+554,91,Wakayama Electric Railway,false,14381
+587,91,Iga Railway,false,16618
+589,91,Hankai Tramway,false,18393
+632,91,Keifuku Electric Railroad,false,10952
+633,91,Ohmi Railway,false,59542
+634,91,Shigaraki Kogen Railway,false,14750
+971,236,Seattle Streetcar,false,6760
+69,81,Moscow Metro,false,544864
+741,81,Moscow Aeroexpress,false,113693
+1175,71,Tranvías Vía Estrecha,true,0
+421,114,JR Central  東海旅客鉄道,false,193337
+363,114,Yamaman,false,4146
+375,114,Kominato Railway,false,39076
+459,114,Kashima Rinkai Railway,false,56148
+399,114,Kaigan Electric Railway,true,0
+401,114,Kawasaki Transportation Department,true,0
+304,114,Toei Light Rail,false,9715
+334,114,Tokyo Tama Intercity Monorail,false,16087
+339,114,Toyo Rapid Railway,false,16350
+382,114,Saitama New Urban Transit,false,13376
+313,114,Tokyo Waterfront New Transit Corporation,false,14807
+314,114,Tokyo Monorail,false,18028
+316,114,Tokyo Waterfront Area Rapid Transit,false,12297
+322,114,Saitama Railway Corporation,false,14766
+906,69,Preserved Railway,false,21989
+849,69,(NR) North London Railway,true,30339
+259,69,(TfL) Underground,false,427491
+297,95,RER,false,0
+300,95,Grand Paris Express,false,0
+296,95,Tramway d'Île-de-France,false,204785
+299,95,Dessertes aéroportuaires,false,43185
+263,69,(TfL) Other,false,178441
+261,69,National Rail,false,114578
+262,69,(TfL) Overground,false,168211
+854,69,(BR) Chiltern,false,102194
+853,69,(BR) Thameslink,false,450890
+857,69,(BR) East Anglia,false,217984
+859,69,(BR) Essex Thameside,false,118950
+860,69,(BR) East Coast,false,177037
+858,69,(BR) Greater Western,false,52954
+851,69,(BR) South Western,false,164138
+850,69,(BR) Southeastern Railway,false,193611
+852,69,(BR) Southern Railway,false,226880
+323,114,Metropolitan Intercity Railway Company,false,58462
+418,114,Izuhakone Railway  伊豆箱根鉄道,false,9628
+349,114,Shonan Monorail,false,6565
+83,95,Métro de Paris,false,263404
+1203,467,Agra Metro,false,5025
+1237,466,Lucknow Metro,false,23291
+855,69,(BR) West Midlands Trains,false,80003
+1236,468,Indore Metro,false,4397
+959,114,Gakunan Electric Train Co.  岳南電車,false,0
+376,114,Isumi Railway  いすみ鉄道,false,26838
+307,114,Keio,false,87352
+308,114,Keisei,false,182983
+309,114,Odakyu,false,145913
+312,114,Tokyu,false,103181
+411,114,Ryutetsu,false,5557
+419,114,Kanto Railway,false,55792
+311,114,Tobu Railway,false,464200
+415,114,Kujukuri Railway,true,0
+417,114,Honjo Electric Railway,true,0
+325,114,Tokyo Toden,true,12187
+879,114,Shinano Railway,false,0
+969,114,Ueda Electric Railway,false,0
+410,114,Yokohama Municipal Streetcar,true,0
+872,114,Watarase Keikoku Railway,false,36813
+460,114,Moka Railway,false,42003
+340,114,Yokohama Municipal Subway,false,53674
+425,114,Jomo Electric Railway,false,25351
+409,114,Nanso Railway,true,0
+310,114,Seibu Railway,false,176414
+391,114,Narita Railway,true,0
+420,114,Choshi Electric Railway  銚子電気鉄道,false,6534
+462,114,Utsunomiya Light Rail Co,false,14552
+864,114,Izukyū Corporation  伊豆急行,false,44525
+305,114,JR East  東日本旅客鉄道,false,2437324
+368,114,Chiba Urban Monorail  千葉都市モノレール,false,15129
+863,114,Joshin Electric Railway,false,0
+100,114,Tokyo Metro,false,190854
+293,114,Toei Subway,false,108684
+966,114,Hakone Tozan Railway 箱根登山鉄道 ,false,0
+324,114,Hokuso Railway  北総鉄道,false,32262

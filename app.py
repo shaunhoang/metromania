@@ -1,157 +1,76 @@
 import pandas as pd
 from flask_caching import Cache
-import plotly.express as px
+import plotly.graph_objects as go 
 import dash_leaflet as dl
 from dash import dcc, html, Dash, no_update, ctx
 from dash.dependencies import Input, Output, State
 import dash_bootstrap_components as dbc
-import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from simplekml import Kml
 import json
+import ast
 
-######## Data intake and cleaning
-cities = pd.read_csv("datasets/cities.csv")
-stations = pd.read_csv("datasets/stations.csv")
-tracks = pd.read_csv("datasets/tracks.csv")
-lines = pd.read_csv("datasets/lines.csv")
-track_lines = pd.read_csv("datasets/track_lines.csv")
-station_lines = pd.read_csv("datasets/station_lines.csv")
-systems = pd.read_csv("datasets/systems.csv")
+# import cleaned datasets
+stations = pd.read_csv(
+  "datasets/stations_cleaned.csv",
+  converters={
+    'linestring_latlon': lambda x: ast.literal_eval(x),
+    'linestring_lonlat': lambda x: ast.literal_eval(x)
+  },
+  encoding='utf-8',          
+  keep_default_na=False     
+  )
+tracks = pd.read_csv(
+  "datasets/tracks_cleaned.csv",
+  converters={
+    'linestring_latlon': lambda x: ast.literal_eval(x),
+    'linestring_lonlat': lambda x: ast.literal_eval(x)
+  },
+  encoding='utf-8',          
+  keep_default_na=False,     
+  )
+wonk_table = pd.read_csv(
+  "datasets/city_wonkiness.csv", index_col=0,
+  encoding='utf-8',          
+  keep_default_na=False,     
+  )
 
+stations['fromyear'] = pd.to_numeric(stations['fromyear'], errors='coerce')
+stations['toyear'] = pd.to_numeric(stations['toyear'], errors='coerce')
+tracks['fromyear'] = pd.to_numeric(tracks['fromyear'], errors='coerce')
+tracks['toyear'] = pd.to_numeric(tracks['toyear'], errors='coerce')
 
-stations = stations.rename(columns={'id':'station_id','name':'station_name'})
-tracks = tracks.rename(columns={'id':'section_id'})
-cities_simpl = pd.DataFrame({'city_id':cities.id,'country':cities.country,'city':cities.name})
-station_lines_simpl = pd.DataFrame({'station_id':station_lines.station_id,'line_id':station_lines.line_id})
-lines_simpl = pd.DataFrame({'line_id':lines.id,'line_name':lines.name,'line_color':lines.color,'system_id':lines.system_id})
-systems_simpl = pd.DataFrame({'system_id':systems.id,'system_name':systems.name})
-track_lines_simpl = pd.DataFrame({'section_id':track_lines.section_id,'line_id':track_lines.line_id})
+# ---------------------------------
+# Define quality thresholds using quantiles and prepare dropdown options
+low_wonk_threshold = wonk_table['avg_wonkiness'].quantile(0.5)
+filtered_wonk_table = wonk_table[wonk_table['avg_wonkiness'] <= low_wonk_threshold].copy() # Filter for low wonkiness
+filtered_wonk_table = filtered_wonk_table.sort_values(by=['country', 'city']) # Sort by country then city
 
-
-##--- Merge multiple datasets into STATIONS
-stations = pd.merge (stations, cities_simpl, how='left',on='city_id')
-stations = pd.merge (stations, station_lines_simpl, how='left',on='station_id')
-stations = pd.merge (stations, lines_simpl, how='left',on='line_id')
-stations = pd.merge (stations, systems_simpl, how='left',on='system_id')
-
-# Split 'geometry' into 'longitudes' and 'latitudes'
-stations['longitude'] = stations['geometry'].apply(lambda x: x.split('POINT(')[1].split(' ')[0])
-stations['longitude'] = stations['longitude'].apply(lambda x: float(x))
-stations['latitude'] = stations['geometry'].apply(lambda x: x.split('POINT(')[1].split(' ')[1].split(')')[0])
-stations['latitude'] = stations['latitude'].apply(lambda x: float(x))
-
-# Reorder columns in STATIONS and clean up
-stations = stations[['station_id','station_name','geometry','longitude',
-                     'latitude','opening','closure','city_id','city',
-                     'country','line_id','line_name','line_color','system_id','system_name']]
-
-##--- Merge multiple datasets into TRACKS
-tracks = pd.merge(tracks, track_lines_simpl,how='left',on='section_id')
-tracks = pd.merge(tracks, lines_simpl, how='left', on='line_id')
-tracks = pd.merge(tracks, cities_simpl, how='left', on='city_id')
-tracks = pd.merge(tracks, systems_simpl, how='left', on='system_id')
-
-# Define function to split coord from linestring object - two versions for different applications
-def split_coord_lonlat(x):
-    stripped_x = x.rstrip(')) ').lstrip(' MULTILINESTRING ((').strip() # strip non-numerical values from object 
-    coord_list = []
-    for point in stripped_x.split(','):
-        coord = point.split(' ')                                # split into lon-lat 
-        coord = [float(x.strip()) for x in coord]               # turn to float
-        coord_list.append(coord)
-    return coord_list
-
-def split_coord_latlon(x):
-    stripped_x = x.rstrip(')) ').lstrip(' MULTILINESTRING ((').strip() # strip non-numerical values from object 
-    coord_list = []
-    for point in stripped_x.split(','):
-        coord = point.split(' ')                              # split into lon-lat 
-        coord[0],coord[1] = coord[1],coord[0]                   # swap to lat-lon
-        coord = [float(x.strip()) for x in coord]               # turn to float
-        coord_list.append(coord)
-    return coord_list
-
-# Split 'geometry' for each row into 'linestring' a list of coordinates to draw track lines
-tracks['linestring_latlon'] = tracks.geometry.apply(split_coord_latlon)
-tracks['linestring_lonlat'] = tracks.geometry.apply(split_coord_lonlat)
-
-# Reorder columns
-tracks = tracks[['section_id','geometry','linestring_latlon','linestring_lonlat','opening','closure',
-                 'length','line_id','line_name','line_color',
-                 'system_id','system_name','city_id','city','country']]
-
-# --- Handle name missing data ---
-
-## Fill in NA 
-stations['station_name'] = stations['station_name'].fillna('n/a')
-stations['line_name'] = stations['line_name'].fillna('n/a')
-stations['line_color'] = stations['line_color'].fillna('#000000')
-tracks['line_name'] = tracks['line_name'].fillna('n/a')
-tracks['line_color'] = tracks['line_color'].fillna('#000000')
-stations['line_id'] = stations['line_id'].fillna(0)
-tracks['line_id'] = tracks['line_id'].fillna(0)
-
-# --- Handle opening and closure date missing data ---
-
-# Handle Closure Dates, Fill NaN with 999999, "still open".
-stations['closure'] = stations['closure'].fillna(999999)
-tracks['closure'] = tracks['closure'].fillna(999999)
-
-# Handle Opening Dates, impute missing data based on minimum known opening year for each city
-stations['opening'] = pd.to_numeric(stations['opening'], errors='coerce')
-tracks['opening'] = pd.to_numeric(tracks['opening'], errors='coerce')
-stations.loc[stations['opening'] > 2100, 'opening'] = pd.NA
-tracks.loc[tracks['opening'] > 2100, 'opening'] = pd.NA
-stations.loc[stations['opening'] == 0, 'opening'] = pd.NA
-tracks.loc[tracks['opening'] == 0, 'opening'] = pd.NA
-stations['opening'] = stations['opening'].astype('Int64')
-tracks['opening'] = tracks['opening'].astype('Int64')
-
-# Flag rows
-stations['was_missing_opening'] = stations['opening'].isna() 
-tracks['was_missing_opening'] = tracks['opening'].isna()   
-
-# Impute
-stations['min_city_opening'] = stations.groupby('city')['opening'].transform('min')
-tracks['min_city_opening'] = tracks.groupby('city')['opening'].transform('min')
-stations['opening'] = stations['opening'].fillna(stations['min_city_opening'])
-tracks['opening'] = tracks['opening'].fillna(tracks['min_city_opening'])
-# Handle cities where all dates were missing (min_city_opening is NaN)
-stations['opening'] = stations['opening'].fillna(1900).astype(int) 
-tracks['opening'] = tracks['opening'].fillna(1900).astype(int) 
-stations = stations.drop(columns=['min_city_opening']) # Drop the temporary column
-tracks = tracks.drop(columns=['min_city_opening']) # Drop the temporary column
-
-# ... (wonkiness calculation) ...
-# Calculate proportion of missing/imputed opening dates per city
-pivot_st = pd.pivot_table(stations, values='station_id', index='city', columns='was_missing_opening', aggfunc='count', fill_value=0)
-pivot_tr = pd.pivot_table(tracks, values='section_id', index='city', columns='was_missing_opening', aggfunc='count', fill_value=0)
-
-pivot_st = pivot_st.rename(columns={True: 'missing', False: 'valid'})
-pivot_tr = pivot_tr.rename(columns={True: 'missing', False: 'valid'})
-if 'missing' not in pivot_st.columns: pivot_st['missing'] = 0
-if 'valid' not in pivot_st.columns: pivot_st['valid'] = 0
-if 'missing' not in pivot_tr.columns: pivot_tr['missing'] = 0
-if 'valid' not in pivot_tr.columns: pivot_tr['valid'] = 0
-
-# Calculate the "wonkiness" score then merge for filtering
-pivot_st['wonkiness_st'] = pivot_st['missing'] / (pivot_st['valid'] + pivot_st['missing'])
-pivot_tr['wonkiness_tr'] = pivot_tr['missing'] / (pivot_tr['valid'] + pivot_tr['missing'])
-wonk_table = pd.merge(pivot_st[['valid', 'missing', 'wonkiness_st']],
-                      pivot_tr[['valid', 'missing', 'wonkiness_tr']],
-                      on='city', suffixes=('_st', '_tr'))
-wonk_table['total_stations'] = wonk_table['valid_st'] + wonk_table['missing_st']
-wonk_table['total_tracks'] = wonk_table['valid_tr'] + wonk_table['missing_tr']
-wonk_table['avg_wonkiness'] = (wonk_table['wonkiness_st'] + wonk_table['wonkiness_tr']) / 2 
-
-# Define quality thresholds using quantiles
-low_wonk_threshold = wonk_table['avg_wonkiness'].quantile(0.6)
+# ---------------------------------      
+# --- Create Dropdown Options with Country Groups (filtered/sorted) ---
 selection_items = []
-for index, row in wonk_table.iterrows():
-    if row['avg_wonkiness'] <= low_wonk_threshold:
-        label = index
-        selection_items.append({'label': label, 'value': index})
+current_country = None
+
+for index, row in filtered_wonk_table.iterrows(): 
+    city_name = row['city']
+    city_id = row['city_id']
+    country_name = row['country']
+
+    # Add a header for each country
+    if country_name != current_country: 
+        if pd.notna(country_name):
+            selection_items.append({
+                'label': f"--- {country_name} ---", # Add formatting for header
+                'value': "disabled", 
+                'disabled': True        
+            })
+            current_country = country_name
+
+    # Add the selectable city option, value = city_id
+    selection_items.append({
+        'label': f"  {city_name}", 
+        'value': city_id
+    })
 
 # ---------------------------------
 # Helper function for placeholder graphs
@@ -196,11 +115,11 @@ def get_filtered_data(city, year):
     if not city or not year:
         return pd.DataFrame(), pd.DataFrame()
 
-    my_stations = stations[(stations.city == city) & 
+    my_stations = stations[(stations.city_id == city) & 
                            (stations.opening <= year) & 
                            (stations.closure > year)]
     
-    my_tracks = tracks[(tracks.city == city) & 
+    my_tracks = tracks[(tracks.city_id == city) & 
                        (tracks.opening <= year) & 
                        (tracks.closure > year)]
                        
@@ -208,8 +127,8 @@ def get_filtered_data(city, year):
 @cache.memoize()
 def get_summary_data(city):
 
-    my_stations = stations[(stations.city == city)]
-    my_tracks = tracks[(tracks.city == city)]
+    my_stations = stations[(stations.city_id == city)]
+    my_tracks = tracks[(tracks.city_id == city)]
 
     joint_df = pd.concat([my_tracks.opening, my_stations.opening])
     
@@ -244,91 +163,162 @@ def get_summary_data(city):
     Input('slider', 'value')
 )
 def map_it(city, year):
-
     if not city or not year:
         return [], [], [0, 0], 2
     my_stations, my_tracks = get_filtered_data(city, year)
     
     markers = []
-    lines = []    
-
     for _, station in my_stations.iterrows():
+        
+        tooltip_html_parts = []
+        tooltip_html_parts.append(f"<b>Station:</b> {station.station_name}")
+        if pd.notna(station.opening) and station.opening > 0:
+            tooltip_html_parts.append(f"<b>Opened:</b> {station.opening:g}")
+
+        # Join
+        tooltip_inner_html = "<br>".join(tooltip_html_parts)
+        tooltip_content = f"<div style='text-align: left;'>{tooltip_inner_html}</div>" if tooltip_inner_html else ""
+        
+        marker_children = []
+        if tooltip_content:
+            marker_children.append(dl.Tooltip(content=tooltip_content))
+
         markers.append(dl.CircleMarker(
             center=[station.latitude, station.longitude],
             radius=3,
             fillColor='white',
-            fillOpacity=0.8,
-            color=station.line_color,
+            fillOpacity=0.9,
+            color='black',
             stroke=True,
             weight=0.5,
             pane='markerPane',
+            children=marker_children
         ))
 
-    for _, track in my_tracks.iterrows():
-        lines.append(dl.Polyline(
-            positions=track.linestring_latlon,
-            color=track.line_color,
-            weight=2,
-            children=[
-                dl.Tooltip(f"{track.line_name} (Opened {track.opening:g})")
-            ]
-        ))
+    lines = []
+    if not my_tracks.empty:
+        grouped_tracks = my_tracks.groupby('section_id')
+        for section_id, group in grouped_tracks:
+            # Get plottable info
+            track_repr = group.iloc[-1]   # use last row as representative
+            positions = track_repr['linestring_latlon']
+            line_color = track_repr['line_color']
+            
+            tooltip_combination_blocks = []
+            # MIN OPENING
+            min_opening = group['opening'][group['opening'] > 0].min()
+            opening_info = ""
+            if pd.notna(min_opening):
+                 opening_info = f"<b>Opened:</b> {min_opening:g}<br>"
+            tooltip_combination_blocks.append(opening_info.strip())
+                 
+            # UNIQUE LINE / SYSTEM / MODE / SERVICE YEARS COMBINATIONS
+            unique_combinations = group[['line_name', 'system_name','transport_mode_name','fromyear','toyear']].drop_duplicates()
+            
+            for _, combo_row in unique_combinations.iterrows():
+                block_parts = []
+                line = combo_row['line_name']
+                system = combo_row['system_name']
+                mode = combo_row['transport_mode_name']
+                fromyear = combo_row['fromyear']
+                toyear = combo_row['toyear']
+                
+                # LINE / SYSTEM / MODE block
+                if pd.notna(line) and line not in ['N.A.', '']:
+                    block_parts.append(f"<b>Line:</b> {line}")
+                if pd.notna(system) and system not in ['N.A.', '']:
+                    block_parts.append(f"<b>System:</b> {system}")
+                if pd.notna(mode):
+                    block_parts.append(f"<b>Mode:</b> {mode}")
+                
+                # SERVICE YEARS
+                service_parts = []
+                if pd.notna(fromyear):
+                    service_parts.append(f"from {int(fromyear):g}")
+                if pd.notna(toyear):
+                    service_parts.append(f"until {int(toyear):g}")
+                if service_parts:
+                    block_parts.append(f"<b>Service:</b> {' '.join(service_parts)}")
+                 
+                # Put together combo block       
+                if block_parts:
+                    tooltip_combination_blocks.append("<br>".join(block_parts))
 
+            # -PUT ALL TOGETHER INTO ONE CONTENT BLOCK
+            tooltip_body = f"<hr style='margin: 5px 0;'>".join(tooltip_combination_blocks) # separate by horizontal line
+            tooltip_content = f"<div style='text-align: left;'>{tooltip_body}</div>" if tooltip_body else "" # wrap in div
+            polyline_children = [dl.Tooltip(content=tooltip_content)] if tooltip_content else [] # create tooltip child if content exists
+
+            # Create Polyline
+            lines.append(dl.Polyline(
+                positions=positions,
+                color=line_color,
+                weight=2,
+                children=polyline_children
+            ))
+
+    # --- Determine map center and zoom ---
     if not my_stations.empty:
         center = [my_stations['latitude'].mean(), my_stations['longitude'].mean()]
         zoom = 11
     else:
         center, zoom = [0, 0], 2
-
+                
     return markers, lines, center, zoom
 
-# Plot it function
 @app.callback(Output('plot','figure'),[Input('dropdown','value'),Input('slider','value')])
 def plot_it(city,year):
 
     if not city or not year:
         return create_placeholder_figure("Select a city and year to see the plot.")
 
-    city_all_stations = stations[stations.city == city]
+    # --- Get boundaries ---
+    city_all_stations = stations[stations.city_id == city]
+    city_name = city_all_stations['city'].iloc[0]
+    
     if city_all_stations.empty:
-      return create_placeholder_figure(f"No data found for {city}.")
+      return create_placeholder_figure(f"No data found for this city.")
     x_min = city_all_stations['longitude'].min()
     x_max = city_all_stations['longitude'].max()
     y_min = city_all_stations['latitude'].min()
     y_max = city_all_stations['latitude'].max()
 
-    # --- Get track data for current and previous year ---
+    # --- Get track data ---
     _, my_tracks_current = get_filtered_data(city, year)
     _, my_tracks_previous = get_filtered_data(city, year - 1)
 
-    if my_tracks_current.empty:
-        fig = create_placeholder_figure(f"No tracks found for {city} in {year}.")
-    else:
+    # --- Initialize go.Figure ---
+    fig = go.Figure()
+
+    if not my_tracks_current.empty:
         # --- Identify new section IDs ---
         current_section_ids = set(my_tracks_current['section_id'])
         previous_section_ids = set(my_tracks_previous['section_id'])
         new_section_ids = current_section_ids - previous_section_ids
 
-        # --- Prepare plotting DataFrame ---
-        plot_df = my_tracks_current[['section_id', 'linestring_lonlat']].explode('linestring_lonlat')
-        plot_df[['x', 'y']] = pd.DataFrame(plot_df['linestring_lonlat'].tolist(), index=plot_df.index)
-        plot_df = plot_df.rename(columns={'section_id': 'group'})
-        plot_df['color'] = plot_df['group'].apply(lambda section_id: 'yellow' if section_id in new_section_ids else 'white') # Mark new sections
+        # --- Add each track segment as a separate trace ---
+        for index, track_row in my_tracks_current.iterrows():
+            section_id = track_row['section_id']
+            linesegment = track_row['linestring_lonlat']
 
-        # --- Create plot using color mapping ---
-        fig = px.line(plot_df,
-                      x="x",
-                      y="y",
-                      line_group="group",
-                      color='color', 
-                      color_discrete_map={ 
-                          'white': 'white',
-                          'yellow': 'yellow'
-                      },
-                      template="plotly_dark")
+            # Check for valid list data
+            if isinstance(linesegment, list) and len(linesegment) > 1:
+                x_coords = [p[0] for p in linesegment if isinstance(p, (list, tuple)) and len(p) == 2]
+                y_coords = [p[1] for p in linesegment if isinstance(p, (list, tuple)) and len(p) == 2]
+                line_color = 'yellow' if section_id in new_section_ids else 'white'
+                line_width = 3 if section_id in new_section_ids else 1
 
-        fig.update_traces(line=dict(width=2))
+                fig.add_trace(go.Scatter(
+                    x=x_coords,
+                    y=y_coords,
+                    mode='lines',
+                    line=dict(color=line_color, width=line_width),
+                    hoverinfo='none'
+                ))
+            else:
+                 print(f"WARN: Skipping invalid linestring for section {section_id}")
 
+    # --- Apply axis settings ---
     fig.update_yaxes(title_text="",showgrid=False,
                      showline=False,mirror=True,showticklabels=False,ticks='',automargin=True, zeroline=False,
                      scaleratio=1,
@@ -341,31 +331,38 @@ def plot_it(city,year):
                      showticklabels=False,ticks='',automargin=True, zeroline=False,
                      range=[x_min, x_max])
 
+    # --- Add annotations ---
     fig.add_annotation(
-        text=f"<b>{year:g}</b>",
-        xref="paper", yref="paper",
-        x=0.98, y=0.98,
-        showarrow=False,
-        font=dict(size=24, color="white"),
-        xanchor='right',
-        yanchor='top'
+        text=f"<b>{city_name.upper()} {year:g}</b>",
+        xref="paper", yref="paper", x=0.98, y=0.98,
+        showarrow=False, font=dict(size=24, color="white"),
+        xanchor='right', yanchor='top'
     )
-    # add annotation for new segments
     fig.add_annotation(
         text="<span style='color:yellow;'><b>New sections</b></span> opened that year",
-        xref="paper", yref="paper",
-        x=0.02, y=0.02,
-        showarrow=False,
-        font=dict(size=14, color="white"),
-        xanchor='left',
-        yanchor='top'
+        xref="paper", yref="paper", x=0.02, y=0.02,
+        showarrow=False, font=dict(size=14, color="white"),
+        xanchor='left', yanchor='bottom'
     )
 
-    fig.update_layout(showlegend=False, 
-                      autosize=True,    
+    # --- Update layout ---
+    fig.update_layout(showlegend=False,
+                      template="plotly_dark",
+                      autosize=True,
                       plot_bgcolor="#222222",
                       paper_bgcolor="#222222",
-                      margin=dict(l=10, r=10, t=10, b=10, pad=4)) 
+                      margin=dict(l=10, r=10, t=10, b=10, pad=4))
+
+    # --- Placeholder if no data ---
+    if not fig.data: 
+        placeholder_fig = create_placeholder_figure(f"No tracks found for this city in {year}.")
+        placeholder_fig.update_layout(
+             xaxis=dict(range=[x_min, x_max], visible=False),
+             yaxis=dict(range=[y_min, y_max], visible=False, scaleanchor="x", scaleratio=1)
+        )
+        placeholder_fig.add_annotation(text=f"<b>{year:g}</b>", xref="paper", yref="paper", x=0.98, y=0.98, showarrow=False, font=dict(size=24, color="white"), xanchor='right', yanchor='top')
+        placeholder_fig.add_annotation(text="<span style='color:yellow;'><b>New sections</b></span> in operation that year", xref="paper", yref="paper", x=0.02, y=0.02, showarrow=False, font=dict(size=14, color="white"), xanchor='left', yanchor='bottom')
+        return placeholder_fig
 
     return fig
   
@@ -424,10 +421,10 @@ def update_slider_value(n_back, n_fwd, current_year):
 
     if ctx.triggered_id == 'year-backward-button':
         new_year = current_year - 1
-        return max(new_year, min_year) # Don't go below min
+        return max(new_year, min_year) 
     elif ctx.triggered_id == 'year-forward-button':
         new_year = current_year + 1
-        return min(new_year, max_year) # Don't go above max
+        return min(new_year, max_year) 
 
     return no_update
 
@@ -440,7 +437,7 @@ def summarize_it(city,year):
     
     dataset = get_summary_data(city)
     if dataset is None:
-         return create_placeholder_figure(f"No historical data for {city}.")
+         return create_placeholder_figure(f"No historical data for this city.")
     
     fig = make_subplots(specs=[[{"secondary_y": True}]])
 
@@ -466,7 +463,7 @@ def summarize_it(city,year):
         plot_bgcolor="#222222",
         paper_bgcolor="#222222",
         title={
-            'text': f"{city} Urban Rail System Growth Over Time",
+            'text': f"System Growth Over Time",
              'y':0.9,
              'x':0.5,
             'xanchor': 'center',
@@ -494,6 +491,7 @@ def export_geojson(city, year, n_clicks):
         return no_update
 
     my_stations, my_tracks = get_filtered_data(city, year)
+    city_name = my_stations['city'].iloc[0]
 
     features = []
 
@@ -521,7 +519,7 @@ def export_geojson(city, year, n_clicks):
             "type": "Feature",
             "geometry": {
                 "type": "LineString",
-                "coordinates": track.linestring_lonlat # Already in [lon, lat] format
+                "coordinates": track.linestring_lonlat 
             },
             "properties": {
                 "name": track.line_name,
@@ -540,7 +538,7 @@ def export_geojson(city, year, n_clicks):
     # Create data dictionary for download
     download_data = dict(
         content=json.dumps(geojson_data),
-        filename=f"metromania_{city.replace(' ', '_')}_{year:g}.geojson"
+        filename=f"metromania_{city_name.replace(' ', '_')}_{year:g}.geojson"
     )
 
     return download_data
@@ -559,8 +557,8 @@ def export_kml(city, year, n_clicks):
         return no_update
 
     my_stations, my_tracks = get_filtered_data(city, year)
-
-    kml = Kml(name=f"{city} Transit {year:g}")
+    city_name = my_stations['city'].iloc[0]
+    kml = Kml()
     
     # --- Stations ---
     list_st=[]
@@ -584,7 +582,7 @@ def export_kml(city, year, n_clicks):
 
     kml_data = dict(
         content=kml.kml(),
-        filename=f"metromania_{city.replace(' ', '_')}_{year:g}.kml"
+        filename=f"metromania_{city_name.replace(' ', '_')}_{year:g}.kml"
     )
 
     return kml_data
@@ -606,7 +604,7 @@ navbar = dbc.Navbar(
                     dbc.Col(
                         dbc.NavbarBrand([
                             html.Span("Metromania", className="fw-bold fs-4"),
-                            html.Span(" – Urban Rail History Explorer", className="text-muted ms-1 fs-4")
+                            html.Span(" – Transit History Explorer", className="text-muted ms-1 fs-4")
                         ]),
                         width="auto"
                     ),
@@ -653,7 +651,7 @@ controls = dbc.Card(
                     options=selection_items,
                     placeholder="Select a city...",
                     className="dbc",
-                    value="London"
+                    value=69 # Default to London
                 ),
                 width=True
             )
@@ -740,7 +738,7 @@ app.layout = html.Div([
         # Title Section
         dbc.Row([
             dbc.Col([
-                html.H4("Visualise the evolution of urban rail systems around the world",
+                html.H4("Visualise the evolution of urban transit systems around the world",
                         className="text-center"),
                 html.P(["Note: Data quality may vary between cities due to historical data availability.",
                        html.Br(),
@@ -797,45 +795,6 @@ app.layout = html.Div([
                 ], className="shadow-lg border-0 rounded-3"), md=6, className="mb-4"
             )
         ]),
-        #   dbc.Col(
-        #         dbc.Card([
-        #             dbc.CardBody([
-        #                 dl.Map(
-        #                   id='map',
-        #                   center=[51.51, -0.13],
-        #                   zoom=2,
-        #                   style={'width': '100%', 'height': '70vh', 'borderRadius': '12px'},
-        #                   children=[
-        #                       dl.LayersControl(
-        #                           [
-        #                               dl.BaseLayer(
-        #                                   dl.TileLayer(url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'),
-        #                                   name='Dark mode',
-        #                                   checked=True
-        #                               ),
-        #                               dl.BaseLayer(
-        #                                   dl.TileLayer(url='https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png'),
-        #                                   name='Light mode',
-        #                                   checked=False
-        #                               ),
-        #                               dl.Overlay(
-        #                                   dl.LayerGroup(id='stations-layer'),
-        #                                   name='Stations',
-        #                                   checked=True
-        #                               ),
-        #                               dl.Overlay(
-        #                                   dl.LayerGroup(id='lines-layer'),
-        #                                   name='Lines',
-        #                                   checked=True
-        #                               ),
-        #                           ]
-        #                       )
-        #                   ]
-        #               )
-        #             ])
-        #         ], className="shadow-lg border-0 rounded-3 bg-dark-subtle"), md=6, className="mb-4"
-        #     )
-        # ]),
 
         # Summary Graph
         dbc.Row([
@@ -862,8 +821,9 @@ app.layout = html.Div([
                                className="text-center text-muted small"), width=6),
                 dbc.Col(html.P([
                     "Data source: ",
-                    html.A("Kaggle.com", href='https://www.kaggle.com/citylines/city-lines',
-                           target="_blank", className="link-info")
+                    html.A("CityLines.co", href='https://www.citylines.co/',
+                           target="_blank", className="link-info"),
+                    " (updated 07/2025)"
                 ], className="text-center text-muted small"), width=6)
             ])
         ], className="mt-3")
