@@ -229,6 +229,7 @@ def map_it(city, year):
             stroke=True,
             weight=0.5,
             pane='markerPane',
+            id=f'station-{station.station_id}',
             children=marker_children
         ))
 
@@ -241,19 +242,14 @@ def map_it(city, year):
             track_repr = group.iloc[0]   # use first row
             positions = track_repr['linestring_latlon']
             line_color = track_repr['line_color']
-
-            tooltip_combination_blocks = []
-            # MIN OPENING
+            
             min_opening = group['opening'][group['opening'] > 0].min()
-            opening_info = ""
-            if pd.notna(min_opening):
-                opening_info = f"<b>Opened:</b> {min_opening:g}<br>"
-            tooltip_combination_blocks.append(opening_info.strip())
-
+            
             # UNIQUE LINE / SYSTEM / MODE / SERVICE YEARS COMBINATIONS
+            tooltip_combination_blocks = []
             unique_combinations = group[[
-                'line_name', 'system_name', 'transport_mode_name', 'fromyear', 'toyear']].drop_duplicates()
-
+                'line_name', 'system_name', 'transport_mode_name', 'fromyear', 'toyear','line_color']].drop_duplicates()
+             
             for _, combo_row in unique_combinations.iterrows():
                 block_parts = []
                 line = combo_row['line_name']
@@ -261,24 +257,41 @@ def map_it(city, year):
                 mode = combo_row['transport_mode_name']
                 fromyear = combo_row['fromyear']
                 toyear = combo_row['toyear']
+                line_color = combo_row['line_color']
 
-                # LINE / SYSTEM / MODE block
+                
+
+                # LINE NAME
                 if pd.notna(line) and line not in ['N.A.', '']:
-                    block_parts.append(f"<b>Line:</b> {line}")
+                    if not isinstance(line_color, str) or not line_color.startswith('#'):
+                      line_color = '#808080'
+                    block_parts.append(f"<span style='background-color:{line_color}; color:white; padding: 0 4px; border-radius: 3px;'>{line}</span>")
+                
+                # SYSTEM
+                system_parts = []
                 if pd.notna(system) and system not in ['N.A.', '']:
-                    block_parts.append(f"<b>System:</b> {system}")
+                    system_parts.append(system)
                 if pd.notna(mode):
-                    block_parts.append(f"<b>Mode:</b> {mode}")
+                    system_parts.append(f"({mode})")
+                if system_parts: 
+                  block_parts.append(" ".join(system_parts))
 
                 # SERVICE YEARS
                 service_parts = []
                 if pd.notna(fromyear):
-                    service_parts.append(f"from {int(fromyear):g}")
+                    service_parts.append(f"{int(fromyear):g}")
+                elif pd.notna(min_opening):
+                    service_parts.append(f"{int(min_opening):g}")
+                else:
+                    service_parts.append("unknown")                    
+ 
                 if pd.notna(toyear):
-                    service_parts.append(f"until {int(toyear):g}")
+                    service_parts.append(f"- {int(toyear):g}")
+                else:
+                    service_parts.append("- present")
+                    
                 if service_parts:
-                    block_parts.append(
-                        f"<b>Service:</b> {' '.join(service_parts)}")
+                    block_parts.append(f"{' '.join(service_parts)}")
 
                 # Put together combo block
                 if block_parts:
@@ -296,7 +309,8 @@ def map_it(city, year):
             lines.append(dl.Polyline(
                 positions=positions,
                 color=line_color,
-                weight=2,
+                weight=4,
+                id=f'track-{section_id}',
                 children=polyline_children
             ))
 
@@ -668,26 +682,6 @@ def update_slider_value(n_back, n_fwd, current_year):
 
     return no_update
 
-
-@app.callback(
-    Output('map-card-header', 'children'),
-    Input('dropdown', 'value'),
-    Input('slider', 'value')
-)
-def update_map_card_title(city_id, year):
-    if not city_id or not year:
-        return "Interactive Map"
-    if city_id == "disabled":
-        return "Interactive Map"
-
-    city_name_series = cities.loc[cities['city_id'] == city_id, 'city']
-    if not city_name_series.empty:
-        city_name = city_name_series.iloc[0]
-        return f"{city_name} in {year:g}"
-    else:
-        return f"Map for ID {city_id} in {year:g}"
-
-
 # ---------------------------------
 # 3. Create Dash Layout
 # Slider marks
@@ -748,7 +742,7 @@ controls = dbc.Card(
         # Row 1: City
         dbc.Row([
             dbc.Col(html.Label(
-                "CITY", className="d-flex align-items-center mb-0 justify-content-center fw-bold"), width=1),
+                "CITY", className="d-flex align-items-center mb-0 justify-content-center fw-bold me-1"), width=1),
             dbc.Col(
                 dcc.Dropdown(
                     id='dropdown',
@@ -764,7 +758,7 @@ controls = dbc.Card(
         # Row 2: Year
         dbc.Row([
             dbc.Col(html.Label(
-                "YEAR", className="d-flex align-items-center mb-0 justify-content-center fw-bold"), width=1),
+                "YEAR", className="d-flex align-items-center mb-0 justify-content-center fw-bold me-1"), width=1),
             dbc.Col(dbc.Button("<", id="year-backward-button",
                     n_clicks=0, color="secondary", size="sm"), width="auto"),
             dbc.Col(
@@ -847,8 +841,6 @@ app.layout = html.Div([
         dbc.Row([
             dbc.Col(
                 dbc.Card([
-                    dbc.CardHeader(id="map-card-header", children="Interactive Map",
-                                   className="fw-bold justify-content-center text-center"),
                     dbc.CardBody([
                         dl.Map(
                             id='map',
