@@ -800,7 +800,7 @@ app.layout = html.Div([
             dbc.Col([
                 html.H4(
                     "Explore and export how transit systems around the world have evolved",
-                    className="text-center mb-3 ms-3"
+                    className="text-center mb-2 ms-3"
                 )
             ], width=12)
         ]),
@@ -815,16 +815,16 @@ app.layout = html.Div([
                     ], width=12, lg=2, className="align-self-center"),
                     dbc.Col(controls, width=12, lg=10)
                 ], className="align-items-stretch h-100"),
-                width=12, lg=8, className="mb-3"
+                width=12, lg=8, className="mb-2"
             ),
             dbc.Col(
                 dbc.Row([
                     dbc.Col(stats_card, width=7),
                     dbc.Col(export_card, width=5)
-                ], className="align-items-stretch h-100"),
+                ]),
                 width=12, lg=4
             )
-        ], align="stretch", className="mb-3"),
+        ], align="stretch", className="mb-2 mb-lg-1"),
 
         # Map Row
         dbc.Row([
