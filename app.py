@@ -123,8 +123,7 @@ cache = Cache(app.server, config={
 # # ... (callbacks) ...
 
 # Caching filtered data
-
-
+@cache.memoize()
 def get_filtered_data(city, year):
     if not city or not year:
         return pd.DataFrame(), pd.DataFrame()
@@ -139,7 +138,6 @@ def get_filtered_data(city, year):
                        (tracks.closure > year)]
 
     return my_stations, my_tracks
-
 
 @cache.memoize()
 def get_summary_data(city):
@@ -170,7 +168,6 @@ def get_summary_data(city):
         return None
 
     return pd.DataFrame(data)
-
 
 # Calculate city center coordinates for viewport update
 city_centers = {}
@@ -237,16 +234,10 @@ def map_it(city, year):
     if not my_tracks.empty:
         grouped_tracks = my_tracks.groupby('section_id')
         for section_id, group in grouped_tracks:
-            # Get plottable info
-            group.sort_values(by='fromyear', ascending=False, inplace=True)
-            track_repr = group.iloc[0]   # use first row
-            positions = track_repr['linestring_latlon']
-            line_color = track_repr['line_color']
-            
-            min_opening = group['opening'][group['opening'] > 0].min()
-            
+
             # UNIQUE LINE / SYSTEM / MODE / SERVICE YEARS COMBINATIONS
             tooltip_combination_blocks = []
+            min_opening = group['opening'][group['opening'] > 0].min()
             unique_combinations = group[[
                 'line_name', 'system_name', 'transport_mode_name', 'fromyear', 'toyear','line_color']].drop_duplicates()
              
@@ -258,8 +249,6 @@ def map_it(city, year):
                 fromyear = combo_row['fromyear']
                 toyear = combo_row['toyear']
                 line_color = combo_row['line_color']
-
-                
 
                 # LINE NAME
                 if pd.notna(line) and line not in ['N.A.', '']:
@@ -303,12 +292,20 @@ def map_it(city, year):
             # wrap in div
             tooltip_content = f"<div style='text-align: left;'>{tooltip_body}</div>" if tooltip_body else ""
             polyline_children = [dl.Tooltip(content=tooltip_content)] if tooltip_content else [
-            ]  # create tooltip child if content exists
-
+            ]  
+            
+            # Get plottable info
+            group = group.sort_values(
+              by=['toyear', 'line_name'],
+              ascending=[False, True], na_position='first'
+              )
+            positions = group.iloc[0]['linestring_latlon']
+            polyline_color = group.iloc[0]['line_color']
+            
             # Create Polyline
             lines.append(dl.Polyline(
                 positions=positions,
-                color=line_color,
+                color=polyline_color,
                 weight=4,
                 id=f'track-{section_id}',
                 children=polyline_children
@@ -812,11 +809,11 @@ app.layout = html.Div([
         dbc.Row([
             dbc.Col([
                 html.H4(
-                    "Explore and export how transit systems around the world have evolved",
+                    "Explore how urban transit systems around the world have evolved",
                     className="text-center mb-2 ms-3"
                 ),
                 dbc.Col([
-                    html.P("Data quality may vary greatly! Small systems or those with >10% missing segment dates are not included.",
+                    html.P("Data quality for each city may vary greatly! Local non-rail and intercity services such as Local Busses, Ferries, People Movers, and High Speed Rail are excluded.",
                            className="text-muted small text-center"),
                 ], className="align-self-center"),
             ], width=12)
