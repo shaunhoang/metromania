@@ -45,14 +45,14 @@ tracks['toyear'] = pd.to_numeric(tracks['toyear'], errors='coerce')
 
 # ---------------------------------
 # Define quality thresholds using quantiles and prepare dropdown options
-quality_threshold = 0.1 # 10% missing openings only
-quantity_threshold = 100 # larger systems only
+quality_threshold = 0.1  # 10% missing openings only
+quantity_threshold = 100  # larger systems only
 
 filtered_cities = cities[
-  (cities['avg_wonkiness'] <= quality_threshold) & 
-  (cities['total_stations'] >= quantity_threshold)
-  ]
-filtered_cities = filtered_cities.sort_values(by=['country', 'city'])  
+    (cities['avg_wonkiness'] <= quality_threshold) &
+    (cities['total_stations'] >= quantity_threshold)
+]
+filtered_cities = filtered_cities.sort_values(by=['country', 'city'])
 
 # ---------------------------------
 # --- Create Dropdown Options with Country Groups (filtered/sorted) ---
@@ -183,6 +183,7 @@ DEFAULT_CITY = 69  # London
 DEFAULT_CENTER = city_centers.get(DEFAULT_CITY, [51.51, -0.13])
 DEFAULT_ZOOM = 11
 
+
 @app.callback(
     Output('stations-layer', 'children'),
     Output('lines-layer', 'children'),
@@ -193,10 +194,10 @@ DEFAULT_ZOOM = 11
 def map_it(city, year):
     if not city or not year:
         return [], [], {'center': DEFAULT_CENTER, 'zoom': DEFAULT_ZOOM}
-      
+
     center = city_centers.get(city, DEFAULT_CENTER)
-    zoom = DEFAULT_ZOOM 
-      
+    zoom = DEFAULT_ZOOM
+
     my_stations, my_tracks = get_filtered_data(city, year)
 
     markers = []
@@ -232,7 +233,7 @@ def map_it(city, year):
         grouped_tracks = my_tracks.groupby('section_id')
         for section_id, group in grouped_tracks:
             # Get plottable info
-            group.sort_values(by='fromyear', ascending=False,inplace=True)
+            group.sort_values(by='fromyear', ascending=False, inplace=True)
             track_repr = group.iloc[0]   # use first row
             positions = track_repr['linestring_latlon']
             line_color = track_repr['line_color']
@@ -325,12 +326,12 @@ def plot_it(city, year):
         avg_latitude_rad = np.radians(avg_latitude_deg)
         # Avoid division by zero near poles (cosine(90 degrees) = 0)
         if abs(avg_latitude_deg) >= 89.9:
-             scale_ratio = 1 / np.cos(np.radians(np.sign(avg_latitude_deg) * 89.9))
+            scale_ratio = 1 / \
+                np.cos(np.radians(np.sign(avg_latitude_deg) * 89.9))
         else:
-             scale_ratio = 1 / np.cos(avg_latitude_rad)
+            scale_ratio = 1 / np.cos(avg_latitude_rad)
     else:
-        scale_ratio = 1 
-
+        scale_ratio = 1
 
     fig = go.Figure()
 
@@ -382,14 +383,14 @@ def plot_it(city, year):
     fig.add_annotation(
         text=f"<b>{city_name.upper()} {year:g}</b>",
         xref="paper", yref="paper", x=0.98, y=0.98,
-        showarrow=False, font=dict(size=24, color="white"),
+        showarrow=False, font=dict(size=20, color="white"),
         xanchor='right', yanchor='top'
     )
     fig.add_annotation(
-        text="<span style='color:yellow;'><b>New sections</b></span> opened that year",
-        xref="paper", yref="paper", x=0.02, y=0.02,
-        showarrow=False, font=dict(size=14, color="white"),
-        xanchor='left', yanchor='bottom'
+        text="<span style='color:yellow;'><b>new segments</b></span> added this year",
+        xref="paper", yref="paper", x=0.98, y=0.93,
+        showarrow=False, font=dict(size=12, color="white"),
+        xanchor='right', yanchor='top'
     )
 
     # --- Update layout ---
@@ -677,9 +678,9 @@ navbar = dbc.Navbar(
                         html.I(className="fas fa-subway fa-lg me-2"), width="auto"),
                     dbc.Col(
                         dbc.NavbarBrand([
-                            html.Span("Metromania", className="fw-bold fs-4"),
+                            html.Span("Metromania", className="fw-bold fs-5"),
                             html.Span(" | Transit History Explorer",
-                                      className="text-muted ms-1 fs-4")
+                                      className="text-muted ms-1 fs-5")
                         ]),
                         width="auto"
                     ),
@@ -692,7 +693,7 @@ navbar = dbc.Navbar(
     ),
     color="primary",
     dark=True,
-    className="mb-4 py-3"
+    className="mb-3 py-3"
 )
 
 
@@ -809,35 +810,35 @@ app.layout = html.Div([
         # Title Section
         dbc.Row([
             dbc.Col([
-                html.H4("Explore how transit systems around the world have evolved",
-                        className="text-center"),
-                html.P("Note: Data quality may vary due to historical data availability. Cities with small transit systems (under 100 stations) and with more than 10 percent of segments missing opening date information have been excluded.",
-                       className="text-center text-muted mb-4"),
-            ], width=12, lg=6, className="mx-auto")
-        ], className="py-1"),
+                html.H3("Explore how transit systems around the world evolve",
+                        className="text-center mb-3 ms-3"),
+            ], width=12)
+        ]),
 
         # Controls and Stats Row
         dbc.Row([
-            dbc.Col(controls, width=12, lg=8),
             dbc.Col(
                 dbc.Row([
-                    dbc.Col(stats_card, width=6),
-                    dbc.Col(export_card, width=6,)
+                    dbc.Col([
+                        html.P("Note: Data quality may vary. Systems with >10 per cent of segments missing opening dates are excluded.",
+                               className="text-center text-muted small mb-1"),
+                    ], width=12, lg=2, className="align-self-center"
+                    ),
+                    dbc.Col(controls, width=12, lg=10),
+                ], className="h-100 g-3"),
+                width=12, lg=8
+            ),
+            dbc.Col(
+                dbc.Row([
+                    dbc.Col(stats_card, width=7),
+                    dbc.Col(export_card, width=5)
                 ], className="h-100 g-3"),
                 width=12, lg=4
             )
-        ], align="stretch", className="mb-4 g-3"),
+        ], align="stretch", className="mb-3 g-3"),
 
-        # Visualization Row
+        # Map Row
         dbc.Row([
-            dbc.Col(
-                dbc.Card([
-                    dbc.CardBody([
-                        dcc.Graph(id='plot', style={
-                                  'height': '70vh'}, figure=create_placeholder_figure("Loading map..."))
-                    ])
-                ], className="shadow-lg border-0 rounded-3"), md=6, className="mb-4"
-            ),
             dbc.Col(
                 dbc.Card([
                     dbc.CardBody([
@@ -858,26 +859,33 @@ app.layout = html.Div([
                             ]
                         )
                     ])
-                ], className="shadow-lg border-0 rounded-3"), md=6, className="mb-4"
+                ], className="shadow-lg border-0 rounded-3"), md=12, className="mb-3"
             )
         ]),
 
-        # Summary Graph
+        # Plot + Summary Graph
         dbc.Row([
+            dbc.Col(
+                dbc.Card([
+                    dbc.CardBody([
+                        dcc.Graph(id='plot', style={
+                                  'height': '60vh'}, figure=create_placeholder_figure("Loading map..."))
+                    ])
+                ], className="shadow-lg border-0 rounded-3 mb-3"), md=5,
+            ),
             dbc.Col(
                 dbc.Card([
                     dbc.CardBody([
                         dcc.Graph(
                             id='summarize',
-                            style={'height': '40vh'},
+                            style={'height': '60vh'},
                             figure=create_placeholder_figure(
                                 "Loading chart...")
                         )
                     ])
-                ], className="shadow-lg border-0 rounded-3"),
-                width=12
+                ], className="shadow-lg border-0 rounded-3"), md=7
             )
-        ], className="mb-4"),
+        ], className="mb-3"),
 
         html.Hr(className="text-muted"),
 
@@ -887,28 +895,33 @@ app.layout = html.Div([
 
                 dbc.Col([
                     "Created by: Shaun Hoang",
-                    html.Span([
-                        html.A(html.I(className="far fa-envelope fa-lg mx-2"),
-                               href="mailto:shaun.hoang@gmail.com", target="_blank"),
-                        html.A(html.I(className="fab fa-github fa-lg mx-2"),
-                               href="https://github.com/shaunhoang/metromania", target="_blank"),
-                        html.A(html.I(className="fab fa-linkedin fa-lg mx-2"),
-                               href="https://www.linkedin.com/in/shaunhoang", target="_blank")
-                    ], className="ms-2")
+                    dbc.Row([
+                        html.Span([
+                            html.A(html.I(className="far fa-envelope fa-lg mx-2"),
+                                   href="mailto:shaun.hoang@gmail.com", target="_blank"),
+                            html.A(html.I(className="fab fa-github fa-lg mx-2"),
+                                   href="https://github.com/shaunhoang/metromania", target="_blank"),
+                            html.A(html.I(className="fab fa-linkedin fa-lg mx-2"),
+                                   href="https://www.linkedin.com/in/shaunhoang", target="_blank")
+                        ], className="ms-2")
+                    ], className="mt-1 justify-content-center")
                 ], className="text-center"),
 
-                dbc.Col(html.P([
+                dbc.Col([
                     "Data source: ",
                     html.A("CityLines.co", href='https://www.citylines.co/',
                            target="_blank", className="link-info"),
-                    " (updated 07/2025)"
-                ], className="text-center text-muted small"), width=6)
-            ]),
+                    dbc.Row([
+                      " (updated 07/2025)"
+                    ], className="mt-1 justify-content-center")
+                ], className="text-center")
 
-        ], className="mt-3")
-    ], fluid=True)
+            ], className="mb-3")
+
+        ]),
+
+    ], fluid=True, className="px-5")
 ])
-
 
 # Finally
 if __name__ == "__main__":
