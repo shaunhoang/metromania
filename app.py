@@ -29,29 +29,31 @@ tracks = pd.read_csv(
   encoding='utf-8',          
   keep_default_na=False,     
   )
-wonk_table = pd.read_csv(
-  "datasets/city_wonkiness.csv", index_col=0,
+cities = pd.read_csv(
+  "datasets/cities_cleaned.csv", index_col=0,
   encoding='utf-8',          
   keep_default_na=False,     
   )
 
+stations['opening'] = pd.to_numeric(stations['opening'], errors='coerce')
 stations['fromyear'] = pd.to_numeric(stations['fromyear'], errors='coerce')
 stations['toyear'] = pd.to_numeric(stations['toyear'], errors='coerce')
+tracks['opening'] = pd.to_numeric(tracks['opening'], errors='coerce')
 tracks['fromyear'] = pd.to_numeric(tracks['fromyear'], errors='coerce')
 tracks['toyear'] = pd.to_numeric(tracks['toyear'], errors='coerce')
 
 # ---------------------------------
 # Define quality thresholds using quantiles and prepare dropdown options
-low_wonk_threshold = wonk_table['avg_wonkiness'].quantile(0.5)
-filtered_wonk_table = wonk_table[wonk_table['avg_wonkiness'] <= low_wonk_threshold].copy() # Filter for low wonkiness
-filtered_wonk_table = filtered_wonk_table.sort_values(by=['country', 'city']) # Sort by country then city
+quality_threshold = cities['avg_wonkiness'].quantile(0.75)
+filtered_cities = cities[cities['avg_wonkiness'] <= quality_threshold].copy() # Filter for low wonkiness (high quality)
+filtered_cities = filtered_cities.sort_values(by=['country', 'city']) # Sort by country then city
 
 # ---------------------------------      
 # --- Create Dropdown Options with Country Groups (filtered/sorted) ---
 selection_items = []
 current_country = None
 
-for index, row in filtered_wonk_table.iterrows(): 
+for index, row in filtered_cities.iterrows(): 
     city_name = row['city']
     city_id = row['city_id']
     country_name = row['country']
@@ -60,13 +62,13 @@ for index, row in filtered_wonk_table.iterrows():
     if country_name != current_country: 
         if pd.notna(country_name):
             selection_items.append({
-                'label': f"--- {country_name} ---", # Add formatting for header
+                'label': f"--- {country_name} ---", 
                 'value': "disabled", 
                 'disabled': True        
             })
             current_country = country_name
 
-    # Add the selectable city option, value = city_id
+    # Add the selectable city option
     selection_items.append({
         'label': f"  {city_name}", 
         'value': city_id
@@ -110,17 +112,18 @@ cache = Cache(app.server, config={
 })
 
 # # ... (callbacks) ...
-@cache.memoize()
 def get_filtered_data(city, year):
     if not city or not year:
         return pd.DataFrame(), pd.DataFrame()
 
     my_stations = stations[(stations.city_id == city) & 
-                           (stations.opening <= year) & 
-                           (stations.closure > year)]
+                           ((stations.opening <= year)|(stations.opening.isna()))& 
+                           (stations.closure > year)
+                           ]
+    
     
     my_tracks = tracks[(tracks.city_id == city) & 
-                       (tracks.opening <= year) & 
+                      ((tracks.opening <= year)|(tracks.opening.isna())) & 
                        (tracks.closure > year)]
                        
     return my_stations, my_tracks
@@ -154,17 +157,40 @@ def get_summary_data(city):
 
     return pd.DataFrame(data)
 
+# --- Pre-calculate city center coordinates for viewport update ---
+city_centers = {}
+grouped_stations = stations.dropna(subset=['latitude', 'longitude']).groupby('city_id')
+for city, group in grouped_stations:
+    center = [group['latitude'].mean(), group['longitude'].mean()]
+    city_centers[city] = center
+
+# Define a default 
+DEFAULT_CITY = 69 # London
+DEFAULT_CENTER = city_centers.get(DEFAULT_CITY, [51.51, -0.13])
+DEFAULT_ZOOM = 11
+
+@app.callback(
+    Output('map', 'center'),
+    Output('map', 'zoom'),
+    Input('dropdown', 'value'),
+    prevent_initial_call=False 
+)
+def update_map_view(city):
+    if not city:
+        return DEFAULT_CENTER, 3
+    center = city_centers.get(city, DEFAULT_CENTER) #
+    zoom = 11 
+    return center, zoom
+
 @app.callback(
     Output('stations-layer', 'children'),
     Output('lines-layer', 'children'),
-    Output('map', 'center'),
-    Output('map', 'zoom'),
     Input('dropdown', 'value'),
     Input('slider', 'value')
 )
 def map_it(city, year):
     if not city or not year:
-        return [], [], [0, 0], 2
+        return [], []
     my_stations, my_tracks = get_filtered_data(city, year)
     
     markers = []
@@ -256,15 +282,8 @@ def map_it(city, year):
                 weight=2,
                 children=polyline_children
             ))
-
-    # --- Determine map center and zoom ---
-    if not my_stations.empty:
-        center = [my_stations['latitude'].mean(), my_stations['longitude'].mean()]
-        zoom = 11
-    else:
-        center, zoom = [0, 0], 2
                 
-    return markers, lines, center, zoom
+    return markers, lines
 
 @app.callback(Output('plot','figure'),[Input('dropdown','value'),Input('slider','value')])
 def plot_it(city,year):
@@ -287,7 +306,6 @@ def plot_it(city,year):
     _, my_tracks_current = get_filtered_data(city, year)
     _, my_tracks_previous = get_filtered_data(city, year - 1)
 
-    # --- Initialize go.Figure ---
     fig = go.Figure()
 
     if not my_tracks_current.empty:
@@ -651,7 +669,7 @@ controls = dbc.Card(
                     options=selection_items,
                     placeholder="Select a city...",
                     className="dbc",
-                    value=69 # Default to London
+                    value=DEFAULT_CITY # Default to London 69
                 ),
                 width=True
             )
@@ -669,7 +687,7 @@ controls = dbc.Card(
                     included=True,
                     marks=slider_marks,
                     tooltip={"placement": "bottom", "always_visible": True},
-                    value=2000
+                    value=2012
                 ),
                 width=True,
             ),
@@ -742,7 +760,7 @@ app.layout = html.Div([
                         className="text-center"),
                 html.P(["Note: Data quality may vary between cities due to historical data availability.",
                        html.Br(),
-                       "Cities with high proportions of missing opening/closure date information have been excluded."
+                       "Cities with high proportions of missing opening date information have been excluded."
                        ],
                        className="text-center text-muted mb-4"),
             ], width=12, lg=6, className="mx-auto") 
@@ -779,8 +797,8 @@ app.layout = html.Div([
                     dbc.CardBody([
                         dl.Map(
                             id='map',
-                            center=[51.51, -0.13],
-                            zoom=2,
+                            center=DEFAULT_CENTER,
+                            zoom=DEFAULT_ZOOM,
                             style={'width': '100%', 'height': '70vh', 'borderRadius': '12px'},
                             children=[
                                 dl.TileLayer(
