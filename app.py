@@ -794,9 +794,9 @@ stats_card = dbc.Card(
 export_card = dbc.Card([
     dbc.CardBody([
         html.P("Export Options", className="text-center text-muted mb-3"),
-        dbc.Button("Export KML", id="export_kml_button",
+        dbc.Button("KML", id="export_kml_button",
                    color="success", className="w-100 mb-2"),
-        dbc.Button("Export GeoJSON", id="export_geojson_button",
+        dbc.Button("GeoJSON", id="export_geojson_button",
                    color="info", className="w-100"),
         dcc.Download(id="download-kml"),
         dcc.Download(id="download-geojson")
