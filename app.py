@@ -123,6 +123,8 @@ cache = Cache(app.server, config={
 # # ... (callbacks) ...
 
 # Caching filtered data
+
+
 def get_filtered_data(city, year):
     if not city or not year:
         return pd.DataFrame(), pd.DataFrame()
@@ -137,6 +139,7 @@ def get_filtered_data(city, year):
                        (tracks.closure > year)]
 
     return my_stations, my_tracks
+
 
 @cache.memoize()
 def get_summary_data(city):
@@ -168,6 +171,7 @@ def get_summary_data(city):
 
     return pd.DataFrame(data)
 
+
 # Calculate city center coordinates for viewport update
 city_centers = {}
 grouped_stations = stations.dropna(
@@ -182,6 +186,8 @@ DEFAULT_CENTER = city_centers.get(DEFAULT_CITY, [51.51, -0.13])
 DEFAULT_ZOOM = 11
 
 # Map it function
+
+
 @app.callback(
     Output('stations-layer', 'children'),
     Output('lines-layer', 'children'),
@@ -297,6 +303,8 @@ def map_it(city, year):
     return markers, lines, {'center': center, 'zoom': zoom}
 
 # Plot it function
+
+
 @app.callback(Output('plot', 'figure'), [Input('dropdown', 'value'), Input('slider', 'value')])
 def plot_it(city, year):
 
@@ -417,6 +425,8 @@ def plot_it(city, year):
     return fig
 
 # Count it function
+
+
 @app.callback(Output('count', 'children'), [Input('dropdown', 'value'), Input('slider', 'value')])
 def count_it(city, year):
     if not city or not year:
@@ -453,6 +463,8 @@ def count_it(city, year):
     ]
 
 # Summarize it function
+
+
 @app.callback(Output('summarize', 'figure'), [Input('dropdown', 'value'), Input('slider', 'value')])
 def summarize_it(city, year):
 
@@ -514,7 +526,9 @@ def summarize_it(city, year):
 
     return fig
 
-# Export it function 
+# Export it function
+
+
 @app.callback(
     Output("download-geojson", "data"),
     [State('dropdown', 'value'),
@@ -580,6 +594,8 @@ def export_geojson(city, year, n_clicks):
     return download_data
 
 # Export it function
+
+
 @app.callback(
     Output("download-kml", "data"),
     [State('dropdown', 'value'),
@@ -624,6 +640,8 @@ def export_kml(city, year, n_clicks):
     return kml_data
 
 # Update values
+
+
 @app.callback(
     Output('slider', 'value'),
     Input('year-backward-button', 'n_clicks'),
@@ -650,6 +668,7 @@ def update_slider_value(n_back, n_fwd, current_year):
 
     return no_update
 
+
 @app.callback(
     Output('map-card-header', 'children'),
     Input('dropdown', 'value'),
@@ -664,7 +683,7 @@ def update_map_card_title(city_id, year):
     city_name_series = cities.loc[cities['city_id'] == city_id, 'city']
     if not city_name_series.empty:
         city_name = city_name_series.iloc[0]
-        return f"{city_name} in {year:g}" 
+        return f"{city_name} in {year:g}"
     else:
         return f"Map for ID {city_id} in {year:g}"
 
@@ -801,36 +820,35 @@ app.layout = html.Div([
                 html.H4(
                     "Explore and export how transit systems around the world have evolved",
                     className="text-center mb-2 ms-3"
-                )
+                ),
+                dbc.Col([
+                    html.P("Data quality may vary greatly! Small systems or those with >10% missing segment dates are not included.",
+                           className="text-muted small text-center"),
+                ], className="align-self-center"),
             ], width=12)
         ]),
 
         # Controls and Side Cards (Stats + Export)
         dbc.Row([
             dbc.Col(
-                dbc.Row([
-                    dbc.Col([
-                        html.P("Data quality may vary greatly! Small systems or those with >10% missing segment dates are not included.",
-                               className="text-muted small text-center"),
-                    ], width=12, lg=2, className="align-self-center"),
-                    dbc.Col(controls, width=12, lg=10)
-                ], className="align-items-stretch h-100"),
-                width=12, lg=8, className="mb-2"
+                controls, 
+                width=12,lg=8
             ),
             dbc.Col(
                 dbc.Row([
                     dbc.Col(stats_card, width=7),
                     dbc.Col(export_card, width=5)
-                ]),
-                width=12, lg=4
+                ],className="g-2"),
+                width=12, lg=4, className="g-2"
             )
-        ], align="stretch", className="mb-2 mb-lg-1"),
+        ], align="stretch", className="mb-2 g-2"),
 
         # Map Row
         dbc.Row([
             dbc.Col(
                 dbc.Card([
-                    dbc.CardHeader(id="map-card-header", children="Interactive Map", className="fw-bold justify-content-center text-center"),
+                    dbc.CardHeader(id="map-card-header", children="Interactive Map",
+                                   className="fw-bold justify-content-center text-center"),
                     dbc.CardBody([
                         dl.Map(
                             id='map',
@@ -849,7 +867,7 @@ app.layout = html.Div([
                             ]
                         )
                     ])
-                ], className="shadow-lg border-0 rounded-3"), md=12, className="mb-3"
+                ], className="shadow-lg border-0 rounded-3"), md=12, className="mb-2"
             )
         ]),
 
@@ -875,7 +893,7 @@ app.layout = html.Div([
                     ])
                 ], className="shadow-lg border-0 rounded-3"), md=7
             )
-        ], className="mb-3"),
+        ], className="mb-2"),
 
         html.Hr(className="text-muted"),
 
@@ -906,7 +924,7 @@ app.layout = html.Div([
                     ], className="mt-1 justify-content-center")
                 ], className="text-center")
 
-            ], className="mb-3")
+            ], className="mb-2")
 
         ]),
 
