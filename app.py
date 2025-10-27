@@ -189,7 +189,6 @@ DEFAULT_ZOOM = 11
     Output('map', 'viewport'),
     Input('dropdown', 'value'),
     Input('slider', 'value'),
-    prevent_initial_call=True
 )
 def map_it(city, year):
     if not city or not year:
@@ -446,7 +445,7 @@ def count_it(city, year):
         dbc.Card(
             [
                 dbc.CardBody([
-                    html.P(f"{track_length_km:,.0f} km of tracks",
+                    html.P(f"{track_length_km:,.0f} km tracks",
                            className="card-title mb-0"),
                 ], className="p-2")
             ],
@@ -795,9 +794,9 @@ stats_card = dbc.Card(
 export_card = dbc.Card([
     dbc.CardBody([
         html.P("Export Options", className="text-center text-muted mb-3"),
-        dbc.Button("Export as KML", id="export_kml_button",
+        dbc.Button("Export KML", id="export_kml_button",
                    color="success", className="w-100 mb-2"),
-        dbc.Button("Export as GeoJSON", id="export_geojson_button",
+        dbc.Button("Export GeoJSON", id="export_geojson_button",
                    color="info", className="w-100"),
         dcc.Download(id="download-kml"),
         dcc.Download(id="download-geojson")
