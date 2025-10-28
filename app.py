@@ -10,6 +10,7 @@ from plotly.subplots import make_subplots
 from simplekml import Kml
 import json
 import ast
+from io import StringIO
 
 # import cleaned datasets
 stations = pd.read_csv(
@@ -37,16 +38,14 @@ cities = pd.read_csv(
 )
 
 stations['opening'] = pd.to_numeric(stations['opening'], errors='coerce')
-stations['fromyear'] = pd.to_numeric(stations['fromyear'], errors='coerce')
-stations['toyear'] = pd.to_numeric(stations['toyear'], errors='coerce')
 tracks['opening'] = pd.to_numeric(tracks['opening'], errors='coerce')
-tracks['fromyear'] = pd.to_numeric(tracks['fromyear'], errors='coerce')
-tracks['toyear'] = pd.to_numeric(tracks['toyear'], errors='coerce')
+stations['closure'] = pd.to_numeric(stations['closure'], errors='coerce')
+tracks['closure'] = pd.to_numeric(tracks['closure'], errors='coerce')
 
 # ---------------------------------
 # Define quality thresholds using quantiles and prepare dropdown options
 quality_threshold = 0.1  # 10% missing openings only
-quantity_threshold = 100  # larger systems only
+quantity_threshold = 75  # larger systems only
 
 filtered_cities = cities[
     (cities['avg_wonkiness'] <= quality_threshold) &
@@ -122,23 +121,6 @@ cache = Cache(app.server, config={
 
 # # ... (callbacks) ...
 
-# Caching filtered data
-@cache.memoize()
-def get_filtered_data(city, year):
-    if not city or not year:
-        return pd.DataFrame(), pd.DataFrame()
-
-    my_stations = stations[(stations.city_id == city) &
-                           ((stations.opening <= year) | (stations.opening.isna())) &
-                           (stations.closure > year)
-                           ]
-
-    my_tracks = tracks[(tracks.city_id == city) &
-                       ((tracks.opening <= year) | (tracks.opening.isna())) &
-                       (tracks.closure > year)]
-
-    return my_stations, my_tracks
-
 @cache.memoize()
 def get_summary_data(city):
 
@@ -150,24 +132,52 @@ def get_summary_data(city):
     valid_years = joint_df[(joint_df > 0) & (joint_df < 2041)].unique()
     if len(valid_years) < 2:
         return None
-
     min_year = int(min(valid_years))
     max_year = int(max(valid_years))
-
     if min_year >= max_year:
         return None
 
     data = []
     for y in range(min_year, max_year + 1):
-        d = {'year': y,
-             'track_length': my_tracks[(my_tracks.opening <= y) & (my_tracks.closure > y)].length.sum()/1000,
-             'stations_num': len(my_stations[(my_stations.opening <= y) & (my_stations.closure > y)])}
+        track_mask = (
+            (my_tracks['opening'].isna() | (my_tracks['opening'] <= y)) &
+            (my_tracks['closure'].isna() | (my_tracks['closure'] > y))
+        )
+        station_mask = (
+            (my_stations['opening'].isna() | (my_stations['opening'] <= y)) &
+            (my_stations['closure'].isna() | (my_stations['closure'] > y))
+        )
+
+        d = {
+            'year': y,
+            'track_length': my_tracks.loc[track_mask, 'length'].sum() / 1000,
+            'stations_num': my_stations.loc[station_mask].shape[0]
+        }
         data.append(d)
 
     if not data:
         return None
 
     return pd.DataFrame(data)
+
+
+@cache.memoize()
+def filter_by_year(df, year):
+    if df.empty or year is None:
+        return pd.DataFrame()
+
+    try:
+        numeric_year = int(year)
+    except (ValueError, TypeError):
+        print(f"WARN: Invalid year '{year}' for filtering. Returning empty.")
+        return pd.DataFrame()
+
+    # --- Build masks based on year ---
+    open_mask = df['opening'].isna() | (df['opening'] <= numeric_year)
+    closure_mask = df['closure'].isna() | (df['closure'] > numeric_year)
+
+    return df[open_mask & closure_mask].copy()
+
 
 # Calculate city center coordinates for viewport update
 city_centers = {}
@@ -181,6 +191,63 @@ for city, group in grouped_stations:
 DEFAULT_CITY = 69  # London
 DEFAULT_CENTER = city_centers.get(DEFAULT_CITY, [51.51, -0.13])
 DEFAULT_ZOOM = 11
+DEFAULT_YEAR = 2012
+
+# filter by city and update store
+
+
+@app.callback(
+    Output('city-data-store', 'data'),
+    Input('dropdown', 'value'),
+    prevent_initial_call=False
+)
+def update_city_store(city_id):
+    city_id = city_id if city_id is not None else DEFAULT_CITY
+    if city_id == "disabled":
+        return {'stations': pd.DataFrame().to_json(orient='split'),
+                'tracks': pd.DataFrame().to_json(orient='split')}
+
+    city_stations = stations[stations['city_id'] == city_id].copy()
+    city_tracks = tracks[tracks['city_id'] == city_id].copy()
+
+    # Convert to JSON for storage
+    stored_data = {
+        'stations': city_stations.to_json(orient='split', date_format='iso'),
+        'tracks': city_tracks.to_json(orient='split', date_format='iso')
+    }
+    return stored_data
+
+# Update map details
+
+
+@app.callback(
+    Output('map-year-display', 'children'),
+    Input('slider', 'value')
+)
+def update_map_year_display(year):
+    if year is not None:
+        return f"{year:g}"
+    return ""
+# Update map view
+
+
+@app.callback(
+    Output('map', 'viewport'),
+    Input('dropdown', 'value'),
+    prevent_initial_call=True
+)
+def update_map_view(city):
+    if not city or city == "disabled":
+        print("DEBUG update_map_view: No valid city, returning default viewport.")
+        return {'center': DEFAULT_CENTER, 'zoom': DEFAULT_ZOOM}
+
+    center = city_centers.get(city, DEFAULT_CENTER)
+    zoom = DEFAULT_ZOOM
+
+    print(
+        f"DEBUG update_map_view: Returning viewport: center={center}, zoom={zoom}")
+    return {'center': center, 'zoom': zoom}
+
 
 # Map it function
 
@@ -188,18 +255,27 @@ DEFAULT_ZOOM = 11
 @app.callback(
     Output('stations-layer', 'children'),
     Output('lines-layer', 'children'),
-    Output('map', 'viewport'),
-    Input('dropdown', 'value'),
+    Input('city-data-store', 'data'),
     Input('slider', 'value'),
+    prevent_initial_call=False
 )
 def map_it(city, year):
-    if not city or not year:
-        return [], [], {'center': DEFAULT_CENTER, 'zoom': DEFAULT_ZOOM}
 
-    center = city_centers.get(city, DEFAULT_CENTER)
-    zoom = DEFAULT_ZOOM
+    if city is None:
+        return [], []
 
-    my_stations, my_tracks = get_filtered_data(city, year)
+    try:
+        stations_json_io = StringIO(city['stations'])
+        tracks_json_io = StringIO(city['tracks'])
+        city_stations_df = pd.read_json(stations_json_io, orient='split')
+        city_tracks_df = pd.read_json(tracks_json_io, orient='split')
+
+    except Exception as e:
+        print(f"ERROR: Could not read data from store: {e}")
+        return [], []
+
+    my_stations = filter_by_year(city_stations_df, year)
+    my_tracks = filter_by_year(city_tracks_df, year)
 
     markers = []
     for _, station in my_stations.iterrows():
@@ -237,48 +313,43 @@ def map_it(city, year):
 
             # UNIQUE LINE / SYSTEM / MODE / SERVICE YEARS COMBINATIONS
             tooltip_combination_blocks = []
-            min_opening = group['opening'][group['opening'] > 0].min()
-            unique_combinations = group[[
-                'line_name', 'system_name', 'transport_mode_name', 'fromyear', 'toyear','line_color']].drop_duplicates()
-             
-            for _, combo_row in unique_combinations.iterrows():
+            for _, combo_row in group.iterrows():
                 block_parts = []
                 line = combo_row['line_name']
                 system = combo_row['system_name']
                 mode = combo_row['transport_mode_name']
-                fromyear = combo_row['fromyear']
-                toyear = combo_row['toyear']
+                opening_yr = combo_row['opening']
+                closure_yr = combo_row['closure']
                 line_color = combo_row['line_color']
 
                 # LINE NAME
                 if pd.notna(line) and line not in ['N.A.', '']:
                     if not isinstance(line_color, str) or not line_color.startswith('#'):
-                      line_color = '#808080'
-                    block_parts.append(f"<span style='background-color:{line_color}; color:white; padding: 0 4px; border-radius: 3px;'>{line}</span>")
-                
+                        line_color = '#808080'
+                    block_parts.append(
+                        f"<span style='background-color:{line_color}; color:white; padding: 0 4px; border-radius: 3px;'>{line}</span>")
+
                 # SYSTEM
                 system_parts = []
                 if pd.notna(system) and system not in ['N.A.', '']:
                     system_parts.append(system)
                 if pd.notna(mode):
                     system_parts.append(f"({mode})")
-                if system_parts: 
-                  block_parts.append(" ".join(system_parts))
+                if system_parts:
+                    block_parts.append(" ".join(system_parts))
 
                 # SERVICE YEARS
                 service_parts = []
-                if pd.notna(fromyear):
-                    service_parts.append(f"{int(fromyear):g}")
-                elif pd.notna(min_opening):
-                    service_parts.append(f"{int(min_opening):g}")
+                if pd.notna(opening_yr):
+                    service_parts.append(f"{int(opening_yr):g}")
                 else:
-                    service_parts.append("unknown")                    
- 
-                if pd.notna(toyear):
-                    service_parts.append(f"- {int(toyear):g}")
+                    service_parts.append("unknown")
+
+                if pd.notna(closure_yr):
+                    service_parts.append(f"- {int(closure_yr):g}")
                 else:
                     service_parts.append("- present")
-                    
+
                 if service_parts:
                     block_parts.append(f"{' '.join(service_parts)}")
 
@@ -292,16 +363,16 @@ def map_it(city, year):
             # wrap in div
             tooltip_content = f"<div style='text-align: left;'>{tooltip_body}</div>" if tooltip_body else ""
             polyline_children = [dl.Tooltip(content=tooltip_content)] if tooltip_content else [
-            ]  
-            
+            ]
+
             # Get plottable info
             group = group.sort_values(
-              by=['toyear', 'line_name'],
-              ascending=[False, True], na_position='first'
-              )
+                by=['closure', 'line_name'],
+                ascending=[False, True], na_position='first'
+            )
             positions = group.iloc[0]['linestring_latlon']
             polyline_color = group.iloc[0]['line_color']
-            
+
             # Create Polyline
             lines.append(dl.Polyline(
                 positions=positions,
@@ -311,37 +382,46 @@ def map_it(city, year):
                 children=polyline_children
             ))
 
-    return markers, lines, {'center': center, 'zoom': zoom}
+    return markers, lines
 
 # Plot it function
 
 
-@app.callback(Output('plot', 'figure'), [Input('dropdown', 'value'), Input('slider', 'value')])
+@app.callback(
+    Output('plot', 'figure'),
+    [Input('city-data-store', 'data'),
+    Input('slider', 'value')]
+)
 def plot_it(city, year):
 
-    if not city or not year:
+    if city is None:
         return create_placeholder_figure("Select a city and year to see the plot.")
+    try:
+        city_tracks_df = pd.read_json(StringIO(city['tracks']), orient='split')
+        city_stations_df = pd.read_json(StringIO(city['stations']), orient='split')
 
-    # --- Get boundaries ---
-    city_all_stations = stations[stations.city_id == city]
-    city_name = city_all_stations['city'].iloc[0]
+    except Exception as e:
+        print(f"ERROR plot_it: Could not read data from store: {e}")
+        return create_placeholder_figure("Error loading city data.")
 
-    if city_all_stations.empty:
-        return create_placeholder_figure(f"No data found for this city.")
-    x_min = city_all_stations['longitude'].min()
-    x_max = city_all_stations['longitude'].max()
-    y_min = city_all_stations['latitude'].min()
-    y_max = city_all_stations['latitude'].max()
+    # --- Get name and boundaries ---
+    city_name = city_stations_df['city'].iloc[0] if not city_stations_df.empty else "Selected City"
 
-    # --- Get track data ---
-    _, my_tracks_current = get_filtered_data(city, year)
-    _, my_tracks_previous = get_filtered_data(city, year - 1)
+    if city_stations_df.empty:
+      return create_placeholder_figure(f"No station data found for this city.")
+    x_min = city_stations_df['longitude'].min()
+    x_max = city_stations_df['longitude'].max()
+    y_min = city_stations_df['latitude'].min()
+    y_max = city_stations_df['latitude'].max()
+
+    # --- Filter tracks by year ---
+    my_tracks_current = filter_by_year(city_tracks_df, year)
+    my_tracks_previous = filter_by_year(city_tracks_df, year - 1)
 
     # Calculate average latitude for scaling using cosine adjustment
-    if not city_all_stations.empty and pd.notna(city_all_stations['latitude'].mean()):
-        avg_latitude_deg = city_all_stations['latitude'].mean()
+    if not city_stations_df.empty and pd.notna(city_stations_df['latitude'].mean()):
+        avg_latitude_deg = city_stations_df['latitude'].mean()
         avg_latitude_rad = np.radians(avg_latitude_deg)
-        # Avoid division by zero near poles (cosine(90 degrees) = 0)
         if abs(avg_latitude_deg) >= 89.9:
             scale_ratio = 1 / \
                 np.cos(np.radians(np.sign(avg_latitude_deg) * 89.9))
@@ -438,14 +518,31 @@ def plot_it(city, year):
 # Count it function
 
 
-@app.callback(Output('count', 'children'), [Input('dropdown', 'value'), Input('slider', 'value')])
+@app.callback(
+    Output('count', 'children'),
+    [Input('city-data-store', 'data'),
+        Input('slider', 'value')]
+)
 def count_it(city, year):
-    if not city or not year:
-        return html.P("Select city and year for stats.", className="text-center text-muted")
 
-    my_stations, my_tracks = get_filtered_data(city, year)
+    if city is None:
+        return html.P("Select city/year", className="text-center text-muted small")
 
-    track_length_km = my_tracks.length.sum()/1000
+    try:
+        city_stations_df = pd.read_json(
+            StringIO(city['stations']), orient='split')
+        city_tracks_df = pd.read_json(
+            StringIO(city['tracks']), orient='split')
+    except Exception as e:
+        print(f"ERROR count_it: Could not read data from store: {e}")
+        return html.P("Error loading data", className="text-center text-danger small")
+
+    # --- Use filter_by_year function ---
+    my_stations = filter_by_year(city_stations_df, year)
+    my_tracks = filter_by_year(city_tracks_df, year)
+
+    # Calculate totals
+    track_length_km = my_tracks['length'].sum() / 1000
     num_stations = len(my_stations)
 
     return [
@@ -476,7 +573,11 @@ def count_it(city, year):
 # Summarize it function
 
 
-@app.callback(Output('summarize', 'figure'), [Input('dropdown', 'value'), Input('slider', 'value')])
+@app.callback(
+  Output('summarize', 'figure'), 
+  [Input('dropdown', 'value'),
+   Input('slider', 'value')]
+  )
 def summarize_it(city, year):
 
     if not city:
@@ -542,16 +643,28 @@ def summarize_it(city, year):
 
 @app.callback(
     Output("download-geojson", "data"),
-    [State('dropdown', 'value'),
+    [State('city-data-store', 'data'),
      State('slider', 'value')],
     Input("export_geojson_button", "n_clicks"),
     prevent_initial_call=True,
 )
 def export_geojson(city, year, n_clicks):
-    if not city or not year:
+    if city is None or n_clicks == 0:
+        print("WARN export_geojson: No city data in store or button not clicked.")
         return no_update
 
-    my_stations, my_tracks = get_filtered_data(city, year)
+    try:
+        city_stations_df = pd.read_json(StringIO(city['stations']), orient='split')
+        city_tracks_df = pd.read_json(StringIO(city['tracks']), orient='split')
+    except Exception as e:
+        print(f"ERROR export_geojson: Could not read data from store: {e}")
+        return no_update
+
+    # --- Filter data by selected year ---
+    my_stations = filter_by_year(city_stations_df, year)
+    my_tracks = filter_by_year(city_tracks_df, year)
+    
+    # --- Get city name for filename ---
     city_name = my_stations['city'].iloc[0]
 
     features = []
@@ -609,16 +722,28 @@ def export_geojson(city, year, n_clicks):
 
 @app.callback(
     Output("download-kml", "data"),
-    [State('dropdown', 'value'),
+    [State('city-data-store', 'data'),
      State('slider', 'value')],
     Input("export_kml_button", "n_clicks"),
     prevent_initial_call=True,
 )
 def export_kml(city, year, n_clicks):
-    if not city or not year:
+    if city is None or n_clicks == 0:
+        print("WARN export_geojson: No city data in store or button not clicked.")
         return no_update
 
-    my_stations, my_tracks = get_filtered_data(city, year)
+    try:
+        city_stations_df = pd.read_json(StringIO(city['stations']), orient='split')
+        city_tracks_df = pd.read_json(StringIO(city['tracks']), orient='split')
+    except Exception as e:
+        print(f"ERROR export_kml: Could not read data from store: {e}")
+        return no_update
+
+    # --- Filter data by selected year ---
+    my_stations = filter_by_year(city_stations_df, year)
+    my_tracks = filter_by_year(city_tracks_df, year)
+    
+    # --- Get city name for filename ---
     city_name = my_stations['city'].iloc[0]
     kml = Kml()
 
@@ -678,6 +803,7 @@ def update_slider_value(n_back, n_fwd, current_year):
         return min(new_year, max_year)
 
     return no_update
+
 
 # ---------------------------------
 # 3. Create Dash Layout
@@ -767,7 +893,7 @@ controls = dbc.Card(
                     included=True,
                     marks=slider_marks,
                     tooltip={"placement": "bottom", "always_visible": True},
-                    value=2012
+                    value=DEFAULT_YEAR
                 ),
                 width=True,
             ),
@@ -805,6 +931,8 @@ export_card = dbc.Card(
 app.layout = html.Div([
     navbar,
     dbc.Container([
+        # Store
+        dcc.Store(id='city-data-store', storage_type='memory'),
         # Title Section
         dbc.Row([
             dbc.Col([
@@ -813,7 +941,7 @@ app.layout = html.Div([
                     className="text-center mb-2 ms-3"
                 ),
                 dbc.Col([
-                    html.P("Data quality for each city may vary greatly! Local non-rail and intercity services such as Local Busses, Ferries, People Movers, and High Speed Rail are excluded.",
+                    html.P("Data quality for each city may vary greatly! Non-rail local services such as Local Busses and Ferries are excluded.",
                            className="text-muted small text-center"),
                 ], className="align-self-center"),
             ], width=12)
@@ -822,14 +950,14 @@ app.layout = html.Div([
         # Controls and Side Cards (Stats + Export)
         dbc.Row([
             dbc.Col(
-                controls, 
-                width=12,lg=8
+                controls,
+                width=12, lg=8
             ),
             dbc.Col(
                 dbc.Row([
                     dbc.Col(stats_card, width=7),
                     dbc.Col(export_card, width=5)
-                ],className="g-2"),
+                ], className="g-2"),
                 width=12, lg=4, className="g-2"
             )
         ], align="stretch", className="mb-2 g-2"),
@@ -839,6 +967,7 @@ app.layout = html.Div([
             dbc.Col(
                 dbc.Card([
                     dbc.CardBody([
+
                         dl.Map(
                             id='map',
                             center=DEFAULT_CENTER,
@@ -850,9 +979,23 @@ app.layout = html.Div([
                                     id='base-layer',
                                     url='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
                                 ),
-                                dl.LayerGroup(id='lines-layer', children=[]),
+                                dl.LayerGroup(
+                                    id='lines-layer', children=[]),
                                 dl.LayerGroup(
                                     id='stations-layer', children=[]),
+                                # Year Display Div
+                                html.Div(id='map-year-display', children="", style={
+                                            'position': 'absolute',
+                                            'top': '10px',
+                                            'right': '10px',
+                                            'zIndex': 1000,
+                                            'backgroundColor': 'rgba(34, 34, 34, 0.75)',
+                                            'color': 'white',
+                                            'padding': '5px 10px',
+                                            'borderRadius': '5px',
+                                            'fontSize': '1.5em',
+                                            'fontWeight': 'bold'
+                                })
                             ]
                         )
                     ])
